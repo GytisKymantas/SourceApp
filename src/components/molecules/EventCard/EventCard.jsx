@@ -5,29 +5,39 @@ import { ReactComponent as EventCardDivider } from "../../../assets/eventCardDiv
 import { ReactComponent as PresentIconClear } from "../../../assets/presentIconClear.svg";
 import { ReactComponent as PresentIconColor } from "../../../assets/presentIconColor.svg";
 import { ReactComponent as CommentIcon } from "../../../assets/commentIcon.svg";
+import { Button } from "../../atoms/Button/Button";
 import Moment from "moment";
 import "./event-card.scss";
 
 export const EventCard = (data) => {
   Moment.locale("en");
   const birthdayData = data?.data[0];
-
   let wishes = birthdayData.wishes;
-  const comments = birthdayData.comments;
+  let comments = birthdayData.comments;
   const name = birthdayData.userName;
   const date = birthdayData.birthdayDate;
   const image = birthdayData.userImage;
 
   const [present, setPresent] = useState(false);
   const [showComments, setShowComments] = useState(false);
+  const [commentValue, setCommentValue] = useState("");
+  const [coms, setComs] = useState(comments);
 
   const handlePresentClick = () => {
     setPresent((prevValue) => !prevValue);
   };
-
   const handleCommentClick = () => {
     setShowComments((prevValue) => !prevValue);
   };
+  const handleCommentSubmit = () => {
+    const userComment = {
+      userName: "You",
+      comment: commentValue,
+      date: Moment(new Date()).format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
+    };
+    setComs([...coms, userComment]);
+  };
+
   return (
     <>
       <div className="card">
@@ -63,13 +73,13 @@ export const EventCard = (data) => {
             onKeyDown={handleCommentClick}
             aria-hidden="true"
           />{" "}
-          <span className="card__icons-number">{comments.length}</span>
+          <span className="card__icons-number">{coms.length}</span>
         </div>
         <div>
           {showComments && (
             <div className="card--expanded">
               <EventCardDivider className="card--expanded__divider" />
-              {comments.map((item, index) => (
+              {coms.map((item, index) => (
                 <div className="card--expanded__comments" key={index}>
                   <div>
                     <span>{item.userName}</span>
@@ -78,6 +88,28 @@ export const EventCard = (data) => {
                   <span>{item.comment}</span>
                 </div>
               ))}
+
+              <div className="comments-box">
+                <input
+                  value={commentValue}
+                  onInput={(e) => setCommentValue(e.target.value)}
+                  placeholder="Send a wish!"
+                />
+                {commentValue.trim() ? (
+                  <Button
+                    type="submit"
+                    label="Send"
+                    onClick={handleCommentSubmit}
+                  />
+                ) : (
+                  <Button
+                    type="submit"
+                    label="Send"
+                    onClick={handleCommentSubmit}
+                    disabled={true}
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
