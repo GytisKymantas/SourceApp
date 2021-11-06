@@ -1,0 +1,12 @@
+.profile {
+    border: 1px solid $color-black;
+    height: 40px;
+    width: 40px;
+
+    &__picture {
+        border-radius: 50%;
+        height: 40px;
+        object-fit: cover;
+        width: 40px;
+    }
+}
