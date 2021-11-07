@@ -1,15 +1,30 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 import "./DropDown.scss";
 
-export const DropDown = (props) => (
-  <div className="dropdown">
-    <div className="dropdown__item">Settings</div>
-    <div className="dropdown__item">Log out</div>
-  </div>
-);
+export const DropDown = ({ items }) => {
+  return (
+    <div className="drop-down">
+      {items.map((item) => {
+        return (
+          <div
+            key={item.id}
+            className="drop-down__item"
+            role="button"
+            tabIndex={item.id}
+            onClick={item.click}
+            onKeyDown={item.click}
+          >
+            <div className="drop-down__logo">{item.logo}</div>
+            <div>{item.text}</div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
-// DropDown.defaultProps = {};
-
-// DropDown.propTypes = {};
+DropDown.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object),
+};

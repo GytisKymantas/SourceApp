@@ -1,22 +1,59 @@
 @import '../../styles/base/base';
 
-.dropdown {
+$border-solid-ghost: 1px solid $color-ghost;
+
+.drop-down {
     background: #fff;
-    border: 1px solid $color-ghost;
+    border: $border-solid-ghost;
     border-radius: 5px;
     color: $color-fiord;
+    font-size: $font-size-small;
     font-weight: $font-weight-regular;
+    line-height: 22px;
+    position: relative;
     width: 197px;
 
-    // max-height: 40px;
-    // max-width: 40px;
-
     &__item {
+        align-items: center;
+        display: flex;
         height: 48px;
     }
 
-    //     &__logo {
-    //         margin-left: -12px;
-    //     }
-    // }
+    &__item:first-child {
+        border-radius: 4px 4px 0 0;
+
+        &::before {
+            background: #fff;
+            border-left: $border-solid-ghost;
+            border-top: $border-solid-ghost;
+            box-sizing: border-box;
+            content: '';
+            height: 9px;
+            left: 180px;
+            position: absolute;
+            top: -2px;
+            transform: rotate(45deg) translate(-50%);
+            width: 9px;
+        }
+
+        &:hover::before {
+            background: $color-porcelain;
+            cursor: pointer;
+        }
+    }
+
+    &__item:last-child {
+        border-radius: 0 0 4px 4px;
+    }
+
+    &__item:hover {
+        background: $color-porcelain;
+        cursor: pointer;
+    }
+
+    &__logo {
+        display: flex;
+        margin-left: 16px;
+        margin-right: 8.75px;
+    }
 }
