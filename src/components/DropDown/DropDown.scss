@@ -1,6 +1,6 @@
 @import '../../styles/base/base';
 
-$border-solid-ghost: 1px solid $color-ghost;
+$border-solid-ghost: 1px solid #cacfd5;
 
 .drop-down {
     background: #fff;
@@ -8,7 +8,7 @@ $border-solid-ghost: 1px solid $color-ghost;
     border-radius: 5px;
     color: $color-fiord;
     font-size: $font-size-small;
-    font-weight: $font-weight-regular;
+    font-weight: 400;
     line-height: 22px;
     position: relative;
     width: 197px;
@@ -37,7 +37,7 @@ $border-solid-ghost: 1px solid $color-ghost;
         }
 
         &:hover::before {
-            background: $color-porcelain;
+            background: #edeff1;
             cursor: pointer;
         }
     }
@@ -47,7 +47,7 @@ $border-solid-ghost: 1px solid $color-ghost;
     }
 
     &__item:hover {
-        background: $color-porcelain;
+        background: #edeff1;
         cursor: pointer;
     }
 

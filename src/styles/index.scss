@@ -5,10 +5,11 @@
 
 @import 'print';
 
-$font-family-roboto: 'Roboto', sans-serif;
+// Delete this
+$font-family-delete: sans-serif;
 
 .app {
-    font-family: $font-family-roboto;
+    font-family: $font-family-delete;
     margin: 40px auto;
     max-width: 400px;
     text-align: center;
