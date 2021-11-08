@@ -1,1 +1,1 @@
-export * from "./Avatar/index";
+export * from "./atoms/Avatar/index";
