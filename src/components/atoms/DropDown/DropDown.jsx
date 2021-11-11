@@ -3,24 +3,30 @@ import PropTypes from "prop-types";
 
 import "./DropDown.scss";
 
-export const DropDown = ({ items }) => (
+export const DropDown = ({ options }) => (
   <div className="drop-down">
-    {items.map((item) => (
+    {options.map((option) => (
       <div
-        key={item.id}
-        className="drop-down__item"
+        key={option.id}
+        className="drop-down__option"
         role="button"
-        tabIndex={item.id}
-        onClick={item.click}
-        onKeyDown={item.click}
+        tabIndex={option.id}
+        onClick={option.click}
+        onKeyDown={option.click}
       >
-        <div className="drop-down__logo">{item.logo}</div>
-        <div>{item.text}</div>
+        <div className="drop-down__logo">{option.logo}</div>
+        <div>{option.text}</div>
       </div>
     ))}
   </div>
 );
 
 DropDown.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object),
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      logo: PropTypes.node,
+      text: PropTypes.string,
+    })
+  ),
 };

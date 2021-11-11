@@ -1,6 +1,6 @@
 @import '../../../styles/base/base';
 
-$border-solid-ghost: 1px solid #cacfd5;
+$border-solid-ghost: 1px solid $color-ghost;
 
 .drop-down {
     background: #fff;
@@ -8,18 +8,18 @@ $border-solid-ghost: 1px solid #cacfd5;
     border-radius: 5px;
     color: $color-fiord;
     font-size: $font-size-small;
-    font-weight: 400;
+    font-weight: $font-weight-regular;
     line-height: 22px;
     position: relative;
     width: 197px;
 
-    &__item {
+    &__option {
         align-items: center;
         display: flex;
         height: 48px;
     }
 
-    &__item:first-child {
+    &__option:first-child {
         border-radius: 4px 4px 0 0;
 
         &::before {
@@ -37,17 +37,17 @@ $border-solid-ghost: 1px solid #cacfd5;
         }
 
         &:hover::before {
-            background: #edeff1;
+            background: $color-porcelain;
             cursor: pointer;
         }
     }
 
-    &__item:last-child {
+    &__option:last-child {
         border-radius: 0 0 4px 4px;
     }
 
-    &__item:hover {
-        background: #edeff1;
+    &__option:hover {
+        background: $color-porcelain;
         cursor: pointer;
     }
 
