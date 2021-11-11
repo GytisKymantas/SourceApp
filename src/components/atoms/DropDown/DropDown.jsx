@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import "./DropDown.scss";
 
-export const DropDown = ({ options }) => (
+export const DropDown = ({ options, onSelect }) => (
   <div className="drop-down">
     {options.map((option) => (
       <div
@@ -11,7 +11,7 @@ export const DropDown = ({ options }) => (
         className="drop-down__option"
         role="button"
         tabIndex={option.id}
-        onClick={option.click}
+        onClick={() => onSelect(option.id)}
         onKeyDown={option.click}
       >
         <div className="drop-down__logo">{option.logo}</div>
@@ -29,4 +29,5 @@ DropDown.propTypes = {
       text: PropTypes.string,
     })
   ),
+  onSelect: PropTypes.func,
 };
