@@ -1,11 +1,17 @@
 .profile-widget {
-    // max-height: 40px;
-    // max-width: 40px;
+    align-items: center;
+    display: flex;
 
-    // &__something {
-    //     border-radius: 50%;
-    //     height: 40px;
-    //     object-fit: cover;
-    //     width: 40px;
-    // }
+    &__notifications-container {
+        height: 24px;
+        margin-right: 20px;
+        position: relative;
+        top: 2px;
+    }
+
+    &__elipse-icon {
+        left: 12px;
+        position: absolute;
+        top: -5px;
+    }
 }
