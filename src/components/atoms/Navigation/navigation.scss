@@ -1,9 +1,8 @@
-@import '../../../styles/base/colors';
+@import '../../../styles/base/base';
 
 .navigation {
     background-color: $color-violet;
     display: inline-block;
-
     width: 1440px;
 
     &__menuItems {
