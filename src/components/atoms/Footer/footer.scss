@@ -1,21 +1,23 @@
 @import '../../../styles/base/base';
 
+@import '../../../styles/index';
+
 .footer {
+    align-items: center;
     background: #fff;
-    bottom: 0%;
+    bottom: 0;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-    height: 5vw;
-    left: 0%;
+    display: flex;
+    height: 72px;
+    justify-content: flex-end;
+    left: 0;
     position: absolute;
-    right: 0%;
+    right: 0;
     width: 100%;
 
     &__text {
-        align-items: center;
         bottom: 38.89%;
         color: $color-fiord;
-        display: flex;
-        font-family: $font-family-roboto;
         font-size: $font-size-mini;
         font-weight: $font-weight-medium;
         line-height: 150%;

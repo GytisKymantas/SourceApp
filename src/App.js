@@ -36,7 +36,7 @@ function App() {
         </a>
       </header>
       <GetStartedList key={instructions.length} instructions={instructions} />
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 }
