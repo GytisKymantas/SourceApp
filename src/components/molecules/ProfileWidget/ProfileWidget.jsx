@@ -6,7 +6,6 @@ import { ReactComponent as SettingsLogo } from "../../../assets/settings.svg";
 import { ReactComponent as LogOutLogo } from "../../../assets/logOut.svg";
 import { ReactComponent as Notification } from "../../../assets/notification.svg";
 import { ReactComponent as Elipse } from "../../../assets/elipse.svg";
-// import PropTypes from "prop-types";
 
 import "./ProfileWidget.scss";
 
@@ -54,12 +53,7 @@ export const ProfileWidget = () => {
         role="menu"
         tabIndex={0}
       >
-        <Avatar
-          imageSource={
-            "https://data.whicdn.com/images/322027365/original.jpg?t=1541703413"
-          }
-          hasIcon={true}
-        />
+        <Avatar hasIcon={true} />
       </div>
       {showDropDown && (
         <div className="profile-widget__drop-down">
@@ -69,12 +63,3 @@ export const ProfileWidget = () => {
     </div>
   );
 };
-
-// Avatar.defaultProps = {
-//   hasIcon: false,
-// };
-
-// Avatar.propTypes = {
-//   imageSource: PropTypes.string,
-//   hasIcon: PropTypes.bool,
-// };
