@@ -12,7 +12,7 @@ export const DropDown = ({ options, onSelect }) => (
         role="button"
         tabIndex={option.id}
         onClick={() => onSelect(option.id)}
-        onKeyDown={option.click}
+        onKeyDown={() => onSelect(option.id)}
       >
         <div className="drop-down__logo">{option.logo}</div>
         <div>{option.text}</div>
