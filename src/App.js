@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ReactComponent as SourceryLogo } from "assets/logo.svg";
 import { GetStartedList } from "features/getStarted/components/GetStartedList";
+import { Footer } from "components/atoms/Footer";
 
 function App() {
   const [instructions, setInstructions] = useState([]);
@@ -35,6 +36,7 @@ function App() {
         </a>
       </header>
       <GetStartedList key={instructions.length} instructions={instructions} />
+      <Footer></Footer>
     </div>
   );
 }

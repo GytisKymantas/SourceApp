@@ -1,14 +1,16 @@
-@import 'src\styles\base\colors';
+@import '../../../styles/base/colors';
 
-@import '../../../styles/base/typography';
+@import '../../../styles/index';
 
 .footer {
     background: #fff;
     bottom: 0%;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    height: 5vw;
     left: 0%;
     position: absolute;
     right: 0%;
+    width: 100%;
 
     &__text {
         align-items: center;
@@ -17,9 +19,7 @@
         display: flex;
         font-family: $font-family-roboto;
         font-size: $font-size-mini;
-        font-style: normal;
         font-weight: $font-weight-medium;
-        left: 86.53%;
         line-height: 150%;
         position: absolute;
         right: 3.33%;

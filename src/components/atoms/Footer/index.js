@@ -1,1 +1,1 @@
-export * from "components/Footer/Footer";
+export * from "components/atoms/Footer/Footer";
