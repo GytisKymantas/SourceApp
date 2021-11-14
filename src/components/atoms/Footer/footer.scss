@@ -1,0 +1,30 @@
+@import 'src\styles\base\colors';
+
+@import '../../../styles/base/typography';
+
+.footer {
+    background: #fff;
+    bottom: 0%;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    left: 0%;
+    position: absolute;
+    right: 0%;
+
+    &__text {
+        align-items: center;
+        bottom: 38.89%;
+        color: $color-fiord;
+        display: flex;
+        font-family: $font-family-roboto;
+        font-size: $font-size-mini;
+        font-style: normal;
+        font-weight: $font-weight-medium;
+        left: 86.53%;
+        line-height: 150%;
+        position: absolute;
+        right: 3.33%;
+        text-align: right;
+        text-transform: uppercase;
+        top: 40.28%;
+    }
+}
