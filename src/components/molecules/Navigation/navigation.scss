@@ -1,0 +1,18 @@
+@import '../../../styles/base/base';
+
+.navigation {
+    background-color: $color-violet;
+    display: inline-block;
+    width: 1440px;
+
+    &__menuItems {
+        text-align: center;
+    }
+
+    &__logo {
+        float: left;
+        height: 80px;
+        margin-left: 48px;
+        vertical-align: middle;
+    }
+}
