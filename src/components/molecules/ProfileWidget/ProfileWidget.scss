@@ -2,6 +2,7 @@
     align-items: center;
     display: flex;
     margin-right: 48px;
+    position: relative;
 
     &__notifications-container {
         height: 24px;
@@ -14,5 +15,11 @@
         left: 12px;
         position: absolute;
         top: -5px;
+    }
+
+    &__drop-down {
+        position: absolute;
+        right: 2px;
+        top: 55px;
     }
 }
