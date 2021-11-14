@@ -10,7 +10,12 @@ $font-family-roboto: 'Roboto', sans-serif;
 .app {
     font-family: $font-family-roboto;
     margin: 40px auto;
-    max-width: 400px;
+    // max-width: 400px;
     text-align: center;
     width: 100%;
+}
+
+.background {
+    background-color: $color-violet;
+    height: 80px;
 }
