@@ -4,11 +4,11 @@ import "./menu-item.scss";
 import { Link } from "react-router-dom";
 
 export const MenuItem = ({ icon, name, link }) => (
-  <div className="menuItem">
+  <div className="menu-item">
     <Link to={link}>
-      <div className="menuItem__content">
-        <div className="menuItem__icon">{icon}</div>
-        <div className="menuItem__name">{name}</div>
+      <div className="menu-item__content">
+        <div className="menu-item__icon">{icon}</div>
+        <div className="menu-item__name">{name}</div>
       </div>
     </Link>
   </div>
