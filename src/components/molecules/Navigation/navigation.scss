@@ -1,12 +1,16 @@
 @import '../../../styles/base/base';
 
 .navigation {
-    background-color: $color-violet;
-    display: inline-block;
-    text-align: center;
-    width: 1440px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
     &__logo {
         float: left;
+    }
+}
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
     }
 }
