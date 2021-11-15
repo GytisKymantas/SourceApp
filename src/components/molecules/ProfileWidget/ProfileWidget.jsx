@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Avatar } from "components/atoms/Avatar/Avatar";
 import { DropDown } from "components/atoms/DropDown/DropDown";
 
@@ -39,8 +39,31 @@ export const ProfileWidget = () => {
     console.log("option selected", optionId);
   };
 
+  const ref = useRef();
+
+  // useEffect hook closes the dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (ref.current && ref.current.contains(e.target)) {
+        // if inside click
+        return;
+      }
+      // if outside click
+      setShowDropDown(false);
+    };
+
+    if (showDropDown) {
+      document.addEventListener("click", handleClickOutside);
+    } else {
+      document.removeEventListener("click", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [showDropDown, setShowDropDown]);
+
   return (
-    <div className="profile-widget">
+    <div ref={ref} className="profile-widget">
       <div className="profile-widget__notifications-container">
         <Notification className="profile-widget__notification-icon" />
         {notifications && <Elipse className="profile-widget__elipse-icon" />}
@@ -49,7 +72,6 @@ export const ProfileWidget = () => {
         className="profile-widget__avatar"
         onClick={handleAvatarClick}
         onKeyDown={handleAvatarClick}
-        // Not sure if nest two rows is right
         role="menu"
         tabIndex={0}
       >
