@@ -27,3 +27,10 @@
         background: rgba(0, 0, 0, 0.12);
     }
 }
+
+@media (max-width: 768px) {
+    .menu-item {
+        height: 100%;
+        width: 100%;
+    }
+}
