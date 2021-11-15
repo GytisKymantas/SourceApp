@@ -3,11 +3,8 @@
 .navigation {
     background-color: $color-violet;
     display: inline-block;
+    text-align: center;
     width: 1440px;
-
-    &__menuItems {
-        text-align: center;
-    }
 
     &__logo {
         float: left;
