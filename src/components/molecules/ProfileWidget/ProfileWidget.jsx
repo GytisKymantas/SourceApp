@@ -69,7 +69,6 @@ export const ProfileWidget = () => {
         {notifications && <Elipse className="profile-widget__elipse-icon" />}
       </div>
       <div
-        className="profile-widget__avatar"
         onClick={handleAvatarClick}
         onKeyDown={handleAvatarClick}
         role="menu"
