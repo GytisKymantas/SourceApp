@@ -63,7 +63,7 @@ export const ProfileWidget = () => {
   }, [showDropDown, setShowDropDown]);
 
   return (
-    <div ref={ref} className="profile-widget">
+    <div className="profile-widget">
       <div className="profile-widget__notifications-container">
         <Notification className="profile-widget__notification-icon" />
         {notifications && <Elipse className="profile-widget__elipse-icon" />}
@@ -78,7 +78,7 @@ export const ProfileWidget = () => {
         <Avatar hasIcon={true} />
       </div>
       {showDropDown && (
-        <div className="profile-widget__drop-down">
+        <div ref={ref} className="profile-widget__drop-down">
           <DropDown options={menuItems} onSelect={handleOptionSelect} />
         </div>
       )}
