@@ -1,0 +1,37 @@
+@import '../../../styles/base/base';
+
+.header {
+    align-items: center;
+    background-color: $color-violet;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+
+    &__logo {
+        margin-left: 47px;
+    }
+
+    &__nav {
+        background-color: $color-chateau-gray;
+        height: 80px;
+        width: 483px;
+    }
+
+    &__user-profile-container {
+        align-items: center;
+        display: flex;
+        height: 80px;
+        justify-content: space-between;
+    }
+
+    &__user-profile-widget {
+        background-color: $color-yellow;
+        height: 80px;
+        margin-left: 27px;
+        margin-right: 39px;
+        width: 40px;
+    }
+}
