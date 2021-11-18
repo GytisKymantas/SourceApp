@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./Breadcrumbs.scss";
 
-const Breadcrumbs = ({ linkList }) => (
+export const Breadcrumbs = ({ linkList }) => (
   <nav>
     <ul className="breadcrumbs">
       {linkList.map((item, index) => (
@@ -26,5 +26,3 @@ Breadcrumbs.propTypes = {
     }).isRequired
   ).isRequired,
 };
-
-export default Breadcrumbs;

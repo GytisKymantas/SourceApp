@@ -1,11 +1,7 @@
-$light-grey: #9ea7b3;
-$dark-grey: #6a7889;
-$font-family: 'roboto';
-$font-size: 12px;
+@import '../../../styles/base/base';
 
 .breadcrumbs {
-    font-family: $font-family;
-    font-size: $font-size;
+    font-size: $font-size-tiny;
     font-style: normal;
     font-weight: 500;
     height: 18px;
@@ -17,22 +13,22 @@ $font-size: 12px;
         display: inline-block;
 
         &:not(:last-of-type)::after {
-            color: $light-grey;
+            color: $color-chateau-gray;
             content: '\203a';
             margin: 0 5px;
         }
 
         &:last-child a {
-            color: $dark-grey;
+            color: $color-dark-gray;
         }
     }
 
     &__link {
-        color: $light-grey;
+        color: $color-chateau-gray;
         text-decoration: none;
 
         &:hover {
-            color: $dark-grey;
+            color: $color-dark-gray;
             text-decoration: underline;
         }
     }

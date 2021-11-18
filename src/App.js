@@ -2,6 +2,26 @@ import React, { useEffect, useState } from "react";
 import { ReactComponent as SourceryLogo } from "assets/logo.svg";
 import { GetStartedList } from "features/getStarted/components/GetStartedList";
 import { Footer } from "components/atoms/Footer";
+import { Breadcrumbs } from "components/atoms/Breadcrumbs";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Dashboard } from "pages/Dashboard";
+import { Reservations } from "pages/Reservations";
+import { EatOut } from "pages/EatOut";
+
+const linkList = [
+  {
+    label: "dashboard",
+    href: "/",
+  },
+  {
+    label: "reservations",
+    href: "/reservations",
+  },
+  {
+    label: "eatout",
+    href: "/eatout",
+  },
+];
 
 function App() {
   const [instructions, setInstructions] = useState([]);
@@ -25,6 +45,14 @@ function App() {
         <SourceryLogo />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+          <Router>
+            <Breadcrumbs linkList={linkList} />
+            <Routes>
+              <Route exact path="/" element={<Dashboard />} />
+              <Route path="/reservations" element={<Reservations />} />
+              <Route path="/eatout" element={<EatOut />} />
+            </Routes>
+          </Router>
         </p>
         <a
           className="App-link"
