@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-family: Roboto;
+    font-style: normal;
+}
+.firstRow {
+    display: flex;
+    flex-wrap: wrap;
+}
+.secondRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.title {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 32px;
+    color: #3e5067;
+    margin-left: 16px;
+}
+
+.reservations {
+    height: 503.33px;
+    width: 456px;
+    left: 100px;
+    border-radius: 5px;
+    background: gray;
+}
+
+.reservations__container {
+    display: flex;
+    background: white;
+    height: 93.95995330810547px;
+    width: 416px;
+    left: 0px;
+    top: 23.7867431640625px;
+    box-shadow: 0px 8px 23px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 20px;
+
+    & * {
+        margin-left: 16px;
+    }
+
+    &-header {
+        display: Flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        font-weight: 900;
+        font-size: 12px;
+        line-height: 32px;
+        color: #3e5067;
+        flex: none;
+        margin: 4px 0px;
+
+        & p {
+            color: #627485;
+        }
+    }
+
+    &-door {
+        position: relative;
+        width: 100%;
+        left: 24%;
+    }
+    &-doorImg {
+        top: -19%;
+        left: -31%;
+        position: absolute;
+    }
+}
