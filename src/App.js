@@ -8,6 +8,7 @@ import { EatOut } from "pages/EatOut";
 import { DropDown } from "components/atoms/DropDown/DropDown";
 import { ReactComponent as SettingsLogo } from "./assets/settings.svg";
 import { ReactComponent as LogOutLogo } from "./assets/logOut.svg";
+import { Footer } from "components/atoms/Footer";
 
 function App() {
   const [instructions, setInstructions] = useState([]);
@@ -71,6 +72,7 @@ function App() {
         </a>
       </header>
       <GetStartedList key={instructions.length} instructions={instructions} />
+      <Footer />
     </div>
   );
 }
