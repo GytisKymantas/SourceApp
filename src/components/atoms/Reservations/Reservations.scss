@@ -2,26 +2,6 @@
     margin: 0;
     padding: 0;
 }
-html {
-    font-family: Roboto;
-    font-style: normal;
-}
-.firstRow {
-    display: flex;
-    flex-wrap: wrap;
-}
-.secondRow {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-.title {
-    font-weight: 900;
-    font-size: 24px;
-    line-height: 32px;
-    color: #3e5067;
-    margin-left: 16px;
-}
 
 .reservations {
     height: 503.33px;
@@ -70,7 +50,7 @@ html {
         width: 100%;
         left: 24%;
     }
-    &-doorImg {
+    &-doorimg {
         top: -19%;
         left: -31%;
         position: absolute;
