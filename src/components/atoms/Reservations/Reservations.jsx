@@ -1,5 +1,5 @@
 import React from "react";
-import "./Reservations.css";
+import "./Reservations.scss";
 import PropTypes from "prop-types";
 import logo from "../../../assets/Graphic.svg";
 
@@ -10,7 +10,7 @@ const Reservations = ({ headerName, reservedNumber }) => (
       <p>{reservedNumber ? `${reservedNumber} RESERVED` : "UNRESERVED"}</p>
     </div>
     <div className="reservations__container-door">
-      <div className="reservations__container-doorImg door">
+      <div className="reservations__container-doorimg door">
         <img src={logo} alt="logo"></img>
       </div>
     </div>
