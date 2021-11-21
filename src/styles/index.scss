@@ -7,10 +7,15 @@
 
 $font-family-roboto: 'Roboto', sans-serif;
 
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .app {
     color: $color-fiord;
     font-family: $font-family-roboto;
-    margin: 40px auto;
     text-align: center;
     width: 100%;
 }
