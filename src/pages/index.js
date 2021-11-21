@@ -1,1 +1,1 @@
-export * from "./Registration/index";
+export * from "./StartingPage/index";
