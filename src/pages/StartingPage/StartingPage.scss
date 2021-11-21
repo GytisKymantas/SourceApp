@@ -7,7 +7,6 @@
     flex-direction: column;
     height: 100vh;
     justify-content: center;
-    padding-top: 20px;
 
     &__logo-container {
         margin-bottom: 72px;
@@ -41,6 +40,7 @@
     .starting-page {
         &__logo-container {
             margin-bottom: 30px;
+            padding-top: 20px;
         }
 
         &__form-container {
