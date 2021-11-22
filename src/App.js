@@ -7,21 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Dashboard } from "pages/Dashboard";
 import { Reservations } from "pages/Reservations";
 import { EatOut } from "pages/EatOut";
-
-const linkList = [
-  {
-    label: "dashboard",
-    href: "/",
-  },
-  {
-    label: "reservations",
-    href: "/reservations",
-  },
-  {
-    label: "eatout",
-    href: "/eatout",
-  },
-];
+import { Item } from "pages/Item";
 
 function App() {
   const [instructions, setInstructions] = useState([]);
@@ -39,6 +25,25 @@ function App() {
       );
   }, []);
 
+  const linkList = [
+    {
+      label: "dashboard",
+      href: "/",
+    },
+    {
+      label: "reservations",
+      href: "/reservations",
+    },
+    {
+      label: "eatout",
+      href: "/eatout",
+    },
+    {
+      label: "item",
+      href: undefined,
+    },
+  ];
+
   return (
     <div className="app">
       <header className="App-header">
@@ -51,6 +56,8 @@ function App() {
               <Route exact path="/" element={<Dashboard />} />
               <Route path="/reservations" element={<Reservations />} />
               <Route path="/eatout" element={<EatOut />} />
+              <Route path="/eatout/item" element={<Item />} />
+              <Route path="/reservations/item" element={<Item />} />
             </Routes>
           </Router>
         </p>

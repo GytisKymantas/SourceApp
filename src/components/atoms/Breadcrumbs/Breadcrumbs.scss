@@ -20,6 +20,12 @@
 
         &:last-child a {
             color: $color-dark-gray;
+            cursor: default;
+            pointer-events: none;
+
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
 
@@ -28,7 +34,6 @@
         text-decoration: none;
 
         &:hover {
-            color: $color-dark-gray;
             text-decoration: underline;
         }
     }
