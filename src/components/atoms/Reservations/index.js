@@ -1,1 +1,1 @@
-export * from "components/atoms/Reservations/Reservations";
+export * from "components/atoms/Reservations/ReservationsItem";
