@@ -12,72 +12,77 @@ import { Footer } from "components/atoms/Footer";
 import { ReactComponent as RestaurantCard} from "components/atoms/RestaurantCard/RestaurantCard";
 
 function App() {
-  const [instructions, setInstructions] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:3008/instructions")
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setInstructions(result);
-        },
-        (error) => {
-          // handle error here
-        }
-      );
-  }, []);
-  const menuItems = [
-    {
-      id: 1,
-      logo: <SettingsLogo />,
-      text: "Settings",
-    },
-    {
-      id: 2,
-      logo: <LogOutLogo />,
-      text: "Log out",
-    },
-  ];
+  <RestaurantCard />
 
-  const handleOptionSelect = (optionId) => {
-    // placeholder for future functionality
-    // eslint-disable-next-line no-console
-    console.log("option selected", optionId);
-  };
-  return (
-    <div className="app">
-      <header className="App-header">
-        <Router>
-          <div className="app">
-            <DropDown options={menuItems} onSelect={handleOptionSelect} />
-            <Navigation />
-            <div className="content">
-              <Routes>
-                <Route exact path="/" element={<Dashboard />} />
-                <Route path="/reservations" element={<Reservations />} />
-                <Route path="/eatOut" element={<EatOut />} />
-              </Routes>
-            </div>
-          </div>
-        </Router>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <GetStartedList key={instructions.length} instructions={instructions} />
-      <Footer />
-      <RestaurantCard />
+
+
+  // const [instructions, setInstructions] = useState([]);
+
+  // useEffect(() => {
+  //   fetch("http://localhost:3008/instructions")
+  //     .then((res) => res.json())
+  //     .then(
+  //       (result) => {
+  //         setInstructions(result);
+  //       },
+  //       (error) => {
+  //         // handle error here
+  //       }
+  //     );
+  // }, []);
+  // const menuItems = [
+  //   {
+  //     id: 1,
+  //     logo: <SettingsLogo />,
+  //     text: "Settings",
+  //   },
+  //   {
+  //     id: 2,
+  //     logo: <LogOutLogo />,
+  //     text: "Log out",
+  //   },
+  // ];
+
+  // const handleOptionSelect = (optionId) => {
+  //   // placeholder for future functionality
+  //   // eslint-disable-next-line no-console
+  //   console.log("option selected", optionId);
+  // };
+  // return (
+  //   <div className="app">
+  //     <header className="App-header">
+  //       <Router>
+  //         <div className="app">
+  //           <DropDown options={menuItems} onSelect={handleOptionSelect} />
+  //           <Navigation />
+  //           <div className="content">
+  //             <Routes>
+  //               <Route exact path="/" element={<Dashboard />} />
+  //               <Route path="/reservations" element={<Reservations />} />
+  //               <Route path="/eatOut" element={<EatOut />} />
+  //             </Routes>
+  //           </div>
+  //         </div>
+  //       </Router>
+  //       <p>
+  //         Edit <code>src/App.js</code> and save to reload.
+  //       </p>
+  //       <a
+  //         className="App-link"
+  //         href="https://reactjs.org"
+  //         target="_blank"
+  //         rel="noopener noreferrer"
+  //       >
+  //         Learn React
+  //       </a>
+  //     </header>
+  //     <GetStartedList key={instructions.length} instructions={instructions} />
+  //     <Footer />
+  //     <RestaurantCard />
       
-    </div>
-  );
+  //   </div>
+  // );
 }
 
 export default App;
