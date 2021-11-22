@@ -1,10 +1,10 @@
 
 
-.restaurant__container {
+.restaurant {
         border-radius: 8px;
 
     // front
-        &-front {
+        &__front {
             position: relative;
             margin-left: 16px;
             width: 416px;
@@ -13,14 +13,14 @@
             border-radius: 8px;
         }
 
-        &-front img:first-of-type{
+        &__front img:first-of-type{
             position: absolute;
             top: 5%;
             left: 2%;
         }
 
         // frame
-        &-frame {
+        &__frame {
             position: absolute;
             left: 79%;
             top: 7%;
@@ -70,7 +70,7 @@
         }
 
         // text footer
-        &-image-text {
+        &__image-text {
             margin-left: 20px;
             font-family: Roboto;
             font-style: normal;
@@ -85,7 +85,7 @@
                 font-style: normal;
             }
         }
-        &-image-heart {
+        &__image-heart {
             position: absolute;
             left: 88%;
             top: 77%;
