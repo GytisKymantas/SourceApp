@@ -3,30 +3,21 @@
     padding: 0;
 }
 
-.reservations {
-    height: 503.33px;
-    width: 456px;
-    left: 100px;
-    border-radius: 5px;
-    background: gray;
-}
 
 .reservations__container {
     display: flex;
     background: white;
-    height: 93.95995330810547px;
+    height: 94px;
     width: 416px;
     left: 0px;
-    top: 23.7867431640625px;
+    top: 24px;
     box-shadow: 0px 8px 23px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     margin-bottom: 50px;
     margin-top: 50px;
     margin-left: 20px;
 
-    & * {
-        margin-left: 16px;
-    }
+    
 
     &-header {
         display: Flex;
@@ -39,6 +30,10 @@
         color: #3e5067;
         flex: none;
         margin: 4px 0px;
+
+        & h1, p {
+            margin-left:1
+        }
 
         & p {
             color: #627485;

@@ -1,9 +1,9 @@
 import React from "react";
 import "./Reservations.scss";
 import PropTypes from "prop-types";
-import logo from "../../../assets/Graphic.svg";
+import logo from "../../../assets/door.svg";
 
-const Reservations = ({ headerName, reservedNumber }) => (
+const ReservationsItem1 = ({ headerName, reservedNumber }) => (
   <div className="reservations__container">
     <div className="reservations__container-header">
       <h1>{headerName}</h1>
@@ -17,10 +17,10 @@ const Reservations = ({ headerName, reservedNumber }) => (
   </div>
 );
 
-Reservations.propTypes = {
+ReservationsItem1.propTypes = {
   headerImage: PropTypes.string,
   headerName: PropTypes.string,
   reservedNumber: PropTypes.number,
 };
 
-export default Reservations;
+export default ReservationsItem1;
