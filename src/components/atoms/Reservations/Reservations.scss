@@ -1,7 +1,7 @@
 @import '../../../styles/base/base';
 
 
-.reservations__container {
+.reservations{
     display: flex;
     background: white;
     height: 94px;
@@ -16,7 +16,7 @@
 
     
 
-    &-header {
+    &__headercontainer {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -28,7 +28,7 @@
         flex: none;
         margin: 4px 0px;
 
-        & h1, p {
+        & h2, p {
             margin-left:16px;
         }
 
@@ -37,12 +37,12 @@
         }
     }
 
-    &-door {
+    &__doorcontainer {
         position: relative;
         width: 100%;
         left: 24%;
     }
-    &-doorimg {
+    &__doorimg {
         top: -19%;
         left: -31%;
         position: absolute;
