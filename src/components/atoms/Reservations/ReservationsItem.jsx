@@ -8,7 +8,7 @@ const ReservationsItem = ({
   reservationNumber,
 }) => (
   <div className="reservations">
-    <div className="reservations__container-header">
+    <div className="reservations__headercontainer">
       <h2>{reservationName}</h2>
       <p>
         {reservationNumber ? `${reservationNumber} RESERVED` : "UNRESERVED"}
