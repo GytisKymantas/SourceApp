@@ -12,6 +12,7 @@
     margin-bottom: 50px;
     margin-top: 50px;
     margin-left: 20px;
+    
     &__headercontainer {
         display: flex;
         flex-direction: column;
@@ -32,12 +33,12 @@
             color: $color-fiord;
         }
     }
-    &__doorcontainer {
+    &__logocontainer {
         position: relative;
         width: 100%;
         left: 24%;
     }
-    &__doorimg {
+    &__logoimg {
         top: -19%;
         left: -31%;
         position: absolute;
