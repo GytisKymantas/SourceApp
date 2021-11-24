@@ -1,5 +1,5 @@
 import React from "react";
-import "./Reservations.scss";
+import "./reservations.scss";
 import PropTypes from "prop-types";
 
 const ReservationsItem = ({
@@ -8,15 +8,15 @@ const ReservationsItem = ({
   reservationNumber,
 }) => (
   <div className="reservations">
-    <div className="reservations__headercontainer">
+    <div className="reservations__header-container">
       <h2>{reservationName}</h2>
       <p>
         {reservationNumber ? `${reservationNumber} RESERVED` : "UNRESERVED"}
       </p>
     </div>
-    <div className="reservations__logocontainer">
-      <div className="reservations__logoimg">
-        <img src={reservationImage} alt="logo"></img>
+    <div className="reservations__image-container">
+      <div className="reservations__image-wrapper">
+        <img src={reservationImage} alt="image"></img>
       </div>
     </div>
   </div>
