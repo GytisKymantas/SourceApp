@@ -1,0 +1,70 @@
+@import '../../../../../styles//base/colors';
+@import '../../../../../styles//base/typography';
+@import '../scss/comments--rows';
+
+.comment--wrapper {
+    height: 149px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    width: 416px;
+
+    .divider--top {
+        border-top: 1px solid #ccc;
+        display: block;
+        justify-content: center;
+        margin: 0 auto;
+        width: 384px;
+    }
+
+    .comment--input {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        margin-top: 12px;
+        padding-left: 16px;
+        padding-right: 16px;
+
+        .input--leave__comment {
+            background: none;
+            border: #fff;
+            color: $color-dark-gray;
+            cursor: pointer;
+            font-size: $font-size-mini;
+            margin-left: 12px;
+            margin-right: 12px;
+            outline: none;
+            width: 90px;
+        }
+
+        .button--post {
+            background: none;
+            border: #fff;
+            border-radius: 10px;
+            color: $color-dark-gray;
+            margin-left: 200px;
+            margin-right: 200px;
+            text-transform: uppercase;
+        }
+
+        .button--post:hover {
+            background: $color-lavender;
+            border-radius: 10px;
+            color: $color-light-gray;
+            cursor: pointer;
+            padding-bottom: 2px;
+            padding-top: 4px;
+            transition: 0.4s;
+        }
+    }
+
+    .divider--bottom {
+        border-top: 1px solid #ccc;
+        display: block;
+        justify-content: center;
+        margin: 0 auto;
+        margin-top: 10px;
+        width: 384px;
+    }
+}

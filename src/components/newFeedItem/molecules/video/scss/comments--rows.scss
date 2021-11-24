@@ -1,0 +1,67 @@
+@import '../../../../../styles//base/colors';
+@import '../../../../../styles//base/typography';
+
+.comments--rows {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    font-size: $font-size-mini;
+    height: 95px;
+    margin-top: 8px;
+    order: 1;
+    padding-left: 14px;
+    text-align: left;
+
+    .comments--box__one {
+        order: 1;
+
+        .comments--header {
+            color: $color-midnight;
+            display: flex;
+            flex-direction: row;
+            font-weight: 500;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            margin-top: 4px;
+            width: 384px;
+        }
+
+        .comments--content {
+            color: $color-fiord;
+            height: 30px;
+            line-height: 150%;
+            margin-bottom: 4px;
+            margin-top: 4px;
+            text-transform: none;
+            width: 384px;
+        }
+    }
+
+    .comments--box__two {
+        display: flex;
+        flex-direction: column;
+
+        .comments--header__two {
+            color: $color-midnight;
+            display: flex;
+            flex-direction: row;
+            font-weight: 500;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            margin-top: 4px;
+            width: 384px;
+        }
+
+        .comments--content__two {
+            color: $color-fiord;
+            font-size: $font-size-mini;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 150%;
+            margin-bottom: 4px;
+            margin-top: 4px;
+            text-transform: none;
+            width: 384px;
+        }
+    }
+}
