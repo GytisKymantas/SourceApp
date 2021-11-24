@@ -16,7 +16,7 @@ const ReservationsItem = ({
     </div>
     <div className="reservations__image-container">
       <div className="reservations__image-wrapper">
-        <img src={reservationImage} alt="image"></img>
+        <img src={reservationImage} alt="image" />
       </div>
     </div>
   </div>
