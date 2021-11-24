@@ -1,0 +1,15 @@
+.avatar {
+    max-height: 40px;
+    max-width: 40px;
+
+    &__picture {
+        border-radius: 50%;
+        height: 40px;
+        object-fit: cover;
+        width: 40px;
+    }
+
+    &__logo {
+        margin-left: -12px;
+    }
+}
