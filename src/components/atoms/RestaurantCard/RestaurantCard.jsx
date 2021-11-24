@@ -5,10 +5,10 @@ import PropTypes from "prop-types";
 const RestaurantCard = ({headerImage,userImage,vectorImage,heartImage}) => (
   <div className="restaurant">
       <div className="restaurant__front">
-          <img src={userImage} alt="user"></img>
-          <img src={headerImage} alt="pizza"></img>
+          <img src={ userImage } alt="user"></img>
+          <img src={ headerImage } alt="pizza"></img>
       <div className="restaurant__frame">
-          <img src={vectorImage} alt="vector"></img>
+          <img src={ vectorImage } alt="vector"></img>
           <span>4.5</span>
       </div>
 
