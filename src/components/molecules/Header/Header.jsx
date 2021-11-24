@@ -3,10 +3,12 @@ import { ReactComponent as Logo } from "assets/rocketLogo.svg";
 
 import "./header.scss";
 import { ProfileWidget } from "../ProfileWidget/ProfileWidget";
+import { Navigation } from "../Navigation/Navigation";
 
 export const Header = () => (
   <header className="header">
-    <Logo className="header__logo" />
-    <ProfileWidget className="header__user-profile" />
+    <Logo />
+    <Navigation />
+    <ProfileWidget />
   </header>
 );
