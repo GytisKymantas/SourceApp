@@ -1,1 +1,1 @@
-export * from "./StartingPage/index";
+export * from "./StartingPageLayout/index";
