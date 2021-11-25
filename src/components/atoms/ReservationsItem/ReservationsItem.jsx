@@ -2,7 +2,7 @@ import React from "react";
 import "./reservations.scss";
 import PropTypes from "prop-types";
 
-const ReservationsItem = ({
+export const ReservationsItem = ({
   reservationName,
   reservationImage,
   reservationNumber,
@@ -16,7 +16,7 @@ const ReservationsItem = ({
     </div>
     <div className="reservations__image-container">
       <div className="reservations__image-wrapper">
-        <img src={reservationImage} alt="image" />
+        <img src={reservationImage} alt="image of a category" />
       </div>
     </div>
   </div>
@@ -27,5 +27,3 @@ ReservationsItem.propTypes = {
   reservationName: PropTypes.string,
   reservationNumber: PropTypes.number,
 };
-
-export default ReservationsItem;
