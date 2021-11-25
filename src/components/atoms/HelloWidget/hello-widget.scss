@@ -1,0 +1,10 @@
+@import '../../../styles/base/base';
+$font-size-massive: 100px;
+$font-weight-massive: 700;
+
+.hello-widget {
+    &__time {
+        font-size: $font-size-massive;
+        font-weight: $font-weight-massive;
+    }
+}
