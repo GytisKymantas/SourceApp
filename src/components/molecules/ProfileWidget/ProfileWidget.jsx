@@ -9,7 +9,7 @@ import { ReactComponent as Elipse } from "../../../assets/elipse.svg";
 
 import "./ProfileWidget.scss";
 
-export const ProfileWidget = () => {
+const ProfileWidget = () => {
   // state placeholder for future notifications functionality,
   // suppose to be false by default actually
   // eslint-disable-next-line no-unused-vars
@@ -84,3 +84,5 @@ export const ProfileWidget = () => {
     </div>
   );
 };
+
+export default ProfileWidget;
