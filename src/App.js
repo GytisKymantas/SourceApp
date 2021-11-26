@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { GetStartedList } from "features/getStarted/components/GetStartedList";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Dashboard } from "pages/Dashboard";
 import { Reservations } from "pages/Reservations";
@@ -8,21 +7,6 @@ import { Footer } from "components/atoms/Footer";
 import { Header } from "components/molecules/Header/Header";
 
 function App() {
-  const [instructions, setInstructions] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3008/instructions")
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setInstructions(result);
-        },
-        (error) => {
-          // handle error here
-        }
-      );
-  }, []);
-
   return (
     <div className="app">
       <Router>
@@ -33,10 +17,6 @@ function App() {
             <Route path="/reservations" element={<Reservations />} />
             <Route path="/eatOut" element={<EatOut />} />
           </Routes>
-          <GetStartedList
-            key={instructions.length}
-            instructions={instructions}
-          />
         </div>
       </Router>
 
