@@ -1,0 +1,282 @@
+@import '../../../styles/';
+
+// Card
+
+.card {
+    align-items: flex-start;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    height: 662px;
+    left: 464px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    text-transform: uppercase;
+    top: 57px;
+    width: 416px;
+}
+
+// Header
+
+.card--header__wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-size: $font-size-tiny;
+    font-weight: 500;
+    height: 24px;
+    justify-content: space-between;
+    line-height: 150%;
+    padding: 6px 16px;
+    width: 390px;
+
+    .card--title {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        font-size: $font-size-tiny;
+        font-weight: 500;
+        height: 24px;
+        justify-content: space-between;
+        line-height: 150%;
+        margin-bottom: 10px;
+        padding: 8px;
+        width: 390px;
+    }
+
+    .card--timestamp {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        font-size: $font-size-tiny;
+        font-weight: 500;
+        height: 24px;
+        justify-content: flex-end;
+        line-height: 150%;
+        margin-bottom: 10px;
+        padding-left: 16px;
+        padding-right: 16px;
+        width: 390px;
+
+        p {
+            color: $color-dark-gray;
+            padding-left: 8px;
+        }
+    }
+}
+// format video / photo
+.video {
+    flex-grow: 1;
+    position: relative;
+
+    .icon {
+        height: 72px;
+        left: 170.61px;
+        position: absolute;
+        top: 160px;
+        width: 75.83px;
+
+        .vector--one {
+            bottom: 33.33%;
+            left: 41.67%;
+            position: absolute;
+            right: 33.33%;
+            top: 33.33%;
+        }
+    }
+
+    .photo {
+        background: url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 150%;
+        height: 405px;
+        width: 416px;
+    }
+}
+
+// comments section wrapper
+
+.comment--wrapper {
+    height: 149px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    width: 416px;
+
+    .divider--top {
+        border-top: 1px solid #ccc;
+        display: block;
+        justify-content: center;
+        margin: 0 auto;
+        width: 384px;
+    }
+
+    .comment--input {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        margin-top: 12px;
+        padding-left: 16px;
+        padding-right: 16px;
+
+        .input--leave__comment {
+            background: none;
+            border: #fff;
+            color: $color-dark-gray;
+            cursor: pointer;
+            font-size: $font-size-mini;
+            margin-left: 12px;
+            margin-right: 12px;
+            outline: none;
+            width: 90px;
+        }
+
+        .button--post {
+            background: none;
+            border: #fff;
+            border-radius: 10px;
+            color: $color-dark-gray;
+            margin-left: 200px;
+            margin-right: 200px;
+            text-transform: uppercase;
+        }
+
+        .button--post:hover {
+            background: $color-lavender;
+            border-radius: 10px;
+            color: $color-light-gray;
+            cursor: pointer;
+            padding-bottom: 2px;
+            padding-top: 4px;
+            transition: 0.4s;
+        }
+    }
+
+    .divider--bottom {
+        border-top: 1px solid #ccc;
+        display: block;
+        justify-content: center;
+        margin: 0 auto;
+        margin-top: 10px;
+        width: 384px;
+    }
+}
+
+// comments section rows
+
+.comments--rows {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    font-size: $font-size-mini;
+    height: 95px;
+    margin-top: 8px;
+    order: 1;
+    padding-left: 14px;
+    text-align: left;
+
+    .comments--box__one {
+        order: 1;
+
+        .comments--header {
+            color: $color-midnight;
+            display: flex;
+            flex-direction: row;
+            font-weight: 500;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            margin-top: 4px;
+            width: 384px;
+        }
+
+        .comments--content {
+            color: $color-fiord;
+            height: 30px;
+            line-height: 150%;
+            margin-bottom: 4px;
+            margin-top: 4px;
+            text-transform: none;
+            width: 384px;
+        }
+    }
+
+    .comments--box__two {
+        display: flex;
+        flex-direction: column;
+
+        .comments--header__two {
+            color: $color-midnight;
+            display: flex;
+            flex-direction: row;
+            font-weight: 500;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            margin-top: 4px;
+            width: 384px;
+        }
+
+        .comments--content__two {
+            color: $color-fiord;
+            font-size: $font-size-mini;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 150%;
+            margin-bottom: 4px;
+            margin-top: 4px;
+            text-transform: none;
+            width: 384px;
+        }
+    }
+}
+
+// Actions -- likes / comments
+
+.actions {
+    align-items: center;
+    color: $color-dark-gray;
+    display: flex;
+    font-size: $font-size-tiny;
+    font-weight: 500;
+    line-height: 150%;
+    padding-left: 16px;
+
+    .likes {
+        align-items: center;
+        background: none;
+        border: $color-light-gray;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        height: 24px;
+        padding-left: 1px;
+        padding-right: 1px;
+        padding-top: 4px;
+        width: 46px;
+
+        .likes--body {
+            color: $color-dark-gray;
+            margin-left: 6px;
+        }
+    }
+
+    .comments {
+        align-items: center;
+        background: none;
+        border: $color-light-gray;
+        cursor: pointer;
+        display: flex;
+        height: 18px;
+        padding-left: 1px;
+        padding-right: 1px;
+        padding-top: 4px;
+
+        .comments--body {
+            color: $color-dark-gray;
+            margin-left: 6px;
+        }
+    }
+}

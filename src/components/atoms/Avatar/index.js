@@ -1,1 +1,1 @@
-export * from "components/atoms/Avatar/Avatar";
+export * from "components/Avatar/Avatar";

@@ -1,10 +1,10 @@
 import React from "react";
-import timestamp from "../../../../assets/news/timestamp.svg";
-import vectorPlay from "../../../../assets/news/vectorPlay.svg";
-import vectorOval from "../../../../assets/news/vectorOval.svg";
-import vectorComment from "../../../../assets/news/vectorComment.svg";
-import vectorLikes from "../../../../assets/news/vectorLikes.svg";
-import "../video/scss/card.scss";
+import timestamp from "../../../assets/news/timestamp.svg";
+import vectorPlay from "../../../assets/news/vectorPlay.svg";
+import vectorOval from "../../../assets/news/vectorOval.svg";
+import vectorComment from "../../../assets/news/vectorComment.svg";
+import vectorLikes from "../../../assets/news/vectorLikes.svg";
+import "../NewsFeedCard/newsFeedCard.scss";
 
 const Video = () => (
   <div className="card">
@@ -42,6 +42,7 @@ const Video = () => (
         <div className="comments--body">1</div>
       </button>
     </div>
+    {/* Comments */}
     <div className="comment--wrapper">
       <span className="divider--top"></span>
       <div>
