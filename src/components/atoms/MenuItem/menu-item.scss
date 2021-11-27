@@ -1,0 +1,42 @@
+@import '../../../styles/base/base';
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-medium;
+    height: 100%;
+    justify-content: center;
+    text-decoration: none;
+
+    &__content {
+        padding: 0 25px;
+    }
+
+    &__icon {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__name {
+        color: $color-light-gray;
+        display: inline-block;
+        padding-left: 15px;
+        text-decoration: none;
+    }
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.12);
+    }
+}
+
+.active {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 768px) {
+    .menu-item {
+        height: 100%;
+        width: 100%;
+    }
+}
