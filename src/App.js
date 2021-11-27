@@ -4,7 +4,7 @@ import { Dashboard } from "pages/Dashboard";
 import { Reservations } from "pages/Reservations";
 import { EatOut } from "pages/EatOut";
 import { Footer } from "components/atoms/Footer";
-import { Header } from "components/molecules/Header/Header";
+import { Header } from "components/organisms/Header/Header";
 
 function App() {
   return (

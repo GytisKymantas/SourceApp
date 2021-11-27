@@ -2,8 +2,8 @@ import React from "react";
 import { ReactComponent as Logo } from "assets/rocketLogo.svg";
 
 import "./header.scss";
-import { ProfileWidget } from "../ProfileWidget/ProfileWidget";
-import { Navigation } from "../Navigation/Navigation";
+import { ProfileWidget } from "../../molecules/ProfileWidget/ProfileWidget";
+import { Navigation } from "../../molecules/Navigation/Navigation";
 
 export const Header = () => (
   <header className="header">
