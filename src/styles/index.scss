@@ -16,5 +16,9 @@ body {
 .app {
     color: $color-fiord;
     font-family: $font-family-roboto;
-    width: 100%;
+    text-align: center;
+}
+
+.content {
+    padding: 48px;
 }
