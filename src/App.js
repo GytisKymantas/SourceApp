@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Dashboard } from "pages/Dashboard";
 import { Reservations } from "pages/Reservations";
 import { EatOut } from "pages/EatOut";
-import { Item } from "pages/Item";
+import { NotFound } from "pages/NotFound";
 
 function App() {
   const [instructions, setInstructions] = useState([]);
@@ -25,25 +25,6 @@ function App() {
       );
   }, []);
 
-  const linkList = [
-    {
-      label: "dashboard",
-      href: "/",
-    },
-    {
-      label: "reservations",
-      href: "/reservations",
-    },
-    {
-      label: "eatout",
-      href: "/eatout",
-    },
-    {
-      label: "item",
-      href: undefined,
-    },
-  ];
-
   return (
     <div className="app">
       <header className="App-header">
@@ -51,13 +32,32 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
           <Router>
-            <Breadcrumbs linkList={linkList} />
+            <Breadcrumbs />
             <Routes>
-              <Route exact path="/" element={<Dashboard />} />
-              <Route path="/reservations" element={<Reservations />} />
-              <Route path="/eatout" element={<EatOut />} />
-              <Route path="/eatout/item" element={<Item />} />
-              <Route path="/reservations/item" element={<Item />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route
+                path="/dashboard/reservations"
+                element={<Reservations />}
+              />
+              <Route
+                path="/dashboard/reservations/meetingrooms"
+                element={<Reservations />}
+              />
+              <Route
+                path="/dashboard/reservations/books"
+                element={<Reservations />}
+              />
+              <Route
+                path="/dashboard/reservations/devices"
+                element={<Reservations />}
+              />
+              <Route path="/dashboard/eatout" element={<EatOut />} />
+              <Route path="/dashboard/eatout/category" element={<EatOut />} />
+              <Route
+                path="/dashboard/eatout/category/single"
+                element={<EatOut />}
+              />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Router>
         </p>
