@@ -14,10 +14,8 @@ const ReservationsItem = ({
         {reservationNumber ? `${reservationNumber} RESERVED` : "UNRESERVED"}
       </p>
     </div>
-    <div className="reservations__image-container">
-      <div className="reservations__image-wrapper">
-        <img src={reservationImage} alt="image of a category" />
-      </div>
+    <div className="reservations__image-wrapper">
+      <img src={reservationImage} alt="image of a category" />
     </div>
   </div>
 );
