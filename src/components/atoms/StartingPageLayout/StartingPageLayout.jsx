@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ReactComponent as TeamSpaceLogo } from "../../assets/teamSpaceLogoPurple.svg";
+import { ReactComponent as TeamSpaceLogo } from "../../../assets/teamSpaceLogoPurple.svg";
 
 import "./StartingPageLayout.scss";
 
