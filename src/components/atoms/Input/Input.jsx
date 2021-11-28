@@ -14,6 +14,7 @@ export const Input = ({
   isFilled,
   isPassword,
   passwordsMatch,
+  showPasswordAlert,
 }) => {
   return (
     <div className="input-container">
@@ -32,7 +33,7 @@ export const Input = ({
       {!isFilled && (
         <p className="input-container__required">Field is required.</p>
       )}
-      {isFilled && isPassword && !passwordsMatch && (
+      {isFilled && isPassword && !passwordsMatch && showPasswordAlert && (
         <p className="input-container__passwords">Passwords do not match.</p>
       )}
     </div>
@@ -50,4 +51,5 @@ Input.propTypes = {
   isFilled: PropTypes.bool.isRequired,
   isPassword: PropTypes.bool.isRequired,
   passwordsMatch: PropTypes.bool,
+  showPasswordAlert: PropTypes.bool,
 };
