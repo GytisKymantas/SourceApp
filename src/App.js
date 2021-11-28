@@ -10,13 +10,11 @@ function App() {
     <div className="app">
       <Router>
         <MainLayout>
-          <div className="content">
-            <Routes>
-              <Route exact path="/" element={<Dashboard />} />
-              <Route path="/reservations" element={<Reservations />} />
-              <Route path="/eatOut" element={<EatOut />} />
-            </Routes>
-          </div>
+          <Routes>
+            <Route exact path="/" element={<Dashboard />} />
+            <Route path="/reservations" element={<Reservations />} />
+            <Route path="/eatOut" element={<EatOut />} />
+          </Routes>
         </MainLayout>
       </Router>
     </div>
