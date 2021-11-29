@@ -10,18 +10,16 @@ export const Button = (
   { icon },
   { label }
 ) => (
-  <div>
-    <button type={type} className={btnClass} onClick={handleClick}>
-      {icon && icon} {label}
-    </button>
-  </div>
+  <button type={type} className={btnClass} onClick={handleClick}>
+    {icon && icon} {label}
+  </button>
 );
 
 Button.propTypes = {
-  children: PropTypes.node,
-  btnClass: PropTypes.string,
   type: PropTypes.string,
-  icon: PropTypes.string,
+  btnClass: PropTypes.string,
+  handleClick: PropTypes.func,
+  icon: PropTypes.node,
   label: PropTypes.string,
 };
 
