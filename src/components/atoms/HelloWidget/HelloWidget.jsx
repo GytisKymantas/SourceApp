@@ -3,7 +3,7 @@ import "./hello-widget.scss";
 import PropTypes from "prop-types";
 
 export const HelloWidget = () => {
-  const name = "Vilija";
+  const name = "Vilija"; //For testing purposes
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
