@@ -1,10 +1,20 @@
 @import '../../../styles/base/base';
 $font-size-massive: 100px;
 $font-weight-massive: 700;
+$font-weight-for-text: 36px;
 
 .hello-widget {
+    font-weight: $font-weight-massive;
+
     &__time {
         font-size: $font-size-massive;
-        font-weight: $font-weight-massive;
+    }
+
+    &__text {
+        font-size: $font-weight-for-text;
+
+        &__name {
+            text-transform: uppercase;
+        }
     }
 }
