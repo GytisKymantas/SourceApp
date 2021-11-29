@@ -1,7 +1,10 @@
 import React from "react";
+import { HelloWidget } from "components/atoms/HelloWidget/HelloWidget";
 
-export const Dashboard = () => (
-  <div>
-    <h1>Dashboard</h1>
-  </div>
-);
+export const Dashboard = () => {
+  return (
+    <div>
+      <HelloWidget />
+    </div>
+  );
+};
