@@ -3,6 +3,7 @@ import "./hello-widget.scss";
 import PropTypes from "prop-types";
 
 export const HelloWidget = () => {
+  const name = "Vilija";
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -19,7 +20,8 @@ export const HelloWidget = () => {
         {time.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
       </div>
       <div className="hello-widget__text">
-        {hours < 12 ? "morning" : [hours >= 17 ? "evening" : "afternoon"]}
+        Good {hours < 12 ? "morning" : [hours >= 17 ? "evening" : "afternoon"]},{" "}
+        <span className="hello-widget__text__name">{name}!</span>
       </div>
     </div>
   );
