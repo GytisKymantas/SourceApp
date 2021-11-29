@@ -4,7 +4,12 @@ $font-weight-massive: 700;
 $font-weight-for-text: 36px;
 
 .hello-widget {
+    display: flex;
+    flex-direction: column;
     font-weight: $font-weight-massive;
+    margin-top: -30px;
+    max-width: 480px;
+    text-align: left;
 
     &__time {
         font-size: $font-size-massive;
@@ -12,6 +17,7 @@ $font-weight-for-text: 36px;
 
     &__text {
         font-size: $font-weight-for-text;
+        margin-top: 16px;
 
         &__name {
             text-transform: uppercase;
