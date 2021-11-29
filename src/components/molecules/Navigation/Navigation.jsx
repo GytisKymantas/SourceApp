@@ -18,7 +18,7 @@ export const Navigation = () => {
         name={reservationsLink}
         link="/reservations"
       />
-      <MenuItem icon={<EatOutIcon />} name={eatOutLink} link="/eatOut" />
+      <MenuItem icon={<EatOutIcon />} name={eatOutLink} link="/eatout" />
     </div>
   );
 };
