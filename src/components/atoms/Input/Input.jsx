@@ -11,10 +11,12 @@ export const Input = ({
   value,
   onChange,
   onBlur,
+  onFocus,
   isFilled,
-  isPassword,
+  isPasswordField,
   passwordsMatch,
   showPasswordAlert,
+  warningInput,
 }) => {
   return (
     <div className="input-container">
@@ -26,30 +28,42 @@ export const Input = ({
         name={name}
         value={value}
         placeholder={placeholder}
-        className={`input-container__input ${isFilled ? "" : "is-blank"}`}
+        className={`input-container__input ${isFilled ? "" : "is-blank"} ${
+          isFilled && isPasswordField && !passwordsMatch && warningInput
+            ? "is-blank"
+            : ""
+        }
+        }`}
         onChange={onChange}
         onBlur={onBlur}
+        onFocus={onFocus}
       />
       {!isFilled && (
         <p className="input-container__required">Field is required.</p>
       )}
-      {isFilled && isPassword && !passwordsMatch && showPasswordAlert && (
+      {isFilled && isPasswordField && !passwordsMatch && showPasswordAlert && (
         <p className="input-container__passwords">Passwords do not match.</p>
       )}
     </div>
   );
 };
 
+Input.defaultProps = {
+  type: "text",
+};
+
 Input.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  labelText: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
+  labelText: PropTypes.string,
+  placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  onBlur: PropTypes.func.isRequired,
-  isFilled: PropTypes.bool.isRequired,
-  isPassword: PropTypes.bool.isRequired,
+  onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
+  isFilled: PropTypes.bool,
+  isPasswordField: PropTypes.bool,
   passwordsMatch: PropTypes.bool,
   showPasswordAlert: PropTypes.bool,
+  warningInput: PropTypes.bool,
 };
