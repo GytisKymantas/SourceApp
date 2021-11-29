@@ -15,17 +15,17 @@ export const Navigation = () => {
       <MenuItem
         icon={<DashboardIcon />}
         name={dashboardLink}
-        link="/dashboard"
+        link="/"
       />
       <MenuItem
         icon={<ReservationsIcon />}
         name={reservationsLink}
-        link="/dashboard/reservations"
+        link="/reservations"
       />
       <MenuItem
         icon={<EatOutIcon />}
         name={eatOutLink}
-        link="/dashboard/eatout"
+        link="/eatout"
       />
     </div>
   );
