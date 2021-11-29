@@ -3,20 +3,44 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Dashboard } from "pages/Dashboard";
 import { Reservations } from "pages/Reservations";
 import { EatOut } from "pages/EatOut";
-import { MainLayout } from "components/templates/MainLayout/MainLayout";
+import { NotFound } from "pages/NotFound";
+import { Footer } from "components/atoms/Footer";
+import { Breadcrumbs } from "components/atoms/Breadcrumbs";
+import { Header } from "components/organisms/Header/Header";
 
 function App() {
   return (
     <div className="app">
       <Router>
-        <MainLayout>
+        <Header />
+        <Breadcrumbs />
+        <div className="content">
           <Routes>
-            <Route exact path="/" element={<Dashboard />} />
-            <Route path="/reservations" element={<Reservations />} />
-            <Route path="/eatOut" element={<EatOut />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard/reservations" element={<Reservations />} />
+            <Route
+              path="/dashboard/reservations/meetingrooms"
+              element={<Reservations />}
+            />
+            <Route
+              path="/dashboard/reservations/books"
+              element={<Reservations />}
+            />
+            <Route
+              path="/dashboard/reservations/devices"
+              element={<Reservations />}
+            />
+            <Route path="/dashboard/eatout" element={<EatOut />} />
+            <Route path="/dashboard/eatout/category" element={<EatOut />} />
+            <Route
+              path="/dashboard/eatout/category/single"
+              element={<EatOut />}
+            />
+            <Route path="*" element={<NotFound />} />
           </Routes>
-        </MainLayout>
+        </div>
       </Router>
+      <Footer />
     </div>
   );
 }
