@@ -16,8 +16,15 @@ body {
 .app {
     color: $color-fiord;
     font-family: $font-family-roboto;
+    min-height: 100vh;
+    position: relative;
+    text-align: center;
+}
+
+body {
+    margin: 0;
 }
 
 .content {
-    padding: 48px;
+    padding: 48px 48px 120px;
 }
