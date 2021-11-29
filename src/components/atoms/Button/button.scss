@@ -1,0 +1,35 @@
+@import '../../../styles/base/base';
+
+button {
+    border-radius: 65px;
+    color: $color-white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.large {
+    height: 40px;
+    width: 114px;
+}
+
+.medium {
+    height: 32px;
+    width: 86px;
+}
+
+.primary {
+    background-color: $color-violet;
+
+    &:hover {
+        background-color: $color-violet-medium;
+    }
+
+    &:active {
+        background-color: $color-violet-dark;
+    }
+
+    &:disabled {
+        background-color: $color-porcelain;
+        color: $color-chateau-gray;
+    }
+}
