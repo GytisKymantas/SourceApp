@@ -4,15 +4,13 @@
 
 .footer {
     align-items: center;
-    background: #fff;
+    background: $color-white;
     bottom: 0;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     display: flex;
     height: 72px;
     justify-content: flex-end;
-    left: 0;
     position: absolute;
-    right: 0;
     width: 100%;
 
     &__text {
