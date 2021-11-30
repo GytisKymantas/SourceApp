@@ -1,0 +1,40 @@
+@import '../../../styles/base/base';
+
+.breadcrumbs {
+    font-size: $font-size-tiny;
+    font-style: normal;
+    font-weight: 500;
+    height: 18px;
+    line-height: 150%;
+    text-transform: uppercase;
+    width: 300px;
+
+    &__item {
+        display: inline-block;
+
+        &:not(:last-of-type)::after {
+            color: $color-chateau-gray;
+            content: '\203a';
+            margin: 0 5px;
+        }
+
+        &:last-child a {
+            color: $color-dark-gray;
+            cursor: default;
+            pointer-events: none;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__link {
+        color: $color-chateau-gray;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
