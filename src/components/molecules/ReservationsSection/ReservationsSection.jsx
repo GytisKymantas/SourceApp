@@ -6,41 +6,39 @@ import Phone from "../../../assets/phone.svg";
 import "./reservations-section.scss";
 
 export const ReservationsSection = () => {
-  const Reservations = [
+  const reservations = [
     {
       id: 1,
       reservationName: "Meeting rooms",
-      number: 2,
+      reservationNumber: 2,
+      reservationImage: Door,
     },
     {
       id: 2,
       reservationName: "Books",
-      number: 2,
+      reservationNumber: 2,
+      reservationImage: Book,
     },
     {
       id: 3,
       reservationName: "Devices",
-      number: 2,
+      reservationNumber: 2,
+      reservationImage: Phone,
     },
   ];
 
   return (
     <div className="reservations-section">
-      <ReservationsItem
-        reservationImage={Door}
-        reservationName="Meeting Rooms"
-        reservationNumber={2}
-      />
-      <ReservationsItem
-        reservationImage={Book}
-        reservationName="Books"
-        reservationNumber={2}
-      />
-      <ReservationsItem
-        reservationImage={Phone}
-        reservationName="Devices"
-        reservationNumber={2}
-      />
+      {reservations.map((obj) => {
+        return (
+          <ReservationsItem
+            reservationName={obj.reservationName}
+            reservationNumber={obj.reservationNumber}
+            reservationImage={obj.reservationImage}
+            key={obj.id}
+          />
+        );
+      })}
     </div>
   );
 };
