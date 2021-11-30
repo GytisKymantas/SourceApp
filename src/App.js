@@ -3,15 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Dashboard } from "pages/Dashboard";
 import { Reservations } from "pages/Reservations";
 import { EatOut } from "pages/EatOut";
-<<<<<<< HEAD
 import { NotFound } from "pages/NotFound";
-=======
 import { DropDown } from "components/atoms/DropDown/DropDown";
 import { ReactComponent as SettingsLogo } from "./assets/settings.svg";
 import { ReactComponent as LogOutLogo } from "./assets/logOut.svg";
 import { Footer } from "components/atoms/Footer";
-import { RestaurantCard } from "components/atoms/RestaurantCard/RestaurantCard";
->>>>>>> feature/SFE21R-42-RestaurantCard
 
 function App() {
   return (
