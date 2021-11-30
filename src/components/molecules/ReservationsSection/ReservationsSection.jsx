@@ -6,6 +6,24 @@ import Phone from "../../../assets/phone.svg";
 import "./reservations-section.scss";
 
 export const ReservationsSection = () => {
+  const Reservations = [
+    {
+      id: 1,
+      reservationName: "Meeting rooms",
+      number: 2,
+    },
+    {
+      id: 2,
+      reservationName: "Books",
+      number: 2,
+    },
+    {
+      id: 3,
+      reservationName: "Devices",
+      number: 2,
+    },
+  ];
+
   return (
     <div className="reservations-section">
       <ReservationsItem
