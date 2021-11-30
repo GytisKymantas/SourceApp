@@ -68,5 +68,5 @@ RestaurantCard.propTypes = {
   userImage: PropTypes.string,
   vectorImage: PropTypes.string,
   heartImage: PropTypes.string,
-  isTrue: PropTypes.string,
+  isTrue: PropTypes.bool,
 };
