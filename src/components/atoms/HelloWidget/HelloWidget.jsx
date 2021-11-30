@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./hello-widget.scss";
 import PropTypes from "prop-types";
 
-export const HelloWidget = () => {
-  const name = "Vilija"; //For testing purposes
+export const HelloWidget = ({ name }) => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -28,5 +27,5 @@ export const HelloWidget = () => {
 };
 
 HelloWidget.propTypes = {
-  time: PropTypes.instanceOf(Date),
+  name: PropTypes.string,
 };
