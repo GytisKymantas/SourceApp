@@ -1,0 +1,22 @@
+@import '../../../styles/base/base';
+
+.frame {
+    align-items: center;
+    background: $color-yellow;
+    border-radius: 8px;
+    display: flex;
+    padding: 0.5rem;
+    width: fit-content;
+
+    &__score {
+        font-size: $font-size-small;
+        font-style: normal;
+        font-weight: bold;
+        margin: 0 5px;
+        text-transform: uppercase;
+    }
+
+    &__logo {
+        margin: 0 5px;
+    }
+}
