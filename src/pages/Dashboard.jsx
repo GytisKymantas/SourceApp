@@ -7,10 +7,10 @@ export const Dashboard = ({ data }) => {
   const { userData } = data;
   const [firstUser] = userData;
   const { userName } = firstUser;
-
+  const firstName = userName.split(" ")[0];
   return (
     <MainLayout>
-      <HelloWidget name={userName} />
+      <HelloWidget name={firstName} />
     </MainLayout>
   );
 };
