@@ -16,11 +16,17 @@ export const HelloWidget = ({ name }) => {
   return (
     <div className="hello-widget">
       <div className="hello-widget__time">
-        {time.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+        {time.toLocaleTimeString("en-GB", {
+          hour: "2-digit",
+          minute: "2-digit",
+        })}
       </div>
       <div className="hello-widget__text">
-        Good {hours < 12 ? "morning" : [hours >= 17 ? "evening" : "afternoon"]},{" "}
-        <span className="hello-widget__text__name">{name}!</span>
+        Good{" "}
+        {hours < 5
+          ? "evening"
+          : [hours > 17 ? "evening" : [hours > 11 ? "afternoon" : "morning"]]}
+        , <span className="hello-widget__text__name">{name}!</span>
       </div>
     </div>
   );
