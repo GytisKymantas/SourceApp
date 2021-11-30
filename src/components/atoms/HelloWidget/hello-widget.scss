@@ -1,26 +1,33 @@
 @import '../../../styles/base/base';
-$font-size-massive: 100px;
-$font-weight-massive: 700;
-$font-weight-for-text: 36px;
 
 .hello-widget {
     display: flex;
     flex-direction: column;
-    font-weight: $font-weight-massive;
-    margin-top: -30px;
-    max-width: 480px;
+    font-weight: $font-weight-bold;
     text-align: left;
 
     &__time {
-        font-size: $font-size-massive;
+        font-size: $font-size-xxlarge;
     }
 
     &__text {
-        font-size: $font-weight-for-text;
+        font-size: $font-size-xlarge;
         margin-top: 16px;
 
         &__name {
             text-transform: uppercase;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .hello-widget {
+        &__time {
+            font-size: $font-size-xlarge;
+        }
+
+        &__text {
+            font-size: $font-size-large;
         }
     }
 }
