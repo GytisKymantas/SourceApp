@@ -1,15 +1,6 @@
 @import '../../../styles/base/base';
 
-<<<<<<< HEAD
-.reservations {
-    display: flex;
-    background: white;
-    height: 94px;
-    max-width: 416px;
-    box-shadow: 0px 8px 23px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
-    position: relative;
-=======
+
 .reservations{
     display: flex;
     background: white;
@@ -19,9 +10,11 @@
     top: 24px;
     box-shadow: 0px 8px 23px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
->>>>>>> feature/SFE21R-42-RestaurantCard
-
-    &__header-container {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 20px;
+    
+    &__headercontainer {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -33,36 +26,22 @@
         flex: none;
         margin: 4px 0px;
 
-<<<<<<< HEAD
-        & h2,
-        p {
-            margin: 0px 0px 0px 16px;
-            text-align: start;
-=======
         & h2, p {
             margin-left:16px;
->>>>>>> feature/SFE21R-42-RestaurantCard
         }
 
         & p {
             color: $color-fiord;
         }
     }
-<<<<<<< HEAD
-
-    &__image-wrapper {
-        top: -19%;
-        left: 61%;
-=======
-    &__image-container {
+    &__doorcontainer {
         position: relative;
         width: 100%;
         left: 24%;
     }
-    &__image-wrapper {
+    &__doorimg {
         top: -19%;
         left: -31%;
->>>>>>> feature/SFE21R-42-RestaurantCard
         position: absolute;
     }
 }
