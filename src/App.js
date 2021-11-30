@@ -9,7 +9,6 @@ import { DropDown } from "components/atoms/DropDown/DropDown";
 import { ReactComponent as SettingsLogo } from "./assets/settings.svg";
 import { ReactComponent as LogOutLogo } from "./assets/logOut.svg";
 import { Footer } from "components/atoms/Footer";
-import { RestaurantCard } from "components/atoms/RestaurantCard/RestaurantCard";
 
 function App() {
   const [instructions, setInstructions] = useState([]);
