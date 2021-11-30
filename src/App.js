@@ -4,6 +4,7 @@ import { Dashboard } from "pages/Dashboard";
 import { Reservations } from "pages/Reservations";
 import { EatOut } from "pages/EatOut";
 import { NotFound } from "pages/NotFound";
+import { Button } from "components/atoms/ButtonQA/ButtonQA";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Button />
       </Router>
     </div>
   );
