@@ -90,7 +90,12 @@ Video.propTypes = {
   postLocation: PropTypes.string,
   postDate: PropTypes.string,
   postLikes: PropTypes.number,
-  postComments: PropTypes.array,
+  postComments: PropTypes.arrayOf({
+    usernName: PropTypes.string,
+    postComments: PropTypes.string,
+    postDate: PropTypes.string
+  })
+    
 };
 
 export default NewsFeedItem;
