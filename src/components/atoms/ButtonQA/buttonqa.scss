@@ -21,7 +21,9 @@
         background-color: $_color-violet-dark;
     }
 
-    &--isDisabled {
+    // &--isDisabled
+
+    &:disabled {
         background-color: $color-porcelain;
         color: $color-chateau-gray;
         cursor: default;
