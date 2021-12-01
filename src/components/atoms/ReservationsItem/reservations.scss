@@ -1,43 +1,40 @@
 @import '../../../styles/base/base';
 
 .reservations {
-    background: $color-iron;
+    background: $color-white;
+    box-shadow: 0 8px 23px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-    box-shadow: 8px 23px rgba(0, 0, 0, 0.25);
     display: flex;
     height: 94px;
-    max-width: 416px;
     position: relative;
+    width: 416px;
 
     &__header-container {
         color: $color-fiord;
         display: flex;
-        flex: none;
-        flex-direction: column;
-        font-size: $font-size-tiny;
         font-weight: $font-weight-bold;
+        font-size: $font-size-tiny;
+        flex-direction: column;
+        flex: none;
         height: 100%;
         justify-content: center;
         line-height: 32px;
-        margin-bottom: 4px;
-        margin-top: 4px;
+        margin: 4px 0;
+    }
 
-        h2 {
-            color: $color-fiord;
-            margin-left: 16px;
-            text-align: start;
-        }
+    &__header-name,
+    &__header-reservation {
+        margin: 0 0 0 16px;
+        text-align: start;
+    }
 
-        p {
-            color: $color-fiord;
-            margin-left: 16px;
-            text-align: start;
-        }
+    &__header-reservation {
+        color: $color-fiord;
+    }
 
-        &__image-wrapper {
-            left: 61%;
-            position: absolute;
-            top: -19%;
-        }
+    &__image-wrapper {
+        left: 61%;
+        top: -19%;
+        position: absolute;
     }
 }
