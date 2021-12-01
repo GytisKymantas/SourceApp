@@ -57,8 +57,6 @@ const NewsFeedItem = ({
               <div className="comments--timestamp">{postDate}</div>
             </div>
             <div className="comments--content">
-              A new comment on this post. A new comment on this post. A new
-              comment on this post.
             </div>
           </div>
 
@@ -68,7 +66,6 @@ const NewsFeedItem = ({
               <div className="comments--timestamp__two">{postDate}</div>
             </div>
             <div className="comments--content__two">
-              A new comment on this post.
             </div>
           </div>
         </div>
