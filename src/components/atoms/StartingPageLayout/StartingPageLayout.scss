@@ -1,0 +1,53 @@
+@import '../../../styles/base/base';
+
+.starting-page-layout {
+    align-items: center;
+    background: $color-mercury;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    margin: -48px;
+
+    &__logo-container {
+        margin-bottom: 72px;
+    }
+
+    &__header {
+        background: $color-white;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+        padding: 40px 32px;
+        width: 546px;
+
+        &__title {
+            font-size: $font-size-large;
+            font-weight: $font-weight-heavy;
+            line-height: 32px;
+            margin: 0;
+        }
+
+        &__subtitle {
+            font-size: $font-size-medium;
+            font-weight: $font-weight-regular;
+            line-height: 24px;
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: 630px) {
+    .starting-page-layout {
+        justify-content: flex-start;
+
+        &__logo-container {
+            margin-bottom: 30px;
+            padding-top: 20px;
+        }
+
+        &__header {
+            padding: 20px 16px;
+            width: 80%;
+        }
+    }
+}
