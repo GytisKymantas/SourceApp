@@ -33,7 +33,7 @@ function App() {
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <Button isDisabled />
+        <Button label="button" />
       </Router>
     </div>
   );

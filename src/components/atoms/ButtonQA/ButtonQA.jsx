@@ -18,12 +18,11 @@ export const Button = ({ type, isLarge, label, isDisabled }) => (
 
 Button.propTypes = {
   type: PropTypes.string,
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
   isLarge: PropTypes.bool,
   isDisabled: PropTypes.bool,
 };
 
 Button.defaultProps = {
   type: "button",
-  label: "default",
 };

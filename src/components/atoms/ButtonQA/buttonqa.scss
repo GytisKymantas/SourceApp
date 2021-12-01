@@ -6,7 +6,8 @@
     border-radius: 65px;
     color: $color-white;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: $font-weight-medium;
+    line-height: 0;
     text-align: center;
     text-transform: uppercase;
 
@@ -36,12 +37,14 @@
     &--medium {
         font-size: $font-size-tiny;
         height: 32px;
+        padding: 9px 10px;
         width: 86px;
     }
 
     &--large {
         font-size: $font-size-small;
         height: 40px;
+        padding: 14px 20px;
         width: 114px;
     }
 }
