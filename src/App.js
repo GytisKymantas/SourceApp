@@ -4,13 +4,31 @@ import { Dashboard } from "pages/Dashboard";
 import { Reservations } from "pages/Reservations";
 import { EatOut } from "pages/EatOut";
 import { NotFound } from "pages/NotFound";
-
+import { useState, useEffect } from "react";
 function App() {
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    fetch(
+      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/userData.json"
+    )
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setData(result);
+        },
+
+        (error) => {
+          // handle error here
+        }
+      );
+  }, []);
+
   return (
     <div className="app">
       <Router>
         <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard data={data} />} />
           <Route path="/dashboard/reservations" element={<Reservations />} />
           <Route
             path="/dashboard/reservations/meetingrooms"
