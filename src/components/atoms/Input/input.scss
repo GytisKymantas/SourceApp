@@ -1,0 +1,48 @@
+@import '../../../styles/base/base';
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &__label {
+        color: $color-chateau-gray;
+        font-size: $font-size-small;
+        font-weight: $font-weight-bold;
+        line-height: 16px;
+        margin-bottom: 8px;
+        margin-top: 24px;
+        text-transform: uppercase;
+    }
+
+    &__input {
+        border: 1px solid $color-ghost;
+        border-radius: 5px;
+        font-size: $font-size-medium;
+        line-height: 22px;
+        padding: 12px 16px;
+
+        &:focus {
+            border: 1px solid $color-fiord;
+            outline: 0;
+        }
+
+        &::placeholder {
+            color: $color-ghost;
+            font-size: $font-size-medium;
+        }
+    }
+
+    &__required,
+    &__passwords {
+        color: $color-watermelon;
+        font-size: $font-size-tiny;
+        position: absolute;
+        right: 0;
+        top: 85px;
+    }
+}
+
+.is-blank {
+    border: 1px solid $color-watermelon;
+}

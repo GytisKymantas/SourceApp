@@ -1,7 +1,8 @@
+import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import React from "react";
 
 export const EatOut = () => (
-  <div>
+  <MainLayout>
     <h1>EatOut</h1>
-  </div>
+  </MainLayout>
 );
