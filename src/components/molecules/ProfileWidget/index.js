@@ -1,1 +1,1 @@
-export * from "components/ProfileWidget/ProfileWidget";
+export * from "components/molecules/ProfileWidget/ProfileWidget";
