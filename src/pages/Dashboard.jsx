@@ -5,8 +5,7 @@ import PropTypes from "prop-types";
 
 export const Dashboard = ({ data }) => {
   const { userData } = data;
-  const [firstUser] = userData;
-  const { userName } = firstUser;
+  const { userName } = userData[0];
   const firstName = userName.split(" ")[0];
   return (
     <MainLayout>
@@ -16,5 +15,8 @@ export const Dashboard = ({ data }) => {
 };
 
 Dashboard.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.shape({
+    userData: PropTypes.object,
+    userName: PropTypes.string,
+  }),
 };
