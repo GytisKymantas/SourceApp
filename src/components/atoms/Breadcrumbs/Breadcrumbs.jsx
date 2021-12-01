@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { paths } from "utils/paths";
 
-import "./Breadcrumbs.scss";
+import "./breadcrumbs.scss";
 
 export const Breadcrumbs = () => {
   const location = useLocation();
