@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ReactComponent as HeartLogo } from "../../../assets/heart.svg";
 
-import "./Avatar.scss";
+import "./avatar.scss";
 
 export const Avatar = ({ imageSource, hasIcon }) => (
   <div className="avatar">
