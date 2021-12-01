@@ -1,0 +1,22 @@
+@import '../../../styles/base/base';
+
+@import '../../../styles/index';
+
+.footer {
+    align-items: center;
+    background: $color-white;
+    bottom: 0;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    height: 72px;
+    justify-content: flex-end;
+    position: absolute;
+    width: 100%;
+
+    &__text {
+        font-size: $font-size-mini;
+        font-weight: $font-weight-medium;
+        margin-right: 48px;
+        text-transform: uppercase;
+    }
+}

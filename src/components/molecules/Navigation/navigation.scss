@@ -1,0 +1,17 @@
+@import '../../../styles/base/base';
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: center;
+
+    &__logo {
+        float: left;
+    }
+}
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+    }
+}
