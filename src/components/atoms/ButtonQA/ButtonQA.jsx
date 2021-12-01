@@ -1,22 +1,29 @@
 import React from "react";
-import PropTypes, { oneOf } from "prop-types";
+import PropTypes from "prop-types";
+import classNames from "classnames";
 
 import "./buttonqa.scss";
 
-export const Button = (props) => (
-  <button type={props.type} className="button primary large">
-    {props.label}
+export const Button = ({ type, isLarge, label, isDisabled }) => (
+  <button
+    type={type}
+    className={classNames("button button--medium", {
+      "button--large": isLarge,
+      "button--isDisabled": isDisabled,
+    })}
+  >
+    {label}
   </button>
 );
 
 Button.propTypes = {
   type: PropTypes.string,
   label: PropTypes.string,
-  btnSize: oneOf(["large", "medium"]),
+  isLarge: PropTypes.bool,
+  isDisabled: PropTypes.bool,
 };
 
 Button.defaultProps = {
   type: "button",
-  // btnClass: "button primary",
   label: "default",
 };
