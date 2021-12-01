@@ -2,7 +2,7 @@ import React from "react";
 import "./reservations.scss";
 import PropTypes from "prop-types";
 
-export const ReservationsItem = ({
+const ReservationsItem = ({
   reservationName,
   reservationImage,
   reservationNumber,
@@ -14,10 +14,8 @@ export const ReservationsItem = ({
         {reservationNumber ? `${reservationNumber} RESERVED` : "UNRESERVED"}
       </p>
     </div>
-    <div className="reservations__image-container">
-      <div className="reservations__image-wrapper">
-        <img src={reservationImage} alt="image of a category" />
-      </div>
+    <div className="reservations__image-wrapper">
+      <img src={reservationImage} alt="Reservations category" />
     </div>
   </div>
 );
@@ -27,3 +25,5 @@ ReservationsItem.propTypes = {
   reservationName: PropTypes.string,
   reservationNumber: PropTypes.number,
 };
+
+export default ReservationsItem;
