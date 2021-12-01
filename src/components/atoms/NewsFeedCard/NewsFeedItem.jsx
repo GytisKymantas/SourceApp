@@ -5,9 +5,9 @@ import vectorPlay from "../../../assets/news/vectorPlay.svg";
 import vectorOval from "../../../assets/news/vectorOval.svg";
 import vectorComment from "../../../assets/news/vectorComment.svg";
 import vectorLikes from "../../../assets/news/vectorLikes.svg";
-import "../NewsFeedCard/newsFeedCard.scss";
+import "../NewsFeedCard/newsFeedItem.scss";
 
-const Video = ({
+const NewsFeedItem = ({
   userName,
   userImage,
   postLocation,
@@ -107,4 +107,4 @@ Video.propTypes = {
   postComments: PropTypes.array,
 };
 
-export default Video;
+export default NewsFeedItem;
