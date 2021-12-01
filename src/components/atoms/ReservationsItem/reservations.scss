@@ -1,14 +1,11 @@
 @import '../../../styles/base/base';
 
 .reservations {
-    background: $color-white;
-    box-shadow: 0 8px 23px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
-    display: flex;
-    height: 94px;
-    position: relative;
-    width: 416px;
-
+  display: flex;
+  background: white;
+  height: 94px;
+  position: absolute;
+  
     &__header-container {
         color: $color-fiord;
         display: flex;
