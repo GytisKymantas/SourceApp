@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./DropDown.scss";
+import "./drop-down.scss";
 
 export const DropDown = ({ options, onSelect }) => (
   <div className="drop-down">
