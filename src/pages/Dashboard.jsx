@@ -4,8 +4,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export const Dashboard = (data) => {
-  const userData = data;
-  const firstName = userData.data?.userData[0].userName.split(" ")[0];
+  const userData = data.data?.userData[0];
+  const firstName = userData?.userName.split(" ")[0];
   return (
     <MainLayout>
       <HelloWidget name={firstName} />
@@ -14,8 +14,5 @@ export const Dashboard = (data) => {
 };
 
 Dashboard.propTypes = {
-  data: PropTypes.shape({
-    data: PropTypes.object,
-    userName: PropTypes.string,
-  }),
+  data: PropTypes.object,
 };
