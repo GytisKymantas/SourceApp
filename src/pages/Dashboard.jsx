@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 export const Dashboard = (data) => {
   const userData = data;
-  const firstName = data.data?.userData[0].userName.split(" ")[0];
+  const firstName = userData.data?.userData[0].userName.split(" ")[0];
   return (
     <MainLayout>
       <HelloWidget name={firstName} />
