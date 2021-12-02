@@ -94,8 +94,7 @@ Video.propTypes = {
     usernName: PropTypes.string,
     postComments: PropTypes.string,
     postDate: PropTypes.string
-  })
-    
+  }) 
 };
 
 export default NewsFeedItem;
