@@ -6,7 +6,7 @@ import { EatOut } from "pages/EatOut";
 import { NotFound } from "pages/NotFound";
 import { useState, useEffect } from "react";
 function App() {
-  const [data, setData] = useState();
+  const [userData, setUserData] = useState();
 
   useEffect(() => {
     fetch(
@@ -15,7 +15,7 @@ function App() {
       .then((res) => res.json())
       .then(
         (result) => {
-          setData(result);
+          setUserData(result);
         },
 
         (error) => {
@@ -28,10 +28,7 @@ function App() {
     <div className="app">
       <Router>
         <Routes>
-          <Route
-            path="/dashboard"
-            element={data ? <Dashboard data={data} /> : "loading"}
-          />
+          <Route path="/dashboard" element={<Dashboard data={userData} />} />
           <Route path="/dashboard/reservations" element={<Reservations />} />
           <Route
             path="/dashboard/reservations/meetingrooms"
