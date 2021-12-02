@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 export const WeatherWidget = () => {
   const api = "9b176ea0bfec0899a9f8b1d8250ffe11";
   const [data, setData] = useState(null);
-  const lat = 0;
-  const long = 0;
+  let lat = 0;
+  let long = 0;
   navigator.geolocation.getCurrentPosition((position) => {
     lat = position.coords.latitude;
     long = position.coords.longitude;
@@ -21,12 +21,11 @@ export const WeatherWidget = () => {
   //   setLongitude(position.coords.longitude);
   // };
 
-  const errorCallback = () => "loading";
-  navigator.geolocation.getCurrentPosition(savePositionToState, errorCallback, {
-    timeout: 1000,
-  });
+  // const errorCallback = () => "loading";
+  // navigator.geolocation.getCurrentPosition(savePositionToState, errorCallback, {
+  //   timeout: 1000,
+  // });
   useEffect(() => {
-    });
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${api}&units=metric`
     )
@@ -41,7 +40,7 @@ export const WeatherWidget = () => {
           // handle error here
         }
       );
-  }, [latitude, longitude]);
+  }, [lat, long]);
 
   return (
     <div>
