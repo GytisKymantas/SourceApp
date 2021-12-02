@@ -12,7 +12,3 @@ export const Dashboard = (data) => {
     </MainLayout>
   );
 };
-
-Dashboard.propTypes = {
-  data: PropTypes.object,
-};
