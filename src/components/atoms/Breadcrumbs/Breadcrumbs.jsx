@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { paths } from "utils/paths";
 
-import "./Breadcrumbs.scss";
+import "./breadcrumbs.scss";
 
 export const Breadcrumbs = () => {
   const location = useLocation();
@@ -14,15 +14,19 @@ export const Breadcrumbs = () => {
 
   return (
     <nav>
-      <ul className="breadcrumbs">
-        {formatedPaths.map((item, index) => (
-          <li className="breadcrumbs__item" key={index}>
-            <Link className="breadcrumbs__link" to={item.href}>
-              {item.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {location.pathname === "/dashboard" ? (
+        ""
+      ) : (
+        <ul className="breadcrumbs">
+          {formatedPaths.map((item, index) => (
+            <li className="breadcrumbs__item" key={index}>
+              <Link className="breadcrumbs__link" to={item.href}>
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </nav>
   );
 };
