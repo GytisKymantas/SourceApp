@@ -22,7 +22,6 @@ const NewsFeedItem = ({
       </div>
       <div className="card--timestamp">
         <p>{postLocation}</p>
-    
         <p className="card--time">{postDate}</p>
       </div>
     </div>
@@ -59,7 +58,6 @@ const NewsFeedItem = ({
             <div className="comments--content">
             </div>
           </div>
-
           <div className="comments--box__two">
             <div className="comments--header__two">
               <div className="comments--name__two">{userName}</div>
@@ -93,7 +91,7 @@ Video.propTypes = {
   postComments: PropTypes.arrayOf({
     usernName: PropTypes.string,
     postComments: PropTypes.string,
-    postDate: PropTypes.string
+    postDate: PropTypes.string,
   }) 
 };
 
