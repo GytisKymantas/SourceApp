@@ -1,0 +1,33 @@
+@import '../../../styles/base/base';
+
+.hello-widget {
+    display: flex;
+    flex-direction: column;
+    font-weight: $font-weight-bold;
+    text-align: left;
+
+    &__time {
+        font-size: $font-size-xxlarge;
+    }
+
+    &__text {
+        font-size: $font-size-xlarge;
+        margin-top: 16px;
+
+        &__name {
+            text-transform: uppercase;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .hello-widget {
+        &__time {
+            font-size: $font-size-xlarge;
+        }
+
+        &__text {
+            font-size: $font-size-large;
+        }
+    }
+}
