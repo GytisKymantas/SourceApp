@@ -5,27 +5,30 @@ import { useState, useEffect } from "react";
 export const WeatherWidget = () => {
   const api = "9b176ea0bfec0899a9f8b1d8250ffe11";
   const [data, setData] = useState(null);
-  const [latitude, setLatitude] = useState(0);
-  const [longitude, setLongitude] = useState(0);
+  const lat = 0;
+  const long = 0;
+  navigator.geolocation.getCurrentPosition((position) => {
+    lat = position.coords.latitude;
+    long = position.coords.longitude;
+  });
+  console.log(lat, long);
 
-  const savePositionToState = (position) => {
-    setLatitude(position.coords.latitude);
-    setLongitude(position.coords.longitude);
-  };
+  // const [latitude, setLatitude] = useState(0);
+  // const [longitude, setLongitude] = useState(0);
+
+  // const savePositionToState = (position) => {
+  //   setLatitude(position.coords.latitude);
+  //   setLongitude(position.coords.longitude);
+  // };
 
   const errorCallback = () => "loading";
   navigator.geolocation.getCurrentPosition(savePositionToState, errorCallback, {
     timeout: 1000,
   });
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition((pos) => {
-      const newUserPos = {
-        lat: pos.coords.latitude,
-        long: pos.coords.longitude,
-      };
     });
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${api}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${api}&units=metric`
     )
       .then((response) => response.json())
       .then(
