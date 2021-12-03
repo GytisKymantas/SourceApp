@@ -9,9 +9,7 @@ function App() {
   const [data, setData] = useState();
 
   useEffect(() => {
-    fetch(
-      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/userData.json"
-    )
+    fetch("https://api.github.com/users/deekshasharma")
       .then((res) => res.json())
       .then(
         (result) => {
