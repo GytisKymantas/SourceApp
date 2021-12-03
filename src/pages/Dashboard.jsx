@@ -23,14 +23,11 @@ export const Dashboard = (data) => {
         }
       );
   }, []);
-  const Birthdays = storiesData?.stories.filter((x) => x.type === "birthday");
-  const Posts = storiesData?.stories.filter((x) => x.type === "post");
-  const Videos = storiesData?.stories.filter((x) => x.type === "video");
 
   return (
     <MainLayout>
       <HelloWidget name={firstName} />
-      <StoriesSection birthdays={Birthdays} posts={Posts} videos={Videos} />
+      <StoriesSection storiesData={storiesData} />
     </MainLayout>
   );
 };
