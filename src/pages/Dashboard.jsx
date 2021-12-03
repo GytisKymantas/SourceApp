@@ -27,7 +27,7 @@ export const Dashboard = (data) => {
   return (
     <MainLayout>
       <HelloWidget name={firstName} />
-      <StoriesSection storiesData={storiesData} />
+      <StoriesSection data={storiesData} />
     </MainLayout>
   );
 };
