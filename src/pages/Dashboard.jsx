@@ -12,7 +12,7 @@ export const Dashboard = () => {
   return (
     <MainLayout>
       <h1>Dashboard</h1>
-      <Button label="button" onClick={clickedBtn} />
+      <Button label="button" onClick={clickedBtn} icon isLarge />
     </MainLayout>
   );
 };

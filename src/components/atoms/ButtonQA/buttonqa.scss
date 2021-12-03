@@ -39,14 +39,16 @@
     &--medium {
         font-size: $font-size-tiny;
         height: 32px;
-        padding: 9px 10px;
         width: 86px;
     }
 
     &--large {
         font-size: $font-size-small;
         height: 40px;
-        padding: 14px 20px;
         width: 114px;
+    }
+
+    &--has-icon {
+        width: 141px;
     }
 }
