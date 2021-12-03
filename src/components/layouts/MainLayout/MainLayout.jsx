@@ -10,8 +10,10 @@ export const MainLayout = ({ children }) => (
   <>
     <Header />
     <main>
-      <Breadcrumbs />
-      <div className="content">{children}</div>
+      <div className="content">
+        <Breadcrumbs />
+        {children}
+      </div>
     </main>
     <Footer />
   </>
