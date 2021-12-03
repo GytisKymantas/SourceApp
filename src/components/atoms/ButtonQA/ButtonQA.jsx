@@ -14,7 +14,6 @@ export const Button = ({
   hasIcon,
 }) => (
   <button
-    id="button"
     type={type}
     className={classNames("button button--medium", {
       "button--large": isLarge,
@@ -23,8 +22,10 @@ export const Button = ({
     disabled={disabled}
     onClick={onClick}
   >
-    {hasIcon && <SearchIcon />}
-    {label}
+    <span className="button__content">
+      {hasIcon && <SearchIcon />}
+      {label}
+    </span>
   </button>
 );
 
@@ -33,7 +34,7 @@ Button.propTypes = {
   label: PropTypes.string.isRequired,
   isLarge: PropTypes.bool,
   disabled: PropTypes.bool,
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
   hasIcon: PropTypes.node,
 };
 

@@ -2,15 +2,20 @@
 
 .button {
     background-color: $color-violet;
-    border: 0;
+    border: transparent;
     border-radius: 65px;
     color: $color-white;
     cursor: pointer;
     font-weight: $font-weight-medium;
-    line-height: 0;
     text-align: center;
     text-transform: uppercase;
     transition: background-color 0.2s ease;
+
+    &__content {
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+    }
 
     &:hover {
         $_color-violet-medium: #5836cc;
@@ -44,6 +49,7 @@
     &--large {
         font-size: $font-size-small;
         height: 40px;
+        padding: 8px 24px;
         width: 114px;
     }
 
