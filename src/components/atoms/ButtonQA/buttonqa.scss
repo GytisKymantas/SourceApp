@@ -10,6 +10,7 @@
     line-height: 0;
     text-align: center;
     text-transform: uppercase;
+    transition: background-color 0.2s ease;
 
     &:hover {
         $_color-violet-medium: #5836cc;
@@ -20,8 +21,6 @@
         $_color-violet-dark: #462ca3;
         background-color: $_color-violet-dark;
     }
-
-    // &--isDisabled
 
     &:disabled {
         background-color: $color-porcelain;

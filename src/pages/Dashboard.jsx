@@ -4,15 +4,14 @@ import { Button } from "components/atoms/ButtonQA/ButtonQA";
 
 export const Dashboard = () => {
   function clickedBtn() {
-    if (Button.clicked === true) {
-      alert("button was clicked");
-    }
+    // eslint-disable-next-line no-console
+    console.log("button was clicked");
   }
 
   return (
     <MainLayout>
       <h1>Dashboard</h1>
-      <Button label="button" onClick={clickedBtn} icon isLarge />
+      <Button label="button" onClick={clickedBtn} />
     </MainLayout>
   );
 };
