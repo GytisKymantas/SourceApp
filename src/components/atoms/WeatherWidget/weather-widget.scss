@@ -1,0 +1,45 @@
+@import '../../../styles/base/base';
+$font-size-description: 20px;
+$font-weight-tiny: 300;
+$font-size-temp: 60px;
+$font-color: rgba(0, 0, 0, 0.5);
+$temp-color: rgba(0, 0, 0, 0.7);
+
+.weather-data {
+    border-radius: 10px;
+    box-shadow: 0 8px 23px rgba(0, 0, 0, 0.25);
+    color: $font-color;
+    height: 176px;
+    width: 420px;
+    //   display: flex;
+
+    &__city {
+        font-size: $font-size-tiny;
+    }
+
+    &__temperature {
+        color: $temp-color;
+
+        font-size: $font-size-temp;
+        font-weight: $font-weight-tiny;
+    }
+
+    &__icon {
+        float: left;
+        margin: 0;
+        position: relative;
+        // margin-left: 177px;
+    }
+
+    &__wind-speed {
+        font-size: $font-size-tiny;
+    }
+
+    &__humidity {
+        font-size: $font-size-tiny;
+    }
+
+    &__description {
+        font-size: $font-size-description;
+    }
+}
