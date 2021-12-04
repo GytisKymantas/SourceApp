@@ -29,7 +29,8 @@
 
         &::placeholder {
             color: $color-ghost;
-            font-size: $font-size-medium;
+            font-size: $font-size-small;
+            font-weight: $font-weight-regular;
         }
     }
 
@@ -43,7 +44,7 @@
         margin: 0;
         position: absolute;
         text-transform: uppercase;
-        top: 100px;
+        top: 99px;
     }
 }
 
