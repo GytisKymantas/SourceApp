@@ -39,10 +39,10 @@ export const Input = ({
         onFocus={onFocus}
       />
       {!isFilled && (
-        <p className="input-container__required">Field is required.</p>
+        <p className="input-container__required">Field is required</p>
       )}
       {isFilled && isPasswordField && !passwordsMatch && showPasswordAlert && (
-        <p className="input-container__passwords">Passwords do not match.</p>
+        <p className="input-container__passwords">Passwords do not match</p>
       )}
     </div>
   );
