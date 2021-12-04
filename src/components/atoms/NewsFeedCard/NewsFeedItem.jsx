@@ -14,7 +14,6 @@ const NewsFeedItem = ({
   postLikes,
   postComments,
 }) => (
-  
   <div className="card">
     <div className="card--header__wrapper">
       <div className="card--title">
