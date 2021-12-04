@@ -1,0 +1,57 @@
+@import '../../../styles/base/base';
+
+.form-container {
+    &__fname-lname,
+    &__passwords {
+        display: flex;
+    }
+
+    &__fname,
+    &__lname,
+    &__password,
+    &__password-repeat {
+        width: 100%;
+    }
+
+    &__fname:first-child,
+    &__password:first-child {
+        margin-right: 20px;
+    }
+
+    &__actions {
+        align-items: center;
+        display: flex;
+        height: 40px;
+        justify-content: space-between;
+        margin-top: 32px;
+    }
+
+    &__actions-text {
+        font-size: $font-size-medium;
+        font-weight: $font-weight-regular;
+        line-height: 24px;
+        margin: 0;
+    }
+
+    &__actions-text-link {
+        color: $color-violet;
+        text-decoration: none;
+    }
+}
+
+button {
+    height: 40px;
+}
+
+@media (max-width: 630px) {
+    .form-container {
+        &__fname-lname,
+        &__passwords {
+            flex-direction: column;
+        }
+
+        &__actions {
+            flex-direction: column;
+        }
+    }
+}
