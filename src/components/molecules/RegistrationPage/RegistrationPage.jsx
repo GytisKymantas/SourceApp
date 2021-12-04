@@ -301,7 +301,7 @@ export const RegistrationPage = () => {
               </button>
               <p className="form-container__actions-text">
                 Already have an account?{" "}
-                <a className="form-container__actions-text-link" href="/log-in">
+                <a className="form-container__actions-text-link" href="/">
                   Sign in
                 </a>
               </p>
