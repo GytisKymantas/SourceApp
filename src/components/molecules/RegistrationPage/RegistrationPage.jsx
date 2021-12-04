@@ -217,7 +217,7 @@ export const RegistrationPage = () => {
   };
 
   return (
-    <div>
+    <div className="registration-page">
       <StartingPageLayout>
         <div className="form-container">
           <form onSubmit={handleSubmit}>

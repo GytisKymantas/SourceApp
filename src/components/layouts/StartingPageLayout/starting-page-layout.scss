@@ -5,7 +5,6 @@
     background: $color-mercury;
     display: flex;
     flex-direction: column;
-    height: 100vh;
     justify-content: center;
 
     &__logo-container {
@@ -37,20 +36,36 @@
     }
 }
 
-@media (max-width: 630px) {
+@media (max-width: 415px) {
     .starting-page-layout {
-        height: 100%;
         justify-content: flex-start;
-        padding-bottom: 30px;
 
         &__logo-container {
-            margin-bottom: 30px;
-            padding-top: 20px;
+            margin-bottom: 40px;
+            padding-top: 25px;
         }
 
         &__header {
             padding: 20px 16px;
-            width: 80%;
+            width: 110%;
         }
     }
 }
+
+// @media (max-width: 630px) {
+//     .starting-page-layout {
+//         // height: 100%;
+//         justify-content: flex-start;
+//         // padding-bottom: 40px;
+
+//         &__logo-container {
+//             margin-bottom: 40px;
+//             padding-top: 40px;
+//         }
+
+//         &__header {
+//             padding: 20px 16px;
+//             width: 120%;
+//         }
+//     }
+// }

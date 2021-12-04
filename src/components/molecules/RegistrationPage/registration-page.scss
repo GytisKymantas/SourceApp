@@ -1,6 +1,15 @@
 @import '../../../styles/base/base';
 
+.registration-page {
+    background: $color-mercury;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
 .form-container {
+    height: 100%;
+
     &__fname-lname,
     &__passwords {
         display: flex;
@@ -43,11 +52,21 @@ button {
     height: 40px;
 }
 
-@media (max-width: 630px) {
+@media (max-width: 415px) {
+    .registration-page {
+        height: auto;
+        padding-bottom: 50px;
+    }
+
     .form-container {
         &__fname-lname,
         &__passwords {
             flex-direction: column;
+        }
+
+        &__fname:first-child,
+        &__password:first-child {
+            margin-right: 0;
         }
 
         &__actions {
