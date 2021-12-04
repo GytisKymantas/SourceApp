@@ -2,8 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ReactComponent as TeamSpaceLogo } from "../../../assets/teamSpaceLogoPurple.svg";
 
-import "./StartingPageLayout.scss";
-// import { Input } from "components/atoms/Input/Input";
+import "./starting-page-layout.scss";
 
 export const StartingPageLayout = ({ title, subtitle, children }) => (
   <div className="starting-page-layout">
