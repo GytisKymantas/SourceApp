@@ -53,5 +53,13 @@ button {
         &__actions {
             flex-direction: column;
         }
+
+        &__actions-button {
+            margin-bottom: 8px;
+        }
+
+        &__actions-text {
+            font-size: $font-size-small;
+        }
     }
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StartingPageLayout } from "components/atoms/StartingPageLayout/StartingPageLayout";
+import { StartingPageLayout } from "components/layouts/StartingPageLayout/StartingPageLayout";
 import { Input } from "components/atoms/Input/Input";
 
 import "./registration-page.scss";
@@ -19,13 +19,16 @@ export const RegistrationPage = () => {
   const [showPasswordAlert, setShowPasswordAlert] = useState(false);
   const [warningInput, setWarningInput] = useState(false);
 
-  const handleRegistrationFormSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     markRequiredFields();
+
     setDoPasswordsMatch(false);
+
     const passwordsMatch = checkPasswordsMatch();
-    const canSubmit = isInputsFilled();
+    const canSubmit = isAllInputsFilled();
+
     // console.log("passwordsMatch", passwordsMatch);
     // console.log("canSubmit", canSubmit);
 
@@ -38,7 +41,7 @@ export const RegistrationPage = () => {
     }
   };
 
-  const isInputsFilled = () => {
+  const isAllInputsFilled = () => {
     if (
       firstName !== "" &&
       lastName !== "" &&
@@ -52,9 +55,6 @@ export const RegistrationPage = () => {
   };
 
   const saveToSessionStorage = () => {
-    // console.log("Everything is filled");
-    sessionStorage.setItem("firstName", firstName);
-    sessionStorage.setItem("lastName", lastName);
     sessionStorage.setItem("email", email);
     sessionStorage.setItem("password", password);
   };
@@ -220,7 +220,7 @@ export const RegistrationPage = () => {
     <div>
       <StartingPageLayout>
         <div className="form-container">
-          <form onSubmit={handleRegistrationFormSubmit}>
+          <form onSubmit={handleSubmit}>
             <div className="form-container__fname-lname">
               <div className="form-container__fname">
                 <Input
