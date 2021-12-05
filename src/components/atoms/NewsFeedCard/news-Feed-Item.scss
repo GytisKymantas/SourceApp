@@ -4,7 +4,7 @@
 
 .card {
     align-items: flex-start;
-    background: #fff;
+    background: $color-iron;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -122,7 +122,7 @@
 
         .input--leave__comment {
             background: none;
-            border: #fff;
+            border: $color-iron;
             color: $color-dark-gray;
             cursor: pointer;
             font-size: $font-size-mini;
@@ -134,7 +134,7 @@
 
         .button--post {
             background: none;
-            border: #fff;
+            border: $color-iron;
             border-radius: 10px;
             color: $color-dark-gray;
             margin-left: 200px;
