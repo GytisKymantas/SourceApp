@@ -113,18 +113,6 @@ export const RegistrationPage = () => {
     setWarningInput(false);
   };
 
-  // const handleGetData = () => {
-  //   const emailFromSessionStorage = sessionStorage.getItem("email");
-  //   const passwordFromSessionStorage = sessionStorage.getItem("password");
-
-  //   const data = {
-  //     email: emailFromSessionStorage,
-  //     password: passwordFromSessionStorage,
-  //   };
-
-  //   console.log(data);
-  // };
-
   // FIRST NAME
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
@@ -305,7 +293,6 @@ export const RegistrationPage = () => {
               </p>
             </div>
           </form>
-          {/* <button onClick={handleGetData}>Get Data</button> */}
         </div>
       </StartingPageLayout>
     </div>
