@@ -5,13 +5,31 @@ import { Reservations } from "pages/Reservations";
 import { EatOut } from "pages/EatOut";
 import { RatingBadge } from "components/atoms/RatingBadge";
 import { NotFound } from "pages/NotFound";
-
+import { useState, useEffect } from "react";
 function App() {
+  const [userData, setUserData] = useState();
+
+  useEffect(() => {
+    fetch(
+      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/userData.json"
+    )
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setUserData(result);
+        },
+
+        (error) => {
+          // handle error here
+        }
+      );
+  }, []);
+
   return (
     <div className="app">
       <Router>
         <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard data={userData} />} />
           <Route path="/dashboard/reservations" element={<Reservations />} />
           <Route
             path="/dashboard/reservations/meetingrooms"
