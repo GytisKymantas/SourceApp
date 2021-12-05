@@ -10,6 +10,7 @@ import "./weather-widget.scss";
 export const WeatherWidget = () => {
   const api = "9b176ea0bfec0899a9f8b1d8250ffe11";
   const [weatherData, setWeatherData] = useState(null);
+
   let lat,
     long = 0;
   let weatherId,
@@ -38,7 +39,7 @@ export const WeatherWidget = () => {
       );
   }, [lat, long]);
 
-  weatherId = weatherData?.weather[0].id;
+  weatherId = weatherData?.weather[0]?.id;
   windSpeed = weatherData?.wind.speed;
   humidity = weatherData?.main.humidity;
 
@@ -53,15 +54,20 @@ export const WeatherWidget = () => {
     : (weather = "Sunny");
 
   return (
-    <div>
+    <div className="test">
       {weatherData ? (
         <div className="weather-data">
-          <p className="weather-data__city">{weatherData?.name}</p>
-          <p className="weather-data__temperature">
-            {Math.round(weatherData?.main.temp)}
-            {"\u00b0"}
-          </p>
-          <p className="weather-data__icon">
+          <div className="weather-data__details">
+            <div className="weather-data__city">{weatherData?.name}</div>
+            <div className="weather-data__temperature">
+              {Math.round(weatherData?.main.temp)}
+              {"\u00b0"}
+            </div>
+            <div className="weather-data__description">{weather}</div>
+            <div className="weather-data__wind-speed">{windSpeed} m/s</div>
+            <div className="weather-data__humidity">{humidity} mm</div>
+          </div>
+          <div className="weather-data__icon">
             {weather === "Sunny" ? (
               <Sun />
             ) : weather === "Rain" ? (
@@ -73,10 +79,7 @@ export const WeatherWidget = () => {
             ) : (
               <Thunderstorm />
             )}
-          </p>
-          <p className="weather-data__wind-speed">{windSpeed} m/s</p>
-          <p className="weather-data__humidity">{humidity} mm</p>
-          <p className="weather-data__description">{weather}</p>
+          </div>
         </div>
       ) : (
         "Loading..."

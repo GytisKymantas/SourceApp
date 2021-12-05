@@ -5,37 +5,42 @@ $font-size-temp: 60px;
 $font-color: rgba(0, 0, 0, 0.5);
 $temp-color: rgba(0, 0, 0, 0.7);
 
+.test {
+    margin: 20px;
+}
+
 .weather-data {
     border-radius: 10px;
     box-shadow: 0 8px 23px rgba(0, 0, 0, 0.25);
     color: $font-color;
+    display: flex;
     height: 176px;
     width: 420px;
-    //   display: flex;
+
+    &__details {
+        margin: 8.74px auto 8.74px 18.58px;
+    }
 
     &__city {
+        align-items: flex-end;
+        flex: 1;
         font-size: $font-size-tiny;
+        line-height: 14px;
     }
 
     &__temperature {
         color: $temp-color;
-
         font-size: $font-size-temp;
         font-weight: $font-weight-tiny;
     }
 
     &__icon {
-        float: left;
-        margin: 0;
-        position: relative;
-        // margin-left: 177px;
+        margin-right: 0;
     }
 
-    &__wind-speed {
-        font-size: $font-size-tiny;
-    }
-
+    &__wind-speed,
     &__humidity {
+        display: inline-flex;
         font-size: $font-size-tiny;
     }
 
