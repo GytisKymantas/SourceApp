@@ -7,7 +7,7 @@ import { ReactComponent as LogOutLogo } from "../../../assets/logOut.svg";
 import { ReactComponent as Notification } from "../../../assets/notification.svg";
 import { ReactComponent as Elipse } from "../../../assets/elipse.svg";
 
-import "./ProfileWidget.scss";
+import "./profile-widget.scss";
 
 export const ProfileWidget = () => {
   // state placeholder for future notifications functionality,
