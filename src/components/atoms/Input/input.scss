@@ -35,7 +35,8 @@
     }
 
     &__required,
-    &__passwords {
+    &__passwords,
+    &__no-match {
         color: $color-watermelon;
         font-size: $font-size-mini;
         font-weight: $font-weight-medium;
