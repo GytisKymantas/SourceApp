@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { StartingPageLayout } from "components/layouts/StartingPageLayout/StartingPageLayout";
 import { Input } from "components/atoms/Input/Input";
 
@@ -19,6 +20,8 @@ export const RegistrationPage = () => {
   const [showPasswordAlert, setShowPasswordAlert] = useState(false);
   const [warningInput, setWarningInput] = useState(false);
 
+  let navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -29,15 +32,10 @@ export const RegistrationPage = () => {
     const passwordsMatch = checkPasswordsMatch();
     const canSubmit = isAllInputsFilled();
 
-    // console.log("passwordsMatch", passwordsMatch);
-    // console.log("canSubmit", canSubmit);
-
     if (passwordsMatch && canSubmit) {
       saveToSessionStorage();
-      // console.log("Saved");
       resetInputFields();
-    } else {
-      // console.log("Not saved");
+      navigate("../", { replace: true });
     }
   };
 
