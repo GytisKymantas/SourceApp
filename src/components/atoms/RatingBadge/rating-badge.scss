@@ -1,5 +1,7 @@
 @import '../../../styles/base/base';
 
+$svg-url: url('../../../assets/ratingBadgeStar.svg');
+
 .frame {
     align-items: center;
     background: $color-yellow;
@@ -18,5 +20,20 @@
 
     &__logo {
         margin: 0 5px;
+    }
+
+    &:hover {
+        background-image: $svg-url, $svg-url, $svg-url, $svg-url, $svg-url,
+            $svg-url;
+        background-position: center left 40px, center left 55px,
+            center left 70px, center left 85px, center left 100px;
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+        background-size: 12px, 12px, 12px, 12px, 12px;
+        cursor: default;
+        width: 110px;
+
+        .frame__logo {
+            display: none;
+        }
     }
 }

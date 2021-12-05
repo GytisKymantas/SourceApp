@@ -10,7 +10,6 @@ function App() {
   return (
     <div className="app">
       <Router>
-        <RatingBadge averageRating={4.5} />
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/dashboard/reservations" element={<Reservations />} />
@@ -34,6 +33,7 @@ function App() {
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <RatingBadge averageRating={4.5} />
       </Router>
     </div>
   );
