@@ -10,36 +10,32 @@ import "./weather-widget.scss";
 export const WeatherWidget = () => {
   const api = "9b176ea0bfec0899a9f8b1d8250ffe11";
   const [weatherData, setWeatherData] = useState(null);
-
-  let lat,
-    long = 0;
+  const [loading, setLoading] = useState(false);
   let weatherId,
     windSpeed,
     humidity,
     weather = null;
 
-  navigator.geolocation.getCurrentPosition((position) => {
-    lat = position.coords.latitude;
-    long = position.coords.longitude;
-  });
-
   useEffect(() => {
+    navigator.geolocation.getCurrentPosition(CallAPI);
+  }, []);
+
+  const CallAPI = (position) => {
+    const lat = position.coords.latitude;
+    const long = position.coords.longitude;
+    setLoading(true);
+
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${api}&units=metric`
     )
       .then((response) => response.json())
-      .then(
-        (res) => {
-          setWeatherData(res);
-        },
+      .then((data) => {
+        setWeatherData(data);
+        setLoading(false);
+      });
+  };
 
-        (error) => {
-          // handle error here
-        }
-      );
-  }, [lat, long]);
-
-  weatherId = weatherData?.weather[0]?.id;
+  weatherId = weatherData?.weather[0].id;
   windSpeed = weatherData?.wind.speed;
   humidity = weatherData?.main.humidity;
 
@@ -49,13 +45,13 @@ export const WeatherWidget = () => {
     ? (weather = "Rain")
     : weatherId > 599 && weatherId < 700
     ? (weather = "Snow")
-    : weatherId > 799 && weatherId < 900
+    : weatherId > 800 && weatherId < 900
     ? (weather = "Cloudy")
     : (weather = "Sunny");
 
   return (
     <div className="test">
-      {weatherData ? (
+      {!loading && (
         <div className="weather-data">
           <div className="weather-data__details">
             <div className="weather-data__city">{weatherData?.name}</div>
@@ -81,8 +77,6 @@ export const WeatherWidget = () => {
             )}
           </div>
         </div>
-      ) : (
-        "Loading..."
       )}
     </div>
   );
