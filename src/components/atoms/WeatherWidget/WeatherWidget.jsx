@@ -5,7 +5,9 @@ import { ReactComponent as Snow } from "../../../assets/weatherSnow.svg";
 import { ReactComponent as Thunderstorm } from "../../../assets/weatherThunderstorm.svg";
 import { ReactComponent as Sun } from "../../../assets/weatherSunny.svg";
 import { ReactComponent as Cloud } from "../../../assets/weatherCloudy.svg";
+import { ReactComponent as Mist } from "../../../assets/weatherMist.svg";
 import "./weather-widget.scss";
+import { countries } from "country-data";
 
 export const WeatherWidget = () => {
   const api = "9b176ea0bfec0899a9f8b1d8250ffe11";
@@ -14,7 +16,8 @@ export const WeatherWidget = () => {
   let weatherId,
     windSpeed,
     humidity,
-    weather = null;
+    weather,
+    countryCode = null;
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(CallAPI);
@@ -23,6 +26,7 @@ export const WeatherWidget = () => {
   const CallAPI = (position) => {
     const lat = position.coords.latitude;
     const long = position.coords.longitude;
+
     setLoading(true);
 
     fetch(
@@ -38,6 +42,7 @@ export const WeatherWidget = () => {
   weatherId = weatherData?.weather[0].id;
   windSpeed = weatherData?.wind.speed;
   humidity = weatherData?.main.humidity;
+  countryCode = weatherData?.sys.country;
 
   weatherId > 199 && weatherId < 300
     ? (weather = "Thunderstorm")
@@ -47,14 +52,18 @@ export const WeatherWidget = () => {
     ? (weather = "Snow")
     : weatherId > 800 && weatherId < 900
     ? (weather = "Cloudy")
-    : (weather = "Sunny");
+    : weatherId === 800
+    ? (weather = "Sunny")
+    : (weather = "Mist");
 
   return (
     <div className="test">
       {!loading && (
         <div className="weather-data">
           <div className="weather-data__details">
-            <div className="weather-data__city">{weatherData?.name}</div>
+            <div className="weather-data__location">
+              {weatherData && countries[countryCode].name}
+            </div>
             <div className="weather-data__temperature">
               {Math.round(weatherData?.main.temp)}
               {"\u00b0"}
@@ -72,6 +81,8 @@ export const WeatherWidget = () => {
               <Snow />
             ) : weather === "Cloudy" ? (
               <Cloud />
+            ) : weather === "Mist" ? (
+              <Mist />
             ) : (
               <Thunderstorm />
             )}
