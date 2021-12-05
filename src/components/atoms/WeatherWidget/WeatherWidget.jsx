@@ -55,6 +55,7 @@ export const WeatherWidget = () => {
     : weatherId === 800
     ? (weather = "Sunny")
     : (weather = "Mist");
+  let options = { weekday: "long", month: "long", day: "numeric" };
 
   return (
     <div className="test">
@@ -62,7 +63,8 @@ export const WeatherWidget = () => {
         <div className="weather-data">
           <div className="weather-data__details">
             <div className="weather-data__location">
-              {weatherData && countries[countryCode].name}
+              {new Date().toLocaleDateString("en-GB", options)} |{" "}
+              {weatherData?.name}, {weatherData && countries[countryCode].name}
             </div>
             <div className="weather-data__temperature">
               {Math.round(weatherData?.main.temp)}

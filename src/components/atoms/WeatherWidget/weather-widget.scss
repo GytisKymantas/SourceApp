@@ -10,15 +10,17 @@ $temp-color: rgba(0, 0, 0, 0.7);
 }
 
 .weather-data {
-    border-radius: 10px;
-    box-shadow: 0 8px 23px rgba(0, 0, 0, 0.25);
     color: $font-color;
     display: flex;
-    height: 176px;
-    width: 420px;
+    position: relative;
+    width: 528.45px;
 
     &__details {
-        margin: 8.74px auto 8.74px 18.58px;
+        border-radius: 10px;
+        box-shadow: 0 8px 23px rgba(0, 0, 0, 0.25);
+        height: 176px;
+        padding: 8.74px 0 8.74px 18.58px;
+        width: 420.44px;
     }
 
     &__location {
@@ -34,10 +36,6 @@ $temp-color: rgba(0, 0, 0, 0.7);
         font-weight: $font-weight-tiny;
     }
 
-    &__icon {
-        margin-right: 0;
-    }
-
     &__wind-speed,
     &__humidity {
         display: inline-flex;
@@ -47,4 +45,9 @@ $temp-color: rgba(0, 0, 0, 0.7);
     &__description {
         font-size: $font-size-description;
     }
+}
+
+.weather-data__icon {
+    position: absolute;
+    right: 0;
 }
