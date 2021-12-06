@@ -5,11 +5,14 @@ import { Reservations } from "pages/Reservations";
 import { EatOut } from "pages/EatOut";
 import { NotFound } from "pages/NotFound";
 import { useState, useEffect } from "react";
+
 function App() {
   const [userData, setUserData] = useState();
 
   useEffect(() => {
-    fetch("https://api.github.com/users/deekshasharma")
+    fetch(
+      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/userData.json"
+    )
       .then((res) => res.json())
       .then(
         (result) => {
@@ -17,7 +20,7 @@ function App() {
         },
 
         (error) => {
-          // handle error here
+          // handle error heres
         }
       );
   }, []);
