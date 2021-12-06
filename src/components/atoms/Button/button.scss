@@ -42,18 +42,16 @@
 
     &--medium {
         font-size: $font-size-tiny;
-        height: 32px;
-        width: 86px;
+        padding: 9px 16px;
     }
 
     &--large {
         font-size: $font-size-small;
-        height: 40px;
         padding: 8px 24px;
-        width: 114px;
     }
 
     &--has-icon {
+        padding: 8px 24px;
         width: 141px;
     }
 }
