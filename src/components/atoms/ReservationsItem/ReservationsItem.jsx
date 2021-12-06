@@ -7,14 +7,14 @@ const ReservationsItem = ({
   reservationImage,
   reservationNumber,
 }) => (
-  <div className="reservations">
-    <div className="reservations__header-container">
+  <div className="reservations-item">
+    <div className="reservations-item__header-container">
       <h2>{reservationName}</h2>
       <p>
         {reservationNumber ? `${reservationNumber} RESERVED` : "UNRESERVED"}
       </p>
     </div>
-    <div className="reservations__image-wrapper">
+    <div className="reservations-item__image-wrapper">
       <img src={reservationImage} alt="Reservations category" />
     </div>
   </div>
