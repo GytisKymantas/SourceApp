@@ -6,9 +6,8 @@ import React from "react";
 export const Dashboard = (data) => {
   const userData = data.data?.userData[0];
   const firstName = userData?.userName.split(" ")[0];
-  const bam = userData?.reservations.split(" ");
-  console.log(bam);
-
+  // const bam = userData?.reservations;
+  // const test2 = Object.entries(bam);
   // console.log(test2);
 
   return (
