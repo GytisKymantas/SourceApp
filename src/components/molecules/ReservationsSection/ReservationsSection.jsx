@@ -7,6 +7,10 @@ import "./reservations-section.scss";
 import PropTypes from "prop-types";
 
 export const ReservationsSection = ({ info }) => {
+  // const infoArray = info && Object.entries(info);
+  const infoArray = info && Object.entries(info);
+  console.log(infoArray[0]);
+
   const reservations = [
     {
       id: 1,
@@ -27,10 +31,11 @@ export const ReservationsSection = ({ info }) => {
       reservationImage: Phone,
     },
   ];
+
   // userData[0].reservations.books.map(object=> {object.id}))
   return (
     <div className="reservations-section">
-      <h3>`blabla`</h3>
+      {/* <h3>`blabla`</h3> */}
       {reservations.map((obj) => {
         return (
           <ReservationsItem
@@ -46,5 +51,5 @@ export const ReservationsSection = ({ info }) => {
   );
 };
 ReservationsSection.propTypes = {
-  info: PropTypes.array,
+  info: PropTypes.string,
 };
