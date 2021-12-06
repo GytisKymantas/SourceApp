@@ -3,31 +3,28 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { ReactComponent as SearchIcon } from "../../../assets/searchIcon.svg";
 
-import "./buttonqa.scss";
+import "./button.scss";
 
-export const Button = ({
-  type,
-  isLarge,
-  label,
-  disabled,
-  onClick,
-  hasIcon,
-}) => (
-  <button
-    type={type}
-    className={classNames("button button--medium", {
-      "button--large": isLarge,
-      "button--has-icon": hasIcon,
-    })}
-    disabled={disabled}
-    onClick={onClick}
-  >
-    <span className="button__content">
-      {hasIcon && <SearchIcon />}
-      {label}
-    </span>
-  </button>
-);
+export const Button = (props) => {
+  const { type, isLarge, label, disabled, onClick, hasIcon } = props;
+
+  return (
+    <button
+      type={type}
+      className={classNames("button button--medium", {
+        "button--large": isLarge,
+        "button--has-icon": hasIcon,
+      })}
+      disabled={disabled}
+      onClick={onClick}
+    >
+      <span className="button__content">
+        {hasIcon && <SearchIcon />}
+        {label}
+      </span>
+    </button>
+  );
+};
 
 Button.propTypes = {
   type: PropTypes.string,
@@ -40,4 +37,5 @@ Button.propTypes = {
 
 Button.defaultProps = {
   type: "button",
+  label: "button",
 };
