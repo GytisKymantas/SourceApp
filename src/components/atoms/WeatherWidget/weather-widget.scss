@@ -24,16 +24,23 @@ $temp-color: rgba(0, 0, 0, 0.7);
     }
 
     &__location {
-        align-items: flex-end;
+        display: flex;
         flex: 1;
         font-size: $font-size-tiny;
+        justify-content: flex-start;
+        letter-spacing: 1px;
         line-height: 14px;
+        padding: 8.74px 113.82px 0 18.58px;
+        text-align: left;
     }
 
     &__temperature {
         color: $temp-color;
+        display: flex;
         font-size: $font-size-temp;
         font-weight: $font-weight-tiny;
+        margin-top: 30px;
+        padding-left: 8.74px;
     }
 
     &__wind-speed,
