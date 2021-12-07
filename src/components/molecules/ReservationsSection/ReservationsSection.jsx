@@ -6,8 +6,8 @@ import Phone from "../../../assets/phone.svg";
 import "./reservations-section.scss";
 import PropTypes from "prop-types";
 
-export const ReservationsSection = ({ info }) => {
-  const infoArray = info && Object.entries(info);
+export const ReservationsSection = ({ reservationInfo }) => {
+  const reservationArray = reservationInfo && Object.entries(reservationInfo);
 
   const logoSwitch = (logo) => {
     if (logo === "books") {
@@ -29,8 +29,8 @@ export const ReservationsSection = ({ info }) => {
 
   return (
     <div className="reservations-section">
-      {infoArray
-        ? infoArray.map((obj, index) => {
+      {reservationArray
+        ? reservationArray.map((obj, index) => {
             return (
               <ReservationsItem
                 reservationName={nameSwitch(obj[0])}
