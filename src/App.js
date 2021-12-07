@@ -20,7 +20,7 @@ function App() {
         },
 
         (error) => {
-          // handle error heres
+          // handle error here
         }
       );
   }, []);

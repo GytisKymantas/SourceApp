@@ -8,7 +8,6 @@ import PropTypes from "prop-types";
 
 export const ReservationsSection = ({ info }) => {
   const infoArray = info && Object.entries(info);
-  console.log(infoArray);
 
   const logoSwitch = (logo) => {
     if (logo === "books") {
@@ -28,7 +27,6 @@ export const ReservationsSection = ({ info }) => {
     }
   };
 
-  // userData[0].reservations.books.map(object=> {object.id}))
   return (
     <div className="reservations-section">
       {infoArray
