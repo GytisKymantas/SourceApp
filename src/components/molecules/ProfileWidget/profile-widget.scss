@@ -4,11 +4,11 @@
     position: relative;
 
     &__notifications-container {
+        cursor: pointer;
         height: 24px;
         margin-right: 20px;
         position: relative;
         top: 2px;
-        cursor: pointer;
     }
 
     &__elipse-icon {
