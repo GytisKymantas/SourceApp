@@ -25,6 +25,10 @@
 
         h2 {
             font-weight: $font-weight-heavy;
+
+            &:first-letter {
+                text-transform: capitalize;
+            }
         }
 
         p {

@@ -1,5 +1,5 @@
 import React from "react";
-import "./reservations.scss";
+import "./reservations-item.scss";
 import PropTypes from "prop-types";
 
 export const ReservationsItem = ({
