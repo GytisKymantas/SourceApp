@@ -1,6 +1,7 @@
 import React from "react";
 import "./restaurant-card.scss";
 import PropTypes from "prop-types";
+import Button from "atoms/Button";
 
 export const RestaurantCard = ({
   headerImage,
@@ -47,6 +48,7 @@ export const RestaurantCard = ({
       <div className="restaurant__container-buttons">
         <button>READ MORE</button>
         <button>CHECK-IN</button>
+        <Button />
       </div>
     </div>
   </div>
