@@ -30,13 +30,13 @@ export const ReservationsSection = ({ info }) => {
   return (
     <div className="reservations-section">
       {infoArray
-        ? infoArray.map((obj) => {
+        ? infoArray.map((obj, index) => {
             return (
               <ReservationsItem
                 reservationName={nameSwitch(obj[0])}
                 reservationNumber={obj[1].length}
                 reservationImage={logoSwitch(obj[0])}
-                key={obj.id}
+                key={index}
               />
             );
           })
