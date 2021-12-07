@@ -10,7 +10,7 @@ export const Button = (props) => {
 
   return (
     <button
-      type={type}
+      type={type ?? "button"}
       className={classNames("button button--medium", {
         "button--large": isLarge,
         "button--has-icon": hasIcon,
@@ -33,9 +33,4 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
   hasIcon: PropTypes.node,
-};
-
-Button.defaultProps = {
-  type: "button",
-  label: "button",
 };
