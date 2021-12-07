@@ -55,16 +55,14 @@ const NewsFeedItem = ({
               <div className="comments--name">{userName}</div>
               <div className="comments--timestamp">{postDate}</div>
             </div>
-            <div className="comments--content">
-            </div>
+            <div className="comments--content"></div>
           </div>
           <div className="comments--box__two">
             <div className="comments--header__two">
               <div className="comments--name__two">{userName}</div>
               <div className="comments--timestamp__two">{postDate}</div>
             </div>
-            <div className="comments--content__two">
-            </div>
+            <div className="comments--content__two"></div>
           </div>
         </div>
       </div>
@@ -82,7 +80,7 @@ const NewsFeedItem = ({
   </div>
 );
 
-Video.propTypes = {
+NewsFeedItem.propTypes = {
   userName: PropTypes.string,
   userImage: PropTypes.string,
   postLocation: PropTypes.string,
@@ -92,7 +90,7 @@ Video.propTypes = {
     usernName: PropTypes.string,
     postComments: PropTypes.string,
     postDate: PropTypes.string,
-  }) 
+  }),
 };
 
 export default NewsFeedItem;
