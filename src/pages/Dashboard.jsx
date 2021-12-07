@@ -20,6 +20,7 @@ export const Dashboard = (data) => {
         (result) => {
           setStoriesData(result);
         },
+
         (error) => {
           // handle error here
         }
