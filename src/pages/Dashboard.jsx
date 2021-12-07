@@ -16,12 +16,10 @@ export const Dashboard = (data) => {
       "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/stories.json"
     )
       .then((res) => res.json())
-
       .then(
         (result) => {
           setStoriesData(result);
         },
-
         (error) => {
           // handle error here
         }
