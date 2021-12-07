@@ -7,46 +7,42 @@ import "./reservations-section.scss";
 import PropTypes from "prop-types";
 
 export const ReservationsSection = ({ info }) => {
-  // const infoArray = info && Object.entries(info);
   const infoArray = info && Object.entries(info);
-  console.log(infoArray[0]);
+  console.log(infoArray);
 
-  const reservations = [
-    {
-      id: 1,
-      reservationName: "Meeting rooms",
-      reservationNumber: 2,
-      reservationImage: Door,
-    },
-    {
-      id: 2,
-      reservationName: "Books",
-      reservationNumber: 2,
-      reservationImage: Book,
-    },
-    {
-      id: 3,
-      reservationName: "Devices",
-      reservationNumber: 2,
-      reservationImage: Phone,
-    },
-  ];
+  const logoSwitch = (logo) => {
+    if (logo === "books") {
+      return Book;
+    } else if (logo === "rooms") {
+      return Door;
+    } else if (logo === "devices") {
+      return Phone;
+    }
+  };
+
+  const nameSwitch = (name) => {
+    if (name === "rooms") {
+      return "Meeting Rooms";
+    } else {
+      return name;
+    }
+  };
 
   // userData[0].reservations.books.map(object=> {object.id}))
   return (
     <div className="reservations-section">
-      {/* <h3>`blabla`</h3> */}
-      {reservations.map((obj) => {
-        return (
-          <ReservationsItem
-            reservationName={obj.reservationName}
-            reservationNumber={2}
-            reservationImage={obj.reservationImage}
-            key={obj.id}
-          />
-        );
-      })}
-      {/* {console.log(Object.keys(info))} */}
+      {infoArray
+        ? infoArray.map((obj) => {
+            return (
+              <ReservationsItem
+                reservationName={nameSwitch(obj[0])}
+                reservationNumber={obj[1].length}
+                reservationImage={logoSwitch(obj[0])}
+                key={obj.id}
+              />
+            );
+          })
+        : "null"}
     </div>
   );
 };

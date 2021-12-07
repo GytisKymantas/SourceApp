@@ -22,6 +22,10 @@
         margin-bottom: 4px;
         margin-top: 4px;
 
+        h2:first-letter {
+            text-transform: capitalize;
+        }
+
         h2,
         p {
             color: $color-fiord;

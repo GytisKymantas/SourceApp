@@ -1,5 +1,6 @@
 .reservations-section {
     display: flex;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
     gap: 48px;
     justify-content: center;
