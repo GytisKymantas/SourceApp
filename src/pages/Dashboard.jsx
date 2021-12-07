@@ -3,6 +3,7 @@ import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import React from "react";
 import { useState, useEffect } from "react";
 import { StoriesSection } from "components/organisms/StoriesSection/StoriesSection";
+
 export const Dashboard = (data) => {
   const userData = data.data?.userData[0];
   const firstName = userData?.userName.split(" ")[0];
