@@ -15,66 +15,66 @@ const NewsFeedItem = ({
   postComments,
 }) => (
   <div className="card">
-    <div className="card--header__wrapper">
-      <div className="card--title">
+    <div className="card-header__wrapper">
+      <div className="card__title">
         <img src={userImage} alt="your profile" />
         <p className="card--name">{userName}</p>
       </div>
-      <div className="card--timestamp">
+      <div className="card__timestamp">
         <p>{postLocation}</p>
         <p className="card--time">{postDate}</p>
       </div>
     </div>
     <div className="video">
       <div className="icon">
-        <img className="vector--one" src={vectorPlay} alt="" />
-        <img className="vector--two" src={vectorOval} alt="" />
+        <img className="vector__one" src={vectorPlay} alt="" />
+        <img className="vector__two" src={vectorOval} alt="" />
       </div>
       <div className="photo">{userImage}</div>
     </div>
     <div className="actions">
       <button className="likes">
-        <div className="likes--outline">
+        <div className="likes__outline">
           <img src={vectorLikes} alt="like here" />
         </div>
-        <div className="likes--body">{postLikes}</div>
+        <div className="likes__body">{postLikes}</div>
       </button>
       <button className="comments">
         <div>
           <img src={vectorComment} alt="leave comment here" />
         </div>
-        <div className="comments--body">{postComments}</div>
+        <div className="comments__body">{postComments}</div>
       </button>
     </div>
-    <div className="comment--wrapper">
-      <span className="divider--top"></span>
+    <div className="comment__wrapper">
+      <span className="divider_top"></span>
       <div>
-        <div className="comments--rows">
-          <div className="comments--box__one">
-            <div className="comments--header">
+        <div className="comments__rows">
+          <div className="comments__box_one">
+            <div className="comments__header">
               <div className="comments--name">{userName}</div>
-              <div className="comments--timestamp">{postDate}</div>
+              <div className="comments__timestamp">{postDate}</div>
             </div>
             <div className="comments--content"></div>
           </div>
-          <div className="comments--box__two">
-            <div className="comments--header__two">
+          <div className="comments__box_two">
+            <div className="comments_header__two">
               <div className="comments--name__two">{userName}</div>
-              <div className="comments--timestamp__two">{postDate}</div>
+              <div className="comments_timestamp__two">{postDate}</div>
             </div>
             <div className="comments--content__two"></div>
           </div>
         </div>
       </div>
-      <span className="divider--bottom"></span>
-      <div className="comment--input">
+      <span className="divider_bottom"></span>
+      <div className="comment_input">
         <img src={userImage} alt="your profile icon" />
         <input
           type="text"
           placeholder="Leave a comment..."
-          className="input--leave__comment"
+          className="input_leave_comment"
         />
-        <button className="button--post">Post</button>
+        <button className="button__post">Post</button>
       </div>
     </div>
   </div>
