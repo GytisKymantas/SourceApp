@@ -29,8 +29,8 @@ export const Dashboard = (data) => {
 
   return (
     <MainLayout>
-      <ReservationsSection reservationData={reservationData} />
       <HelloWidget name={firstName} />
+      <ReservationsSection reservationData={reservationData} />
       {storiesData && <StoriesSection data={storiesData} />}
     </MainLayout>
   );
