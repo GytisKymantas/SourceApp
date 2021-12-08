@@ -43,3 +43,19 @@
         top: -19%;
     }
 }
+@media (max-width: 375px) {
+    .reservations-item__image-wrapper {
+        img {
+            width: 130px;
+            height: 120px;
+        }
+    }
+    .reservations-item__header-container {
+        h2 {
+            font-size: $font-size-big;
+        }
+        p {
+            font-size: $font-size-tiny;
+        }
+    }
+}

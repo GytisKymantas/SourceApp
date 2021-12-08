@@ -8,7 +8,7 @@ import { StoriesSection } from "components/organisms/StoriesSection/StoriesSecti
 export const Dashboard = (data) => {
   const userData = data.data?.userData[0];
   const firstName = userData?.userName.split(" ")[0];
-  const reservationInfo = userData?.reservations;
+  const reservationData = userData?.reservations;
   const [storiesData, setStoriesData] = useState();
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export const Dashboard = (data) => {
 
   return (
     <MainLayout>
-      <ReservationsSection info={reservationInfo} />
+      <ReservationsSection reservationData={reservationData} />
       <HelloWidget name={firstName} />
       {storiesData && <StoriesSection data={storiesData} />}
     </MainLayout>

@@ -6,20 +6,20 @@ import Phone from "../../../assets/phone.svg";
 import "./reservations-section.scss";
 import PropTypes from "prop-types";
 
-export const ReservationsSection = ({ reservationInfo }) => {
-  const reservationArray = reservationInfo && Object.entries(reservationInfo);
+export const ReservationsSection = ({ reservationData }) => {
+  const reservationArray = reservationData && Object.entries(reservationData);
 
-  const logoSwitch = (logo) => {
-    if (logo === "books") {
+  const logoChanger = (image) => {
+    if (image === "books") {
       return Book;
-    } else if (logo === "rooms") {
+    } else if (image === "rooms") {
       return Door;
-    } else if (logo === "devices") {
+    } else if (image === "devices") {
       return Phone;
     }
   };
 
-  const nameSwitch = (name) => {
+  const nameChanger = (name) => {
     if (name === "rooms") {
       return "Meeting Rooms";
     } else {
@@ -33,9 +33,9 @@ export const ReservationsSection = ({ reservationInfo }) => {
         ? reservationArray.map((obj, index) => {
             return (
               <ReservationsItem
-                reservationName={nameSwitch(obj[0])}
+                reservationName={logoChanger(obj[0])}
                 reservationNumber={obj[1].length}
-                reservationImage={logoSwitch(obj[0])}
+                reservationImage={nameChanger(obj[0])}
                 key={index}
               />
             );
@@ -45,5 +45,5 @@ export const ReservationsSection = ({ reservationInfo }) => {
   );
 };
 ReservationsSection.propTypes = {
-  info: PropTypes.string,
+  reservationData: PropTypes.object,
 };
