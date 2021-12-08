@@ -52,14 +52,14 @@ const NewsFeedItem = ({
         <div className="comments__rows">
           <div className="comments__box_one">
             <div className="comments__header">
-              <div className="comments--name">{userName}</div>
+              <div className="comments__name">{userName}</div>
               <div className="comments__timestamp">{postDate}</div>
             </div>
             <div className="comments--content"></div>
           </div>
           <div className="comments__box_two">
             <div className="comments_header__two">
-              <div className="comments--name__two">{userName}</div>
+              <div className="comments__name__two">{userName}</div>
               <div className="comments_timestamp__two">{postDate}</div>
             </div>
             <div className="comments--content__two"></div>
