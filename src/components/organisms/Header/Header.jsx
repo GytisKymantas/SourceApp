@@ -5,9 +5,13 @@ import "./header.scss";
 import { ProfileWidget } from "../../molecules/ProfileWidget/ProfileWidget";
 import { Navigation } from "../../molecules/Navigation/Navigation";
 
+const logoPath = "/dashboard";
+
 export const Header = () => (
   <header className="header">
-    <Logo />
+    <a href={logoPath}>
+      <Logo />
+    </a>
     <Navigation />
     <ProfileWidget />
   </header>

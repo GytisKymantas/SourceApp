@@ -1,0 +1,57 @@
+@import '../../../styles/base/base';
+
+.button {
+    background-color: $color-violet;
+    border: transparent;
+    border-radius: 65px;
+    color: $color-white;
+    cursor: pointer;
+    font-weight: $font-weight-medium;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease;
+
+    &__content {
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &:hover {
+        $_color-violet-medium: #5836cc;
+        background-color: $_color-violet-medium;
+    }
+
+    &:active {
+        $_color-violet-dark: #462ca3;
+        background-color: $_color-violet-dark;
+    }
+
+    &:disabled {
+        background-color: $color-porcelain;
+        color: $color-chateau-gray;
+        cursor: default;
+
+        &:hover,
+        :active,
+        :focus {
+            background-color: $color-porcelain;
+            color: $color-chateau-gray;
+        }
+    }
+
+    &--medium {
+        font-size: $font-size-tiny;
+        padding: 9px 16px;
+    }
+
+    &--large {
+        font-size: $font-size-small;
+        padding: 8px 24px;
+    }
+
+    &--has-icon {
+        padding: 8px 24px;
+        width: 141px;
+    }
+}
