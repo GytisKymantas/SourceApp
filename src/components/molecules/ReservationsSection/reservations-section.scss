@@ -3,6 +3,18 @@
     flex-direction: row-reverse;
     flex-wrap: wrap;
     gap: 48px;
-    justify-content: center;
+    justify-content: space-between;
     padding-bottom: 72px;
+    padding-top: 164px;
+    position: relative;
+
+    &__header {
+        font-size: $font-size-large;
+        font-weight: $font-weight-heavy;
+        left: 0;
+        line-height: 32px;
+        margin: 0;
+        position: absolute;
+        top: 84px;
+    }
 }

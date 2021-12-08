@@ -17,7 +17,6 @@ export const ReservationsSection = ({ reservationData }) => {
         return name;
     }
   };
-
   const imageMatcher = (image) => {
     switch (image) {
       case "books":
@@ -33,6 +32,7 @@ export const ReservationsSection = ({ reservationData }) => {
 
   return (
     <div className="reservations-section">
+      <h2 className="reservations-section__header">Reservations</h2>
       {reservationArray
         ? reservationArray.map((obj, index) => {
             return (
@@ -44,7 +44,7 @@ export const ReservationsSection = ({ reservationData }) => {
               />
             );
           })
-        : "null"}
+        : null}
     </div>
   );
 };
