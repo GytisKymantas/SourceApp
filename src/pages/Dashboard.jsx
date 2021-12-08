@@ -1,8 +1,8 @@
-import { HelloWidget } from "components/atoms/HelloWidget/HelloWidget";
 import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import React from "react";
 import { useState, useEffect } from "react";
 import { StoriesSection } from "components/organisms/StoriesSection/StoriesSection";
+import { GreetingSection } from "components/molecules/GreetingSection/GreetingSection";
 export const Dashboard = (data) => {
   const userData = data.data?.userData[0];
   const firstName = userData?.userName.split(" ")[0];
@@ -26,7 +26,7 @@ export const Dashboard = (data) => {
 
   return (
     <MainLayout>
-      <HelloWidget name={firstName} />
+      <GreetingSection name={firstName} />
       {storiesData && <StoriesSection data={storiesData} />}
     </MainLayout>
   );
