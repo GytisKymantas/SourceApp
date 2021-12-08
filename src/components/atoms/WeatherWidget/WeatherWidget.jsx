@@ -6,6 +6,10 @@ import { ReactComponent as Thunderstorm } from "../../../assets/weatherThunderst
 import { ReactComponent as Sun } from "../../../assets/weatherSunny.svg";
 import { ReactComponent as Cloud } from "../../../assets/weatherCloudy.svg";
 import { ReactComponent as Mist } from "../../../assets/weatherMist.svg";
+import { ReactComponent as Divider } from "../../../assets/divider.svg";
+import { ReactComponent as DropIcon } from "../../../assets/dropletIcon.svg";
+import { ReactComponent as WindIcon } from "../../../assets/windIcon.svg";
+
 import "./weather-widget.scss";
 import { countries } from "country-data";
 
@@ -58,21 +62,34 @@ export const WeatherWidget = () => {
   let options = { weekday: "long", month: "long", day: "numeric" };
 
   return (
-    <div className="test">
+    <div>
       {!loading && (
         <div className="weather-data">
-          <div className="weather-data__details">
-            <div className="weather-data__location">
+          <div className="weather-data__information">
+            <div className="weather-data__information__location">
               {new Date().toLocaleDateString("en-GB", options)} |{" "}
               {weatherData?.name}, {weatherData && countries[countryCode].name}
             </div>
-            <div className="weather-data__temperature">
-              {Math.round(weatherData?.main.temp)}
-              {"\u00b0"}
+            <div className="weather-data__main-details">
+              <span className="weather-data__main-details__temperature">
+                {Math.round(weatherData?.main.temp)}
+                {"\u00b0"}
+              </span>
+              <span className="weather-data__main-details__description">
+                {weather}
+              </span>
             </div>
-            <div className="weather-data__description">{weather}</div>
-            <div className="weather-data__wind-speed">{windSpeed} m/s</div>
-            <div className="weather-data__humidity">{humidity} mm</div>
+            <Divider className="weather-data__divider" />
+            <div className="weather-data__details">
+              <span className="weather-data__details__wind-speed">
+                <WindIcon className="weather-data__details__icon" /> {windSpeed}{" "}
+                m/s
+              </span>
+              <span className="weather-data__details__humidity">
+                <DropIcon className="weather-data__details__icon" />
+                {humidity} mm
+              </span>
+            </div>
           </div>
           <div className="weather-data__icon">
             {weather === "Sunny" ? (
