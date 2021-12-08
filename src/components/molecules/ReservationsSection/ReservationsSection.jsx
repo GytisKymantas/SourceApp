@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 export const ReservationsSection = ({ reservationData }) => {
   const reservationArray = reservationData && Object.entries(reservationData);
 
-  const logoChanger = (image) => {
+  const imageChanger = (image) => {
     if (image === "books") {
       return Book;
     } else if (image === "rooms") {
@@ -33,7 +33,7 @@ export const ReservationsSection = ({ reservationData }) => {
         ? reservationArray.map((obj, index) => {
             return (
               <ReservationsItem
-                reservationName={logoChanger(obj[0])}
+                reservationName={imageChanger(obj[0])}
                 reservationNumber={obj[1].length}
                 reservationImage={nameChanger(obj[0])}
                 key={index}
