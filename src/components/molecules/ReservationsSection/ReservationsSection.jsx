@@ -9,21 +9,25 @@ import PropTypes from "prop-types";
 export const ReservationsSection = ({ reservationData }) => {
   const reservationArray = reservationData && Object.entries(reservationData);
 
-  const imageMatcher = (image) => {
-    if (image === "books") {
-      return Book;
-    } else if (image === "rooms") {
-      return Door;
-    } else if (image === "devices") {
-      return Phone;
+  const nameMatcher = (name) => {
+    switch (name) {
+      case "books":
+        return "Meeting Rooms";
+      default:
+        return name;
     }
   };
 
-  const nameMatcher = (name) => {
-    if (name === "rooms") {
-      return "Meeting Rooms";
-    } else {
-      return name;
+  const imageMatcher = (image) => {
+    switch (image) {
+      case "books":
+        return Book;
+      case "rooms":
+        return Door;
+      case "devices":
+        return Phone;
+      default:
+        return Door;
     }
   };
 
