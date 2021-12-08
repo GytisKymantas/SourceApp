@@ -1,60 +1,125 @@
 @import '../../../styles/base/base';
 $font-size-description: 20px;
-$font-weight-tiny: 300;
-$font-size-temp: 60px;
-$font-color: rgba(0, 0, 0, 0.5);
-$temp-color: rgba(0, 0, 0, 0.7);
-
-.test {
-    margin: 20px;
-}
+$font-size-temperature: 60px;
+$color-black-transparent-05: rgba(0, 0, 0, 0.5);
+$color-black-transparent-07: rgba(0, 0, 0, 0.7);
 
 .weather-data {
-    color: $font-color;
+    color: $color-black-transparent-05;
     display: flex;
+    flex-direction: row;
+    height: 214px;
+    justify-content: flex-start;
+    min-width: 300px;
     position: relative;
+    top: 0;
     width: 528.45px;
 
-    &__details {
+    &__information {
         border-radius: 10px;
         box-shadow: 0 8px 23px rgba(0, 0, 0, 0.25);
         height: 176px;
-        // padding: 8.74px 0 8.74px 18.58px;
+        min-width: 300px;
+        position: relative;
         width: 420.44px;
+
+        &__location {
+            font-size: $font-size-tiny;
+            letter-spacing: 1px;
+            line-height: 14px;
+            padding: 8.74px 113.82px 0 18.58px;
+            text-align: left;
+        }
     }
 
-    &__location {
+    &__main-details {
+        bottom: 32.77px;
         display: flex;
-        flex: 1;
-        font-size: $font-size-tiny;
-        justify-content: flex-start;
-        letter-spacing: 1px;
-        line-height: 14px;
-        padding: 8.74px 113.82px 0 18.58px;
-        text-align: left;
+        padding-left: 18.58px;
+        position: absolute;
+
+        &__temperature {
+            color: $color-black-transparent-07;
+            font-size: $font-size-temperature;
+            font-weight: $font-weight-light;
+        }
+
+        &__description {
+            align-self: flex-end;
+            font-size: $font-size-description;
+            font-weight: $font-weight-light;
+            margin-bottom: 9.83px;
+        }
     }
 
-    &__temperature {
-        color: $temp-color;
+    &__details {
+        bottom: 0;
         display: flex;
-        font-size: $font-size-temp;
-        font-weight: $font-weight-tiny;
-        margin-top: 30px;
-        padding-left: 8.74px;
+        padding: 0 0 7.74px 18.58px;
+        position: absolute;
+
+        &__wind-speed {
+            align-items: center;
+            display: flex;
+            font-size: $font-size-tiny;
+            font-weight: 300;
+            line-height: 14px;
+            padding-right: 30px;
+        }
+
+        &__humidity {
+            align-items: center;
+            display: flex;
+            font-size: $font-size-tiny;
+            font-weight: $font-weight-light;
+        }
+
+        &__icon {
+            padding-right: 5.88px;
+        }
     }
 
-    &__wind-speed,
-    &__humidity {
-        display: inline-flex;
-        font-size: $font-size-tiny;
+    &__divider {
+        bottom: 32.77px;
+        display: flex;
+        padding-left: 18.58px;
+        position: absolute;
     }
 
-    &__description {
-        font-size: $font-size-description;
+    &__icon {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        right: 2.5px;
     }
 }
 
-.weather-data__icon {
-    position: absolute;
-    right: 2.5px;
+@media (max-width: 950px) {
+    .weather-data {
+        width: 480px;
+
+        &__information {
+            width: 371.99px;
+        }
+    }
+}
+
+@media (max-width: 880px) {
+    .weather-data {
+        width: 300px;
+
+        &__information {
+            margin: 0 auto;
+            width: 300px;
+
+            &__location {
+                padding: 8.74px 18.58px 0;
+            }
+        }
+
+        &__icon {
+            display: none;
+        }
+    }
 }
