@@ -57,7 +57,7 @@ export const WeatherWidget = () => {
     : weatherId > 800 && weatherId < 900
     ? (weather = "Cloudy")
     : weatherId === 800
-    ? (weather = "Sunny")
+    ? (weather = "Clear sky")
     : (weather = "Mist");
   let options = { weekday: "long", month: "long", day: "numeric" };
 
@@ -92,7 +92,7 @@ export const WeatherWidget = () => {
             </div>
           </div>
           <div className="weather-data__icon">
-            {weather === "Sunny" ? (
+            {weather === "Clear sky" ? (
               <Sun />
             ) : weather === "Rain" ? (
               <Rain />
