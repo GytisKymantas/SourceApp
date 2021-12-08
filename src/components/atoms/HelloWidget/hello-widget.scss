@@ -20,14 +20,29 @@
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1030px) {
     .hello-widget {
         &__time {
-            font-size: $font-size-xlarge;
+            font-weight: $font-weight-medium;
         }
 
         &__text {
             font-size: $font-size-large;
+        }
+    }
+}
+@media (max-width: 672px) {
+    .hello-widget {
+        justify-content: center;
+
+        &__time {
+            $font-size-xlarge-plus: 60px;
+            font-size: $font-size-xlarge-plus;
+            font-weight: $font-weight-medium;
+        }
+
+        &__text {
+            word-break: normal;
         }
     }
 }
