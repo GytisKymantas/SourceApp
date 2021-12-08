@@ -284,7 +284,7 @@ export const RegistrationPage = () => {
               </div>
             </div>
             <div className="form-container__actions">
-              <Button type="submit" label="register" />
+              <Button type="submit" label="register" isLarge={true} />
               <p className="form-container__actions-text">
                 Already have an account?{" "}
                 <a className="form-container__actions-text-link" href="/">
