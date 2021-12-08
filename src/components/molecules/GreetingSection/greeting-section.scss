@@ -1,0 +1,16 @@
+.greeting-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+
+    &__hello-widget {
+        order: 1;
+    }
+
+    &__weather-widget {
+        margin-left: auto;
+        order: 2;
+    }
+}
