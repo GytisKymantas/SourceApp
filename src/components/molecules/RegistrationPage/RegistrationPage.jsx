@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { StartingPageLayout } from "components/layouts/StartingPageLayout/StartingPageLayout";
 import { Input } from "components/atoms/Input/Input";
 
 import "./registration-page.scss";
+import { Button } from "components/atoms/Button/Button";
 
 export const RegistrationPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -20,7 +21,8 @@ export const RegistrationPage = () => {
   const [showPasswordAlert, setShowPasswordAlert] = useState(false);
   const [warningInput, setWarningInput] = useState(false);
 
-  let navigate = useNavigate();
+  // All commented lines will be relevant after login implementation
+  // let navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,7 +37,7 @@ export const RegistrationPage = () => {
     if (passwordsMatch && canSubmit) {
       saveToSessionStorage();
       resetInputFields();
-      navigate("../", { replace: true });
+      // navigate("../", { replace: true });
     }
   };
 
@@ -282,9 +284,7 @@ export const RegistrationPage = () => {
               </div>
             </div>
             <div className="form-container__actions">
-              <button type="submit" className="form-container__actions-button">
-                Submit
-              </button>
+              <Button type="submit" label="register" />
               <p className="form-container__actions-text">
                 Already have an account?{" "}
                 <a className="form-container__actions-text-link" href="/">
