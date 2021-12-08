@@ -55,6 +55,8 @@
     }
 
     .form-container {
+        height: 580px;
+
         &__fname-lname,
         &__passwords {
             flex-direction: column;
@@ -67,6 +69,7 @@
 
         &__actions {
             flex-direction: column;
+            margin-top: 26px;
         }
 
         &__actions-button {
@@ -75,6 +78,7 @@
 
         &__actions-text {
             font-size: $font-size-small;
+            padding: 10px 0;
         }
     }
 }
