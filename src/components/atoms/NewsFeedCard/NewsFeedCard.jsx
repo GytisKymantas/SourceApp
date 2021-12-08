@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import vectorPlay from "../../../assets/news/vectorPlay.svg";
-import vectorOval from "../../../assets/news/vectorOval.svg";
-import vectorComment from "../../../assets/news/vectorComment.svg";
-import vectorLikes from "../../../assets/news/vectorLikes.svg";
+import vectorPlay from "../../../assets/vectorPlay.svg";
+import vectorOval from "../../../assets/vectorOval.svg";
+import vectorComment from "../../../assets/vectorComment.svg";
+import vectorLikes from "../../../assets/vectorLikes.svg";
 import "../NewsFeedCard/news-Feed-Card.scss";
 
 const NewsFeedItem = ({
