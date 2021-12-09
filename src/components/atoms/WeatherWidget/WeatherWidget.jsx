@@ -16,7 +16,6 @@ import "./weather-widget.scss";
 import { countries } from "country-data";
 
 export const WeatherWidget = ({ time }) => {
-  const api = "9b176ea0bfec0899a9f8b1d8250ffe11";
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
   let weatherId,
@@ -34,9 +33,8 @@ export const WeatherWidget = ({ time }) => {
     const long = position.coords.longitude;
 
     setLoading(true);
-
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${api}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -61,8 +59,8 @@ export const WeatherWidget = ({ time }) => {
     : weatherId === 800
     ? (weather = "Clear sky")
     : (weather = "Mist");
-  const options = { weekday: "long", month: "long", day: "numeric" };
 
+  const options = { weekday: "long", month: "long", day: "numeric" };
   const sunset = new Date(weatherData?.sys.sunset * 1000);
   const sunrise = new Date(weatherData?.sys.sunrise * 1000);
 
