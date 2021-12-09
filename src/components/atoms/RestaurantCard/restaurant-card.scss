@@ -1,3 +1,5 @@
+@import '../../../styles/base/base';
+
 .restaurant {
     border-radius: 8px;
     text-align: start !important;
@@ -118,7 +120,7 @@
             font-size: $font-size-mini;
             font-weight: $font-size-medium;
             line-height: 18px;
-            color: $color-dark-gay;
+            color: $color-dark-gray;
         }
         & button:last-child {
             font-size: $font-size-small;

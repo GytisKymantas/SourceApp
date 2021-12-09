@@ -1,7 +1,8 @@
 import React from "react";
 import "./restaurant-card.scss";
 import PropTypes from "prop-types";
-import Button from "atoms/Button";
+import globe from "../../../assets/globe.svg";
+import map from "../../../assets/map.svg";
 
 export const RestaurantCard = ({
   headerImage,
@@ -48,8 +49,14 @@ export const RestaurantCard = ({
       <div className="restaurant__container-buttons">
         <button>READ MORE</button>
         <button>CHECK-IN</button>
-        <Button />
       </div>
     </div>
   </div>
 );
+
+RestaurantCard.propTypes = {
+  headerImage: PropTypes.string,
+  userImage: PropTypes.string,
+  vectorImage: PropTypes.string,
+  heartImage: PropTypes.string,
+};
