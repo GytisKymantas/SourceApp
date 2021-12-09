@@ -53,18 +53,7 @@
 
     .reservations-item__header-container {
         h2 {
-            font-size: $font-size-big;
-        }
-
-        p {
-            font-size: $font-size-tiny;
-        }
-    }
-}
-@media (max-width: 330px) {
-    .reservations-item__header-container {
-        h2 {
-            font-size: $font-size-medium;
+            font-size: $font-size-small;
         }
 
         p {
