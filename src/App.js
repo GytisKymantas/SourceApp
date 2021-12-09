@@ -8,6 +8,23 @@ import { NotFound } from "pages/NotFound";
 import { useState, useEffect } from "react";
 function App() {
   const [userData, setUserData] = useState();
+  const [restaurantData, setRestaurantData] = useState();
+
+  useEffect(() => {
+    fetch(
+      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/restaurants.json"
+    )
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setRestaurantData(result);
+        },
+
+        (error) => {
+          // handle error here
+        }
+      );
+  }, []);
 
   useEffect(() => {
     fetch(

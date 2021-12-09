@@ -46,6 +46,7 @@ export const Dashboard = (data) => {
     <MainLayout>
       <HelloWidget name={firstName} />
       {storiesData && <StoriesSection data={storiesData} />}
+      <RestaurantCard />
     </MainLayout>
   );
 };

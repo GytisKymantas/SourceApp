@@ -9,6 +9,12 @@ export const RestaurantCard = ({
   userImage,
   vectorImage,
   heartImage,
+  restaurantName,
+  retaurantWebsite,
+  restaurantAddress,
+  restaurantOpeningHours,
+  restaurantDescription,
+  restaurantCategories,
 }) => (
   <div className="restaurant__container">
     <div className="restaurant__container-front">
@@ -19,33 +25,30 @@ export const RestaurantCard = ({
         <span>4.5</span>
       </div>
       <ul>
-        <li>Salads</li>
-        <li>Snacks</li>
-        <li>Pizza</li>
+        <li>{restaurantCategories}</li>
+        <li>{restaurantCategories}</li>
+        <li>{restaurantCategories}</li>
       </ul>
       <div className="restaurant__container-image-heart">
         <img src={heartImage} alt="heart" />
       </div>
       <div className="restaurant__container-image-text">
-        <h2>Ristorante Viva Piccola it...</h2>
-        <span>10:00 - 21:00</span>
+        <h2>{restaurantName}</h2>
+        <span>{restaurantOpeningHours}</span>
       </div>
     </div>
     <div className="restaurant__container-hidden">
       <div className="restaurant__container-examples">
         <span>
           <img src={globe} alt="globe" />
-          EXAMPLE.COM
+          {retaurantWebsite}
         </span>
         <span>
           <img src={map} alt="map" />
-          EXAMPLE ST.32
+          {restaurantAddress}
         </span>
       </div>
-      <p>
-        Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor
-        sit amet.Lorem ipsum dolor sit amet.
-      </p>
+      <p>{restaurantDescription}</p>
       <div className="restaurant__container-buttons">
         <button>READ MORE</button>
         <button>CHECK-IN</button>
@@ -59,4 +62,10 @@ RestaurantCard.propTypes = {
   userImage: PropTypes.string,
   vectorImage: PropTypes.string,
   heartImage: PropTypes.string,
+  restaurantName: PropTypes.string,
+  retaurantWebsite: PropTypes.string,
+  restaurantAddress: PropTypes.string,
+  restaurantOpeningHours: PropTypes.string,
+  restaurantDescription: PropTypes.string,
+  restaurantCategories: PropTypes.string,
 };
