@@ -33,16 +33,14 @@
 }
 @media (max-width: 672px) {
     .hello-widget {
+        align-items: center;
         justify-content: center;
+        text-align: center;
 
         &__time {
             $font-size-xlarge-plus: 60px;
             font-size: $font-size-xlarge-plus;
             font-weight: $font-weight-medium;
-        }
-
-        &__text {
-            word-break: normal;
         }
     }
 }
