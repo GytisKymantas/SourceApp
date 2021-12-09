@@ -15,7 +15,10 @@
 
     &__element-container {
         display: flex;
-        flex-wrap: wrap;
         gap: 48px;
+
+        @media (max-width: 1050px) {
+            flex-wrap: wrap;
+        }
     }
 }
