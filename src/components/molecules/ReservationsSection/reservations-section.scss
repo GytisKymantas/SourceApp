@@ -6,12 +6,12 @@
     &__header-wrapper {
         height: 84px;
         text-align: start;
+    }
 
-        &__header {
-            font-size: $font-size-large;
-            font-weight: $font-weight-heavy;
-            line-height: 32px;
-        }
+    &__header {
+        font-size: $font-size-large;
+        font-weight: $font-weight-heavy;
+        line-height: 32px;
     }
 
     &__element-container {
