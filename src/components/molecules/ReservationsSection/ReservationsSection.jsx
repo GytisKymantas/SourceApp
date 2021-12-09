@@ -32,19 +32,23 @@ export const ReservationsSection = ({ reservationData }) => {
 
   return (
     <div className="reservations-section">
-      <h2 className="reservations-section__header">Reservations</h2>
-      {reservationArray
-        ? reservationArray.map((obj, index) => {
-            return (
-              <ReservationsItem
-                reservationName={nameMatcher(obj[0])}
-                reservationNumber={obj[1].length}
-                reservationImage={imageMatcher(obj[0])}
-                key={index}
-              />
-            );
-          })
-        : null}
+      <div className="reservations-section__header-wrapper">
+        <h2 className="reservations-section__header">Reservations</h2>
+      </div>
+      <div className="reservations-section__element-container">
+        {reservationArray
+          ? reservationArray.map((obj, index) => {
+              return (
+                <ReservationsItem
+                  reservationName={nameMatcher(obj[0])}
+                  reservationNumber={obj[1].length}
+                  reservationImage={imageMatcher(obj[0])}
+                  key={index}
+                />
+              );
+            })
+          : null}
+      </div>
     </div>
   );
 };

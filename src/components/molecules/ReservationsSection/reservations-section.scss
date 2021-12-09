@@ -1,19 +1,21 @@
 @import '../../../styles/base/base';
-.reservations-section {
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-bottom: 72px;
-    position: relative;
 
-    &__header {
-        font-size: $font-size-large;
-        font-weight: $font-weight-heavy;
-        left: 0;
-        line-height: 32px;
-        margin: 0;
-        position: absolute;
-        top: -84px;
+.reservations-section {
+    padding-bottom: 72px;
+
+    &__header-wrapper {
+        height: 84px;
+        text-align: start;
+
+        &__header {
+            font-size: $font-size-large;
+            font-weight: $font-weight-heavy;
+            line-height: 32px;
+        }
+    }
+
+    &__element-container {
+        display: flex;
+        justify-content: space-between;
     }
 }
