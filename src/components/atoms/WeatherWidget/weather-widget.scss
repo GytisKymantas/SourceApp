@@ -1,17 +1,15 @@
 @import '../../../styles/base/base';
-$font-size-description: 20px;
-$font-size-temperature: 60px;
-$color-black-transparent-05: rgba(0, 0, 0, 0.5);
-$color-black-transparent-07: rgba(0, 0, 0, 0.7);
-$bottom-z-index: -1;
+$_font-size-description: 20px;
+$_font-size-temperature: 60px;
+$_color-black-transparent-05: rgba(0, 0, 0, 0.5);
+$_color-black-transparent-07: rgba(0, 0, 0, 0.7);
 
 .weather-data {
-    color: $color-black-transparent-05;
+    color: $_color-black-transparent-05;
     display: flex;
     height: 214px;
     position: relative;
     width: 528.45px;
-    z-index: $bottom-z-index;
 
     &__information {
         border-radius: 10px;
@@ -36,14 +34,14 @@ $bottom-z-index: -1;
         position: absolute;
 
         &__temperature {
-            color: $color-black-transparent-07;
-            font-size: $font-size-temperature;
+            color: $_color-black-transparent-07;
+            font-size: $_font-size-temperature;
             font-weight: $font-weight-light;
         }
 
         &__description {
             align-self: flex-end;
-            font-size: $font-size-description;
+            font-size: $_font-size-description;
             font-weight: $font-weight-light;
             margin-bottom: 9.83px;
         }
