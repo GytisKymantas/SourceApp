@@ -101,6 +101,7 @@ $bottom-z-index: -1;
 
 @media (max-width: 880px) {
     .weather-data {
+        height: 176px;
         width: 300px;
 
         &__information {
