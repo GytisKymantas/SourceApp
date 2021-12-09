@@ -8,4 +8,27 @@
     height: 80px;
     justify-content: space-between;
     padding: 0 48px;
+
+    &__logo {
+        min-width: 30px;
+        width: auto;
+    }
+
+    &__logo,
+    &__navigation,
+    &__profile-widget {
+        flex: auto;
+    }
+
+    @media (max-width: 768px) {
+        padding: 0 36px;
+    }
+
+    @media (max-width: 673px) {
+        padding: 0 24px;
+    }
+
+    @media (max-width: 580px) {
+        padding: 0 12px;
+    }
 }

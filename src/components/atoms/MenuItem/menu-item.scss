@@ -34,9 +34,44 @@
     background: rgba(0, 0, 0, 0.12);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 786px) {
     .menu-item {
+        font-size: $font-size-small;
         height: 100%;
-        width: 100%;
+        // width: 100%;
+    }
+}
+
+@media (max-width: 673px) {
+    .menu-item {
+        &__content {
+            padding: 0 20px;
+        }
+    }
+}
+
+@media (max-width: 610px) {
+    .menu-item {
+        &__content {
+            padding: 0 15px;
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    .menu-item {
+        font-size: $font-size-tiny;
+    }
+}
+
+@media (max-width: 530px) {
+    .menu-item {
+        &__content {
+            padding: 0 5px;
+        }
+
+        &__name {
+            padding-left: 0;
+        }
     }
 }

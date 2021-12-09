@@ -12,7 +12,7 @@ export const Header = () => (
     <a href={logoPath}>
       <Logo />
     </a>
-    <Navigation />
-    <ProfileWidget />
+    <Navigation className="header__navigation" />
+    <ProfileWidget className="header__profile-widget" />
   </header>
 );
