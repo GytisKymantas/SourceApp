@@ -1,3 +1,5 @@
+$_top-z-index: 1;
+
 .profile-widget {
     align-items: center;
     display: flex;
@@ -21,5 +23,6 @@
         position: absolute;
         right: 3px;
         top: 55px;
+        z-index: $_top-z-index;
     }
 }
