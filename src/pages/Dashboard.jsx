@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { StoriesSection } from "components/organisms/StoriesSection/StoriesSection";
 import { GreetingSection } from "components/molecules/GreetingSection/GreetingSection";
+
 export const Dashboard = (data) => {
   const userData = data.data?.userData[0];
   const firstName = userData?.userName.split(" ")[0];
