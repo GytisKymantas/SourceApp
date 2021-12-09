@@ -43,7 +43,7 @@
         top: -19%;
     }
 }
-@media (max-width: 375px) {
+@media (max-width: 400px) {
     .reservations-item__image-wrapper {
         img {
             height: 120px;
@@ -58,6 +58,17 @@
 
         p {
             font-size: $font-size-tiny;
+        }
+    }
+}
+@media (max-width: 330px) {
+    .reservations-item__header-container {
+        h2 {
+            font-size: $font-size-medium;
+        }
+
+        p {
+            font-size: $font-size-mini;
         }
     }
 }
