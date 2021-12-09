@@ -32,9 +32,7 @@ export const ReservationsSection = ({ reservationData }) => {
 
   return (
     <div className="reservations-section">
-      <div className="reservations-section__header-wrapper">
-        <h2 className="reservations-section__header">Reservations</h2>
-      </div>
+      <h2 className="reservations-section__header">Reservations</h2>
       <div className="reservations-section__element-container">
         {reservationArray
           ? reservationArray.map((obj, index) => {
