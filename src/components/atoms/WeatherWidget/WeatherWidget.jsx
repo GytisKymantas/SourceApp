@@ -3,17 +3,19 @@ import { useState, useEffect } from "react";
 import { ReactComponent as Rain } from "../../../assets/weatherRainy.svg";
 import { ReactComponent as Snow } from "../../../assets/weatherSnow.svg";
 import { ReactComponent as Thunderstorm } from "../../../assets/weatherThunderstorm.svg";
-import { ReactComponent as Sun } from "../../../assets/weatherSunny.svg";
-import { ReactComponent as Cloud } from "../../../assets/weatherCloudy.svg";
+import { ReactComponent as ClearDay } from "../../../assets/weatherClearSun.svg";
+import { ReactComponent as ClearNight } from "../../../assets/weatherClearMoon.svg";
+import { ReactComponent as CloudDay } from "../../../assets/weatherCloudySun.svg";
+import { ReactComponent as CloudNight } from "../../../assets/weatherCloudyMoon.svg";
 import { ReactComponent as Mist } from "../../../assets/weatherMist.svg";
 import { ReactComponent as Divider } from "../../../assets/divider.svg";
 import { ReactComponent as DropIcon } from "../../../assets/dropletIcon.svg";
 import { ReactComponent as WindIcon } from "../../../assets/windIcon.svg";
-
+import PropTypes from "prop-types";
 import "./weather-widget.scss";
 import { countries } from "country-data";
 
-export const WeatherWidget = () => {
+export const WeatherWidget = ({ time }) => {
   const api = "9b176ea0bfec0899a9f8b1d8250ffe11";
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -59,7 +61,10 @@ export const WeatherWidget = () => {
     : weatherId === 800
     ? (weather = "Clear sky")
     : (weather = "Mist");
-  let options = { weekday: "long", month: "long", day: "numeric" };
+  const options = { weekday: "long", month: "long", day: "numeric" };
+
+  const sunset = new Date(weatherData?.sys.sunset * 1000);
+  const sunrise = new Date(weatherData?.sys.sunrise * 1000);
 
   return (
     <div>
@@ -93,13 +98,21 @@ export const WeatherWidget = () => {
           </div>
           <div className="weather-data__icon">
             {weather === "Clear sky" ? (
-              <Sun />
+              time < sunset && time > sunrise ? (
+                <ClearDay />
+              ) : (
+                <ClearNight />
+              )
             ) : weather === "Rain" ? (
               <Rain />
             ) : weather === "Snow" ? (
               <Snow />
             ) : weather === "Cloudy" ? (
-              <Cloud />
+              time < sunset && time > sunrise ? (
+                <CloudDay />
+              ) : (
+                <CloudNight />
+              )
             ) : weather === "Mist" ? (
               <Mist />
             ) : (
@@ -112,4 +125,6 @@ export const WeatherWidget = () => {
   );
 };
 
-WeatherWidget.propTypes = {};
+WeatherWidget.propTypes = {
+  time: PropTypes.object,
+};
