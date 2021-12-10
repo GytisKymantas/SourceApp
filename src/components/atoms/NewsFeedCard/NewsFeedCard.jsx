@@ -4,7 +4,7 @@ import vectorPlay from "../../../assets/vectorPlay.svg";
 import vectorOval from "../../../assets/vectorOval.svg";
 import vectorComment from "../../../assets/vectorComment.svg";
 import vectorLikes from "../../../assets/vectorLikes.svg";
-import "../NewsFeedCard/news-Feed-Card.scss";
+import "../NewsFeedCard/news-feed-card.scss";
 
 const NewsFeedItem = ({
   userName,
