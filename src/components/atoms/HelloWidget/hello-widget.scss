@@ -1,4 +1,5 @@
 @import '../../../styles/base/base';
+$_font-size-xlarge-plus: 60px;
 
 .hello-widget {
     display: flex;
@@ -38,7 +39,6 @@
         text-align: center;
 
         &__time {
-            $font-size-xlarge-plus: 60px;
             font-size: $font-size-xlarge-plus;
             font-weight: $font-weight-medium;
         }
