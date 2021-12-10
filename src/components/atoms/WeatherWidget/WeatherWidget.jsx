@@ -65,7 +65,7 @@ export const WeatherWidget = ({ time }) => {
   const sunrise = new Date(weatherData?.sys.sunrise * 1000);
 
   return (
-    <div>
+    <>
       {!loading && (
         <div className="weather-data">
           <div className="weather-data__information">
@@ -119,7 +119,7 @@ export const WeatherWidget = ({ time }) => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
