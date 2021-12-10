@@ -39,7 +39,7 @@ $_font-size-xlarge-plus: 60px;
         text-align: center;
 
         &__time {
-            font-size: $font-size-xlarge-plus;
+            font-size: $_font-size-xlarge-plus;
             font-weight: $font-weight-medium;
         }
     }
