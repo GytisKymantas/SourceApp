@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { StoriesSection } from "components/organisms/StoriesSection/StoriesSection";
 import { GreetingSection } from "components/molecules/GreetingSection/GreetingSection";
+import { ViewEatOutCard } from "components/molecules/ViewEatOutCard/ViewEatOutCard";
 
 export const Dashboard = (data) => {
   const userData = data.data?.userData[0];
@@ -29,6 +30,7 @@ export const Dashboard = (data) => {
     <MainLayout>
       <GreetingSection name={firstName} />
       {storiesData && <StoriesSection data={storiesData} />}
+      <ViewEatOutCard />
     </MainLayout>
   );
 };
