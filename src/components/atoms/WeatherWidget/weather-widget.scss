@@ -9,28 +9,28 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
     display: flex;
     height: 214px;
     position: relative;
-    width: 528.45px;
+    width: 528.5px;
 
     &__information {
         border-radius: 10px;
         box-shadow: 0 8px 23px rgba(0, 0, 0, 0.25);
         height: 176px;
         position: relative;
-        width: 420.44px;
+        width: 420.5px;
 
         &__location {
             font-size: $font-size-tiny;
             letter-spacing: 1px;
             line-height: 14px;
-            padding: 8.74px 113.82px 0 18.58px;
+            padding: 9px 114px 0 19px;
             text-align: left;
         }
     }
 
     &__main-details {
-        bottom: 32.77px;
+        bottom: 33px;
         display: flex;
-        padding-left: 18.58px;
+        padding-left: 19px;
         position: absolute;
 
         &__temperature {
@@ -43,14 +43,14 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
             align-self: flex-end;
             font-size: $_font-size-description;
             font-weight: $font-weight-light;
-            margin-bottom: 9.83px;
+            margin-bottom: 10px;
         }
     }
 
     &__details {
         bottom: 0;
         display: flex;
-        padding: 0 0 7.74px 18.58px;
+        padding: 0 0 8px 19px;
         position: absolute;
 
         &__wind-speed {
@@ -70,14 +70,14 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
         }
 
         &__icon {
-            padding-right: 5.88px;
+            padding-right: 6px;
         }
     }
 
     &__divider {
-        bottom: 32.77px;
+        bottom: 33px;
         display: flex;
-        padding-left: 18.58px;
+        padding-left: 19px;
         position: absolute;
     }
 
@@ -92,7 +92,7 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
         width: 480px;
 
         &__information {
-            width: 371.99px;
+            width: 372px;
         }
     }
 }
@@ -107,7 +107,7 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
             width: 300px;
 
             &__location {
-                padding: 8.74px 18.58px 0;
+                padding: 9px 19px 0;
             }
         }
 
