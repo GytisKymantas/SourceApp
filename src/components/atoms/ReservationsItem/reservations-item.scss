@@ -6,6 +6,7 @@
     display: flex;
     height: 94px;
     min-width: 100px;
+
     position: relative;
     width: 416px;
 
@@ -36,29 +37,26 @@
             font-size: $font-size-tiny;
             font-weight: $font-weight-medium;
         }
+        @media (max-width: 400px) {
+            h2 {
+                font-size: $font-size-small;
+            }
+
+            p {
+                font-size: $font-size-mini;
+            }
+        }
     }
 
     &__image-wrapper {
         left: 61%;
         position: absolute;
         top: -19%;
-    }
-}
-@media (max-width: 400px) {
-    .reservations-item__image-wrapper {
-        img {
-            height: 120px;
-            width: 130px;
-        }
-    }
-
-    .reservations-item__header-container {
-        h2 {
-            font-size: $font-size-small;
-        }
-
-        p {
-            font-size: $font-size-mini;
+        @media (max-width: 400px) {
+            img {
+                height: 120px;
+                width: 130px;
+            }
         }
     }
 }

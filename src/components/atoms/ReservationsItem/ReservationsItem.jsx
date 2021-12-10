@@ -15,7 +15,11 @@ export const ReservationsItem = ({
       </p>
     </div>
     <div className="reservations-item__image-wrapper">
-      <img src={reservationImage} alt="Reservations category" />
+      <img
+        className="reservations-item__image"
+        src={reservationImage}
+        alt="Reservations category"
+      />
     </div>
   </div>
 );
