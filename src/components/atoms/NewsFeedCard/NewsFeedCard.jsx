@@ -9,6 +9,7 @@ import "../NewsFeedCard/news-feed-card.scss";
 const NewsFeedItem = ({
   userName,
   userImage,
+  postVideo,
   postLocation,
   postDate,
   postLikes,
@@ -25,13 +26,14 @@ const NewsFeedItem = ({
         <p className="card--time">{postDate}</p>
       </div>
     </div>
-    <div className="video">
-      <div className="icon">
+    {postVideo ? (
+      <div className="card__content-video">
         <img className="vector__one" src={vectorPlay} alt="" />
         <img className="vector__two" src={vectorOval} alt="" />
       </div>
-      <div className="photo">{userImage}</div>
-    </div>
+    ) : (
+      <div className="card__content-image">{userImage}</div>
+    )}
     <div className="actions">
       <button className="likes">
         <div className="likes__outline">
@@ -86,6 +88,7 @@ NewsFeedItem.propTypes = {
   postLocation: PropTypes.string,
   postDate: PropTypes.string,
   postLikes: PropTypes.number,
+  postVideo: PropTypes.string,
   postComments: PropTypes.arrayOf({
     usernName: PropTypes.string,
     postComments: PropTypes.string,
