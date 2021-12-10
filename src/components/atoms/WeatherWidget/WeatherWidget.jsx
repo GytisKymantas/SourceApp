@@ -68,12 +68,37 @@ export const WeatherWidget = ({ time }) => {
     <>
       {!loading && (
         <div className="weather-data">
-          <div className="weather-data__information">
-            <div className="weather-data__information__location">
+          <div className="weather-data__location">
+            {new Date().toLocaleDateString("en-GB", options)} |{" "}
+            {weatherData?.name}, {weatherData && countries[countryCode].name}
+          </div>
+          <div className="weather-data__details">
+            <div className="weather-data__details-main">
+              <span className="weather-data__details-main__temperature">
+                {Math.round(weatherData?.main.temp)}
+                {"\u00b0"}
+              </span>
+              <span className="weather-data__details-main__description">
+                {weather}
+              </span>
+            </div>
+            <Divider />
+            <div className="weather-data__details-secondary">
+              <span className="weather-data__details-secondary__wind-speed">
+                <WindIcon className="weather-data__details-secondary__icon" />{" "}
+                {windSpeed} m/s
+              </span>
+              <span className="weather-data__details-secondary__humidity">
+                <DropIcon className="weather-data__details-secondary__icon" />
+                {humidity} mm
+              </span>
+            </div>
+            {/* <div className="weather-data__information">
+            <div className="weather-data__information-location">
               {new Date().toLocaleDateString("en-GB", options)} |{" "}
               {weatherData?.name}, {weatherData && countries[countryCode].name}
-            </div>
-            <div className="weather-data__main-details">
+            </div>*/}
+            {/* <div className="weather-data__main-details">
               <span className="weather-data__main-details__temperature">
                 {Math.round(weatherData?.main.temp)}
                 {"\u00b0"}
@@ -82,8 +107,8 @@ export const WeatherWidget = ({ time }) => {
                 {weather}
               </span>
             </div>
-            <Divider className="weather-data__divider" />
-            <div className="weather-data__details">
+            <Divider className="weather-data__divider" /> */}
+            {/* <div className="weather-data__details">
               <span className="weather-data__details__wind-speed">
                 <WindIcon className="weather-data__details__icon" /> {windSpeed}{" "}
                 m/s
@@ -92,7 +117,7 @@ export const WeatherWidget = ({ time }) => {
                 <DropIcon className="weather-data__details__icon" />
                 {humidity} mm
               </span>
-            </div>
+            </div> */}
           </div>
           <div className="weather-data__icon">
             {weather === "Clear sky" ? (
