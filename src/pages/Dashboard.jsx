@@ -1,4 +1,5 @@
 import { MainLayout } from "components/layouts/MainLayout/MainLayout";
+import { ReservationsSection } from "components/molecules/ReservationsSection/ReservationsSection";
 import React from "react";
 import { useState, useEffect } from "react";
 import { StoriesSection } from "components/organisms/StoriesSection/StoriesSection";
@@ -8,6 +9,7 @@ import { ViewEatOutCard } from "components/molecules/ViewEatOutCard/ViewEatOutCa
 export const Dashboard = (data) => {
   const userData = data.data?.userData[0];
   const firstName = userData?.userName.split(" ")[0];
+  const reservationData = userData?.reservations;
   const [storiesData, setStoriesData] = useState();
 
   useEffect(() => {
@@ -29,6 +31,7 @@ export const Dashboard = (data) => {
   return (
     <MainLayout>
       <GreetingSection name={firstName} />
+      <ReservationsSection reservationData={reservationData} />
       {storiesData && <StoriesSection data={storiesData} />}
       <ViewEatOutCard />
     </MainLayout>
