@@ -1,17 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import globe from "../../../assets/globe.svg";
-import map from "../../../assets/map.svg";
+import map from "../../../assets/map pin.svg";
 import heartImage from "../../../assets/heart.svg";
 import "./restaurant-card.scss";
-import userImage from "../../../assets/CheckIn.svg";
 import redHeart from "../../../assets/redheart.svg";
+import vectorImage from "../../../assets/Vector.svg";
+import personIcon from "../../../assets/personIcon.svg";
 import { useLocation } from "react-router";
+import { Button } from "components/atoms/Button/Button";
 
 export const RestaurantCard = ({ restaurantData }) => {
-  const userImage = "bla";
-  const vectorImage = "bla";
   const location = useLocation();
+  const restaurantCheckin = restaurantData.restaurants[0].checkIns;
   const restaurantName = restaurantData.restaurants[0].name;
   const retaurantWebsite = restaurantData.restaurants[0].website;
   const restaurantAddress = restaurantData.restaurants[0].location.address;
@@ -20,13 +21,20 @@ export const RestaurantCard = ({ restaurantData }) => {
   const restaurantDescription = restaurantData.restaurants[0].description;
   const restaurantCategories = restaurantData.restaurants[0].categories;
   const restaurantImage = restaurantData.restaurants[0].image;
-  console.log(restaurantOpeningHours);
+
+  const funkyfunction = () => {
+    return 2 * 3;
+  };
+
   return (
     <div className="restaurant__container">
       {location.pathname === "/dashboard" ? (
         <div className="restaurant__container-front">
           {location.pathname === "/dashboard" ? (
-            <img className="user-image" src={userImage} alt="user" />
+            <div className="restaurant__user-image">
+              <img src={personIcon} alt="person" />
+              <span>{restaurantCheckin}</span>
+            </div>
           ) : (
             ""
           )}
@@ -48,9 +56,9 @@ export const RestaurantCard = ({ restaurantData }) => {
             </ul>
             <div className="restaurant__container-image-heart">
               {location.pathname === "/dashboard" ? (
-                <img src={heartImage} alt="heart" />
+                <img src={heartImage} alt="heart " />
               ) : (
-                <img src={redHeart} alt="heart" />
+                <img src={redHeart} alt="heart filled red" />
               )}
             </div>
             <div className="restaurant__container-image-text">
@@ -65,19 +73,19 @@ export const RestaurantCard = ({ restaurantData }) => {
       {location.pathname === "/dashboard" ? (
         <div className="restaurant__container-hidden">
           <div className="restaurant__container-examples">
-            <span>
+            <span className="restaurant__website">
               <img src={globe} alt="globe" />
               {retaurantWebsite}
             </span>
-            <span>
+            <span className="restaurant__address">
               <img src={map} alt="map" />
               {restaurantAddress}
             </span>
           </div>
-          <p>{restaurantDescription}</p>
+          <p className="restaurant__description">{restaurantDescription}</p>
           <div className="restaurant__container-buttons">
             <button>READ MORE</button>
-            <button>CHECK-IN</button>
+            <Button label={"CHECK-IN"} onClick={funkyfunction()} />
           </div>
         </div>
       ) : (
@@ -88,15 +96,5 @@ export const RestaurantCard = ({ restaurantData }) => {
 };
 
 RestaurantCard.propTypes = {
-  // headerImage: PropTypes.string,
-  // userImage: PropTypes.string,
-  // vectorImage: PropTypes.string,
-  // heartImage: PropTypes.string,
-  // restaurantName: PropTypes.string,
-  // retaurantWebsite: PropTypes.string,
-  // restaurantAddress: PropTypes.string,
-  // restaurantOpeningHours: PropTypes.string,
-  // restaurantDescription: PropTypes.string,
-  // restaurantCategories: PropTypes.string,
   restaurantData: PropTypes.object,
 };
