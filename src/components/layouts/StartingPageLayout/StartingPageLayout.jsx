@@ -9,9 +9,9 @@ export const StartingPageLayout = ({ title, subtitle, children }) => (
     <div className="starting-page-layout__logo-container">
       <TeamSpaceLogo />
     </div>
-    <div className="starting-page-layout__header">
-      <h2 className="starting-page-layout__header__title">{title}</h2>
-      <p className="starting-page-layout__header__subtitle">{subtitle}</p>
+    <div className="starting-page-layout__container">
+      <h2 className="starting-page-layout__container--title">{title}</h2>
+      <p className="starting-page-layout__container--subtitle">{subtitle}</p>
       {children}
     </div>
   </div>
