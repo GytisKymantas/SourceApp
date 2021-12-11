@@ -59,7 +59,8 @@ $_color-lynch: #627485;
         margin-left: 16px;
         margin-top: 16px;
 
-        :nth-child(2) {
+        &-present {
+            display: flex;
             padding-right: 12px;
         }
 

@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Avatar } from "../Avatar/Avatar";
 import { ReactComponent as EventCardGraphics } from "../../../assets/eventCardGraphics.svg";
 import { ReactComponent as EventCardDivider } from "../../../assets/eventCardDivider.svg";
 import { ReactComponent as PresentIconClear } from "../../../assets/presentIconClear.svg";
+import { ReactComponent as PresentIconColor } from "../../../assets/presentIconColor.svg";
 import { ReactComponent as CommentIcon } from "../../../assets/commentIcon.svg";
-
 import "./event-card.scss";
 
-export const EventCard = () => {
+export const EventCard = (data) => {
+  const [present, setPresent] = useState(false);
+  const wishes = data?.data[0].wishes;
+  const comments = data?.data[0].comments.length;
+  const name = data?.data[0].userName;
+  const date = data?.data[0].birthdayDate;
+
+  const handlePresentClick = () => {
+    setPresent((prevValue) => !prevValue);
+  };
+
   return (
     <>
       <div className="card">
@@ -17,17 +27,25 @@ export const EventCard = () => {
         <EventCardGraphics className="card__details-graphics" />
 
         <div className="card__details">
-          <div className="card__details-name">Firstname Lastname</div>
+          <div className="card__details-name">{name}</div>
           {/* prideti kad celebrates today */}
           <div className="card__details-birthday">
-            Celebrated a birthday on{" "}
+            Celebrated a birthday on {date}
           </div>
           <div className="card__details-wish">Send a wish!</div>
         </div>
         <EventCardDivider className="card__divider" />
         <div className="card__icons">
-          <PresentIconClear /> <span className="card__icons-number">17</span>{" "}
-          <CommentIcon /> <span className="card__icons-number">0</span>
+          <div
+            className="card__icons-present"
+            onClick={handlePresentClick}
+            onKeyDown={handlePresentClick}
+            aria-hidden="true"
+          >
+            {present ? <PresentIconClear /> : <PresentIconColor />}
+            <span className="card__icons-number">{wishes}</span>
+          </div>
+          <CommentIcon /> <span className="card__icons-number">{comments}</span>
         </div>
       </div>
     </>
