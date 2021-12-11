@@ -112,20 +112,20 @@ export const RegistrationPage = () => {
     }
   };
 
-  const checkPasswordRequirements = (str) => {
-    if (str.length < 6) {
+  const checkPasswordRequirements = (pass) => {
+    if (pass.length < 6) {
       setPasswordWarningMessage("Must be at least 6 characters long");
       setRedBorder(true);
       return false;
-    } else if (str.search(/\d/) === -1) {
+    } else if (pass.search(/\d/) === -1) {
       setPasswordWarningMessage("Must include a number");
       setRedBorder(true);
       return false;
-    } else if (str.search(/[a-z]/) === -1) {
+    } else if (pass.search(/[a-z]/) === -1) {
       setPasswordWarningMessage("Must include a lowercase letter");
       setRedBorder(true);
       return false;
-    } else if (str.search(/[A-Z]/) === -1) {
+    } else if (pass.search(/[A-Z]/) === -1) {
       setPasswordWarningMessage("Must include an uppercase letter");
       setRedBorder(true);
       return false;
