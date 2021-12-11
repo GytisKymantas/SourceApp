@@ -1,21 +1,19 @@
-.container {
-    align-items: flex-end;
-    bottom: 0;
-    display: flex;
-    height: 239px;
-    width: 416px;
-}
-
 .card {
-    align-items: center;
+    align-items: flex-start;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     display: flex;
     height: 191.5px;
+    justify-content: center;
+    margin-top: 72px;
     top: 48px;
     width: 416px;
 
-    &__image div:first-child {
-        transform: scale(2.4);
+    &__image {
+        margin-top: -16px;
+
+        div:first-child {
+            transform: scale(2.4);
+        }
     }
 }
