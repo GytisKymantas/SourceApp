@@ -8,7 +8,7 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
     display: flex;
     height: 201px;
     position: relative;
-    width: 528.5px;
+    width: 526.5px;
 
     &__box {
         border-radius: 10px;
@@ -76,10 +76,44 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
     }
 
     &__icon {
-        align-self: center;
-        display: flex;
         flex-direction: column;
         position: absolute;
-        right: 2.6px;
+        right: 0;
+    }
+}
+
+@media (max-width: 950px) {
+    .weather-data {
+        width: 475.8px;
+
+        &__box {
+            width: 372px;
+        }
+
+        &__icon {
+            right: -21px;
+            transform: scale(0.8);
+        }
+    }
+}
+
+@media (max-width: 890px) {
+    .weather-data {
+        height: 176px;
+        width: 372px;
+
+        &__box {
+            margin: 0;
+            width: 300px;
+        }
+
+        &__location {
+            padding-right: 0;
+        }
+
+        &__icon {
+            right: -53px;
+            transform: scale(0.5);
+        }
     }
 }
