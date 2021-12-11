@@ -70,7 +70,7 @@ export const RestaurantCard = ({ restaurantData }) => {
       ) : (
         ""
       )}
-      {location.pathname === "/dashboard" ? (
+      {location.pathname === "/eatout" ? (
         <div className="restaurant__container-hidden">
           <div className="restaurant__container-examples">
             <span className="restaurant__website">
