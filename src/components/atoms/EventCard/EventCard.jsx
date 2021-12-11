@@ -5,9 +5,11 @@ import "./event-card.scss";
 export const EventCard = () => {
   return (
     <>
-      <div className="card">
-        <div className="card__image">
-          <Avatar hasIcon={false} />
+      <div className="container">
+        <div className="card">
+          <div className="card__image">
+            <Avatar hasIcon={false} />
+          </div>
         </div>
       </div>
     </>
