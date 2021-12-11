@@ -286,7 +286,7 @@ export const RegistrationPage = () => {
             <div className="registration-form-container__actions">
               <Button type="submit" label="register" isLarge={true} />
               <p className="registration-form-container__actions-text">
-                Already have an account?{" "}
+                Already have an account?&nbsp;
                 <a
                   className="registration-form-container__actions-text-link"
                   href="/"

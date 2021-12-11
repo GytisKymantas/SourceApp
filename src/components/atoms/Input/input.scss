@@ -34,9 +34,7 @@
         }
     }
 
-    &__required,
-    &__passwords,
-    &__no-match {
+    &__warning-text {
         color: $color-watermelon;
         font-size: $font-size-mini;
         font-weight: $font-weight-medium;

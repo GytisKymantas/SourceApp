@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 
 import "./input.scss";
 
@@ -29,24 +30,24 @@ export const Input = ({
       name={name}
       value={value}
       placeholder={placeholder}
-      className={`input-container__input ${isFilled ? "" : "is-blank"} ${
-        isFilled && isPasswordField && !passwordsMatch && warningInput
-          ? "is-blank"
-          : ""
-      } ${isFilled && !doCredentialsMatch && isSubmitted ? "is-blank" : ""}
-        }`}
+      className={classNames("input-container__input", {
+        "is-blank":
+          !isFilled ||
+          (isFilled && isPasswordField && !passwordsMatch && warningInput) ||
+          (isFilled && !doCredentialsMatch && isSubmitted),
+      })}
       onChange={onChange}
       onBlur={onBlur}
       onFocus={onFocus}
     />
     {!isFilled && (
-      <p className="input-container__required">Field is required</p>
+      <p className="input-container__warning-text">Field is required</p>
     )}
     {isFilled && isPasswordField && !passwordsMatch && showPasswordAlert && (
-      <p className="input-container__passwords">Passwords do not match</p>
+      <p className="input-container__warning-text">Passwords do not match</p>
     )}
     {isFilled && !doCredentialsMatch && isSubmitted && (
-      <p className="input-container__no-match">
+      <p className="input-container__warning-text">
         Couldn&apos;t find your account or password do not match
       </p>
     )}
