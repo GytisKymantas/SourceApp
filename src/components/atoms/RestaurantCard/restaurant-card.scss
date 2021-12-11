@@ -1,21 +1,31 @@
 @import '../../../styles/base/base';
 
-.restaurant {
+.restaurant__container {
     border-radius: 8px;
     text-align: start !important;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+    width: 416px;
 
-    // front
-    &__front {
+    &-front {
         position: relative;
-        margin-left: 16px;
-        width: 416px;
-        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
         margin-bottom: 15px;
         border-radius: 8px;
+        height: 229px;
+
+        .user-image {
+            position: absolute;
+            top: 5%;
+            left: 6%;
+        }
     }
 
-    // frame
-    &__frame {
+    &-image-wrapper {
+        background-position: center !important;
+        background-size: cover !important;
+        height: 180px;
+    }
+
+    &-frame {
         position: absolute;
         left: 79%;
         top: 7%;
@@ -39,25 +49,30 @@
             line-height: 16px;
         }
     }
-    // ordererd list
-    & ul {
+
+    &-footer {
+        padding-bottom: 20px;
+        position: absolute;
+        top: 55%;
+        width: 100%;
+    }
+
+    .ordered-list {
         display: flex;
-        padding: 0;
+        padding: 0 0 0 20px;
         gap: 32px;
         text-transform: uppercase;
         font-weight: $font-weight-medium;
         font-size: $font-size-mini;
         line-height: 150%;
         color: $color-dark-gray;
-        margin-left: 20px;
 
         & li:first-of-type {
             list-style-type: none;
         }
     }
 
-    // text footer
-    &__image-text {
+    &-image-text {
         margin-left: 20px;
         font-weight: $font-weight-medium;
         line-height: 28px;
@@ -67,6 +82,7 @@
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
+            margin: 0;
         }
 
         & span {
@@ -75,16 +91,16 @@
             line-height: 150%;
         }
     }
-    &__image-heart {
+    &-image-heart {
         float: right;
         margin-right: 15px;
     }
 
-    &__hidden {
+    &-hidden {
         margin-left: 20px;
         padding-bottom: 10px;
     }
-    &__examples {
+    &-examples {
         display: flex;
         flex-direction: column;
         gap: 5px;
@@ -107,7 +123,7 @@
         color: $color-dark-gray;
     }
 
-    &__buttons {
+    &-buttons {
         display: flex;
         justify-content: flex-end;
         gap: 20px;
