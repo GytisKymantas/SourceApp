@@ -5,15 +5,23 @@ $_color-black-transparent-05: rgba(0, 0, 0, 0.5);
 $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
 
 .weather-data {
-    border-radius: 10px;
-    box-shadow: 0 8px 23px rgba(0, 0, 0, 0.25);
-    color: $_color-black-transparent-05;
     display: flex;
-    flex-direction: column;
-    height: 158px;
-    margin-bottom: auto;
-    padding: 9px 0 9px 19px;
-    width: 401.5px;
+    height: 201px;
+    position: relative;
+    width: 528.5px;
+
+    &__box {
+        border-radius: 10px;
+        box-shadow: 0 8px 23px rgba(0, 0, 0, 0.25);
+        color: $_color-black-transparent-05;
+        display: flex;
+        flex-direction: column;
+        height: 158px;
+        margin-bottom: auto;
+        padding: 9px 0 9px 19px;
+        position: relative;
+        width: 401.5px;
+    }
 
     &__location {
         font-size: $font-size-tiny;
@@ -68,8 +76,10 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
     }
 
     &__icon {
-        align-self: flex-end;
+        align-self: center;
         display: flex;
         flex-direction: column;
+        position: absolute;
+        right: 2.6px;
     }
 }
