@@ -207,10 +207,10 @@ export const RegistrationPage = () => {
   return (
     <div className="registration-page">
       <StartingPageLayout>
-        <div className="form-container">
+        <div className="registration-form-container">
           <form onSubmit={handleSubmit}>
-            <div className="form-container__fname-lname">
-              <div className="form-container__fname">
+            <div className="registration-form-container__fname-lname">
+              <div className="registration-form-container__fname">
                 <Input
                   name="fName"
                   labelText="First name"
@@ -222,7 +222,7 @@ export const RegistrationPage = () => {
                   isFilled={isFirstNameFilled}
                 />
               </div>
-              <div className="form-container__lname">
+              <div className="registration-form-container__lname">
                 <Input
                   name="lName"
                   labelText="Last name"
@@ -235,7 +235,7 @@ export const RegistrationPage = () => {
                 />
               </div>
             </div>
-            <div className="form-container__email">
+            <div className="registration-form-container__email">
               <Input
                 type="email"
                 name="email"
@@ -248,8 +248,8 @@ export const RegistrationPage = () => {
                 isFilled={isEmailFilled}
               />
             </div>
-            <div className="form-container__passwords">
-              <div className="form-container__password">
+            <div className="registration-form-container__passwords">
+              <div className="registration-form-container__password">
                 <Input
                   type="password"
                   name="password"
@@ -265,7 +265,7 @@ export const RegistrationPage = () => {
                   warningInput={warningInput}
                 />
               </div>
-              <div className="form-container__password-repeat">
+              <div className="registration-form-container__password-repeat">
                 <Input
                   type="password"
                   name="passwordRepeat"
@@ -283,11 +283,14 @@ export const RegistrationPage = () => {
                 />
               </div>
             </div>
-            <div className="form-container__actions">
+            <div className="registration-form-container__actions">
               <Button type="submit" label="register" isLarge={true} />
-              <p className="form-container__actions-text">
+              <p className="registration-form-container__actions-text">
                 Already have an account?{" "}
-                <a className="form-container__actions-text-link" href="/">
+                <a
+                  className="registration-form-container__actions-text-link"
+                  href="/"
+                >
                   Sign in
                 </a>
               </p>
