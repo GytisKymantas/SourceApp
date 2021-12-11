@@ -17,9 +17,10 @@ export const Input = ({
   isPasswordField,
   passwordsMatch,
   showPasswordAlert,
-  warningInput,
+  redBorder,
   doCredentialsMatch,
   isSubmitted,
+  passwordWarningMessage,
 }) => (
   <div className="input-container">
     <label htmlFor={name} className="input-container__label">
@@ -31,10 +32,11 @@ export const Input = ({
       value={value}
       placeholder={placeholder}
       className={classNames("input-container__input", {
-        "is-blank":
+        "red-border":
           !isFilled ||
-          (isFilled && isPasswordField && !passwordsMatch && warningInput) ||
-          (isFilled && !doCredentialsMatch && isSubmitted),
+          (isFilled && isPasswordField && !passwordsMatch && redBorder) ||
+          (isFilled && !doCredentialsMatch && isSubmitted) ||
+          (isFilled && redBorder),
       })}
       onChange={onChange}
       onBlur={onBlur}
@@ -50,6 +52,9 @@ export const Input = ({
       <p className="input-container__warning-text">
         Couldn&apos;t find your account or password do not match
       </p>
+    )}
+    {!!passwordWarningMessage && (
+      <p className="input-container__warning-text">{passwordWarningMessage}</p>
     )}
   </div>
 );
@@ -71,7 +76,8 @@ Input.propTypes = {
   isPasswordField: PropTypes.bool,
   passwordsMatch: PropTypes.bool,
   showPasswordAlert: PropTypes.bool,
-  warningInput: PropTypes.bool,
+  redBorder: PropTypes.bool,
   doCredentialsMatch: PropTypes.bool,
   isSubmitted: PropTypes.bool,
+  passwordWarningMessage: PropTypes.string,
 };

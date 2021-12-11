@@ -19,7 +19,8 @@ export const RegistrationPage = () => {
   const [isPasswordRepeatFilled, setIsPasswordRepeatFilled] = useState(true);
   const [doPasswordsMatch, setDoPasswordsMatch] = useState(false);
   const [showPasswordAlert, setShowPasswordAlert] = useState(false);
-  const [warningInput, setWarningInput] = useState(false);
+  const [redBorder, setRedBorder] = useState(false);
+  const [passwordWarningMessage, setPasswordWarningMessage] = useState("");
 
   // All commented lines will be relevant after login implementation
   // let navigate = useNavigate();
@@ -30,11 +31,23 @@ export const RegistrationPage = () => {
     markRequiredFields();
 
     setDoPasswordsMatch(false);
+    setPasswordWarningMessage("");
 
     const passwordsMatch = checkPasswordsMatch();
+
+    if (!passwordsMatch) {
+      return;
+    }
+
+    const passwordsMeetsRequirements = checkPasswordRequirements(password);
+
+    if (!passwordsMeetsRequirements) {
+      return;
+    }
+
     const canSubmit = isAllInputsFilled();
 
-    if (passwordsMatch && canSubmit) {
+    if (passwordsMatch && passwordsMeetsRequirements && canSubmit) {
       saveToSessionStorage();
       resetInputFields();
       // navigate("../", { replace: true });
@@ -88,15 +101,36 @@ export const RegistrationPage = () => {
       passwordRepeat !== ""
     ) {
       setDoPasswordsMatch(true);
-      setWarningInput(false);
+      setRedBorder(false);
       setShowPasswordAlert(false);
       return true;
     } else {
       setDoPasswordsMatch(false);
-      setWarningInput(true);
+      setRedBorder(true);
       setShowPasswordAlert(true);
       return false;
     }
+  };
+
+  const checkPasswordRequirements = (str) => {
+    if (str.length < 6) {
+      setPasswordWarningMessage("Must be at least 6 characters long");
+      setRedBorder(true);
+      return false;
+    } else if (str.search(/\d/) === -1) {
+      setPasswordWarningMessage("Must include a number");
+      setRedBorder(true);
+      return false;
+    } else if (str.search(/[a-z]/) === -1) {
+      setPasswordWarningMessage("Must include a lowercase letter");
+      setRedBorder(true);
+      return false;
+    } else if (str.search(/[A-Z]/) === -1) {
+      setPasswordWarningMessage("Must include an uppercase letter");
+      setRedBorder(true);
+      return false;
+    }
+    return true;
   };
 
   const resetInputFields = () => {
@@ -112,7 +146,8 @@ export const RegistrationPage = () => {
     setIsPasswordRepeatFilled(true);
     setDoPasswordsMatch(false);
     setShowPasswordAlert(false);
-    setWarningInput(false);
+    setRedBorder(false);
+    setPasswordWarningMessage("");
   };
 
   // FIRST NAME
@@ -170,7 +205,8 @@ export const RegistrationPage = () => {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
     setShowPasswordAlert(false);
-    setWarningInput(false);
+    setRedBorder(false);
+    setPasswordWarningMessage("");
   };
 
   const handlePasswordBlur = () => {
@@ -189,7 +225,8 @@ export const RegistrationPage = () => {
   const handlePasswordRepeatChange = (e) => {
     setPasswordRepeat(e.target.value);
     setShowPasswordAlert(false);
-    setWarningInput(false);
+    setRedBorder(false);
+    setPasswordWarningMessage("");
   };
 
   const handlePasswordRepeatBlur = () => {
@@ -262,7 +299,7 @@ export const RegistrationPage = () => {
                   isFilled={isPasswordFilled}
                   isPasswordField={true}
                   passwordsMatch={doPasswordsMatch}
-                  warningInput={warningInput}
+                  redBorder={redBorder}
                 />
               </div>
               <div className="registration-form-container__password-repeat">
@@ -279,7 +316,8 @@ export const RegistrationPage = () => {
                   isPasswordField={true}
                   passwordsMatch={doPasswordsMatch}
                   showPasswordAlert={showPasswordAlert}
-                  warningInput={warningInput}
+                  redBorder={redBorder}
+                  passwordWarningMessage={passwordWarningMessage}
                 />
               </div>
             </div>
