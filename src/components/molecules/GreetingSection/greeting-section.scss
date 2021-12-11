@@ -1,6 +1,7 @@
 .greeting-section {
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
     justify-content: space-between;
     margin-bottom: 72px;
 
@@ -14,7 +15,7 @@
     }
 }
 
-@media (max-width: 690px) {
+@media (max-width: 782px) {
     .greeting-section {
         align-items: center;
         flex-direction: column;
