@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { RegistrationPage } from "components/molecules/RegistrationPage/RegistrationPage";
+import { RegistrationPage } from "pages/RegistrationPage/RegistrationPage";
 import { Dashboard } from "pages/Dashboard";
 import { Reservations } from "pages/Reservations";
 import { EatOut } from "pages/EatOut";
