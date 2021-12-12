@@ -4,8 +4,8 @@ import { Dashboard } from "pages/Dashboard";
 import { Reservations } from "pages/Reservations";
 import { EatOut } from "pages/EatOut";
 import { NotFound } from "pages/NotFound";
-
 import { useState, useEffect } from "react";
+
 function App() {
   const [userData, setUserData] = useState();
 
