@@ -10,12 +10,13 @@ import "./event-card.scss";
 
 export const EventCard = (data) => {
   Moment.locale("en");
-
   const birthdayData = data?.data[0];
+
   let wishes = birthdayData.wishes;
   const comments = birthdayData.comments.length;
   const name = birthdayData.userName;
   const date = birthdayData.birthdayDate;
+  const image = birthdayData.userImage;
 
   const [present, setPresent] = useState(false);
 
@@ -27,7 +28,7 @@ export const EventCard = (data) => {
     <>
       <div className="card">
         <div className="card__image">
-          <Avatar hasIcon={false} />
+          <Avatar hasIcon={false} imageSource={image} />
         </div>
         <EventCardGraphics className="card__details-graphics" />
 
