@@ -9,12 +9,15 @@ import Moment from "moment";
 import "./event-card.scss";
 
 export const EventCard = (data) => {
-  const [present, setPresent] = useState(false);
-  const wishes = data?.data[0].wishes;
-  const comments = data?.data[0].comments.length;
-  const name = data?.data[0].userName;
-  const date = data?.data[0].birthdayDate;
   Moment.locale("en");
+
+  const birthdayData = data?.data[0];
+  let wishes = birthdayData.wishes;
+  const comments = birthdayData.comments.length;
+  const name = birthdayData.userName;
+  const date = birthdayData.birthdayDate;
+
+  const [present, setPresent] = useState(false);
 
   const handlePresentClick = () => {
     setPresent((prevValue) => !prevValue);
@@ -46,7 +49,9 @@ export const EventCard = (data) => {
             aria-hidden="true"
           >
             {present ? <PresentIconClear /> : <PresentIconColor />}
-            <span className="card__icons-number">{wishes}</span>
+            <span className="card__icons-number">
+              {present ? wishes : (wishes = wishes + 1)}
+            </span>
           </div>
           <CommentIcon /> <span className="card__icons-number">{comments}</span>
         </div>
