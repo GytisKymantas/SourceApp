@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { StartingPageLayout } from "components/layouts/StartingPageLayout/StartingPageLayout";
 import { Input } from "components/atoms/Input/Input";
 import { Button } from "components/atoms/Button/Button";
@@ -22,8 +22,7 @@ export const RegistrationPage = () => {
   const [redBorder, setRedBorder] = useState(false);
   const [passwordWarningMessage, setPasswordWarningMessage] = useState("");
 
-  // All commented lines will be relevant after login implementation
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,7 +49,7 @@ export const RegistrationPage = () => {
     if (passwordsMatch && passwordsMeetsRequirements && canSubmit) {
       saveToSessionStorage();
       resetInputFields();
-      // navigate("../", { replace: true });
+      navigate("../", { replace: true });
     }
   };
 
