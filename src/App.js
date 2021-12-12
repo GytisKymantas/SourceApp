@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Dashboard } from "pages/Dashboard";
 import { Reservations } from "pages/Reservations";
 import { EatOut } from "pages/EatOut";
-import { NotFound } from "pages/NotFound";
 import { useState, useEffect } from "react";
+import { LoginPage } from "pages/LoginPage/LoginPage";
+import { NotFound } from "pages/NotFound/NotFound";
 
 function App() {
   const [userData, setUserData] = useState();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -25,30 +27,57 @@ function App() {
       );
   }, []);
 
+  let isUserLoggedIn = sessionStorage.getItem("loggedIn");
+
+  useEffect(() => {
+    if (isUserLoggedIn === "true") {
+      setIsLoggedIn(true);
+    }
+
+    if (isUserLoggedIn === "false") {
+      sessionStorage.setItem("loggedIn", "false");
+      setIsLoggedIn(false);
+    }
+  }, [isLoggedIn, isUserLoggedIn]);
+
   return (
     <div className="app">
       <Router>
         <Routes>
-          <Route path="/dashboard" element={<Dashboard data={userData} />} />
-          <Route path="/dashboard/reservations" element={<Reservations />} />
           <Route
-            path="/dashboard/reservations/meetingrooms"
-            element={<Reservations />}
+            path="/"
+            element={<LoginPage setIsLoggedIn={setIsLoggedIn} />}
           />
-          <Route
-            path="/dashboard/reservations/books"
-            element={<Reservations />}
-          />
-          <Route
-            path="/dashboard/reservations/devices"
-            element={<Reservations />}
-          />
-          <Route path="/dashboard/eatout" element={<EatOut />} />
-          <Route path="/dashboard/eatout/category" element={<EatOut />} />
-          <Route
-            path="/dashboard/eatout/category/single"
-            element={<EatOut />}
-          />
+          {isLoggedIn && (
+            <>
+              <Route
+                path="/dashboard"
+                element={<Dashboard data={userData} />}
+              />
+              <Route
+                path="/dashboard/reservations"
+                element={<Reservations />}
+              />
+              <Route
+                path="/dashboard/reservations/meetingrooms"
+                element={<Reservations />}
+              />
+              <Route
+                path="/dashboard/reservations/books"
+                element={<Reservations />}
+              />
+              <Route
+                path="/dashboard/reservations/devices"
+                element={<Reservations />}
+              />
+              <Route path="/dashboard/eatout" element={<EatOut />} />
+              <Route path="/dashboard/eatout/category" element={<EatOut />} />
+              <Route
+                path="/dashboard/eatout/category/single"
+                element={<EatOut />}
+              />
+            </>
+          )}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
