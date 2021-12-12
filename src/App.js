@@ -6,6 +6,7 @@ import { EatOut } from "pages/EatOut";
 import { RatingBadge } from "components/atoms/RatingBadge";
 import { NotFound } from "pages/NotFound";
 import { useState, useEffect } from "react";
+
 function App() {
   const [userData, setUserData] = useState();
 
