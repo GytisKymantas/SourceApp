@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Avatar } from "../Avatar/Avatar";
+import { Avatar } from "../../atoms/Avatar/Avatar";
 import { ReactComponent as EventCardGraphics } from "../../../assets/eventCardGraphics.svg";
 import { ReactComponent as EventCardDivider } from "../../../assets/eventCardDivider.svg";
 import { ReactComponent as PresentIconClear } from "../../../assets/presentIconClear.svg";
 import { ReactComponent as PresentIconColor } from "../../../assets/presentIconColor.svg";
 import { ReactComponent as CommentIcon } from "../../../assets/commentIcon.svg";
+import Moment from "moment";
 import "./event-card.scss";
 
 export const EventCard = (data) => {
@@ -13,6 +14,7 @@ export const EventCard = (data) => {
   const comments = data?.data[0].comments.length;
   const name = data?.data[0].userName;
   const date = data?.data[0].birthdayDate;
+  Moment.locale("en");
 
   const handlePresentClick = () => {
     setPresent((prevValue) => !prevValue);
@@ -30,7 +32,8 @@ export const EventCard = (data) => {
           <div className="card__details-name">{name}</div>
           {/* prideti kad celebrates today */}
           <div className="card__details-birthday">
-            Celebrated a birthday on {date}
+            Celebrated a birthday on{" "}
+            <span>{Moment(date).format("MMM Do")}</span>
           </div>
           <div className="card__details-wish">Send a wish!</div>
         </div>
