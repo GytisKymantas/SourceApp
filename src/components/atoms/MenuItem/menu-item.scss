@@ -36,9 +36,9 @@
 
 @media (max-width: 786px) {
     .menu-item {
-        font-size: $font-size-small;
+        // font-size: $font-size-small;
         height: 100%;
-        // width: 100%;
+        width: 100%;
     }
 }
 
@@ -72,6 +72,26 @@
 
         &__name {
             padding-left: 0;
+        }
+    }
+}
+
+@media (max-width: 415px) {
+    .menu-item {
+        font-size: $font-size-mini;
+
+        &__icon {
+            transform: scale(0.8);
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .menu-item {
+        font-size: $font-size-mini;
+
+        &__icon {
+            transform: scale(0.6);
         }
     }
 }

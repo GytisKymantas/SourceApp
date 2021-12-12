@@ -9,10 +9,16 @@ const logoPath = "/dashboard";
 
 export const Header = () => (
   <header className="header">
-    <a href={logoPath}>
-      <Logo />
-    </a>
-    <Navigation className="header__navigation" />
-    <ProfileWidget className="header__profile-widget" />
+    <div className="header__logo">
+      <a href={logoPath}>
+        <Logo />
+      </a>
+    </div>
+    <div className="header__navigation">
+      <Navigation />
+    </div>
+    <div className="header__profile-widget">
+      <ProfileWidget />
+    </div>
   </header>
 );
