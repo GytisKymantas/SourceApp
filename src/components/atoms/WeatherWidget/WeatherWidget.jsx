@@ -25,7 +25,7 @@ export const WeatherWidget = ({ time }) => {
     countryCode = null;
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(CallAPI);
+    navigator.geolocation.getCurrentPosition(CallAPI, errorCallback);
   }, []);
 
   const CallAPI = (position) => {
@@ -42,6 +42,8 @@ export const WeatherWidget = ({ time }) => {
         setLoading(false);
       });
   };
+
+  const errorCallback = (error) => alert("Location permission not granted");
 
   weatherId = weatherData?.weather[0].id;
   windSpeed = weatherData?.wind.speed;
