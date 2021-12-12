@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import globe from "../../../assets/globe.svg";
-import map from "../../../assets/map pin.svg";
-import heartImage from "../../../assets/heart.svg";
+import globe from "../../../assets/globeIcon.svg";
+import map from "../../../assets/mapPinIcon.svg";
+import heartImage from "../../../assets/clearHeartIcon.svg";
 import "./restaurant-card.scss";
-import redHeart from "../../../assets/redheart.svg";
+import redHeart from "../../../assets/redHeartIcon.svg";
 import vectorImage from "../../../assets/Vector.svg";
 import personIcon from "../../../assets/personIcon.svg";
 import { useLocation } from "react-router";
