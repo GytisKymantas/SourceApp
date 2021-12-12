@@ -38,13 +38,13 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
         &-main {
             display: flex;
 
-            &__temperature {
+            :first-child {
                 color: $_color-black-transparent-07;
                 font-size: $_font-size-temperature;
                 font-weight: $font-weight-light;
             }
 
-            &__description {
+            :nth-child(2) {
                 align-self: flex-end;
                 font-size: $_font-size-description;
                 font-weight: $font-weight-light;
@@ -58,19 +58,19 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
             font-weight: $font-weight-light;
             margin-top: 8px;
 
-            &__wind-speed {
+            :first-child {
+                padding-right: 6px;
+            }
+
+            :nth-child(2) {
+                align-items: center;
+                display: flex;
+            }
+
+            span:first-child {
                 align-items: center;
                 display: flex;
                 padding-right: 30px;
-            }
-
-            &__humidity {
-                align-items: center;
-                display: flex;
-            }
-
-            &__icon {
-                padding-right: 6px;
             }
         }
     }

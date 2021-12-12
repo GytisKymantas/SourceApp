@@ -75,22 +75,19 @@ export const WeatherWidget = ({ time }) => {
             </div>
             <div className="weather-data__details">
               <div className="weather-data__details-main">
-                <span className="weather-data__details-main__temperature">
+                <span>
                   {Math.round(weatherData?.main.temp)}
                   {"\u00b0"}
                 </span>
-                <span className="weather-data__details-main__description">
-                  {weather}
-                </span>
+                <span>{weather}</span>
               </div>
               <Divider />
               <div className="weather-data__details-secondary">
-                <span className="weather-data__details-secondary__wind-speed">
-                  <WindIcon className="weather-data__details-secondary__icon" />{" "}
-                  {windSpeed} m/s
+                <span>
+                  <WindIcon /> {windSpeed} m/s
                 </span>
-                <span className="weather-data__details-secondary__humidity">
-                  <DropIcon className="weather-data__details-secondary__icon" />
+                <span>
+                  <DropIcon />
                   {humidity} mm
                 </span>
               </div>
