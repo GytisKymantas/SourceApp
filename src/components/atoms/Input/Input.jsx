@@ -50,7 +50,7 @@ export const Input = ({
     )}
     {isFilled && !doCredentialsMatch && isSubmitted && (
       <p className="input-container__warning-text">
-        Couldn&apos;t find your account or password do not match
+        Couldn&apos;t find your account or wrong password
       </p>
     )}
     {!!passwordWarningMessage && (
