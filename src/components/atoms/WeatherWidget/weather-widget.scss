@@ -17,9 +17,7 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
         display: flex;
         flex-direction: column;
         height: 158px;
-        margin-bottom: auto;
         padding: 9px 0 9px 19px;
-        position: relative;
         width: 401.5px;
     }
 
@@ -76,7 +74,6 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
     }
 
     &__icon {
-        flex-direction: column;
         position: absolute;
         right: 0;
     }
