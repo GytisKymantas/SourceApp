@@ -19,7 +19,6 @@ export const RegistrationPage = () => {
   const [isPasswordRepeatFilled, setIsPasswordRepeatFilled] = useState(true);
   const [doPasswordsMatch, setDoPasswordsMatch] = useState(false);
   const [showPasswordAlert, setShowPasswordAlert] = useState(false);
-  const [redBorder, setRedBorder] = useState(false);
   const [passwordWarningMessage, setPasswordWarningMessage] = useState("");
 
   let navigate = useNavigate();
@@ -100,12 +99,10 @@ export const RegistrationPage = () => {
       passwordRepeat !== ""
     ) {
       setDoPasswordsMatch(true);
-      setRedBorder(false);
       setShowPasswordAlert(false);
       return true;
     } else {
       setDoPasswordsMatch(false);
-      setRedBorder(true);
       setShowPasswordAlert(true);
       return false;
     }
@@ -114,19 +111,15 @@ export const RegistrationPage = () => {
   const checkPasswordRequirements = (pass) => {
     if (pass.length < 6) {
       setPasswordWarningMessage("Must be at least 6 characters long");
-      setRedBorder(true);
       return false;
     } else if (pass.search(/\d/) === -1) {
       setPasswordWarningMessage("Must include a number");
-      setRedBorder(true);
       return false;
     } else if (pass.search(/[a-z]/) === -1) {
       setPasswordWarningMessage("Must include a lowercase letter");
-      setRedBorder(true);
       return false;
     } else if (pass.search(/[A-Z]/) === -1) {
       setPasswordWarningMessage("Must include an uppercase letter");
-      setRedBorder(true);
       return false;
     }
     return true;
@@ -145,7 +138,6 @@ export const RegistrationPage = () => {
     setIsPasswordRepeatFilled(true);
     setDoPasswordsMatch(false);
     setShowPasswordAlert(false);
-    setRedBorder(false);
     setPasswordWarningMessage("");
   };
 
@@ -203,8 +195,6 @@ export const RegistrationPage = () => {
   // PASSWORD
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
-    setShowPasswordAlert(false);
-    setRedBorder(false);
     setPasswordWarningMessage("");
   };
 
@@ -218,13 +208,13 @@ export const RegistrationPage = () => {
 
   const handlePasswordFocus = () => {
     setIsPasswordFilled(true);
+    setShowPasswordAlert(false);
   };
 
   // PASSWORD REPEAT
   const handlePasswordRepeatChange = (e) => {
     setPasswordRepeat(e.target.value);
     setShowPasswordAlert(false);
-    setRedBorder(false);
     setPasswordWarningMessage("");
   };
 
@@ -238,6 +228,7 @@ export const RegistrationPage = () => {
 
   const handlePasswordRepeatFocus = () => {
     setIsPasswordRepeatFilled(true);
+    setShowPasswordAlert(false);
   };
 
   return (
@@ -296,9 +287,9 @@ export const RegistrationPage = () => {
                   onBlur={handlePasswordBlur}
                   onFocus={handlePasswordFocus}
                   isFilled={isPasswordFilled}
-                  isPasswordField={true}
                   passwordsMatch={doPasswordsMatch}
-                  redBorder={redBorder}
+                  showPasswordAlert={showPasswordAlert}
+                  passwordWarningMessage={passwordWarningMessage}
                 />
               </div>
               <div className="registration-form-container__password-repeat">
@@ -312,10 +303,8 @@ export const RegistrationPage = () => {
                   onBlur={handlePasswordRepeatBlur}
                   onFocus={handlePasswordRepeatFocus}
                   isFilled={isPasswordRepeatFilled}
-                  isPasswordField={true}
                   passwordsMatch={doPasswordsMatch}
                   showPasswordAlert={showPasswordAlert}
-                  redBorder={redBorder}
                   passwordWarningMessage={passwordWarningMessage}
                 />
               </div>
