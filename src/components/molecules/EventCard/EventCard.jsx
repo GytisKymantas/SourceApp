@@ -95,8 +95,9 @@ export const EventCard = (data) => {
                 </div>
               ))}
 
-              <div className="comments-box">
+              <div className="comments__box">
                 <input
+                  className="comments__box-input"
                   value={commentValue}
                   onInput={(e) => setCommentValue(e.target.value)}
                   placeholder="Send a wish!"
