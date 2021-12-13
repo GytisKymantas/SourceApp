@@ -51,7 +51,7 @@ export const Dashboard = (data) => {
       {restaurantData && (
         <RestaurantCard
           restaurantData={restaurantData}
-          displayFullCard={false}
+          displayFullCard={true}
         />
       )}
       <ViewEatOutCard />
