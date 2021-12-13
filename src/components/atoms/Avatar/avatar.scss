@@ -1,5 +1,4 @@
 .avatar {
-    cursor: pointer;
     max-height: 40px;
     max-width: 40px;
 
@@ -12,5 +11,9 @@
 
     &__logo {
         margin-left: -12px;
+    }
+
+    &__clickable {
+        cursor: pointer;
     }
 }
