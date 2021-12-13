@@ -3,8 +3,8 @@
 .restaurant__container {
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-    text-align: start;
     margin-bottom: 40px;
+    text-align: start;
     width: 416px;
 
     &-front {
@@ -115,8 +115,8 @@
     }
 
     .restaurant__description {
-        width: 368px;
         padding-top: 7px;
+        width: 368px;
     }
 
     .restaurant__user-image {

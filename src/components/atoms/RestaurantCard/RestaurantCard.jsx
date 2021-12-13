@@ -19,7 +19,7 @@ export const RestaurantCard = ({ restaurantData, displayFullCard }) => {
   const restaurantDescription = restaurantList.description;
   const restaurantCategories = restaurantList.categories;
   const restaurantImage = restaurantList.image;
-  console.log(restaurantWebsite);
+
   const funkyfunction = () => {
     return 2 * 3;
   };
@@ -87,5 +87,5 @@ export const RestaurantCard = ({ restaurantData, displayFullCard }) => {
 
 RestaurantCard.propTypes = {
   restaurantData: PropTypes.object,
-  displayFullCard: PropTypes.bool,
+  displayFullCard: PropTypes.bool.isRequired,
 };
