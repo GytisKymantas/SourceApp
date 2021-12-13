@@ -42,7 +42,7 @@ export const EventCard = (data) => {
     <>
       <div className="card">
         <div className="card__image">
-          <Avatar hasIcon={false} imageSource={image} />
+          <Avatar hasIcon={false} imageSource={image} isClickable={false} />
         </div>
         <EventCardGraphics className="card__details-graphics" />
 
