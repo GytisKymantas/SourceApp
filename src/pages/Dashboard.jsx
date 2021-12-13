@@ -51,7 +51,12 @@ export const Dashboard = (data) => {
       <HelloWidget name={firstName} />
       <ReservationsSection reservationData={reservationData} />
       {storiesData && <StoriesSection data={storiesData} />}
-      {restaurantData && <RestaurantCard restaurantData={restaurantData} />}
+      {restaurantData && (
+        <RestaurantCard
+          restaurantData={restaurantData}
+          displayFullCard={false}
+        />
+      )}
       <ViewEatOutCard />
     </MainLayout>
   );

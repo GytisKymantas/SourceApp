@@ -4,12 +4,12 @@
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     text-align: start;
+    margin-bottom: 40px;
     width: 416px;
 
     &-front {
         border-radius: 8px;
         height: 229px;
-        margin-bottom: 15px;
         position: relative;
 
         .user-image {
@@ -105,7 +105,7 @@
     .restaurant__address {
         align-items: center;
         display: flex;
-        gap: 5px;
+        gap: 10px;
         text-transform: uppercase;
 
         img {
@@ -116,6 +116,7 @@
 
     .restaurant__description {
         width: 368px;
+        padding-top: 7px;
     }
 
     .restaurant__user-image {
@@ -152,13 +153,13 @@
     &-examples {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 10px;
         margin-top: 5px;
 
         .restaurant__website {
             align-items: center;
             display: flex;
-            gap: 5px;
+            gap: 10px;
             line-height: 22px;
             text-transform: uppercase;
         }
@@ -177,8 +178,7 @@
         display: flex;
         gap: 20px;
         justify-content: flex-end;
-        margin-bottom: 20px;
-        margin-right: 20px;
+        padding: 15px 24px 24px 0;
 
         button:first-child {
             background: transparent;
