@@ -72,9 +72,9 @@ export const EventCard = (data) => {
               {comments.map((item, index) => (
                 <div className="card--expanded__comments" key={index}>
                   <div>
-                    <span>{item.userName}</span>{" "}
-                    <span>{Moment(item.date).format("MM/DD/YYYY HH:mm")}</span>{" "}
-                  </div>{" "}
+                    <span>{item.userName}</span>
+                    <span>{Moment(item.date).format("MM/DD/YYYY HH:mm")}</span>
+                  </div>
                   <span>{item.comment}</span>
                 </div>
               ))}
