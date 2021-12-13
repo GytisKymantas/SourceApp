@@ -20,7 +20,7 @@ export const RestaurantCard = ({ restaurantData, displayFullCard }) => {
   const restaurantCategories = restaurantList.categories;
   const restaurantImage = restaurantList.image;
 
-  const funkyfunction = () => {
+  const placeholderFunction = () => {
     return 2 * 3;
   };
 
@@ -38,8 +38,10 @@ export const RestaurantCard = ({ restaurantData, displayFullCard }) => {
           }}
         ></div>
         <div className="restaurant__container-frame">
+          {/* // placeholder */}
           <img src={vectorImage} alt="vector" />
           <span>4.5</span>
+          {/* // placeholder */}
         </div>
         <div className="restaurant__container-footer">
           <ul className="ordered-list">
@@ -75,7 +77,7 @@ export const RestaurantCard = ({ restaurantData, displayFullCard }) => {
           <p className="restaurant__description">{restaurantDescription}</p>
           <div className="restaurant__container-buttons">
             <button>READ MORE</button>
-            <Button label={"CHECK-IN"} onClick={funkyfunction()} />
+            <Button label={"CHECK-IN"} onClick={placeholderFunction()} />
           </div>
         </div>
       ) : (
