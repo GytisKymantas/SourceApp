@@ -36,6 +36,7 @@ export const EventCard = (data) => {
       date: Moment(new Date()).format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
     };
     setComs([...coms, userComment]);
+    setCommentValue("");
   };
 
   return (
