@@ -75,9 +75,7 @@ $_color-lynch: #627485;
     }
 
     &--expanded__comments {
-        align-items: center;
         font-size: $font-size-mini;
-        font-weight: $font-weight-regular;
         padding: 5px 0;
 
         &--divider {
@@ -90,7 +88,6 @@ $_color-lynch: #627485;
 
             span:first-child {
                 font-weight: $font-weight-medium;
-                padding-bottom: 3px;
                 text-transform: uppercase;
             }
         }
