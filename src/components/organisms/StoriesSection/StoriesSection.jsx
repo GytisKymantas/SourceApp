@@ -7,7 +7,7 @@ export const StoriesSection = ({ data }) => {
 
   return (
     <div className="section">
-      <EventCard data={Birthdays} />
+      {Birthdays && <EventCard data={Birthdays[0]} />}
     </div>
   );
 };
