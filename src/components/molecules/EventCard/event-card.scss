@@ -60,7 +60,7 @@ $_color-lynch: #627485;
         display: flex;
         font-size: $font-size-tiny;
         font-weight: $font-weight-medium;
-        margin: 16px 0 0 16px;
+        margin: 16px;
 
         &-present {
             display: flex;
@@ -74,27 +74,32 @@ $_color-lynch: #627485;
         }
     }
 
-    &--expanded__comments {
-        font-size: $font-size-mini;
-        padding: 5px 0;
+    &--expanded {
+        display: flex;
+        flex-direction: column;
 
-        &--divider {
-            margin-top: 0;
+        &__divider {
+            margin: 0 auto 3px;
         }
 
-        :first-child {
-            display: flex;
-            justify-content: space-between;
+        &__comments {
+            font-size: $font-size-mini;
+            padding: 5px 0;
+
+            :first-child {
+                display: flex;
+                justify-content: space-between;
+            }
 
             span:first-child {
                 font-weight: $font-weight-medium;
                 text-transform: uppercase;
             }
-        }
 
-        :nth-child(2) {
-            display: flex;
-            padding-bottom: 5px;
+            :nth-child(2) {
+                display: flex;
+                padding-bottom: 5px;
+            }
         }
     }
 }
