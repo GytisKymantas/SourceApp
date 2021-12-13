@@ -114,3 +114,24 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
         }
     }
 }
+
+@media (max-width: 360px) {
+    .weather-data {
+        height: 176px;
+        width: 300px;
+
+        &__box {
+            margin: 0;
+            width: 228px;
+        }
+
+        &__location {
+            padding-right: 0;
+        }
+
+        &__icon {
+            right: -52.75px;
+            transform: scale(0.4);
+        }
+    }
+}
