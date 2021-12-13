@@ -28,9 +28,6 @@ export const Dashboard = (data) => {
           // handle error here
         }
       );
-  }, []);
-
-  useEffect(() => {
     fetch(
       "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/stories.json"
     )

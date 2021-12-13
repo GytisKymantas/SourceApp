@@ -55,7 +55,7 @@ export const RestaurantCard = ({ restaurantData, displayFullCard }) => {
             )}
           </div>
           <div className="restaurant__container-image-text">
-            <h2>{restaurantName}</h2>
+            <h2 title={restaurantName}>{restaurantName}</h2>
             <span>{restaurantOpeningHours}</span>
           </div>
         </div>
