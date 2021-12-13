@@ -11,12 +11,11 @@ import "./event-card.scss";
 
 export const EventCard = (data) => {
   Moment.locale("en");
-  const birthdayData = data?.data[0];
-  let wishes = birthdayData.wishes;
-  let comments = birthdayData.comments;
-  const name = birthdayData.userName;
-  const date = birthdayData.birthdayDate;
-  const image = birthdayData.userImage;
+  let wishes = data?.data.wishes;
+  let comments = data?.data.comments;
+  const name = data?.data.userName;
+  const date = data?.data.birthdayDate;
+  const image = data?.data.userImage;
 
   const [present, setPresent] = useState(false);
   const [showComments, setShowComments] = useState(false);
