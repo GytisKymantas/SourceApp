@@ -1,0 +1,22 @@
+@import '../../../styles/base/base';
+
+.news-section {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 72px;
+
+    &__header {
+        display: flex;
+        font-size: $font-size-large;
+        font-weight: $font-weight-heavy;
+        line-height: 32px;
+    }
+
+    &__container-side {
+        display: flex;
+    }
+
+    &__container-middle {
+        display: flex;
+    }
+}
