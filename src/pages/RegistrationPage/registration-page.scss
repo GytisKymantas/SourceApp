@@ -8,8 +8,7 @@
 }
 
 .registration-form-container {
-    &__fname-lname,
-    &__passwords {
+    &__two-inputs {
         display: flex;
     }
 
@@ -46,7 +45,7 @@
     }
 }
 
-@media (max-width: 415px) {
+@media (max-width: 425px) {
     .registration-page {
         height: auto;
         padding-bottom: 20px;
@@ -55,8 +54,7 @@
     .registration-form-container {
         height: 580px;
 
-        &__fname-lname,
-        &__passwords {
+        &__two-inputs {
             flex-direction: column;
         }
 

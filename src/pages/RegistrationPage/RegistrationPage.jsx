@@ -236,7 +236,7 @@ export const RegistrationPage = () => {
       <StartingPageLayout>
         <div className="registration-form-container">
           <form onSubmit={handleSubmit}>
-            <div className="registration-form-container__fname-lname">
+            <div className="registration-form-container__two-inputs">
               <div className="registration-form-container__fname">
                 <Input
                   name="fName"
@@ -275,7 +275,7 @@ export const RegistrationPage = () => {
                 isFilled={isEmailFilled}
               />
             </div>
-            <div className="registration-form-container__passwords">
+            <div className="registration-form-container__two-inputs">
               <div className="registration-form-container__password">
                 <Input
                   type="password"
