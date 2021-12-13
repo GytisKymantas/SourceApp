@@ -2,76 +2,90 @@
 $_color-lynch: #627485;
 
 .card {
-  align-items: center;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-  display: flex;
-  flex-direction: column;
-  height: 191.5px;
-  justify-content: flex-start;
-  margin-top: 48px;
-  position: relative;
-  width: 416px;
-
-  &__image {
-    margin-top: -24px;
-    transform: scale(2.4);
-  }
-
-  &__details {
-    color: $color-midnight;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
-    font-size: $font-size-tiny;
-    font-weight: $font-weight-medium;
-    position: absolute;
-    top: 65.5px;
+    // height: 191.5px;
+    justify-content: flex-start;
+    margin-top: 48px;
+    position: relative;
+    width: 416px;
 
-    &-graphics {
-      display: flex;
+    &__image {
+        margin-top: -24px;
+        transform: scale(2.4);
     }
 
-    &-name {
-      line-height: 150%;
-      text-transform: uppercase;
-    }
-
-    &-birthday {
-      font-weight: $font-weight-regular;
-
-      :first-child {
+    &__details {
+        color: $color-midnight;
+        display: flex;
+        flex-direction: column;
+        font-size: $font-size-tiny;
         font-weight: $font-weight-medium;
-      }
+        position: absolute;
+        top: 65.5px;
+
+        &-graphics {
+            display: flex;
+        }
+
+        &-name {
+            line-height: 150%;
+            text-transform: uppercase;
+        }
+
+        &-birthday {
+            font-weight: $font-weight-regular;
+
+            :first-child {
+                font-weight: $font-weight-medium;
+            }
+        }
+
+        &-birthday,
+        &-wish {
+            line-height: 16px;
+        }
     }
 
-    &-birthday,
-    &-wish {
-      line-height: 16px;
-    }
-  }
-
-  &__divider {
-    display: flex;
-    margin-top: 24px;
-  }
-
-  &__icons {
-    align-self: flex-start;
-    display: flex;
-    font-size: $font-size-tiny;
-    font-weight: $font-weight-medium;
-    margin-left: 16px;
-    margin-top: 16px;
-
-    &-present {
-      display: flex;
-      padding-right: 12px;
+    &__divider {
+        display: flex;
+        margin-top: 24px;
     }
 
-    &-number {
-      color: $_color-lynch;
-      line-height: 150%;
-      margin: auto 0 auto 8px;
+    &__icons {
+        align-self: flex-start;
+        display: flex;
+        font-size: $font-size-tiny;
+        font-weight: $font-weight-medium;
+        margin: 16px;
+
+        &-present {
+            display: flex;
+            padding-right: 12px;
+        }
+
+        &-number {
+            color: $_color-lynch;
+            line-height: 150%;
+            margin: auto 0 auto 8px;
+        }
     }
-  }
+
+    &--expanded {
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-direction: column;
+        width: 416px;
+
+        :nth-child(3) {
+            display: flex;
+            font-size: $font-size-mini;
+            font-weight: $font-weight-regular;
+            justify-content: space-between;
+        }
+    }
 }

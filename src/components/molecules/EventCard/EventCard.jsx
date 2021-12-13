@@ -13,17 +13,21 @@ export const EventCard = (data) => {
   const birthdayData = data?.data[0];
 
   let wishes = birthdayData.wishes;
-  const comments = birthdayData.comments.length;
+  const comments = birthdayData.comments;
   const name = birthdayData.userName;
   const date = birthdayData.birthdayDate;
   const image = birthdayData.userImage;
 
   const [present, setPresent] = useState(false);
+  const [showComments, setShowComments] = useState(false);
 
   const handlePresentClick = () => {
     setPresent((prevValue) => !prevValue);
   };
 
+  const handleCommentClick = () => {
+    setShowComments((prevValue) => !prevValue);
+  };
   return (
     <>
       <div className="card">
@@ -54,7 +58,25 @@ export const EventCard = (data) => {
               {present ? wishes : (wishes = wishes + 1)}
             </span>
           </div>
-          <CommentIcon /> <span className="card__icons-number">{comments}</span>
+          <CommentIcon
+            onClick={handleCommentClick}
+            onKeyDown={handleCommentClick}
+            aria-hidden="true"
+          />{" "}
+          <span className="card__icons-number">{comments.length}</span>
+        </div>
+        <div>
+          {showComments && (
+            <div className="card--expanded">
+              {comments.map((item, index) => (
+                <div className="author" key={index}>
+                  <span>{item.userName}</span>
+                  <span>{item.comment}</span>
+                  <span>{Moment(item.date).format("MM/DD/YYYY HH:mm")}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </>
