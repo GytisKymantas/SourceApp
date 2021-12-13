@@ -81,6 +81,8 @@ $_color-lynch: #627485;
     &--expanded {
         display: flex;
         flex-direction: column;
+        padding: 0 19px;
+        text-align: justify;
 
         &__divider {
             margin: 0 auto 3px;
