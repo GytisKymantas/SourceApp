@@ -48,11 +48,17 @@ export const EventCard = (data) => {
 
         <div className="card__details">
           <div className="card__details-name">{name}</div>
-          {/* prideti kad celebrates today */}
-          <div className="card__details-birthday">
-            Celebrated a birthday on{" "}
-            <span>{Moment(date).format("MMM Do")}</span>
-          </div>
+          {Moment(date).format("MMM Do") ===
+          Moment(new Date()).format("MMM Do") ? (
+            <div className="card__details-birthday">
+              Celebrates a birthday <span>today</span>
+            </div>
+          ) : (
+            <div className="card__details-birthday">
+              Celebrated a birthday on{" "}
+              <span>{Moment(date).format("MMM Do")}</span>
+            </div>
+          )}
           <div className="card__details-wish">Send a wish!</div>
         </div>
         <EventCardDivider className="card__divider" />
