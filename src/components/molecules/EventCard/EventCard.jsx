@@ -69,9 +69,9 @@ export const EventCard = (data) => {
             onKeyDown={handlePresentClick}
             aria-hidden="true"
           >
-            {present ? <PresentIconClear /> : <PresentIconColor />}
+            {present ? <PresentIconColor /> : <PresentIconClear />}
             <span className="card__icons-number">
-              {present ? wishes : (wishes = wishes + 1)}
+              {present ? (wishes = wishes + 1) : wishes}
             </span>
           </div>
           <CommentIcon
