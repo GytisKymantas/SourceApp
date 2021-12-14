@@ -36,38 +36,16 @@
 
 @media (max-width: 786px) {
     .menu-item {
-        // font-size: $font-size-small;
         height: 100%;
-        width: 100%;
-    }
-}
-
-@media (max-width: 673px) {
-    .menu-item {
-        &__content {
-            padding: 0 20px;
-        }
-    }
-}
-
-@media (max-width: 610px) {
-    .menu-item {
-        &__content {
-            padding: 0 15px;
-        }
     }
 }
 
 @media (max-width: 560px) {
     .menu-item {
         font-size: $font-size-tiny;
-    }
-}
 
-@media (max-width: 530px) {
-    .menu-item {
         &__content {
-            padding: 0 5px;
+            padding: 0 10px;
         }
 
         &__name {
@@ -80,6 +58,10 @@
     .menu-item {
         font-size: $font-size-mini;
 
+        &__content {
+            padding: 0 5px;
+        }
+
         &__icon {
             transform: scale(0.8);
         }
@@ -88,8 +70,6 @@
 
 @media (max-width: 350px) {
     .menu-item {
-        font-size: $font-size-mini;
-
         &__icon {
             transform: scale(0.6);
         }

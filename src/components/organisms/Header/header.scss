@@ -9,15 +9,21 @@
     justify-content: space-between;
     padding: 0 48px;
 
+    &__logo,
+    &__profile-widget {
+        flex-shrink: 3;
+    }
+
     &__logo {
-        flex: auto;
+        flex-basis: 80px;
+    }
+
+    &__navigation {
+        flex-shrink: 1;
     }
 
     @media (max-width: 768px) {
-        // padding: 0 36px;
-    }
-
-    @media (max-width: 673px) {
+        justify-content: space-around;
         padding: 0 24px;
     }
 
@@ -32,15 +38,6 @@
 
     @media (max-width: 450px) {
         padding: 0 8px;
-
-        &__logo,
-        &__profile-widget {
-            transform: scale(0.6);
-        }
-    }
-
-    @media (max-width: 375px) {
-        padding: 0 4px;
 
         &__logo,
         &__profile-widget {
