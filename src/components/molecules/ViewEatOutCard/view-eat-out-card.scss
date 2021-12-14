@@ -24,4 +24,10 @@
         margin-bottom: 12px;
         text-align: center;
     }
+
+    @media (max-width: 410px) {
+        &__text {
+            font-size: $font-size-medium;
+        }
+    }
 }
