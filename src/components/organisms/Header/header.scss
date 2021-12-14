@@ -10,16 +10,9 @@
     padding: 0 48px;
 
     &__logo,
+    &__navigation,
     &__profile-widget {
-        flex-shrink: 3;
-    }
-
-    &__logo {
-        flex-basis: 80px;
-    }
-
-    &__navigation {
-        flex-shrink: 1;
+        flex: initial;
     }
 
     @media (max-width: 768px) {
