@@ -14,9 +14,11 @@
 
     &__container-side {
         display: flex;
+        flex-direction: column;
     }
 
     &__container-middle {
         display: flex;
+        flex-direction: column;
     }
 }
