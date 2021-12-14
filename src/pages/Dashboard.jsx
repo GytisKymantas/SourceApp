@@ -11,6 +11,7 @@ export const Dashboard = (data) => {
   const userData = data.data?.userData[0];
   const firstName = userData?.userName.split(" ")[0];
   const reservationData = userData?.reservations;
+  // const restaurantList = restaurantData?.restaurants[0];
   const [storiesData, setStoriesData] = useState();
   const [restaurantData, setRestaurantData] = useState();
 
@@ -50,8 +51,17 @@ export const Dashboard = (data) => {
       {storiesData && <StoriesSection data={storiesData} />}
       {restaurantData && (
         <RestaurantCard
-          restaurantData={restaurantData}
           displayFullCard={true}
+          numberOfCheckIns={restaurantData?.restaurants[0].checkIns}
+          restaurantName={restaurantData?.restaurants[0].name}
+          restaurantWebsite={restaurantData?.restaurants[0].website.slice(7)}
+          restaurantAddress={restaurantData?.restaurants[0].location.address}
+          restaurantOpeningHours={
+            restaurantData?.restaurants[0].openingHours[0].hours
+          }
+          restaurantDescription={restaurantData?.restaurants[0].description}
+          restaurantCategories={restaurantData?.restaurants[0].categories}
+          restaurantImage={restaurantData?.restaurants[0].image}
         />
       )}
       <ViewEatOutCard />

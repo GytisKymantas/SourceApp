@@ -9,27 +9,23 @@ import vectorImage from "../../../assets/Vector.svg";
 import personIcon from "../../../assets/personIcon.svg";
 import { Button } from "components/atoms/Button/Button";
 
-export const RestaurantCard = ({ restaurantData, displayFullCard }) => {
-  const restaurantList = restaurantData.restaurants[0];
-  const restaurantCheckin = restaurantList.checkIns;
-  const restaurantName = restaurantList.name;
-  const restaurantWebsite = restaurantList.website.slice(7);
-  const restaurantAddress = restaurantList.location.address;
-  const restaurantOpeningHours = restaurantList.openingHours[0].hours;
-  const restaurantDescription = restaurantList.description;
-  const restaurantCategories = restaurantList.categories;
-  const restaurantImage = restaurantList.image;
-
-  const placeholderFunction = () => {
-    return 2 * 3;
-  };
-
+export const RestaurantCard = ({
+  displayFullCard,
+  numberOfCheckIns,
+  restaurantName,
+  restaurantWebsite,
+  restaurantAddress,
+  restaurantOpeningHours,
+  restaurantDescription,
+  restaurantCategories,
+  restaurantImage,
+}) => {
   return (
     <div className="restaurant__container">
       <div className="restaurant__container-front">
         <div className="restaurant__user-image">
           <img src={personIcon} alt="person" />
-          <span>{restaurantCheckin}</span>
+          <span>{numberOfCheckIns}</span>
         </div>
         <div
           className="restaurant__container-image-wrapper"
@@ -77,17 +73,23 @@ export const RestaurantCard = ({ restaurantData, displayFullCard }) => {
           <p className="restaurant__description">{restaurantDescription}</p>
           <div className="restaurant__container-buttons">
             <button>READ MORE</button>
-            <Button label={"CHECK-IN"} onClick={placeholderFunction()} />
+            <Button label={"CHECK-IN"} />
           </div>
         </div>
-      ) : (
-        ""
-      )}
+      ) : null}
     </div>
   );
 };
 
 RestaurantCard.propTypes = {
-  restaurantData: PropTypes.object,
   displayFullCard: PropTypes.bool.isRequired,
+  restaurantList: PropTypes.object,
+  numberOfCheckIns: PropTypes.object,
+  restaurantName: PropTypes.object,
+  restaurantWebsite: PropTypes.object,
+  restaurantAddress: PropTypes.object,
+  restaurantOpeningHours: PropTypes.object,
+  restaurantDescription: PropTypes.object,
+  restaurantCategories: PropTypes.object,
+  restaurantImage: PropTypes.object,
 };
