@@ -23,7 +23,7 @@ export const RestaurantCard = ({
   return (
     <div className="restaurant__container">
       <div className="restaurant__container-front">
-        <div className="restaurant__user-image">
+        <div className="restaurant__people-number">
           <img src={personIcon} alt="person" />
           <span>{numberOfCheckIns}</span>
         </div>
@@ -47,7 +47,7 @@ export const RestaurantCard = ({
           </ul>
           <div className="restaurant__container-image-heart">
             {!displayFullCard ? (
-              <img src={heartImage} alt="heart " />
+              <img src={heartImage} alt="clear heart" />
             ) : (
               <img src={redHeart} alt="heart filled red" />
             )}
