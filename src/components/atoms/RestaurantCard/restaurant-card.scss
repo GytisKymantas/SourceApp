@@ -1,0 +1,193 @@
+@import '../../../styles/base/base';
+
+.restaurant__container {
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    margin-bottom: 40px;
+    text-align: start;
+    width: 416px;
+
+    &-front {
+        border-radius: 8px;
+        height: 229px;
+        position: relative;
+
+        .user-image {
+            left: 6%;
+            position: absolute;
+            top: 5%;
+        }
+    }
+
+    &-image-wrapper {
+        background-position: center !important;
+        background-size: cover !important;
+        height: 180px;
+    }
+
+    &-frame {
+        background: $color-yellow;
+        border-radius: 8px;
+        height: 32px;
+        left: 79%;
+        position: absolute;
+        top: 16px;
+        width: 68px;
+
+        img {
+            left: 17%;
+            position: absolute;
+            top: 25%;
+        }
+
+        span {
+            font-size: $font-size-small;
+            font-weight: bold;
+            left: 50%;
+            line-height: 16px;
+            position: absolute;
+            top: 23%;
+        }
+    }
+
+    &-footer {
+        padding-bottom: 20px;
+        position: absolute;
+        top: 55%;
+        width: 100%;
+    }
+
+    .ordered-list {
+        color: $color-dark-gray;
+        display: flex;
+        font-size: $font-size-mini;
+        font-weight: $font-weight-medium;
+        gap: 32px;
+        line-height: 150%;
+        padding: 0 0 0 20px;
+        text-transform: uppercase;
+
+        li:first-of-type {
+            list-style-type: none;
+        }
+    }
+
+    &-image-text {
+        font-weight: $font-weight-medium;
+        line-height: 28px;
+        margin-left: 20px;
+
+        h2 {
+            margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 75%;
+        }
+
+        span {
+            color: $color-dark-gray;
+            font-size: $font-size-mini;
+            line-height: 150%;
+        }
+    }
+
+    &-image-heart {
+        float: right;
+        margin-right: 15px;
+    }
+
+    &-hidden {
+        margin-left: 20px;
+        padding-bottom: 10px;
+    }
+
+    .restaurant__address {
+        align-items: center;
+        display: flex;
+        gap: 10px;
+        text-transform: uppercase;
+
+        img {
+            height: 23px;
+            width: 24px;
+        }
+    }
+
+    .restaurant__description {
+        padding-top: 7px;
+        width: 368px;
+    }
+
+    .restaurant__people-number {
+        align-items: center;
+        background: #31465e;
+        border-radius: 8px;
+        display: flex;
+        gap: 5px;
+        height: 32px;
+        justify-content: center;
+        left: 16px;
+        position: absolute;
+        top: 16px;
+        width: 56px;
+
+        img {
+            color: $color-yellow;
+            height: 16px;
+            padding-bottom: 12px;
+            padding-top: 9px;
+            width: 14px;
+        }
+
+        span {
+            color: $color-yellow;
+            font-size: $font-size-small;
+            height: 16px;
+            padding-bottom: 15px;
+            padding-top: 12px;
+            width: 9px;
+        }
+    }
+
+    &-examples {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 5px;
+
+        .restaurant__website {
+            align-items: center;
+            display: flex;
+            gap: 10px;
+            line-height: 22px;
+            text-transform: uppercase;
+        }
+    }
+
+    p {
+        align-items: flex-end;
+        color: $color-dark-gray;
+        display: flex;
+        font-size: $font-size-medium;
+        line-height: 24px;
+        margin: 10px 0;
+    }
+
+    &-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+        padding: 15px 24px 24px 0;
+
+        button:first-child {
+            background: transparent;
+            border: 0;
+            color: $color-dark-gray;
+            cursor: pointer;
+            font-size: $font-size-mini;
+            font-weight: $font-size-medium;
+            line-height: 18px;
+        }
+    }
+}
