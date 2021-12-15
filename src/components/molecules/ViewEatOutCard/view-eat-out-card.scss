@@ -25,6 +25,12 @@
         text-align: center;
     }
 
+    @media (max-width: 500px) {
+        &__content {
+            padding: 0 32px;
+        }
+    }
+
     @media (max-width: 410px) {
         &__text {
             font-size: $font-size-medium;
