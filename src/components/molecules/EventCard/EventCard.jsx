@@ -44,7 +44,7 @@ export const EventCard = (data) => {
             hasIcon={false}
             imageSource={userImage}
             isClickable={false}
-            size="large"
+            isLarge={true}
           />
         </div>
         <EventCardGraphics className="card__details-graphics" />

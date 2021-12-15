@@ -1,16 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { ReactComponent as HeartLogo } from "../../../assets/heart.svg";
+import classNames from "classnames";
 
 import "./avatar.scss";
 
-export const Avatar = ({ imageSource, hasIcon, isClickable, size }) => (
-  <div className={`avatar${isClickable ? "__clickable" : ""}--${size}`}>
-    <img
-      className={`avatar__picture--${size}`}
-      src={imageSource}
-      alt="profile"
-    />
+export const Avatar = ({ imageSource, hasIcon, isClickable, isLarge }) => (
+  <div
+    className={classNames("avatar", {
+      "avatar--large": isLarge,
+      avatar__clickable: isClickable,
+    })}
+  >
+    <img className="avatar__picture" src={imageSource} alt="profile" />
     {hasIcon && <HeartLogo className="avatar__logo" />}
   </div>
 );
@@ -25,5 +27,5 @@ Avatar.propTypes = {
   imageSource: PropTypes.string,
   hasIcon: PropTypes.bool,
   isClickable: PropTypes.bool,
-  size: PropTypes.string,
+  isLarge: PropTypes.bool,
 };

@@ -1,21 +1,17 @@
 .avatar {
     &__clickable {
         cursor: pointer;
-        max-height: 40px;
-        max-width: 40px;
     }
 
-    &__picture--small {
+    img {
         border-radius: 50%;
         height: 40px;
         object-fit: cover;
         width: 40px;
     }
 
-    &__picture--large {
-        border-radius: 50%;
+    &--large img {
         height: 96px;
-        object-fit: cover;
         width: 96px;
     }
 
