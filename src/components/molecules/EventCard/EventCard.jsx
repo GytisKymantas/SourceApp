@@ -98,20 +98,12 @@ export const EventCard = (data) => {
                   onInput={(e) => setCommentValue(e.target.value)}
                   placeholder="Send a wish!"
                 />
-                {commentValue.trim() ? (
-                  <Button
-                    type="submit"
-                    label="Send"
-                    onClick={handleCommentSubmit}
-                  />
-                ) : (
-                  <Button
-                    type="submit"
-                    label="Send"
-                    onClick={handleCommentSubmit}
-                    disabled={true}
-                  />
-                )}
+                <Button
+                  type="submit"
+                  label="Send"
+                  onClick={handleCommentSubmit}
+                  disabled={!commentValue.trim()}
+                />
               </div>
             </div>
           )}
