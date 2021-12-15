@@ -11,11 +11,9 @@ import "./event-card.scss";
 
 export const EventCard = (data) => {
   Moment.locale("en");
-  let wishes = data?.data.wishes;
-  let comments = data?.data.comments;
-  const name = data?.data.userName;
-  const date = data?.data.birthdayDate;
-  const image = data?.data.userImage;
+  const eventData = data?.data;
+  let wishes = eventData.wishes;
+  const { comments, userName, birthdayDate, userImage } = eventData;
 
   const [present, setPresent] = useState(false);
   const [showComments, setShowComments] = useState(false);
@@ -42,13 +40,13 @@ export const EventCard = (data) => {
     <>
       <div className="card">
         <div className="card__image">
-          <Avatar hasIcon={false} imageSource={image} isClickable={false} />
+          <Avatar hasIcon={false} imageSource={userImage} isClickable={false} />
         </div>
         <EventCardGraphics className="card__details-graphics" />
 
         <div className="card__details">
-          <div className="card__details-name">{name}</div>
-          {Moment(date).format("MMM Do") ===
+          <div className="card__details-name">{userName}</div>
+          {Moment(birthdayDate).format("MMM Do") ===
           Moment(new Date()).format("MMM Do") ? (
             <div className="card__details-birthday">
               Celebrates a birthday <span>today</span>
@@ -56,7 +54,7 @@ export const EventCard = (data) => {
           ) : (
             <div className="card__details-birthday">
               Celebrated a birthday on{" "}
-              <span>{Moment(date).format("MMM Do")}</span>
+              <span>{Moment(birthdayDate).format("MMM Do")}</span>
             </div>
           )}
           <div className="card__details-wish">Send a wish!</div>
