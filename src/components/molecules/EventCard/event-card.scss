@@ -7,7 +7,6 @@ $_color-lynch: #627485;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
-    // justify-content: flex-start;
     margin-top: 48px;
     padding: 16px 0 0;
     position: relative;
@@ -20,7 +19,6 @@ $_color-lynch: #627485;
 
     &__details {
         color: $color-midnight;
-        // flex-direction: column;
         font-size: $font-size-tiny;
         font-weight: $font-weight-medium;
         position: absolute;
@@ -46,7 +44,6 @@ $_color-lynch: #627485;
     }
 
     &__divider {
-        // display: flex;
         margin-top: 24px;
     }
 
@@ -68,7 +65,6 @@ $_color-lynch: #627485;
 
         &-number {
             color: $_color-lynch;
-            //   line-height: 150%;
             margin: auto 0 auto 8px;
         }
     }
