@@ -43,7 +43,6 @@ export const EventCard = (data) => {
           <Avatar hasIcon={false} imageSource={userImage} isClickable={false} />
         </div>
         <EventCardGraphics className="card__details-graphics" />
-
         <div className="card__details">
           <div className="card__details-name">{userName}</div>
           {Moment(birthdayDate).format("MMM Do") ===
@@ -92,7 +91,6 @@ export const EventCard = (data) => {
                   <span>{item.comment}</span>
                 </div>
               ))}
-
               <div className="comments__box">
                 <input
                   className="comments__box-input"
