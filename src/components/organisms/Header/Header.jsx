@@ -14,15 +14,11 @@ export const Header = () => {
 
   return (
     <header className="header">
-      <div className="header__logo">
-        <a href={logoPath}>{matched ? <RocketLogo /> : <Logo />}</a>
-      </div>
-      <div className="header__navigation">
-        <Navigation />
-      </div>
-      <div className="header__profile-widget">
-        <ProfileWidget />
-      </div>
+      <a className="header__logo" href={logoPath}>
+        {matched ? <RocketLogo /> : <Logo />}
+      </a>
+      <Navigation className="header__navigation" />
+      <ProfileWidget className="header__profile-widget" />
     </header>
   );
 };
