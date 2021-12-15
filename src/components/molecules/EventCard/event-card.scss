@@ -7,7 +7,7 @@ $_color-lynch: #627485;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    // justify-content: flex-start;
     margin-top: 48px;
     padding: 16px 0 0;
     position: relative;
@@ -20,7 +20,7 @@ $_color-lynch: #627485;
 
     &__details {
         color: $color-midnight;
-        flex-direction: column;
+        // flex-direction: column;
         font-size: $font-size-tiny;
         font-weight: $font-weight-medium;
         position: absolute;
@@ -46,7 +46,7 @@ $_color-lynch: #627485;
     }
 
     &__divider {
-        display: flex;
+        // display: flex;
         margin-top: 24px;
     }
 
@@ -68,7 +68,7 @@ $_color-lynch: #627485;
 
         &-number {
             color: $_color-lynch;
-            line-height: 150%;
+            //   line-height: 150%;
             margin: auto 0 auto 8px;
         }
     }
@@ -78,6 +78,7 @@ $_color-lynch: #627485;
         flex-direction: column;
         padding: 0 19px;
         text-align: justify;
+        word-break: break-word;
 
         &__divider {
             margin: 0 auto 3px;
@@ -109,6 +110,10 @@ $_color-lynch: #627485;
     display: flex;
     justify-content: space-between;
     padding: 10px 0;
+
+    :nth-child(2) {
+        align-self: center;
+    }
 
     &-input {
         border: 1px solid $color-ghost;

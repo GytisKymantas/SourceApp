@@ -97,7 +97,7 @@ export const EventCard = (data) => {
                 </div>
               ))}
               <div className="comments__box">
-                <input
+                <textarea
                   className="comments__box-input"
                   value={commentValue}
                   onInput={(e) => setCommentValue(e.target.value)}
