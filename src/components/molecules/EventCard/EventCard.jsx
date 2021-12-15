@@ -40,7 +40,12 @@ export const EventCard = (data) => {
     <>
       <div className="card">
         <div className="card__image">
-          <Avatar hasIcon={false} imageSource={userImage} isClickable={false} />
+          <Avatar
+            hasIcon={false}
+            imageSource={userImage}
+            isClickable={false}
+            size="large"
+          />
         </div>
         <EventCardGraphics className="card__details-graphics" />
         <div className="card__details">

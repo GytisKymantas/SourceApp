@@ -74,7 +74,7 @@ export const ProfileWidget = () => {
         role="menu"
         tabIndex={0}
       >
-        <Avatar hasIcon={true} isClickable={true} />
+        <Avatar hasIcon={true} isClickable={true} size="small" />
       </div>
       {showDropDown && (
         <div ref={ref} className="profile-widget__drop-down">
