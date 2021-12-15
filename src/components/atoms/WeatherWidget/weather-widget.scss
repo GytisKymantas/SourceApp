@@ -10,7 +10,8 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
     position: relative;
     width: 526.5px;
 
-    &__box {
+    &__box,
+    &__invisible-box {
         border-radius: 10px;
         box-shadow: 0 8px 23px rgba(0, 0, 0, 0.25);
         color: $_color-black-transparent-05;
@@ -19,6 +20,15 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
         height: 158px;
         padding: 9px 0 9px 19px;
         width: 401.5px;
+    }
+
+    &__invisible-box {
+        padding: 9px 19px;
+
+        :first-child {
+            font-size: $font-size-big;
+            font-weight: $font-weight-bold;
+        }
     }
 
     &__location {
@@ -83,7 +93,8 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
     .weather-data {
         width: 475.8px;
 
-        &__box {
+        &__box,
+        &__invisible-box {
             width: 372px;
         }
 
@@ -99,7 +110,8 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
         height: 176px;
         width: 372px;
 
-        &__box {
+        &__box,
+        &__invisible-box {
             margin: 0;
             width: 300px;
         }
@@ -123,6 +135,17 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
         &__box {
             margin: 0;
             width: 228px;
+        }
+
+        &__invisible-box {
+            margin: 0;
+            padding: 9px 19px;
+            width: 228px;
+
+            :first-child {
+                font-size: $font-size-medium;
+                font-weight: $font-weight-medium;
+            }
         }
 
         &__location {

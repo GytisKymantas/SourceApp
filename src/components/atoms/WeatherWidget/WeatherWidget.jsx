@@ -12,12 +12,14 @@ import { ReactComponent as Divider } from "../../../assets/divider.svg";
 import { ReactComponent as DropIcon } from "../../../assets/dropletIcon.svg";
 import { ReactComponent as WindIcon } from "../../../assets/windIcon.svg";
 import PropTypes from "prop-types";
-import "./weather-widget.scss";
 import { countries } from "country-data";
+
+import "./weather-widget.scss";
 
 export const WeatherWidget = ({ time }) => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [weatherError, setWeatherError] = useState(false);
   let weatherId,
     windSpeed,
     humidity,
@@ -40,11 +42,10 @@ export const WeatherWidget = ({ time }) => {
       .then((data) => {
         setWeatherData(data);
         setLoading(false);
+        setWeatherError(false);
       });
   };
-
-  const errorCallback = (error) => alert("Location permission not granted");
-
+  const errorCallback = () => setWeatherError(true);
   weatherId = weatherData?.weather[0].id;
   windSpeed = weatherData?.wind.speed;
   humidity = weatherData?.main.humidity;
@@ -68,7 +69,18 @@ export const WeatherWidget = ({ time }) => {
 
   return (
     <>
-      {!loading && (
+      {loading ||
+        (weatherError && (
+          <div className="weather-data__invisible">
+            <div className="weather-data__invisible-box">
+              <p> No weather information available &#9785;</p>
+              <p>
+                Make sure location services are enabled on your browser settings
+              </p>
+            </div>
+          </div>
+        ))}
+      {!loading && !weatherError && (
         <div className="weather-data">
           <div className="weather-data__box">
             <div className="weather-data__location">
