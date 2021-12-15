@@ -9,11 +9,13 @@ $_color-lynch: #627485;
     flex-direction: column;
     justify-content: flex-start;
     margin-top: 48px;
+    padding: 16px 0 0;
     position: relative;
     width: 416px;
 
     &__image {
-        margin-top: -48px;
+        margin-top: -64px;
+        position: absolute;
     }
 
     &__details {
