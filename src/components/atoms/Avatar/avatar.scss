@@ -1,19 +1,25 @@
 .avatar {
-    max-height: 40px;
-    max-width: 40px;
+    &__clickable {
+        cursor: pointer;
+        max-height: 40px;
+        max-width: 40px;
+    }
 
-    &__picture {
+    &__picture--small {
         border-radius: 50%;
         height: 40px;
         object-fit: cover;
         width: 40px;
     }
 
-    &__logo {
-        margin-left: -12px;
+    &__picture--large {
+        border-radius: 50%;
+        height: 96px;
+        object-fit: cover;
+        width: 96px;
     }
 
-    &__clickable {
-        cursor: pointer;
+    &__logo {
+        margin-left: -12px;
     }
 }
