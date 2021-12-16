@@ -8,7 +8,7 @@ $svg-url: url('../../../assets/ratingBadgeStar.svg');
     border-radius: 8px;
     display: flex;
     height: 18px;
-    padding: 0.5rem;
+    padding: 8px;
     width: 60px;
 
     &__score {
@@ -19,7 +19,7 @@ $svg-url: url('../../../assets/ratingBadgeStar.svg');
         text-transform: uppercase;
     }
 
-    &__logo {
+    &__icon {
         margin: 0 5px;
     }
 
@@ -33,7 +33,7 @@ $svg-url: url('../../../assets/ratingBadgeStar.svg');
         cursor: default;
         width: 110px;
 
-        .frame__logo {
+        .frame__icon {
             display: none;
         }
     }
