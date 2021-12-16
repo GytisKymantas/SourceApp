@@ -11,16 +11,10 @@ export const Dashboard = (data) => {
   const userData = data.data?.userData[0];
   const firstName = userData?.userName.split(" ")[0];
   const reservationData = userData?.reservations;
-  // const restaurantList = restaurantData?.restaurants[0];
   const [storiesData, setStoriesData] = useState();
   const [restaurantData, setRestaurantData] = useState();
   const restaurantCardData = restaurantData?.restaurants[0];
-  // const reducer = (previousValue, currentValue) => previousValue + currentValue;
-  // const restaurantRatingsArray = restaurantCardData?.reviews.map(
-  //   (obj) => obj.rating
-  // );
-  // const average =
-  //   restaurantRatingsArray.reduce(reducer) / restaurantRatingsArray.length;
+  const ratingArray = restaurantCardData?.reviews.map((obj) => obj.rating);
 
   useEffect(() => {
     fetch(
@@ -56,20 +50,20 @@ export const Dashboard = (data) => {
       <HelloWidget name={firstName} />
       <ReservationsSection reservationData={reservationData} />
       {storiesData && <StoriesSection data={storiesData} />}
-      {restaurantData && (
-        <RestaurantCard
-          displayFullCard
-          numberOfCheckIns={restaurantCardData.checkIns}
-          restaurantName={restaurantCardData.name}
-          restaurantWebsite={restaurantCardData.website.slice(7)}
-          restaurantAddress={restaurantCardData.location.address}
-          restaurantOpeningHours={restaurantCardData.openingHours[0].hours}
-          restaurantDescription={restaurantCardData.description}
-          restaurantCategories={restaurantCardData.categories}
-          restaurantImage={restaurantCardData.image}
-          restaurantAverageRating={restaurantCardData}
-        />
-      )}
+
+      <RestaurantCard
+        displayFullCard
+        numberOfCheckIns={restaurantCardData?.checkIns}
+        restaurantName={restaurantCardData?.name}
+        restaurantWebsite={restaurantCardData?.website.slice(7)}
+        restaurantAddress={restaurantCardData?.location.address}
+        restaurantOpeningHours={restaurantCardData?.openingHours[0].hours}
+        restaurantDescription={restaurantCardData?.description}
+        restaurantCategories={restaurantCardData?.categories}
+        restaurantImage={restaurantCardData?.image}
+        restaurantAverageRating={ratingArray}
+      />
+
       <ViewEatOutCard />
     </MainLayout>
   );
