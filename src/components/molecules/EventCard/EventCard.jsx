@@ -53,16 +53,18 @@ export const EventCard = (data) => {
         <EventCardGraphics className="card__details-graphics" />
         <div className="card__details">
           <div className="card__details-name">{userName}</div>
-          {isToday ? (
-            <div className="card__details-birthday">
-              Celebrates birthday <span>today</span>
-            </div>
-          ) : (
-            <div className="card__details-birthday">
-              Celebrated birthday on{" "}
-              <span>{Moment(birthdayDate).format("MMM Do")}</span>
-            </div>
-          )}
+          <div className="card__details-birthday">
+            {isToday ? (
+              <>
+                Celebrates birthday <span>today</span>
+              </>
+            ) : (
+              <>
+                Celebrated birthday on{" "}
+                <span>{Moment(birthdayDate).format("MMM Do")}</span>
+              </>
+            )}
+          </div>
           <div className="card__details-wish">Send a wish!</div>
         </div>
         <EventCardDivider className="card__divider" />

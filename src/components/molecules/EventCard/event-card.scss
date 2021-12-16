@@ -32,7 +32,7 @@ $_color-lynch: #627485;
         &-birthday {
             font-weight: $font-weight-regular;
 
-            :first-child {
+            span {
                 font-weight: $font-weight-medium;
             }
         }
