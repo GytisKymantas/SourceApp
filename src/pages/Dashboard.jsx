@@ -5,7 +5,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { StoriesSection } from "components/organisms/StoriesSection/StoriesSection";
 import { RestaurantCard } from "components/atoms/RestaurantCard/RestaurantCard";
-import { ViewEatOutCard } from "components/molecules/ViewEatOutCard/ViewEatOutCard";
+import EatOutSection from "components/organisms/EatOutSection/EatOutSection";
 
 export const Dashboard = (data) => {
   const userData = data.data?.userData[0];
@@ -64,7 +64,7 @@ export const Dashboard = (data) => {
           restaurantImage={restaurantData?.restaurants[0].image}
         />
       )}
-      <ViewEatOutCard />
+      <EatOutSection data={restaurantData} />
     </MainLayout>
   );
 };
