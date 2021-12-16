@@ -14,7 +14,9 @@ export const Dashboard = (data) => {
   const [storiesData, setStoriesData] = useState();
   const [restaurantData, setRestaurantData] = useState();
   const restaurantCardData = restaurantData?.restaurants[0];
-  const ratingArray = restaurantCardData?.reviews.map((obj) => obj.rating);
+  const ratingArray = restaurantCardData?.reviews.map(
+    (review) => review.rating
+  );
 
   useEffect(() => {
     fetch(
