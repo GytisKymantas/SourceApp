@@ -4,7 +4,7 @@ import { EventCard } from "components/molecules/EventCard/EventCard.jsx";
 
 export const StoriesSection = ({ data }) => {
   const storiesData = data?.stories;
-  const birthdays = storiesData?.filter((x) => x.type === "birthday");
+  const birthdays = storiesData?.filter((story) => story.type === "birthday");
 
   return (
     <div className="section">
