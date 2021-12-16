@@ -9,7 +9,7 @@ export const Avatar = ({ imageSource, hasIcon, isClickable, isLarge }) => (
   <div
     className={classNames("avatar", {
       "avatar--large": isLarge,
-      avatar__clickable: isClickable,
+      "avatar--clickable": isClickable,
     })}
   >
     <img className="avatar__picture" src={imageSource} alt="profile" />
