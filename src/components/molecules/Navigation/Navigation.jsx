@@ -10,23 +10,18 @@ export const Navigation = () => {
   const eatOutName = "Eat-Out";
   const reservationsName = "Reservations";
   const dashboardName = "Dashboard";
-  const linkStart = "/dashboard";
   return (
     <div className="navigation">
-      <MenuItem
-        icon={<DashboardIcon />}
-        name={dashboardName}
-        link={linkStart + "/"}
-      />
+      <MenuItem icon={<DashboardIcon />} name={dashboardName} link={"/"} />
       <MenuItem
         icon={<ReservationsIcon />}
         name={reservationsName}
-        link={linkStart + "/reservations"}
+        link={"/dashboard/reservations"}
       />
       <MenuItem
         icon={<EatOutIcon />}
         name={eatOutName}
-        link={linkStart + "/eatout"}
+        link={"/dashboard/eatout"}
       />
     </div>
   );
