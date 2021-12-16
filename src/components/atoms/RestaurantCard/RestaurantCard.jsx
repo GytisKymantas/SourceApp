@@ -23,8 +23,9 @@ export const RestaurantCard = ({
 }) => {
   const average =
     restaurantAverageRating &&
-    restaurantAverageRating.reduce((pv, cv) => pv + cv) /
-      restaurantAverageRating.length;
+    restaurantAverageRating.reduce(
+      (preValue, curValue) => preValue + curValue
+    ) / restaurantAverageRating.length;
 
   return (
     <div className="restaurant__container">
@@ -46,8 +47,8 @@ export const RestaurantCard = ({
         <div className="restaurant__container-footer">
           <ul className="ordered-list">
             {restaurantCategories &&
-              restaurantCategories.map((obj, index) => (
-                <li key={index}>{obj}</li>
+              restaurantCategories.map((category, index) => (
+                <li key={index}>{category}</li>
               ))}
           </ul>
           <div className="restaurant__container-image-heart">
