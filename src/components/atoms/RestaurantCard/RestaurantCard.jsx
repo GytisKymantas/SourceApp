@@ -28,7 +28,7 @@ export const RestaurantCard = ({
       (preValue, curValue) => preValue + curValue
     ) / restaurantAverageRating.length;
 
-  const [heart, setHeart] = useState(false);
+  const [heart, setHeart] = useState(true);
 
   const handleHeartClick = () => {
     setHeart((prevValue) => !prevValue);
