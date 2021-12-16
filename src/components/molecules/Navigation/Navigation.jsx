@@ -7,18 +7,27 @@ import { ReactComponent as DashboardIcon } from "../../../assets/dashboardIcon.s
 import "./navigation.scss";
 
 export const Navigation = () => {
-  const eatOutLink = "Eat-Out";
-  const reservationsLink = "Reservations";
-  const dashboardLink = "Dashboard";
+  const eatOutName = "Eat-Out";
+  const reservationsName = "Reservations";
+  const dashboardName = "Dashboard";
+  const linkStart = "/dashboard";
   return (
     <div className="navigation">
-      <MenuItem icon={<DashboardIcon />} name={dashboardLink} link="/" />
+      <MenuItem
+        icon={<DashboardIcon />}
+        name={dashboardName}
+        link={linkStart + "/"}
+      />
       <MenuItem
         icon={<ReservationsIcon />}
-        name={reservationsLink}
-        link="/reservations"
+        name={reservationsName}
+        link={linkStart + "/reservations"}
       />
-      <MenuItem icon={<EatOutIcon />} name={eatOutLink} link="/eatout" />
+      <MenuItem
+        icon={<EatOutIcon />}
+        name={eatOutName}
+        link={linkStart + "/eatout"}
+      />
     </div>
   );
 };

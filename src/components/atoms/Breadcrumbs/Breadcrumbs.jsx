@@ -14,7 +14,7 @@ export const Breadcrumbs = () => {
 
   return (
     <nav>
-      {location.pathname === "/dashboard" ? (
+      {location.pathname === "/dashboard/" ? (
         ""
       ) : (
         <ul className="breadcrumbs">
