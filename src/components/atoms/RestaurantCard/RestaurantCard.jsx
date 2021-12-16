@@ -8,6 +8,7 @@ import redHeart from "../../../assets/redHeartIcon.svg";
 import vectorImage from "../../../assets/Vector.svg";
 import personIcon from "../../../assets/personIcon.svg";
 import { Button } from "components/atoms/Button/Button";
+import { useState } from "react";
 
 export const RestaurantCard = ({
   displayFullCard,
@@ -26,6 +27,12 @@ export const RestaurantCard = ({
     restaurantAverageRating.reduce(
       (preValue, curValue) => preValue + curValue
     ) / restaurantAverageRating.length;
+
+  const [heart, setHeart] = useState(false);
+
+  const handleHeartClick = () => {
+    setHeart((prevValue) => !prevValue);
+  };
 
   return (
     <div className="restaurant__container">
@@ -51,8 +58,14 @@ export const RestaurantCard = ({
                 <li key={index}>{category}</li>
               ))}
           </ul>
-          <div className="restaurant__container-image-heart">
-            {!displayFullCard ? (
+          <div
+            className="restaurant__container-image-heart"
+            onClick={handleHeartClick}
+            onKeyDown={handleHeartClick}
+            role="Button"
+            aria-hidden="true"
+          >
+            {heart ? (
               <img src={heartImage} alt="clear heart" />
             ) : (
               <img src={redHeart} alt="heart filled red" />
