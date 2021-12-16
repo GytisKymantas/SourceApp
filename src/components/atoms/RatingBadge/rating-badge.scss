@@ -7,14 +7,15 @@ $svg-url: url('../../../assets/ratingBadgeStar.svg');
     background: $color-yellow;
     border-radius: 8px;
     display: flex;
+    height: 18px;
     padding: 0.5rem;
-    width: fit-content;
+    width: 60px;
 
     &__score {
         font-size: $font-size-small;
         font-style: normal;
         font-weight: bold;
-        margin: 0 5px;
+        margin: 0 3px;
         text-transform: uppercase;
     }
 

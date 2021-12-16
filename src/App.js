@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Dashboard } from "pages/Dashboard";
 import { Reservations } from "pages/Reservations";
 import { EatOut } from "pages/EatOut";
-import { RatingBadge } from "components/atoms/RatingBadge";
 import { NotFound } from "pages/NotFound";
 import { useState, useEffect } from "react";
 
@@ -52,7 +51,6 @@ function App() {
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <RatingBadge averageRating={4.5} />
       </Router>
     </div>
   );
