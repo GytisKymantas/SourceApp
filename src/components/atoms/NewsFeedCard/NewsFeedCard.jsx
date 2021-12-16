@@ -12,28 +12,32 @@ export const NewsFeedItem = (data) => {
   Moment.locale("en");
 
   // const postVideo = data?.data[0];
-  const postNews = data?.data[1];
+  const postNews = data?.data[0];
 
   // console.log(postNews);
 
-  const name = postNews.userName;
+  const authorName = postNews.authorName;
   const userImage = postNews.userImage;
   const postImage = postNews.postImage;
   const postLocation = postNews.postLocation;
   const postDate = postNews.postDate;
   let likes = postNews.likes;
-  let comments = postNews.comment;
+  const comments = postNews.comment;
 
-  /* Let = {
-    userName: comments.userName,
-  };
-*/
+  const userComments = [
+    {
+      userName: postNews.userNames,
+      userComment: postNews.userComment,
+      userDate: postNews.userDate,
+    },
+  ];
+
   return (
     <div className="card">
       <div className="card-header__wrapper">
         <div className="card__title">
           <img className="user__icon" src={userImage} alt="your profile" />
-          <p className="card--name">{name}</p>
+          <p className="card--name">{authorName}</p>
         </div>
         <div className="card__timestamp">
           <p>{postLocation}</p>
@@ -68,19 +72,23 @@ export const NewsFeedItem = (data) => {
         <span className="divider_top"></span>
         <div>
           <div className="comments__rows">
-            <div className="comments__box_one">
-              <div className="comments__header">
-                <div className="comments__name">{name}</div>
-                <div className="comments__timestamp">{postDate}</div>
+            {userComments.map((item1, index1) => (
+              <div className="comments__box_one" key={index1}>
+                <div className="comments__header">
+                  <span className="comments__name">{item1.userNames}</span>
+                  <span className="comments__timestamp">
+                    {Moment(item1.userDate).format("MM/DD/YY HH:mm")}
+                  </span>
+                </div>
+                <span className="comments--content">{item1.userComments}</span>
               </div>
-              <div className="comments--content"></div>
-            </div>
+            ))}
             <div className="comments__box_two">
               <div className="comments_header__two">
-                <div className="comments__name__two">{name}</div>
+                <div className="comments__name__two">{authorName}</div>
                 <div className="comments_timestamp__two">{postDate}</div>
               </div>
-              <div className="comments--content__two"></div>
+              <div className="comments--content__two">Comment</div>
             </div>
           </div>
         </div>
@@ -98,17 +106,3 @@ export const NewsFeedItem = (data) => {
     </div>
   );
 };
-
-// NewsFeedItem.propTypes = {
-//   userName: PropTypes.string,
-//   userImage: PropTypes.string,
-//   postLocation: PropTypes.string,
-//   postDate: PropTypes.string,
-//   postLikes: PropTypes.number,
-//   postVideo: PropTypes.string,
-//   postComments: PropTypes.arrayOf({
-//     usernName: PropTypes.string,
-//     postComments: PropTypes.string,
-//     postDate: PropTypes.string,
-//   }),
-// };
