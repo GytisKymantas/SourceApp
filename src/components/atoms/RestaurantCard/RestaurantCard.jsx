@@ -92,7 +92,7 @@ export const RestaurantCard = ({
           <p className="restaurant__description">{restaurantDescription}</p>
           <div className="restaurant__container-buttons">
             <button>READ MORE</button>
-            <Button label={"CHECK-IN"} />
+            <Button label={"CHECK-IN"} onClick={handleHeartClick} />
           </div>
         </div>
       ) : null}
@@ -111,5 +111,5 @@ RestaurantCard.propTypes = {
   restaurantDescription: PropTypes.string,
   restaurantCategories: PropTypes.array,
   restaurantImage: PropTypes.string,
-  restaurantAverageRating: PropTypes.number,
+  restaurantAverageRating: PropTypes.array,
 };
