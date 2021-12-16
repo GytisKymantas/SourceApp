@@ -54,18 +54,14 @@ $_color-lynch: #627485;
         font-weight: $font-weight-medium;
         margin: 16px;
 
-        &-present {
-            display: flex;
-            padding-right: 12px;
-        }
-
-        svg {
+        &-present,
+        &-comment {
             cursor: pointer;
         }
 
         &-number {
             color: $_color-lynch;
-            margin: auto 0 auto 8px;
+            margin: auto 12px auto 8px;
         }
     }
 

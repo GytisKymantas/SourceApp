@@ -67,18 +67,24 @@ export const EventCard = (data) => {
         </div>
         <EventCardDivider className="card__divider" />
         <div className="card__icons">
-          <div
-            className="card__icons-present"
-            onClick={handlePresentClick}
-            onKeyDown={handlePresentClick}
-            aria-hidden="true"
-          >
-            {present ? <PresentIconColor /> : <PresentIconClear />}
-            <span className="card__icons-number">
-              {present ? (wishes = wishes + 1) : wishes}
-            </span>
-          </div>
+          {present ? (
+            <PresentIconColor
+              className="card__icons-present"
+              onClick={handlePresentClick}
+              onKeyDown={handlePresentClick}
+            />
+          ) : (
+            <PresentIconClear
+              className="card__icons-present"
+              onClick={handlePresentClick}
+              onKeyDown={handlePresentClick}
+            />
+          )}
+          <span className="card__icons-number">
+            {present ? (wishes = wishes + 1) : wishes}
+          </span>
           <CommentIcon
+            className="card__icons-comment"
             onClick={handleCommentClick}
             onKeyDown={handleCommentClick}
             aria-hidden="true"
