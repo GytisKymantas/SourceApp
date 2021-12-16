@@ -14,6 +14,9 @@ export const EventCard = (data) => {
   const eventData = data?.data;
   let wishes = eventData.wishes;
   const { comments, userName, birthdayDate, userImage } = eventData;
+  const isToday =
+    Moment(new Date()).format("MMM Do") ===
+    Moment(birthdayDate).format("MMM Do");
 
   const [present, setPresent] = useState(false);
   const [showComments, setShowComments] = useState(false);
@@ -50,14 +53,13 @@ export const EventCard = (data) => {
         <EventCardGraphics className="card__details-graphics" />
         <div className="card__details">
           <div className="card__details-name">{userName}</div>
-          {Moment(birthdayDate).format("MMM Do") ===
-          Moment(new Date()).format("MMM Do") ? (
+          {isToday ? (
             <div className="card__details-birthday">
-              Celebrates a birthday <span>today</span>
+              Celebrates birthday <span>today</span>
             </div>
           ) : (
             <div className="card__details-birthday">
-              Celebrated a birthday on{" "}
+              Celebrated birthday on{" "}
               <span>{Moment(birthdayDate).format("MMM Do")}</span>
             </div>
           )}
