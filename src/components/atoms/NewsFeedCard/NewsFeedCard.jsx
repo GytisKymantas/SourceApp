@@ -12,32 +12,26 @@ export const NewsFeedItem = (data) => {
   Moment.locale("en");
 
   // const postVideo = data?.data[0];
-  const postNews = data?.data[0];
+  const postNews = data?.data[7];
 
   // console.log(postNews);
 
-  const authorName = postNews.authorName;
+  const userName = postNews.userName;
   const userImage = postNews.userImage;
   const postImage = postNews.postImage;
   const postLocation = postNews.postLocation;
   const postDate = postNews.postDate;
   let likes = postNews.likes;
-  const comments = postNews.comment;
-
-  const userComments = [
-    {
-      userName: postNews.userNames,
-      userComment: postNews.userComment,
-      userDate: postNews.userDate,
-    },
-  ];
+  const comments = postNews.comments;
+  const comment = postNews.comment;
+  const date = postNews.date;
 
   return (
     <div className="card">
       <div className="card-header__wrapper">
         <div className="card__title">
           <img className="user__icon" src={userImage} alt="your profile" />
-          <p className="card--name">{authorName}</p>
+          <p className="card--name">{userName}</p>
         </div>
         <div className="card__timestamp">
           <p>{postLocation}</p>
@@ -65,31 +59,26 @@ export const NewsFeedItem = (data) => {
           <div>
             <img src={vectorComment} alt="leave comment here" />
           </div>
-          <div className="comments__body">{comments}</div>
+          <div className="comments__body">{comments.length}</div>
         </button>
       </div>
       <div className="comment__wrapper">
         <span className="divider_top"></span>
         <div>
           <div className="comments__rows">
-            {userComments.map((item1, index1) => (
+            {comments.map((item1, index1) => (
               <div className="comments__box_one" key={index1}>
                 <div className="comments__header">
-                  <span className="comments__name">{item1.userNames}</span>
-                  <span className="comments__timestamp">
-                    {Moment(item1.userDate).format("MM/DD/YY HH:mm")}
-                  </span>
+                  <span className="comments__name">{item1.userName}</span>
+                  {/* dummy */}
+                  <div>{date}</div>
+                  <span className="comments__timestamp">{item1.date}</span>
                 </div>
-                <span className="comments--content">{item1.userComments}</span>
+                {/* dummy */}
+                <div> {comment}</div>
+                <span className="comments--content">{item1.comment}</span>
               </div>
             ))}
-            <div className="comments__box_two">
-              <div className="comments_header__two">
-                <div className="comments__name__two">{authorName}</div>
-                <div className="comments_timestamp__two">{postDate}</div>
-              </div>
-              <div className="comments--content__two">Comment</div>
-            </div>
           </div>
         </div>
         <span className="divider_bottom"></span>
