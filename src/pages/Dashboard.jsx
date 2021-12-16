@@ -14,6 +14,13 @@ export const Dashboard = (data) => {
   // const restaurantList = restaurantData?.restaurants[0];
   const [storiesData, setStoriesData] = useState();
   const [restaurantData, setRestaurantData] = useState();
+  const restaurantCardData = restaurantData?.restaurants[0];
+  // const reducer = (previousValue, currentValue) => previousValue + currentValue;
+  // const restaurantRatingsArray = restaurantCardData?.reviews.map(
+  //   (obj) => obj.rating
+  // );
+  // const average =
+  //   restaurantRatingsArray.reduce(reducer) / restaurantRatingsArray.length;
 
   useEffect(() => {
     fetch(
@@ -51,17 +58,16 @@ export const Dashboard = (data) => {
       {storiesData && <StoriesSection data={storiesData} />}
       {restaurantData && (
         <RestaurantCard
-          displayFullCard={true}
-          numberOfCheckIns={restaurantData?.restaurants[0].checkIns}
-          restaurantName={restaurantData?.restaurants[0].name}
-          restaurantWebsite={restaurantData?.restaurants[0].website.slice(7)}
-          restaurantAddress={restaurantData?.restaurants[0].location.address}
-          restaurantOpeningHours={
-            restaurantData?.restaurants[0].openingHours[0].hours
-          }
-          restaurantDescription={restaurantData?.restaurants[0].description}
-          restaurantCategories={restaurantData?.restaurants[0].categories}
-          restaurantImage={restaurantData?.restaurants[0].image}
+          displayFullCard
+          numberOfCheckIns={restaurantCardData.checkIns}
+          restaurantName={restaurantCardData.name}
+          restaurantWebsite={restaurantCardData.website.slice(7)}
+          restaurantAddress={restaurantCardData.location.address}
+          restaurantOpeningHours={restaurantCardData.openingHours[0].hours}
+          restaurantDescription={restaurantCardData.description}
+          restaurantCategories={restaurantCardData.categories}
+          restaurantImage={restaurantCardData.image}
+          restaurantAverageRating={restaurantCardData}
         />
       )}
       <ViewEatOutCard />

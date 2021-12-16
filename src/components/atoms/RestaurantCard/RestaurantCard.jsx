@@ -19,6 +19,7 @@ export const RestaurantCard = ({
   restaurantDescription,
   restaurantCategories,
   restaurantImage,
+  restaurantAverageRating,
 }) => {
   return (
     <div className="restaurant__container">
@@ -34,10 +35,8 @@ export const RestaurantCard = ({
           }}
         ></div>
         <div className="restaurant__container-frame">
-          {/* // placeholder */}
           <img src={vectorImage} alt="vector" />
-          <span>4.5</span>
-          {/* // placeholder */}
+          <span>{restaurantAverageRating}</span>
         </div>
         <div className="restaurant__container-footer">
           <ul className="ordered-list">
@@ -59,8 +58,8 @@ export const RestaurantCard = ({
         </div>
       </div>
       {displayFullCard ? (
-        <div className="restaurant__container-hidden">
-          <div className="restaurant__container-examples">
+        <div className="restaurant__container-bottom">
+          <div className="restaurant__container-credentials">
             <span className="restaurant__website">
               <img src={globe} alt="globe" />
               {restaurantWebsite}
@@ -84,12 +83,13 @@ export const RestaurantCard = ({
 RestaurantCard.propTypes = {
   displayFullCard: PropTypes.bool.isRequired,
   restaurantList: PropTypes.object,
-  numberOfCheckIns: PropTypes.object,
-  restaurantName: PropTypes.object,
-  restaurantWebsite: PropTypes.object,
-  restaurantAddress: PropTypes.object,
-  restaurantOpeningHours: PropTypes.object,
-  restaurantDescription: PropTypes.object,
-  restaurantCategories: PropTypes.object,
-  restaurantImage: PropTypes.object,
+  numberOfCheckIns: PropTypes.number,
+  restaurantName: PropTypes.string,
+  restaurantWebsite: PropTypes.string,
+  restaurantAddress: PropTypes.string,
+  restaurantOpeningHours: PropTypes.string,
+  restaurantDescription: PropTypes.string,
+  restaurantCategories: PropTypes.array,
+  restaurantImage: PropTypes.string,
+  restaurantAverageRating: PropTypes.number,
 };
