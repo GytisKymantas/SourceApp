@@ -62,7 +62,7 @@ export const RestaurantCard = ({
             className="restaurant__container-image-heart"
             onClick={handleHeartClick}
             onKeyDown={handleHeartClick}
-            role="Button"
+            role="button"
             aria-hidden="true"
           >
             {heart ? (
@@ -82,13 +82,13 @@ export const RestaurantCard = ({
           <div className="restaurant__container-credentials">
             <span className="restaurant__website">
               <img src={globe} alt="globe" />
-              <a href="#" target="_blank">
+              <a href={restaurantWebsite} rel="noreferrer" target="_blank">
                 {restaurantWebsite}
               </a>
             </span>
             <span className="restaurant__address">
               <img src={map} alt="map" />
-              <a href="#" target="_blank">
+              <a href={restaurantAddress} rel="noreferrer" target="_blank">
                 {restaurantAddress}
               </a>
             </span>
