@@ -3,7 +3,8 @@ import React from "react";
 // import vectorPlay from "../../../assets/vectorPlay.svg";
 // import vectorOval from "../../../assets/vectorOval.svg";
 import vectorComment from "../../../assets/vectorComment.svg";
-import vectorLikes from "../../../assets/vectorLikes.svg";
+import transparentHeart from "../../../assets/transparentHeart.svg";
+import redHeart from "assets/redHeart.svg";
 import Moment from "moment";
 import { Button } from "../../atoms/Button/Button";
 import "../NewsFeedCard/news-feed-card.scss";
@@ -51,7 +52,8 @@ export const NewsFeedItem = (data) => {
       <div className="actions">
         <button className="likes">
           <div className="likes__outline">
-            <img src={vectorLikes} alt="like here" />
+            <img src={transparentHeart} alt="like here" />
+            <img src={redHeart} alt="like here" />
           </div>
           <div className="likes__body">{likes}</div>
         </button>
