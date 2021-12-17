@@ -32,6 +32,8 @@ $svg-url: url('../../../assets/ratingBadgeStar.svg');
         background-size: 12px, 12px, 12px, 12px, 12px;
         cursor: default;
         width: 110px;
+        position: absolute;
+        left: -68%;
 
         .frame__icon {
             display: none;
