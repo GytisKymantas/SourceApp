@@ -36,7 +36,6 @@ export const NewsFeedItem = (data) => {
         <div className="card__timestamp">
           <p>{postLocation}</p>
           <p className="card--time">{Moment(postDate).format("HH")}H</p>
-          {/* <span>{Moment(item1.date).format("MM/DD/YYYY HH:mm")}</span> */}
         </div>
       </div>
       {/* {postVideo ? (
@@ -92,7 +91,7 @@ export const NewsFeedItem = (data) => {
             placeholder="Leave a comment..."
             className="input_leave_comment"
           />
-          <Button type="submit" label="Send"></Button>
+          <Button type="submit" label="POST"></Button>
         </div>
       </div>
     </div>
