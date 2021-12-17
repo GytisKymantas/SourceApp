@@ -5,9 +5,10 @@ import map from "../../../assets/mapPinIcon.svg";
 import heartImage from "../../../assets/clearHeartIcon.svg";
 import "./restaurant-card.scss";
 import redHeart from "../../../assets/redHeartIcon.svg";
-import vectorImage from "../../../assets/Vector.svg";
 import personIcon from "../../../assets/personIcon.svg";
 import { Button } from "components/atoms/Button/Button";
+import { RatingBadge } from "components/atoms/RatingBadge/RatingBadge";
+
 import { useState } from "react";
 
 export const RestaurantCard = ({
@@ -48,8 +49,7 @@ export const RestaurantCard = ({
           }}
         ></div>
         <div className="restaurant__container-frame">
-          <img src={vectorImage} alt="vector" />
-          <span>{Math.round(average * 10) / 10}</span>
+          <RatingBadge averageRating={Math.round(average * 10) / 10} />
         </div>
         <div className="restaurant__container-footer">
           <ul className="ordered-list">
@@ -82,11 +82,11 @@ export const RestaurantCard = ({
           <div className="restaurant__container-credentials">
             <span className="restaurant__website">
               <img src={globe} alt="globe" />
-              {restaurantWebsite}
+              <a href="#">{restaurantWebsite}</a>
             </span>
             <span className="restaurant__address">
               <img src={map} alt="map" />
-              {restaurantAddress}
+              <a href="#">{restaurantAddress}</a>
             </span>
           </div>
           <p className="restaurant__description">{restaurantDescription}</p>

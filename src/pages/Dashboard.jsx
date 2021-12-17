@@ -51,7 +51,6 @@ export const Dashboard = (data) => {
     <MainLayout>
       <HelloWidget name={firstName} />
       <ReservationsSection reservationData={reservationData} />
-      {storiesData && <StoriesSection data={storiesData} />}
       <RestaurantCard
         displayFullCard
         numberOfCheckIns={restaurantCardData?.checkIns}
@@ -65,6 +64,7 @@ export const Dashboard = (data) => {
         restaurantAverageRating={ratingArray}
       />
       <ViewEatOutCard />
+      {storiesData && <StoriesSection data={storiesData} />}
     </MainLayout>
   );
 };

@@ -7,6 +7,17 @@
     text-align: start;
     max-width: 416px;
 
+    a {
+        text-decoration: none;
+        color: #3e5067;
+        transition: 0.3s;
+
+        &:hover {
+            color: black;
+            opacity: 0.4;
+        }
+    }
+
     &-front {
         border-radius: 8px;
         height: 229px;
@@ -33,21 +44,6 @@
         position: absolute;
         top: 16px;
         width: 68px;
-
-        img {
-            left: 17%;
-            position: absolute;
-            top: 25%;
-        }
-
-        span {
-            font-size: $font-size-small;
-            font-weight: bold;
-            left: 50%;
-            line-height: 16px;
-            position: absolute;
-            top: 23%;
-        }
     }
 
     &-footer {
