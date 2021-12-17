@@ -12,16 +12,16 @@ export const Navigation = () => {
   const dashboardName = "Dashboard";
   return (
     <div className="navigation">
-      <MenuItem icon={<DashboardIcon />} name={dashboardName} link={"/"} />
+      <MenuItem icon={<DashboardIcon />} name={dashboardName} link="/" />
       <MenuItem
         icon={<ReservationsIcon />}
         name={reservationsName}
-        link={"/dashboard/reservations"}
+        link="/dashboard/reservations"
       />
       <MenuItem
         icon={<EatOutIcon />}
         name={eatOutName}
-        link={"/dashboard/eatout"}
+        link="/dashboard/eatout"
       />
     </div>
   );
