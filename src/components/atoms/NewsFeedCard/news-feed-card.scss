@@ -181,6 +181,7 @@
     text-align: left;
 
     .comments__box_one {
+        margin-bottom: 10px;
         order: 1;
 
         .comments__header {
@@ -189,8 +190,8 @@
             flex-direction: row;
             font-weight: $font-weight-medium;
             justify-content: space-between;
-            margin-bottom: 4px;
-            margin-top: 4px;
+            margin-bottom: 6px;
+            margin-top: 6px;
             width: 384px;
         }
 
