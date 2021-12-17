@@ -35,7 +35,8 @@ export const NewsFeedItem = (data) => {
         </div>
         <div className="card__timestamp">
           <p>{postLocation}</p>
-          <p className="card--time">{postDate}</p>
+          <p className="card--time">{Moment(postDate).format("HH")}H</p>
+          {/* <span>{Moment(item1.date).format("MM/DD/YYYY HH:mm")}</span> */}
         </div>
       </div>
       {/* {postVideo ? (
@@ -72,9 +73,9 @@ export const NewsFeedItem = (data) => {
                   <span className="comments__name">{item1.userName}</span>
                   {/* dummy */}
                   <div>{date}</div>
-                  <span className="comments__timestamp">
-                    {item1.date.slice(0, 16)}
-                  </span>
+                  <div className="comments__timestamp">
+                    <span>{Moment(item1.date).format("MM/DD/YYYY HH:mm")}</span>
+                  </div>
                 </div>
                 {/* dummy */}
                 <div> {comment}</div>
