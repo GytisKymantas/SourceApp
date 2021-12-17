@@ -64,7 +64,7 @@ export const Dashboard = (data) => {
           restaurantImage={restaurantData?.restaurants[0].image}
         />
       )}
-      <EatOutSection data={restaurantData} />
+      {restaurantData && <EatOutSection data={restaurantData} />}
     </MainLayout>
   );
 };
