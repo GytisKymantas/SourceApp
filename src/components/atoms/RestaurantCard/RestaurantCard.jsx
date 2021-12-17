@@ -82,13 +82,21 @@ export const RestaurantCard = ({
           <div className="restaurant__container-credentials">
             <span className="restaurant__website">
               <img src={globe} alt="globe" />
-              <a href={restaurantWebsite} rel="noreferrer" target="_blank">
+              <a
+                href={restaurantWebsite}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 {restaurantWebsite}
               </a>
             </span>
             <span className="restaurant__address">
               <img src={map} alt="map" />
-              <a href={restaurantAddress} rel="noreferrer" target="_blank">
+              <a
+                href={restaurantAddress}
+                rel="nooopener noreferrer"
+                target="_blank"
+              >
                 {restaurantAddress}
               </a>
             </span>
