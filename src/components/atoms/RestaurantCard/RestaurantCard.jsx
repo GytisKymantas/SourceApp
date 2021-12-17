@@ -84,7 +84,7 @@ export const RestaurantCard = ({
               <img src={globe} alt="globe" />
               <a
                 href={restaurantWebsite}
-                rel="noopener noreferrer"
+                rel="nopener noreferrer"
                 target="_blank"
               >
                 {restaurantWebsite}
@@ -94,7 +94,7 @@ export const RestaurantCard = ({
               <img src={map} alt="map" />
               <a
                 href={restaurantAddress}
-                rel="nooopener noreferrer"
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 {restaurantAddress}
