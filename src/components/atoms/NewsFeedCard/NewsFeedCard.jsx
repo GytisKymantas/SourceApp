@@ -12,7 +12,7 @@ export const NewsFeedItem = (data) => {
   Moment.locale("en");
 
   // const postVideo = data?.data[0];
-  const postNews = data?.data[7];
+  const postNews = data?.data[0];
 
   // console.log(postNews);
 
@@ -72,7 +72,9 @@ export const NewsFeedItem = (data) => {
                   <span className="comments__name">{item1.userName}</span>
                   {/* dummy */}
                   <div>{date}</div>
-                  <span className="comments__timestamp">{item1.date}</span>
+                  <span className="comments__timestamp">
+                    {item1.date.slice(0, 16)}
+                  </span>
                 </div>
                 {/* dummy */}
                 <div> {comment}</div>
