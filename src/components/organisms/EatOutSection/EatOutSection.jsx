@@ -21,7 +21,6 @@ const EatOutSection = (data) => {
     }
     return finalArray;
   };
-  console.log(twoBiggest());
 
   return (
     <div className="main-container">

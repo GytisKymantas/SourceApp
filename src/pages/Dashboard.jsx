@@ -48,7 +48,6 @@ export const Dashboard = (data) => {
     <MainLayout>
       <HelloWidget name={firstName} />
       <ReservationsSection reservationData={reservationData} />
-<<<<<<< HEAD
       {storiesData && <StoriesSection data={storiesData} />}
       {restaurantData && (
         <RestaurantCard
@@ -66,10 +65,7 @@ export const Dashboard = (data) => {
         />
       )}
       {restaurantData && <EatOutSection data={restaurantData} />}
-=======
-      <ViewEatOutCard />
       {storiesData && <StoriesSection data={storiesData} />}
->>>>>>> dev
     </MainLayout>
   );
 };
