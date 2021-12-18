@@ -2,15 +2,11 @@ import React from "react";
 import "./category-item.scss";
 import PropTypes from "prop-types";
 
-export const CategoryItem = ({
-  categoryName,
-  categoryImage,
-  categoryNumber,
-}) => (
+export const CategoryItem = ({ categoryName, categoryImage, categoryInfo }) => (
   <div className="category-item">
     <div className="category-item__header-container">
       <h2>{categoryName}</h2>
-      <p>{categoryNumber ? `${categoryNumber} RESERVED` : "UNRESERVED"}</p>
+      <p>{categoryInfo}</p>
     </div>
     <div className="category-item__image-wrapper">
       <img
@@ -25,5 +21,5 @@ export const CategoryItem = ({
 CategoryItem.propTypes = {
   categoryImage: PropTypes.string,
   categoryName: PropTypes.string,
-  categoryNumber: PropTypes.number,
+  categoryInfo: PropTypes.string,
 };
