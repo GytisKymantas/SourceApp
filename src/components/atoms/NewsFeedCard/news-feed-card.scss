@@ -70,27 +70,23 @@
     flex-grow: 1;
     position: relative;
 
-    .icon {
-        height: 72px;
-        left: 170.61px;
+    .vector__one {
+        left: 46%;
         position: absolute;
-        top: 160px;
-        width: 75.83px;
+        top: 44%;
+    }
 
-        .vector__one {
-            bottom: 33.33%;
-            left: 41.67%;
-            position: absolute;
-            right: 33.33%;
-            top: 33.33%;
-        }
+    .vector__two {
+        left: 39%;
+        position: absolute;
+        top: 39%;
     }
 }
 
 .card__content-image {
-    background-size: 150%;
     height: 405px;
     margin-bottom: 14px;
+    object-fit: cover;
     width: 416px;
 }
 

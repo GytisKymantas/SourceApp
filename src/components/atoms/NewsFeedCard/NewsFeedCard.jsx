@@ -1,7 +1,7 @@
 import React from "react";
 // import PropTypes from "prop-types";
-// import vectorPlay from "../../../assets/vectorPlay.svg";
-// import vectorOval from "../../../assets/vectorOval.svg";
+import vectorPlay from "../../../assets/vectorPlay.svg";
+import vectorOval from "../../../assets/vectorOval.svg";
 import vectorComment from "../../../assets/vectorComment.svg";
 import transparentHeart from "../../../assets/transparentHeart.svg";
 import redHeart from "assets/redHeart.svg";
@@ -12,8 +12,8 @@ import "../NewsFeedCard/news-feed-card.scss";
 export const NewsFeedItem = (data) => {
   Moment.locale("en");
 
-  // const postVideo = data?.data[0];
   const postNews = data?.data[0];
+  const postVideos = data?.data[7];
 
   // console.log(postNews);
 
@@ -26,7 +26,8 @@ export const NewsFeedItem = (data) => {
   const comments = postNews.comments;
   const comment = postNews.comment;
   const date = postNews.date;
-
+  const postCover = postNews.postCover;
+  const postVideo = postNews.postVideo;
   return (
     <div className="card">
       <div className="card-header__wrapper">
@@ -39,16 +40,16 @@ export const NewsFeedItem = (data) => {
           <p className="card--time">{Moment(postDate).format("HH")}H</p>
         </div>
       </div>
-      {/* {postVideo ? (
+      {postVideos ? (
         <div className="card__content-video">
           <img className="vector__one" src={vectorPlay} alt="" />
-
+          <img src={postCover} alt="" />
+          <img className="card__content-image" src={postVideo} alt="" />
           <img className="vector__two" src={vectorOval} alt="" />
         </div>
       ) : (
-        <div className="card__content-image">{postImage}</div>
-      )} */}
-      <img className="card__content-image" src={postImage} alt="" />
+        <img className="card__content-image" src={postImage} alt="" />
+      )}
       <div className="actions">
         <button className="likes">
           <div className="likes__outline">
