@@ -13,7 +13,7 @@ export const NewsFeedItem = (data) => {
   Moment.locale("en");
 
   const postNews = data?.data[0];
-  const postVideos = data?.data[7];
+  const postVideos = data?.data[2];
 
   // console.log(postNews);
 
@@ -25,8 +25,9 @@ export const NewsFeedItem = (data) => {
   let likes = postNews.likes;
   const comments = postNews.comments;
   const comment = postNews.comment;
-  const date = postNews.date;
   const postCover = postNews.postCover;
+  const date = postNews.date;
+  // Video
   const postVideo = postNews.postVideo;
   return (
     <div className="card">
@@ -42,10 +43,15 @@ export const NewsFeedItem = (data) => {
       </div>
       {postVideos ? (
         <div className="card__content-video">
-          <img className="vector__one" src={vectorPlay} alt="" />
-          <img src={postCover} alt="" />
-          <img className="card__content-image" src={postVideo} alt="" />
+          {/* <button> */}
           <img className="vector__two" src={vectorOval} alt="" />
+          <img className="vector__one" src={vectorPlay} alt="" />
+          {/* </button> */}
+          {/* <img className="card__content-image" src={postCover} alt="" /> */}
+          <video className="card__content-image" src={postVideo || postCover}>
+            <track kind="captions" type="video/mp4"></track>
+            Sorry, your browser does not support embedded videos.
+          </video>
         </div>
       ) : (
         <img className="card__content-image" src={postImage} alt="" />
