@@ -12,7 +12,7 @@ import "../NewsFeedCard/news-feed-card.scss";
 export const NewsFeedItem = (data) => {
   Moment.locale("en");
 
-  const postNews = data?.data[0];
+  const postNews = data?.data[1];
   const postVideos = data?.data[2];
 
   // console.log(postNews);
@@ -43,11 +43,8 @@ export const NewsFeedItem = (data) => {
       </div>
       {postVideos ? (
         <div className="card__content-video">
-          {/* <button> */}
           <img className="vector__two" src={vectorOval} alt="" />
           <img className="vector__one" src={vectorPlay} alt="" />
-          {/* </button> */}
-          {/* <img className="card__content-image" src={postCover} alt="" /> */}
           <video className="card__content-image" src={postVideo || postCover}>
             <track kind="captions" type="video/mp4"></track>
             Sorry, your browser does not support embedded videos.
