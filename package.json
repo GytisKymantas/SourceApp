@@ -12,7 +12,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^6.0.2",
-    "react-scripts": "^3.4.4"
+    "react-scripts": "3.4.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -65,7 +65,8 @@
     "@storybook/addon-links": "^6.0.27",
     "@storybook/addon-notes": "^5.3.21",
     "@storybook/addons": "^6.0.27",
-    "@storybook/react": "^6.4.7",
+    "@storybook/react": "^6.3.12",
+    "@svgr/webpack": "^5.4.0",
     "css-loader": "^5.0.0",
     "eslint": "6.6.0",
     "eslint-config-prettier": "^6.12.0",
