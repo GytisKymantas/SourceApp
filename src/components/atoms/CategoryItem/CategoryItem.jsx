@@ -1,31 +1,29 @@
 import React from "react";
-import "./reservations-item.scss";
+import "./category-item.scss";
 import PropTypes from "prop-types";
 
-export const ReservationsItem = ({
-  reservationName,
-  reservationImage,
-  reservationNumber,
+export const CategoryItem = ({
+  categoryName,
+  categoryImage,
+  categoryNumber,
 }) => (
-  <div className="reservations-item">
-    <div className="reservations-item__header-container">
-      <h2>{reservationName}</h2>
-      <p>
-        {reservationNumber ? `${reservationNumber} RESERVED` : "UNRESERVED"}
-      </p>
+  <div className="category-item">
+    <div className="category-item__header-container">
+      <h2>{categoryName}</h2>
+      <p>{categoryNumber ? `${categoryNumber} RESERVED` : "UNRESERVED"}</p>
     </div>
-    <div className="reservations-item__image-wrapper">
+    <div className="category-item__image-wrapper">
       <img
-        className="reservations-item__image"
-        src={reservationImage}
-        alt="Reservations category"
+        className="category-item__image"
+        src={categoryImage}
+        alt="Category"
       />
     </div>
   </div>
 );
 
-ReservationsItem.propTypes = {
-  reservationImage: PropTypes.string,
-  reservationName: PropTypes.string,
-  reservationNumber: PropTypes.number,
+CategoryItem.propTypes = {
+  categoryImage: PropTypes.string,
+  categoryName: PropTypes.string,
+  categoryNumber: PropTypes.number,
 };
