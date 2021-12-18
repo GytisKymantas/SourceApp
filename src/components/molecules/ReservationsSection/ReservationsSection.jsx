@@ -1,5 +1,5 @@
 import React from "react";
-import { ReservationsItem } from "components/atoms/ReservationsItem/ReservationsItem";
+import { CategoryItem } from "components/atoms/CategoryItem/CategoryItem";
 import Door from "../../../assets/door.svg";
 import Book from "../../../assets/book.svg";
 import Phone from "../../../assets/phone.svg";
@@ -11,7 +11,7 @@ export const ReservationsSection = ({ reservationData }) => {
 
   const nameMatcher = (name) => {
     switch (name) {
-      case "books":
+      case "rooms":
         return "Meeting Rooms";
       default:
         return name;
@@ -37,10 +37,12 @@ export const ReservationsSection = ({ reservationData }) => {
         {reservationArray
           ? reservationArray.map((obj, index) => {
               return (
-                <ReservationsItem
-                  reservationName={nameMatcher(obj[0])}
-                  reservationNumber={obj[1].length}
-                  reservationImage={imageMatcher(obj[0])}
+                <CategoryItem
+                  categoryName={nameMatcher(obj[0])}
+                  categoryInfo={
+                    obj[1].length ? `${obj[1].length} RESERVED` : "UNRESERVED"
+                  }
+                  categoryImage={imageMatcher(obj[0])}
                   key={index}
                 />
               );
