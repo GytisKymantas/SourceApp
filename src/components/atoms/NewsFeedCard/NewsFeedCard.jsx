@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import vectorPlay from "../../../assets/vectorPlay.svg";
 import vectorOval from "../../../assets/vectorOval.svg";
 import vectorComment from "../../../assets/vectorComment.svg";
-import { ReactComponent as transparentHeart } from "../../../assets/transparentHeart.svg";
-import { ReactComponent as redHeart } from "assets/redHeart.svg";
+import { ReactComponent as TransparentHeart } from "../../../assets/transparentHeart.svg";
+import { ReactComponent as RedHeart } from "assets/redHeart.svg";
 import Moment from "moment";
 import { Button } from "../../atoms/Button/Button";
 import "../NewsFeedCard/news-feed-card.scss";
@@ -79,18 +79,15 @@ export const NewsFeedItem = (data) => {
       )}
       {/* liek button start */}
       <div className="actions">
-        {/* <button className="likes"> */}
         <div className="likes">
-          {/* <img src={transparentHeart} alt="like here" /> */}
-          {/* <img src={redHeart} alt="like here" /> */}
           {like ? (
-            <redHeart
+            <RedHeart
               className="card__icons-present"
               onClick={handleLikeClick}
               onKeyDown={handleLikeClick}
             />
           ) : (
-            <transparentHeart
+            <TransparentHeart
               className="card__icons-present"
               onClick={handleLikeClick}
               onKeyDown={handleLikeClick}
@@ -100,9 +97,6 @@ export const NewsFeedItem = (data) => {
             {like ? (likes = likes + 1) : likes}
           </span>
         </div>
-        {/* <div className="likes__body">{likes}</div> */}
-        {/* </button> */}
-        {/* liek button end*/}
         <button className="comments">
           <div>
             <img src={vectorComment} alt="leave comment here" />
