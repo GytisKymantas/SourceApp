@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 // import PropTypes from "prop-types";
 import vectorPlay from "../../../assets/vectorPlay.svg";
 import vectorOval from "../../../assets/vectorOval.svg";
 import vectorComment from "../../../assets/vectorComment.svg";
-import transparentHeart from "../../../assets/transparentHeart.svg";
-import redHeart from "assets/redHeart.svg";
+import { ReactComponent as transparentHeart } from "../../../assets/transparentHeart.svg";
+import { ReactComponent as redHeart } from "assets/redHeart.svg";
 import Moment from "moment";
 import { Button } from "../../atoms/Button/Button";
 import "../NewsFeedCard/news-feed-card.scss";
 
 export const NewsFeedItem = (data) => {
   Moment.locale("en");
+
+  // like button
+  const [like, setLike] = useState(false);
+
+  const handleLikeClick = () => {
+    setLike((prevValue) => !prevValue);
+  };
+  // like button end
 
   const postNews = data?.data[1];
   const postVideos = data?.data[2];
@@ -27,7 +35,23 @@ export const NewsFeedItem = (data) => {
   const comment = postNews.comment;
   const postCover = postNews.postCover;
   const date = postNews.date;
-  // Video
+
+  // const {
+  //   userName,
+  //   userImage,
+  //   postImage,
+  //   postLocation,
+  //   postDate,
+  //   comments,
+  //   comment,
+  //   postCover,
+  //   date,
+  //   // Video
+  //   postVideo,
+  // } = postNews;
+
+  // let likes = postNews;
+  // same video
   const postVideo = postNews.postVideo;
   return (
     <div className="card">
@@ -53,14 +77,32 @@ export const NewsFeedItem = (data) => {
       ) : (
         <img className="card__content-image" src={postImage} alt="" />
       )}
+      {/* liek button start */}
       <div className="actions">
-        <button className="likes">
-          <div className="likes__outline">
-            <img src={transparentHeart} alt="like here" />
-            <img src={redHeart} alt="like here" />
-          </div>
-          <div className="likes__body">{likes}</div>
-        </button>
+        {/* <button className="likes"> */}
+        <div className="likes">
+          {/* <img src={transparentHeart} alt="like here" /> */}
+          {/* <img src={redHeart} alt="like here" /> */}
+          {like ? (
+            <redHeart
+              className="card__icons-present"
+              onClick={handleLikeClick}
+              onKeyDown={handleLikeClick}
+            />
+          ) : (
+            <transparentHeart
+              className="card__icons-present"
+              onClick={handleLikeClick}
+              onKeyDown={handleLikeClick}
+            />
+          )}
+          <span className="likes__body">
+            {like ? (likes = likes + 1) : likes}
+          </span>
+        </div>
+        {/* <div className="likes__body">{likes}</div> */}
+        {/* </button> */}
+        {/* liek button end*/}
         <button className="comments">
           <div>
             <img src={vectorComment} alt="leave comment here" />
