@@ -35,7 +35,7 @@ $_font-size-xlarge-plus: 60px;
 @media (max-width: 672px) {
     .hello-widget {
         align-items: center;
-        justify-content: center;
+        // justify-content: center;
         text-align: center;
 
         &__time {
