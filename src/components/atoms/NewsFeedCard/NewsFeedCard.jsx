@@ -23,8 +23,6 @@ export const NewsFeedItem = (data) => {
   const postNews = data?.data[1];
   const postVideos = data?.data[2];
 
-  // console.log(postNews);
-
   const userName = postNews.userName;
   const userImage = postNews.userImage;
   const postImage = postNews.postImage;
@@ -35,23 +33,6 @@ export const NewsFeedItem = (data) => {
   const comment = postNews.comment;
   const postCover = postNews.postCover;
   const date = postNews.date;
-
-  // const {
-  //   userName,
-  //   userImage,
-  //   postImage,
-  //   postLocation,
-  //   postDate,
-  //   comments,
-  //   comment,
-  //   postCover,
-  //   date,
-  //   // Video
-  //   postVideo,
-  // } = postNews;
-
-  // let likes = postNews;
-  // same video
   const postVideo = postNews.postVideo;
   return (
     <div className="card">
