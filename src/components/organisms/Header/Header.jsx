@@ -1,5 +1,4 @@
-import React from "react";
-import useReactSimpleMatchMedia from "react-simple-matchmedia";
+import React, { useEffect, useState } from "react";
 import { ReactComponent as RocketLogo } from "assets/rocketLogo.svg";
 import { ReactComponent as Logo } from "assets/logo.svg";
 
@@ -10,12 +9,20 @@ import { Navigation } from "../../molecules/Navigation/Navigation";
 const logoPath = "/dashboard";
 
 export const Header = () => {
-  const matched = useReactSimpleMatchMedia("(max-width: 768px)");
+  const [width, setWidth] = useState(window.innerWidth);
+  const breakPoint = 768;
+
+  useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
 
   return (
     <header className="header">
       <a className="header__logo" href={logoPath}>
-        {matched ? <RocketLogo /> : <Logo />}
+        {width > breakPoint ? <Logo /> : <RocketLogo />}
       </a>
       <Navigation className="header__navigation" />
       <ProfileWidget className="header__profile-widget" />
