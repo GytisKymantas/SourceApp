@@ -118,7 +118,11 @@
 
     .restaurant__description {
         padding-top: 7px;
-        width: 368px;
+        width: 390px;
+        overflow: hidden;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
     }
 
     .restaurant__people-number {
