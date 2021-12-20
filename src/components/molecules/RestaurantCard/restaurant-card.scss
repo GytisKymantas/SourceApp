@@ -44,6 +44,11 @@
         position: absolute;
         top: 16px;
         width: 68px;
+
+        & .frame:hover {
+            left: -74%;
+            position: absolute;
+        }
     }
 
     &-footer {
@@ -91,6 +96,7 @@
     &-image-heart {
         float: right;
         margin-right: 15px;
+        cursor: pointer;
     }
 
     &-bottom {

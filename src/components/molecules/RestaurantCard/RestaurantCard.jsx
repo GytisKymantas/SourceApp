@@ -31,9 +31,7 @@ export const RestaurantCard = ({
 
   const [heart, setHeart] = useState(true);
 
-  const handleHeartClick = () => {
-    setHeart((prevValue) => !prevValue);
-  };
+  const handleHeartClick = () => setHeart(!heart);
 
   return (
     <div className="restaurant__container">
@@ -65,11 +63,10 @@ export const RestaurantCard = ({
             role="button"
             aria-hidden="true"
           >
-            {heart ? (
-              <img src={heartImage} alt="clear heart" />
-            ) : (
-              <img src={redHeart} alt="heart filled red" />
-            )}
+            <img
+              src={heart ? heartImage : redHeart}
+              alt={heart ? "clear heart" : "heart filled red"}
+            />
           </div>
           <div className="restaurant__container-image-text">
             <h2 title={restaurantName}>{restaurantName}</h2>
@@ -83,8 +80,8 @@ export const RestaurantCard = ({
             <span className="restaurant__website">
               <img src={globe} alt="globe" />
               <a
-                href={restaurantWebsite}
-                rel="nopener noreferrer"
+                href={`https://${restaurantWebsite}`}
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 {restaurantWebsite}
@@ -92,13 +89,8 @@ export const RestaurantCard = ({
             </span>
             <span className="restaurant__address">
               <img src={map} alt="map" />
-              <a
-                href={restaurantAddress}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                {restaurantAddress}
-              </a>
+
+              {restaurantAddress}
             </span>
           </div>
           <p className="restaurant__description">{restaurantDescription}</p>

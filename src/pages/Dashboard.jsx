@@ -4,7 +4,7 @@ import { ReservationsSection } from "components/molecules/ReservationsSection/Re
 import React from "react";
 import { useState, useEffect } from "react";
 import { StoriesSection } from "components/organisms/StoriesSection/StoriesSection";
-import { RestaurantCard } from "components/atoms/RestaurantCard/RestaurantCard";
+import { RestaurantCard } from "components/molecules/RestaurantCard/RestaurantCard";
 import { ViewEatOutCard } from "components/molecules/ViewEatOutCard/ViewEatOutCard";
 
 export const Dashboard = (data) => {
@@ -51,21 +51,23 @@ export const Dashboard = (data) => {
     <MainLayout>
       <HelloWidget name={firstName} />
       <ReservationsSection reservationData={reservationData} />
-      <RestaurantCard
-        displayFullCard
-        numberOfCheckIns={restaurantCardData?.checkIns}
-        restaurantName={restaurantCardData?.name}
-        restaurantWebsite={restaurantCardData?.website.replace(
-          /(^\w+:|^)\/\//,
-          ""
-        )}
-        restaurantAddress={restaurantCardData?.location.address}
-        restaurantOpeningHours={restaurantCardData?.openingHours[0].hours}
-        restaurantDescription={restaurantCardData?.description}
-        restaurantCategories={restaurantCardData?.categories}
-        restaurantImage={restaurantCardData?.image}
-        restaurantAverageRating={ratingArray}
-      />
+      {restaurantCardData && (
+        <RestaurantCard
+          displayFullCard
+          numberOfCheckIns={restaurantCardData.checkIns}
+          restaurantName={restaurantCardData.name}
+          restaurantWebsite={restaurantCardData.website.replace(
+            /(^\w+:|^)\/\//,
+            ""
+          )}
+          restaurantAddress={restaurantCardData.location.address}
+          restaurantOpeningHours={restaurantCardData.openingHours[0].hours}
+          restaurantDescription={restaurantCardData.description}
+          restaurantCategories={restaurantCardData.categories}
+          restaurantImage={restaurantCardData.image}
+          restaurantAverageRating={ratingArray}
+        />
+      )}
       <ViewEatOutCard />
       {storiesData && <StoriesSection data={storiesData} />}
     </MainLayout>
