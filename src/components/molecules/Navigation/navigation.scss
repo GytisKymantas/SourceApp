@@ -12,6 +12,6 @@
 }
 @media (max-width: 768px) {
     .navigation {
-        width: auto;
+        flex-direction: column;
     }
 }
