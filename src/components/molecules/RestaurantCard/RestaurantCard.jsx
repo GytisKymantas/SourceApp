@@ -1,15 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import globe from "../../../assets/globeIcon.svg";
 import map from "../../../assets/mapPinIcon.svg";
 import heartImage from "../../../assets/clearHeartIcon.svg";
-import "./restaurant-card.scss";
 import redHeart from "../../../assets/redHeartIcon.svg";
 import personIcon from "../../../assets/personIcon.svg";
 import { Button } from "components/atoms/Button/Button";
 import { RatingBadge } from "components/atoms/RatingBadge/RatingBadge";
-
-import { useState } from "react";
+import "./restaurant-card.scss";
 
 export const RestaurantCard = ({
   displayFullCard,
@@ -77,7 +75,7 @@ export const RestaurantCard = ({
       {displayFullCard ? (
         <div className="restaurant__container-bottom">
           <div className="restaurant__container-credentials">
-            <span className="restaurant__website">
+            <span className="restaurant-locale">
               <img src={globe} alt="globe" />
               <a
                 href={`https://${restaurantWebsite}`}
@@ -87,9 +85,8 @@ export const RestaurantCard = ({
                 {restaurantWebsite}
               </a>
             </span>
-            <span className="restaurant__address">
-              <img src={map} alt="map" />
-
+            <span className="restaurant-locale">
+              <img src={map} className="location-pin" alt="map" />
               {restaurantAddress}
             </span>
           </div>
