@@ -37,41 +37,6 @@
 @media (max-width: 768px) {
     .menu-item {
         height: 100%;
-    }
-}
-
-@media (max-width: 560px) {
-    .menu-item {
-        font-size: $font-size-tiny;
-
-        &__content {
-            padding: 0 10px;
-        }
-
-        &__name {
-            padding-left: 0;
-        }
-    }
-}
-
-@media (max-width: 415px) {
-    .menu-item {
-        font-size: $font-size-mini;
-
-        &__content {
-            padding: 0 5px;
-        }
-
-        &__icon {
-            transform: scale(0.8);
-        }
-    }
-}
-
-@media (max-width: 350px) {
-    .menu-item {
-        &__icon {
-            transform: scale(0.6);
-        }
+        width: 100%;
     }
 }
