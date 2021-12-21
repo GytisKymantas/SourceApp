@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import PropTypes from "prop-types";
 import vectorPlay from "../../../assets/vectorPlay.svg";
 import vectorOval from "../../../assets/vectorOval.svg";
-import vectorComment from "../../../assets/vectorComment.svg";
+import { ReactComponent as VectorComment } from "../../../assets/vectorComment.svg";
 import { ReactComponent as TransparentHeart } from "../../../assets/transparentHeart.svg";
 import { ReactComponent as RedHeart } from "assets/redHeart.svg";
 import Moment from "moment";
@@ -12,15 +12,7 @@ import "../NewsFeedCard/news-feed-card.scss";
 export const NewsFeedItem = (data) => {
   Moment.locale("en");
 
-  // like button
-  const [like, setLike] = useState(false);
-
-  const handleLikeClick = () => {
-    setLike((prevValue) => !prevValue);
-  };
-  // like button end
-
-  const postNews = data?.data[1];
+  const postNews = data?.data[2];
   const postVideos = data?.data[2];
 
   const userName = postNews.userName;
@@ -34,6 +26,30 @@ export const NewsFeedItem = (data) => {
   const postCover = postNews.postCover;
   const date = postNews.date;
   const postVideo = postNews.postVideo;
+
+  // like button
+  const [like, setLike] = useState(false);
+  const handleLikeClick = () => {
+    setLike((prevValue) => !prevValue);
+  };
+  // like button end
+
+  // comment submit start
+  const [commentValue, setCommentValue] = useState("");
+  const [coms, setComs] = useState(comments);
+
+  // neveikia
+  const handleCommentSubmit = () => {
+    const userComment = {
+      userName: "You",
+      comment: commentValue,
+      date: Moment(new Date()).format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
+    };
+    setComs([...coms, userComment]);
+    setCommentValue("");
+  };
+
+  // comment submit end
   return (
     <div className="card">
       <div className="card-header__wrapper">
@@ -79,9 +95,7 @@ export const NewsFeedItem = (data) => {
           </span>
         </div>
         <button className="comments">
-          <div>
-            <img src={vectorComment} alt="leave comment here" />
-          </div>
+          <VectorComment />
           <div className="comments__body">{comments.length}</div>
         </button>
       </div>
@@ -100,7 +114,7 @@ export const NewsFeedItem = (data) => {
                   </div>
                 </div>
                 {/* dummy */}
-                <div> {comment}</div>
+                <div> {comment} </div>
                 <span className="comments--content">{item1.comment}</span>
               </div>
             ))}
@@ -110,11 +124,20 @@ export const NewsFeedItem = (data) => {
         <div className="comment_input">
           <img className="user__icon" src={userImage} alt="your profile icon" />
           <input
+            className="input_leave_comment"
             type="text"
             placeholder="Leave a comment..."
-            className="input_leave_comment"
+            // added
+            value={commentValue}
+            onInput={(e) => setCommentValue(e.target.value)}
           />
-          <Button type="submit" label="POST"></Button>
+          {/* Veikia buttonas*/}
+          <Button
+            type="submit"
+            label="POST"
+            onClick={handleCommentSubmit}
+            disabled={!commentValue.trim()}
+          />
         </div>
       </div>
     </div>
