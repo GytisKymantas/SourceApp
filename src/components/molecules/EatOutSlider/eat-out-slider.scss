@@ -22,12 +22,21 @@ $svg-url: url('../../../assets/SliderBulletPoint.svg');
         align-items: flex-start;
 
         .top-navigation {
-            width: 60px;
             display: flex;
+            width: 312px;
+            justify-content: space-between;
             gap: 10px;
             padding-bottom: 25px;
 
-            img {
+            .bullets {
+                display: flex;
+                gap: 10px;
+
+                img {
+                    cursor: pointer;
+                }
+            }
+            .placeholder-nav {
                 cursor: pointer;
             }
         }

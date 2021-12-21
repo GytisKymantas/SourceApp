@@ -3,6 +3,7 @@ import CassaDellaPasta from "../../../assets/CassaDellaPasta.svg";
 import SliderBulletPoint from "../../../assets/SliderBulletPoint.svg";
 import SliderBulletPointSelected from "../../../assets/SliderBulletPointSelected.svg";
 import { Button } from "components/atoms/Button/Button";
+import PlaceholderNav from "../../../assets/PlaceholderNav.svg";
 
 // import PropTypes from "prop-types";
 
@@ -16,11 +17,16 @@ const EatOutSlider = () => {
       </div>
       <div className="slider-text__wrapper">
         <div className="top-navigation">
-          <img src={SliderBulletPoint} alt="bullet point" />
-          <img src={SliderBulletPoint} alt="bullet point" />
-          <img src={SliderBulletPointSelected} alt="selected point" />
-          <img src={SliderBulletPoint} alt="bullet point" />
-          <img src={SliderBulletPoint} alt="bullet point" />
+          <div className="bullets">
+            <img src={SliderBulletPoint} alt="bullet point" />
+            <img src={SliderBulletPoint} alt="bullet point" />
+            <img src={SliderBulletPointSelected} alt="selected point" />
+            <img src={SliderBulletPoint} alt="bullet point" />
+            <img src={SliderBulletPoint} alt="bullet point" />
+          </div>
+          <div className="placeholder-nav">
+            <img src={PlaceholderNav} alt="placeholder" />
+          </div>
         </div>
         <span className="text-slogan">Feel the taste of italy</span>
         <h2>Casa Della Pasta</h2>
