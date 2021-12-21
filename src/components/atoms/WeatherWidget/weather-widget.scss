@@ -12,6 +12,7 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
 
     &__box,
     &__invisible-box {
+        background-color: $color-white;
         border-radius: 10px;
         box-shadow: 0 8px 23px rgba(0, 0, 0, 0.25);
         color: $_color-black-transparent-05;
