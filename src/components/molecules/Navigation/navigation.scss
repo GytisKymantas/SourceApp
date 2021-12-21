@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: row;
     height: 100%;
-    justify-content: center;
+    justify-content: space-evenly;
 
     &__logo {
         float: left;
@@ -12,6 +12,7 @@
 }
 @media (max-width: 768px) {
     .navigation {
-        width: auto;
+        height: 80px;
+        width: 100%;
     }
 }

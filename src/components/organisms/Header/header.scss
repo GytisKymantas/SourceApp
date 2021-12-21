@@ -6,44 +6,52 @@
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     display: flex;
     height: 80px;
-    justify-content: space-between;
-    padding: 0 48px;
+    min-width: 280px;
+    padding: 0 6%;
+    text-align: center;
+    width: 88%;
 
-    &__logo,
-    &__navigation,
-    &__profile-widget {
-        flex: initial;
+    &__logo {
+        display: flex;
+        left: 20px;
+        order: 1;
+        width: 20%;
     }
+}
 
-    @media (max-width: 768px) {
+.navigation {
+    height: 80px;
+    order: 2;
+    width: 60%;
+}
+
+.profile-widget {
+    display: flex;
+    justify-content: flex-end;
+    order: 3;
+    width: 20%;
+}
+
+@media all and (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        height: 160px;
         justify-content: space-around;
-        padding: 0 24px;
-    }
 
-    @media (max-width: 580px) {
-        padding: 0 12px;
-
-        &__logo,
-        &__profile-widget {
-            transform: scale(0.8);
+        &__logo {
+            width: 45%;
         }
     }
 
-    @media (max-width: 450px) {
-        padding: 0 8px;
-
-        &__logo,
-        &__profile-widget {
-            transform: scale(0.6);
-        }
+    .navigation {
+        order: 3;
+        padding: 0;
+        width: 100%;
     }
 
-    @media (max-width: 350px) {
-        padding: 0 4px;
-
-        &__logo,
-        &__profile-widget {
-            transform: scale(0.5);
-        }
+    .profile-widget {
+        height: 80px;
+        order: 2;
+        width: 45%;
     }
 }
