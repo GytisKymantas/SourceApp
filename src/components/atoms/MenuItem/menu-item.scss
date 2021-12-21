@@ -2,7 +2,6 @@
 
 .menu-item {
     display: flex;
-    flex-direction: column;
     font-size: $font-size-medium;
     font-weight: $font-weight-medium;
     height: 100%;
@@ -46,10 +45,6 @@
 @media (max-width: 560px) {
     .menu-item {
         flex-wrap: wrap;
-    }
-}
-@media (max-width: 560px) {
-    .menu-item {
         font-size: $font-size-tiny;
 
         &__content {
@@ -57,7 +52,7 @@
         }
 
         &__name {
-            padding-left: 0;
+            padding-left: 5px;
         }
     }
 }
