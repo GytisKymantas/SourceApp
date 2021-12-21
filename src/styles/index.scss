@@ -27,6 +27,7 @@ body {
 }
 
 .content {
+    max-width: 1440px;
     padding: 48px 48px 120px;
 
     @media (max-width: 768px) {
