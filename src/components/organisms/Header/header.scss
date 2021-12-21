@@ -12,9 +12,7 @@
 
     &__logo {
         display: flex;
-        left: 20px;
         order: 1;
-        width: 15%;
     }
 }
 
@@ -35,12 +33,12 @@
     .header {
         flex-wrap: wrap;
         height: 160px;
-        justify-content: space-around;
+        justify-content: space-between;
         padding: 0;
 
         &__logo {
             padding-left: 3%;
-            width: 45%;
+            width: 15%;
         }
     }
 
