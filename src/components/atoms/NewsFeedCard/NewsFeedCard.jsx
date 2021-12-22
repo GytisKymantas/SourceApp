@@ -39,13 +39,14 @@ export const NewsFeedItem = (data) => {
   const [coms, setComs] = useState(comments);
 
   // neveikia
+
   const handleCommentSubmit = () => {
     const userComment = {
       userName: { userName },
       comment: commentValue,
       date: Moment(new Date()).format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
     };
-    setComs([...coms, userComment]);
+    setComs([coms, userComment]);
     setCommentValue("");
   };
 
@@ -107,14 +108,14 @@ export const NewsFeedItem = (data) => {
               <div className="comments__box_one" key={index1}>
                 <div className="comments__header">
                   <span className="comments__name">{item1.userName}</span>
-                  {/* dummy */}
-                  <div>{date}</div>
                   <div className="comments__timestamp">
                     <span>{Moment(item1.date).format("MM/DD/YYYY HH:mm")}</span>
                   </div>
                 </div>
                 {/* dummy */}
                 <div> {comment} </div>
+                {/* dummy */}
+                <div>{date}</div>
                 <span className="comments--content">{item1.comment}</span>
               </div>
             ))}
