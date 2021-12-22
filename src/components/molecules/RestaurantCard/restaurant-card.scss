@@ -33,6 +33,7 @@
     &-image-wrapper {
         background-position: center !important;
         background-size: cover !important;
+        border-radius: 8px;
         height: 180px;
     }
 
@@ -84,6 +85,10 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             width: 75%;
+
+            @media (max-width: 360px) {
+                font-size: $font-size-big;
+            }
         }
 
         span {
@@ -94,9 +99,10 @@
     }
 
     &-image-heart {
+        cursor: pointer;
         float: right;
         margin-right: 15px;
-        cursor: pointer;
+        padding-top: 2px;
     }
 
     &-bottom {
@@ -105,7 +111,7 @@
     }
 
     .restaurant__description {
-        padding-top: 7px;
+        padding: 7px 15px 0 0;
         max-width: 390px;
         overflow: hidden;
         -webkit-line-clamp: 3;
@@ -157,6 +163,10 @@
             line-height: 22px;
             text-transform: uppercase;
 
+            @media (max-width: 360px) {
+                font-size: $font-size-tiny;
+            }
+
             .location-pin {
                 height: 23px;
                 width: 24px;
@@ -175,10 +185,15 @@
 
     &-buttons {
         display: flex;
-        gap: 20px;
+        gap: 16px;
         justify-content: flex-end;
         padding: 15px 24px 24px 0;
 
+        button {
+            @media (max-width: 325px) {
+                font-size: $font-size-mini;
+            }
+        }
         button:first-child {
             background: transparent;
             border: 0;
