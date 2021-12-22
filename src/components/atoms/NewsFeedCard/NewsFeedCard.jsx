@@ -44,6 +44,7 @@ export const NewsFeedItem = (data) => {
 
   // like button
   const [like, setLike] = useState(false);
+
   const handleLikeClick = () => {
     setLike((prevValue) => !prevValue);
   };
@@ -111,7 +112,7 @@ export const NewsFeedItem = (data) => {
         </div>
         <button className="comments">
           <VectorComment />
-          <div className="comments__body">{comments.length}</div>
+          <span className="comments__body">{coms.length}</span>
         </button>
       </div>
       <div className="comment__wrapper">
