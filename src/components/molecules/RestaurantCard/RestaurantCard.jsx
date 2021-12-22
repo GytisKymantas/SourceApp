@@ -28,15 +28,17 @@ export const RestaurantCard = ({
     ) / restaurantAverageRating.length;
 
   const [heart, setHeart] = useState(true);
+  const [checkIn, setCheckIn] = useState(numberOfCheckIns);
 
   const handleHeartClick = () => setHeart(!heart);
+  const handleCheckInClick = () => setCheckIn(checkIn + 1);
 
   return (
     <div className="restaurant__container">
       <div className="restaurant__container-front">
         <div className="restaurant__people-number">
           <img src={personIcon} alt="person" />
-          <span>{numberOfCheckIns}</span>
+          <span>{checkIn}</span>
         </div>
         <div
           className="restaurant__container-image-wrapper"
@@ -93,7 +95,7 @@ export const RestaurantCard = ({
           <p className="restaurant__description">{restaurantDescription}</p>
           <div className="restaurant__container-buttons">
             <button>READ MORE</button>
-            <Button label={"CHECK-IN"} onClick={handleHeartClick} />
+            <Button label={"CHECK-IN"} onClick={handleCheckInClick} />
           </div>
         </div>
       ) : null}
