@@ -12,20 +12,35 @@ import "../NewsFeedCard/news-feed-card.scss";
 export const NewsFeedItem = (data) => {
   Moment.locale("en");
 
-  const postNews = data?.data[0];
-  const postVideos = data?.data[2];
+  const postNews = data?.data;
+  let {
+    userName,
+    userImage,
+    postImage,
+    postLocation,
+    postDate,
+    comments,
+    comment,
+    date,
+    likes,
+  } = postNews[1];
 
-  const userName = postNews.userName;
-  const userImage = postNews.userImage;
-  const postImage = postNews.postImage;
-  const postLocation = postNews.postLocation;
-  const postDate = postNews.postDate;
-  let likes = postNews.likes;
-  const comments = postNews.comments;
-  const comment = postNews.comment;
-  const postCover = postNews.postCover;
-  const date = postNews.date;
-  const postVideo = postNews.postVideo;
+  const postVideos = data?.data;
+  const { postCover, postVideo } = postVideos[1];
+
+  // const postNews = data?.data[2];
+  // const postVideos = data?.data[2];
+
+  // const userName = postNews.userName;
+  // const userImage = postNews.userImage;
+  // const postImage = postNews.postImage;
+  // const postLocation = postNews.postLocation;
+  // const postDate = postNews.postDate;
+  // const comments = postNews.comments;
+  // const comment = postNews.comment;
+  // const postCover = postNews.postCover;
+  // const date = postNews.date;
+  // const postVideo = postNews.postVideo;
 
   // like button
   const [like, setLike] = useState(false);
@@ -38,15 +53,14 @@ export const NewsFeedItem = (data) => {
   const [commentValue, setCommentValue] = useState("");
   const [coms, setComs] = useState(comments);
 
-  // neveikia
-
+  // veikia
   const handleCommentSubmit = () => {
     const userComment = {
-      userName: { userName },
+      userName: "You",
       comment: commentValue,
       date: Moment(new Date()).format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
     };
-    setComs([coms, userComment]);
+    setComs([...coms, userComment]);
     setCommentValue("");
   };
 
@@ -102,41 +116,46 @@ export const NewsFeedItem = (data) => {
       </div>
       <div className="comment__wrapper">
         <span className="divider_top"></span>
-        <div>
+        <div className="test">
           <div className="comments__rows">
-            {comments.map((item1, index1) => (
-              <div className="comments__box_one" key={index1}>
+            {coms.map((item, index) => (
+              <div className="comments__box_one" key={index}>
                 <div className="comments__header">
-                  <span className="comments__name">{item1.userName}</span>
+                  <span className="comments__name">{item.userName}</span>
                   <div className="comments__timestamp">
-                    <span>{Moment(item1.date).format("MM/DD/YYYY HH:mm")}</span>
+                    <span>{Moment(item.date).format("MM/DD/YYYY HH:mm")}</span>
                   </div>
                 </div>
                 {/* dummy */}
                 <div> {comment} </div>
                 {/* dummy */}
                 <div>{date}</div>
-                <span className="comments--content">{item1.comment}</span>
+                <span className="comments--content">{item.comment}</span>
               </div>
             ))}
           </div>
-        </div>
-        <span className="divider_bottom"></span>
-        <div className="comment_input">
-          <img className="user__icon" src={userImage} alt="your profile icon" />
-          <input
-            className="input_leave_comment"
-            type="text"
-            placeholder="Leave a comment..."
-            value={commentValue}
-            onInput={(e) => setCommentValue(e.target.value)}
-          />
-          <Button
-            type="submit"
-            label="POST"
-            onClick={handleCommentSubmit}
-            disabled={!commentValue.trim()}
-          />
+          <span className="divider_bottom"></span>
+          <div className="comment_input">
+            <img
+              className="user__icon"
+              src={userImage}
+              alt="your profile icon"
+            />
+            <input
+              className="input_leave_comment"
+              type="text"
+              placeholder="Leave a comment..."
+              value={commentValue}
+              onInput={(e) => setCommentValue(e.target.value)}
+            />
+            <Button
+              className="btn__active"
+              type="submit"
+              label="POST"
+              onClick={handleCommentSubmit}
+              disabled={!commentValue.trim()}
+            />
+          </div>
         </div>
       </div>
     </div>
