@@ -5,7 +5,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { StoriesSection } from "components/organisms/StoriesSection/StoriesSection";
 import { ViewEatOutCard } from "components/molecules/ViewEatOutCard/ViewEatOutCard";
-import EatOutSlider from "components/molecules/EatOutSlider/EatOutSlider";
 
 export const Dashboard = (data) => {
   const userData = data.data?.userData[0];
@@ -35,7 +34,6 @@ export const Dashboard = (data) => {
       <ReservationsSection reservationData={reservationData} />
       <ViewEatOutCard />
       {storiesData && <StoriesSection data={storiesData} />}
-      <EatOutSlider />
     </MainLayout>
   );
 };
