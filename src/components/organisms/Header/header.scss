@@ -8,12 +8,13 @@
     display: flex;
     height: 80px;
     min-width: 280px;
-    padding: 0 6%;
+    padding: 0 48px;
     text-align: center;
 
     &__logo {
         display: flex;
         order: 1;
+        width: 15%;
     }
 }
 
@@ -38,8 +39,7 @@
         padding: 0;
 
         &__logo {
-            padding-left: 3%;
-            width: 15%;
+            margin-left: 3%;
         }
     }
 
@@ -51,8 +51,8 @@
 
     .profile-widget {
         height: 80px;
+        margin-right: 3%;
         order: 2;
-        padding-right: 3%;
         width: 45%;
     }
 }
