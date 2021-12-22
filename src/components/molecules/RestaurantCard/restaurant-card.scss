@@ -46,7 +46,7 @@
         top: 16px;
         width: 68px;
 
-        & .frame:hover {
+        .frame:hover {
             left: -74%;
             position: absolute;
         }
@@ -111,12 +111,10 @@
     }
 
     .restaurant__description {
-        padding: 7px 15px 0 0;
         max-width: 390px;
         overflow: hidden;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        display: -webkit-box;
+        padding: 7px 15px 0 0;
+        text-overflow: ellipsis;
     }
 
     .restaurant__people-number {
@@ -194,6 +192,7 @@
                 font-size: $font-size-mini;
             }
         }
+
         button:first-child {
             background: transparent;
             border: 0;
