@@ -5,7 +5,7 @@ import "./header.scss";
 import { ProfileWidget } from "../../molecules/ProfileWidget/ProfileWidget";
 import { Navigation } from "../../molecules/Navigation/Navigation";
 
-const logoPath = "/dashboard";
+const logoPath = "/";
 
 export const Header = () => (
   <header className="header">
