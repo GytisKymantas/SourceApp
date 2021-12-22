@@ -12,7 +12,7 @@ import "../NewsFeedCard/news-feed-card.scss";
 export const NewsFeedItem = (data) => {
   Moment.locale("en");
 
-  const postNews = data?.data[2];
+  const postNews = data?.data[0];
   const postVideos = data?.data[2];
 
   const userName = postNews.userName;
@@ -41,7 +41,7 @@ export const NewsFeedItem = (data) => {
   // neveikia
   const handleCommentSubmit = () => {
     const userComment = {
-      userName: "You",
+      userName: { userName },
       comment: commentValue,
       date: Moment(new Date()).format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
     };
@@ -127,11 +127,9 @@ export const NewsFeedItem = (data) => {
             className="input_leave_comment"
             type="text"
             placeholder="Leave a comment..."
-            // added
             value={commentValue}
             onInput={(e) => setCommentValue(e.target.value)}
           />
-          {/* Veikia buttonas*/}
           <Button
             type="submit"
             label="POST"
