@@ -20,8 +20,6 @@ export const NewsFeedItem = (data) => {
     postLocation,
     postDate,
     comments,
-    comment,
-    date,
     likes,
   } = postNews[1];
 
@@ -127,10 +125,6 @@ export const NewsFeedItem = (data) => {
                     <span>{Moment(item.date).format("MM/DD/YYYY HH:mm")}</span>
                   </div>
                 </div>
-                {/* dummy */}
-                <div> {comment} </div>
-                {/* dummy */}
-                <div>{date}</div>
                 <span className="comments--content">{item.comment}</span>
               </div>
             ))}
