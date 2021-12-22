@@ -49,21 +49,7 @@ export const Dashboard = (data) => {
       <HelloWidget name={firstName} />
       <ReservationsSection reservationData={reservationData} />
       {storiesData && <StoriesSection data={storiesData} />}
-      {restaurantData && (
-        <RestaurantCard
-          displayFullCard={true}
-          numberOfCheckIns={restaurantData?.restaurants[0].checkIns}
-          restaurantName={restaurantData?.restaurants[0].name}
-          restaurantWebsite={restaurantData?.restaurants[0].website.slice(7)}
-          restaurantAddress={restaurantData?.restaurants[0].location.address}
-          restaurantOpeningHours={
-            restaurantData?.restaurants[0].openingHours[0].hours
-          }
-          restaurantDescription={restaurantData?.restaurants[0].description}
-          restaurantCategories={restaurantData?.restaurants[0].categories}
-          restaurantImage={restaurantData?.restaurants[0].image}
-        />
-      )}
+
       {restaurantData && <EatOutSection data={restaurantData} />}
       {storiesData && <StoriesSection data={storiesData} />}
     </MainLayout>

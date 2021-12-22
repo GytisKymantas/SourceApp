@@ -4,8 +4,19 @@
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     margin-bottom: 40px;
+    max-width: 416px;
     text-align: start;
-    width: 416px;
+
+    a {
+        color: $color-fiord;
+        text-decoration: none;
+        transition: 0.3s;
+
+        &:hover {
+            color: $color-black;
+            opacity: 0.4;
+        }
+    }
 
     &-front {
         border-radius: 8px;
@@ -29,24 +40,14 @@
         background: $color-yellow;
         border-radius: 8px;
         height: 32px;
-        left: 79%;
+        left: calc(100% - 96px);
         position: absolute;
         top: 16px;
         width: 68px;
 
-        img {
-            left: 17%;
+        & .frame:hover {
+            left: -74%;
             position: absolute;
-            top: 25%;
-        }
-
-        span {
-            font-size: $font-size-small;
-            font-weight: bold;
-            left: 50%;
-            line-height: 16px;
-            position: absolute;
-            top: 23%;
         }
     }
 
@@ -95,33 +96,26 @@
     &-image-heart {
         float: right;
         margin-right: 15px;
+        cursor: pointer;
     }
 
-    &-hidden {
+    &-bottom {
         margin-left: 20px;
         padding-bottom: 10px;
     }
 
-    .restaurant__address {
-        align-items: center;
-        display: flex;
-        gap: 10px;
-        text-transform: uppercase;
-
-        img {
-            height: 23px;
-            width: 24px;
-        }
-    }
-
     .restaurant__description {
         padding-top: 7px;
-        width: 368px;
+        max-width: 390px;
+        overflow: hidden;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
     }
 
     .restaurant__people-number {
         align-items: center;
-        background: #31465e;
+        background: $color-fiord;
         border-radius: 8px;
         display: flex;
         gap: 5px;
@@ -150,18 +144,23 @@
         }
     }
 
-    &-examples {
+    &-credentials {
         display: flex;
         flex-direction: column;
         gap: 10px;
         margin-top: 5px;
 
-        .restaurant__website {
+        .restaurant-locale {
             align-items: center;
             display: flex;
             gap: 10px;
             line-height: 22px;
             text-transform: uppercase;
+
+            .location-pin {
+                height: 23px;
+                width: 24px;
+            }
         }
     }
 
