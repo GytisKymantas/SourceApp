@@ -14,6 +14,7 @@ export const ReservationsSection = ({ reservationData }) => {
   if (reservationArray !== undefined) {
     for (let i = 0; i < 3; i++) {
       reservationArray[i][0] = correctNaming[i];
+      reservationArray[i][1] = i + 1;
     }
   }
 
@@ -62,7 +63,7 @@ export const ReservationsSection = ({ reservationData }) => {
                 >
                   <ReservationsItem
                     reservationName={nameMatcher(obj[0])}
-                    reservationNumber={obj[1].length}
+                    reservationNumber={obj[1]}
                     reservationImage={imageMatcher(obj[0])}
                     key={index}
                   />
