@@ -12,7 +12,9 @@ export const ReservationsSection = ({ reservationData }) => {
   const nameMatcher = (name) => {
     switch (name) {
       case "books":
-        return "Meeting Rooms";
+        return "Books";
+      case "rooms":
+        return "Meeting rooms";
       default:
         return name;
     }
