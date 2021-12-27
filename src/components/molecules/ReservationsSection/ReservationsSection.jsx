@@ -48,7 +48,7 @@ export const ReservationsSection = ({ reservationData }) => {
     }
   };
 
-  const objChecker = (item) => {
+  const getPath = (item) => {
     return item === "books"
       ? path.concat("books")
       : item === "devices"
@@ -68,7 +68,7 @@ export const ReservationsSection = ({ reservationData }) => {
                 <Link
                   key={index}
                   className="reservations-section__element"
-                  to={objChecker(obj[0])}
+                  to={getPath(obj[0])}
                 >
                   <ReservationsItem
                     reservationName={nameMatcher(obj[0])}
@@ -84,6 +84,7 @@ export const ReservationsSection = ({ reservationData }) => {
     </div>
   );
 };
+
 ReservationsSection.propTypes = {
   reservationData: PropTypes.object,
 };
