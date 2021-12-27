@@ -48,6 +48,16 @@ export const ReservationsSection = ({ reservationData }) => {
     }
   };
 
+  const objChecker = (item) => {
+    return item === "books"
+      ? path.concat("books")
+      : item === "devices"
+      ? path.concat("devices")
+      : item === "rooms"
+      ? path.concat("meetingrooms")
+      : "/";
+  };
+
   return (
     <div className="reservations-section">
       <h2 className="reservations-section__header">Reservations</h2>
@@ -58,15 +68,7 @@ export const ReservationsSection = ({ reservationData }) => {
                 <Link
                   key={index}
                   className="reservations-section__element"
-                  to={
-                    obj[0] === "books"
-                      ? path.concat("books")
-                      : obj[0] === "devices"
-                      ? path.concat("devices")
-                      : obj[0] === "rooms"
-                      ? path.concat("meetingrooms")
-                      : "/"
-                  }
+                  to={objChecker(obj[0])}
                 >
                   <ReservationsItem
                     reservationName={nameMatcher(obj[0])}
