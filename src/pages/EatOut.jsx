@@ -1,8 +1,35 @@
 import { MainLayout } from "components/layouts/MainLayout/MainLayout";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export const EatOut = () => (
-  <MainLayout>
-    <h1>EatOut</h1>
-  </MainLayout>
-);
+export const EatOut = (data) => {
+  const [restaurantData, setRestaurantData] = useState();
+
+  // const restaurantCardData = restaurantData?.restaurants[0];
+
+  // const ratingArray = restaurantCardData?.reviews.map(
+  //   (review) => review.rating
+  // );
+  useEffect(() => {
+    fetch(
+      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/restaurants.json"
+    )
+      .then((res) => res.json())
+
+      .then(
+        (result) => {
+          setRestaurantData(result);
+        },
+
+        (error) => {
+          // handle error here
+        }
+      );
+  }, []);
+  /* eslint-disable no-alert, no-console */
+  console.log(restaurantData);
+  return (
+    <MainLayout>
+      <h1>EatOut</h1>
+    </MainLayout>
+  );
+};
