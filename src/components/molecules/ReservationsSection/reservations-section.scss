@@ -23,10 +23,10 @@ $inherit: inherit;
             flex-wrap: wrap;
             justify-content: center;
         }
+    }
 
-        &--link {
-            color: $inherit;
-            text-decoration: none;
-        }
+    &__element {
+        color: $inherit;
+        text-decoration: none;
     }
 }

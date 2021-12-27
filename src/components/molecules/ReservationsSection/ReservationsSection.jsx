@@ -9,9 +9,15 @@ import { Link } from "react-router-dom";
 
 export const ReservationsSection = ({ reservationData }) => {
   const reservationArray = reservationData && Object.entries(reservationData);
-  const correctNaming = ["rooms", "books", "devices"];
+  const path = "/dashboard/reservations/";
 
-  if (reservationArray !== undefined) {
+  let correctNaming = [];
+  if (reservationData) {
+    correctNaming = Object.keys(reservationData);
+    correctNaming.unshift(correctNaming.pop());
+  }
+
+  if (reservationArray) {
     for (let i = 0; i < 3; i++) {
       reservationArray[i][0] = correctNaming[i];
       reservationArray[i][1] = i + 1;
@@ -28,6 +34,7 @@ export const ReservationsSection = ({ reservationData }) => {
         return name;
     }
   };
+
   const imageMatcher = (image) => {
     switch (image) {
       case "books":
@@ -50,14 +57,14 @@ export const ReservationsSection = ({ reservationData }) => {
               return (
                 <Link
                   key={index}
-                  className="reservations-section__element-container--link"
+                  className="reservations-section__element"
                   to={
                     obj[0] === "books"
-                      ? "/dashboard/reservations/books"
+                      ? path.concat("books")
                       : obj[0] === "devices"
-                      ? "/dashboard/reservations/devices"
+                      ? path.concat("devices")
                       : obj[0] === "rooms"
-                      ? "/dashboard/reservations/meetingrooms"
+                      ? path.concat("meetingrooms")
                       : "/"
                   }
                 >
