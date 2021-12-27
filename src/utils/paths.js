@@ -1,5 +1,5 @@
 export const paths = {
-  dashboard: "/dashboard",
+  dashboard: "/",
   reservations: "/dashboard/reservations",
   meetingrooms: "/dashboard/reservations/meetingrooms",
   books: "/dashboard/reservations/books",

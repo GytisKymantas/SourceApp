@@ -29,8 +29,8 @@ function App() {
     <div className="app">
       <Router>
         <Routes>
+          <Route path="/" element={<Dashboard data={userData} />} />
           <Route path="/registration" element={<RegistrationPage />} />
-          <Route path="/dashboard" element={<Dashboard data={userData} />} />
           <Route path="/dashboard/reservations" element={<Reservations />} />
           <Route
             path="/dashboard/reservations/meetingrooms"
