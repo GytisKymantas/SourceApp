@@ -10,12 +10,10 @@ const logoPath = "/";
 
 export const Header = () => {
   const [width, setWidth] = useState(window.innerWidth);
-
   const breakPoint = 768;
 
   useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth);
-
     window.addEventListener("resize", handleWindowResize);
 
     return () => window.removeEventListener("resize", handleWindowResize);
@@ -26,9 +24,7 @@ export const Header = () => {
       <a className="header__logo" href={logoPath}>
         {width > breakPoint ? <Logo /> : <RocketLogo />}
       </a>
-
       <Navigation className="header__navigation" />
-
       <ProfileWidget className="header__profile-widget" />
     </header>
   );
