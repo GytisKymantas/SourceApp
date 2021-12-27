@@ -1,4 +1,5 @@
 import { MainLayout } from "components/layouts/MainLayout/MainLayout";
+import { NewPlacesSection } from "components/organisms/NewPlacesSection/NewPlacesSection";
 import React, { useEffect, useState } from "react";
 
 export const EatOut = (data) => {
@@ -30,6 +31,7 @@ export const EatOut = (data) => {
   return (
     <MainLayout>
       <h1>EatOut</h1>
+      {restaurantData && <NewPlacesSection data={restaurantData} />}
     </MainLayout>
   );
 };
