@@ -109,17 +109,15 @@ export const RegistrationPage = () => {
   };
 
   const checkPasswordRequirements = (pass) => {
-    if (pass.length < 6) {
-      setPasswordWarningMessage("Must be at least 6 characters long");
-      return false;
-    } else if (pass.search(/\d/) === -1) {
-      setPasswordWarningMessage("Must include a number");
-      return false;
-    } else if (pass.search(/[a-z]/) === -1) {
-      setPasswordWarningMessage("Must include a lowercase letter");
-      return false;
-    } else if (pass.search(/[A-Z]/) === -1) {
-      setPasswordWarningMessage("Must include an uppercase letter");
+    if (
+      pass.length < 6 ||
+      pass.search(/\d/) === -1 ||
+      pass.search(/[a-z]/) === -1 ||
+      pass.search(/[A-Z]/) === -1
+    ) {
+      setPasswordWarningMessage(
+        "Must be at least 6 characters long, include a number, lowercase & uppercase letters"
+      );
       return false;
     }
     return true;

@@ -52,10 +52,15 @@
     }
 
     .registration-form-container {
-        height: 580px;
+        height: 600px;
 
         &__two-inputs {
             flex-direction: column;
+        }
+
+        &__password,
+        &__password-repeat {
+            margin-bottom: 10px;
         }
 
         &__fname:first-child,
