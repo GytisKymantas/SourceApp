@@ -33,6 +33,7 @@
     &-image-wrapper {
         background-position: center !important;
         background-size: cover !important;
+        border-radius: 8px;
         height: 180px;
     }
 
@@ -45,7 +46,11 @@
         top: 16px;
         width: 68px;
 
-        & .frame:hover {
+        .frame {
+            padding: 7px;
+        }
+
+        .frame:hover {
             left: -74%;
             position: absolute;
         }
@@ -84,6 +89,10 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             width: 75%;
+
+            @media (max-width: 360px) {
+                font-size: $font-size-big;
+            }
         }
 
         span {
@@ -94,9 +103,10 @@
     }
 
     &-image-heart {
+        cursor: pointer;
         float: right;
         margin-right: 15px;
-        cursor: pointer;
+        padding-top: 2px;
     }
 
     &-bottom {
@@ -105,12 +115,9 @@
     }
 
     .restaurant__description {
-        padding-top: 7px;
         max-width: 390px;
         overflow: hidden;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        display: -webkit-box;
+        padding: 7px 15px 0 0;
     }
 
     .restaurant__people-number {
@@ -118,7 +125,7 @@
         background: $color-fiord;
         border-radius: 8px;
         display: flex;
-        gap: 5px;
+        gap: 2.5px;
         height: 32px;
         justify-content: center;
         left: 16px;
@@ -157,6 +164,10 @@
             line-height: 22px;
             text-transform: uppercase;
 
+            @media (max-width: 360px) {
+                font-size: $font-size-tiny;
+            }
+
             .location-pin {
                 height: 23px;
                 width: 24px;
@@ -175,9 +186,15 @@
 
     &-buttons {
         display: flex;
-        gap: 20px;
+        gap: 16px;
         justify-content: flex-end;
         padding: 15px 24px 24px 0;
+
+        button {
+            @media (max-width: 325px) {
+                font-size: $font-size-mini;
+            }
+        }
 
         button:first-child {
             background: transparent;
@@ -188,5 +205,12 @@
             font-weight: $font-size-medium;
             line-height: 18px;
         }
+    }
+}
+
+.icon {
+    @media (max-width: 360px) {
+        height: 20px !important;
+        width: 20px !important;
     }
 }

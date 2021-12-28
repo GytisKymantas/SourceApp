@@ -14,11 +14,11 @@ body {
 }
 
 .app {
+    background-color: $color-light-gray;
     color: $color-fiord;
     font-family: $font-family-roboto;
     min-height: 100vh;
     position: relative;
-    text-align: center;
 }
 
 body {
@@ -26,5 +26,23 @@ body {
 }
 
 .content {
+    margin: 0 auto;
+    max-width: 1440px;
     padding: 48px 48px 120px;
+
+    @media (max-width: 768px) {
+        padding: 48px 36px 120px;
+    }
+
+    @media (max-width: 580px) {
+        padding: 48px 24px 120px;
+    }
+
+    @media (max-width: 450px) {
+        padding: 48px 18px 120px;
+    }
+
+    @media (max-width: 350px) {
+        padding: 48px 12px 120px;
+    }
 }
