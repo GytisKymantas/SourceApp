@@ -109,16 +109,13 @@
         margin-left: 20px;
         padding-bottom: 10px;
     }
-    /* stylelint-disable */
+
     .restaurant__description {
-        box-orient: vertical;
-        display: -webkit-box;
-        line-clamp: 3;
         max-width: 390px;
         overflow: hidden;
         padding: 7px 15px 0 0;
     }
-    /* stylelint-enable*/
+
     .restaurant__people-number {
         align-items: center;
         background: $color-fiord;
@@ -209,7 +206,7 @@
 
 .icon {
     @media (max-width: 360px) {
-        height: 20px;
-        width: 20px;
+        height: 20px !important;
+        width: 20px !important;
     }
 }

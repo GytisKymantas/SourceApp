@@ -94,7 +94,10 @@ export const RestaurantCard = ({
           <p className="restaurant__description">{restaurantDescription}</p>
           <div className="restaurant__container-buttons">
             <button>READ MORE</button>
-            <Button label={"CHECK-IN"} onClick={handleCheckInClick} />
+            <Button
+              label={checkIn ? "CHECK-IN" : "CHECK-OUT"}
+              onClick={handleCheckInClick}
+            />
           </div>
         </div>
       ) : null}
