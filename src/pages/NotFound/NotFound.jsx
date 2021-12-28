@@ -8,7 +8,7 @@ export const NotFound = () => {
   let navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate("../", { replace: true });
+    navigate("../dashboard/dashboard", { replace: true });
   };
 
   return (

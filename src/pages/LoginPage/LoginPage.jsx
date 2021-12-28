@@ -125,7 +125,7 @@ export const LoginPage = ({ setIsLoggedIn }) => {
     <div className="login-page">
       <StartingPageLayout
         title={"Login"}
-        subtitle={"Welcom back, please login."}
+        subtitle={"Welcome back, please login."}
       >
         <div className="login-form-container">
           <form onSubmit={handleSubmit}>
