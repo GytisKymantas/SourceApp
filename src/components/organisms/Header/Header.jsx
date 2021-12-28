@@ -6,7 +6,7 @@ import "./header.scss";
 import { ProfileWidget } from "../../molecules/ProfileWidget/ProfileWidget";
 import { Navigation } from "../../molecules/Navigation/Navigation";
 
-const logoPath = "/";
+const logoPath = "/dashboard/dashboard";
 
 export const Header = () => {
   const [width, setWidth] = useState(window.innerWidth);

@@ -9,7 +9,7 @@ import { NotFound } from "pages/NotFound/NotFound";
 
 function App() {
   const [userData, setUserData] = useState();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   useEffect(() => {
     fetch(
@@ -52,7 +52,7 @@ function App() {
           {isLoggedIn && (
             <>
               <Route
-                path="/dashboard"
+                path="/dashboard/dashboard"
                 element={<Dashboard data={userData} />}
               />
               <Route
