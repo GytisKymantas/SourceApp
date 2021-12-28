@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { RegistrationPage } from "pages/RegistrationPage/RegistrationPage";
 import { Dashboard } from "pages/Dashboard";
 import { Reservations } from "pages/Reservations";
 import { EatOut } from "pages/EatOut";
-import { useState, useEffect } from "react";
 import { LoginPage } from "pages/LoginPage/LoginPage";
 import { NotFound } from "pages/NotFound/NotFound";
 
@@ -48,6 +48,7 @@ function App() {
             path="/"
             element={<LoginPage setIsLoggedIn={setIsLoggedIn} />}
           />
+          <Route path="/registration" element={<RegistrationPage />} />
           {isLoggedIn && (
             <>
               <Route

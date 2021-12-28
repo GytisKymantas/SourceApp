@@ -1,6 +1,7 @@
 .profile-widget {
     align-items: center;
     display: flex;
+    height: 80px;
     position: relative;
 
     &__notifications-container {
@@ -20,6 +21,6 @@
     &__drop-down {
         position: absolute;
         right: 3px;
-        top: 55px;
+        top: 66px;
     }
 }
