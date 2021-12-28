@@ -130,7 +130,7 @@ export const LoginPage = ({ setIsLoggedIn }) => {
         <div className="login-form-container">
           <form onSubmit={handleSubmit}>
             <div className="login-form-container__inputs">
-              <div className="login-form-container__email">
+              <div className="login-form-container__input">
                 <Input
                   type="email"
                   name="email"
@@ -145,7 +145,7 @@ export const LoginPage = ({ setIsLoggedIn }) => {
                   isSubmitted={isSubmitted}
                 />
               </div>
-              <div className="login-form-container__password">
+              <div className="login-form-container__input">
                 <Input
                   type="password"
                   name="password"
