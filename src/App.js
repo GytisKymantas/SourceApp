@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { RegistrationPage } from "pages/RegistrationPage/RegistrationPage";
 import { Dashboard } from "pages/Dashboard";
 import { Reservations } from "pages/Reservations";
@@ -82,10 +77,9 @@ function App() {
                 path="/dashboard/eatout/category/single"
                 element={<EatOut />}
               />
-              <Route path="*" element={<NotFound />} />
             </>
           )}
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="*" element={<NotFound isLoggedIn={isLoggedIn} />} />
         </Routes>
       </Router>
     </div>

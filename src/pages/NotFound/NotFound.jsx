@@ -1,14 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { PropTypes } from "prop-types";
 import { Button } from "components/atoms/Button/Button";
 
 import "./not-found.scss";
 
-export const NotFound = () => {
+export const NotFound = ({ isLoggedIn }) => {
   let navigate = useNavigate();
 
-  const handleButtonClick = () => {
-    navigate("../dashboard/dashboard", { replace: true });
+  const handleButtonClick = (isLoggedIn) => {
+    isLoggedIn
+      ? navigate("../dashboard/dashboard", { replace: true })
+      : navigate("../", { replace: true });
   };
 
   return (
@@ -23,8 +26,12 @@ export const NotFound = () => {
         type="submit"
         label="go to homepage"
         isLarge={true}
-        onClick={handleButtonClick}
+        onClick={() => handleButtonClick(isLoggedIn)}
       />
     </div>
   );
+};
+
+NotFound.propTypes = {
+  isLoggedIn: PropTypes.bool,
 };
