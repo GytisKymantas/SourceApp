@@ -46,6 +46,10 @@
         top: 16px;
         width: 68px;
 
+        .frame {
+            padding: 7px;
+        }
+
         .frame:hover {
             left: -74%;
             position: absolute;
