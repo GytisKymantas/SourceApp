@@ -8,3 +8,4 @@ export * from "./atoms/CategoryItem/index";
 // ----- MOLECULES ----- //
 export * from "./molecules/ProfileWidget/index";
 export * from "./molecules/Navigation/index";
+export * from "./molecules/EventCard/index";
