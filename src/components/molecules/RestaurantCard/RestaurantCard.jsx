@@ -29,16 +29,15 @@ export const RestaurantCard = ({
 
   const [heart, setHeart] = useState(true);
   const [checkIn, setCheckIn] = useState(numberOfCheckIns);
-
   const handleHeartClick = () => setHeart(!heart);
-  const handleCheckInClick = () => setCheckIn(checkIn + 1);
+  const handleCheckInClick = () => setCheckIn(!checkIn);
 
   return (
     <div className="restaurant__container">
       <div className="restaurant__container-front">
         <div className="restaurant__people-number">
           <img src={personIcon} alt="person" />
-          <span>{checkIn}</span>
+          <span>{!checkIn ? numberOfCheckIns + 1 : numberOfCheckIns}</span>
         </div>
         <div
           className="restaurant__container-image-wrapper"
@@ -78,7 +77,7 @@ export const RestaurantCard = ({
         <div className="restaurant__container-bottom">
           <div className="restaurant__container-credentials">
             <span className="restaurant-locale">
-              <img src={globe} alt="globe" />
+              <img src={globe} className="icon" alt="globe" />
               <a
                 href={`https://${restaurantWebsite}`}
                 rel="noopener noreferrer"
@@ -88,7 +87,7 @@ export const RestaurantCard = ({
               </a>
             </span>
             <span className="restaurant-locale">
-              <img src={map} className="location-pin" alt="map" />
+              <img src={map} className="location-pin icon" alt="map" />
               {restaurantAddress}
             </span>
           </div>
