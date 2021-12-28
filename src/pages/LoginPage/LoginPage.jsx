@@ -40,7 +40,7 @@ export const LoginPage = ({ setIsLoggedIn }) => {
       setDoCredentialsMatch(true);
       resetInputFields();
       sessionStorage.setItem("loggedIn", "true");
-      navigate("../dashboard", { replace: true });
+      navigate("../dashboard/dashboard", { replace: true });
     }
 
     if (
