@@ -35,14 +35,14 @@ export const ReservationsSection = ({ reservationData }) => {
       <h2 className="reservations-section__header">Reservations</h2>
       <div className="reservations-section__element-container">
         {reservationArray
-          ? reservationArray.map((obj, index) => {
+          ? reservationArray.map((name, index) => {
               return (
                 <CategoryItem
-                  categoryName={nameMatcher(obj[0])}
+                  categoryName={nameMatcher(name[0])}
                   categoryInfo={
-                    obj[1].length ? `${obj[1].length} RESERVED` : "UNRESERVED"
+                    name[1].length ? `${name[1].length} RESERVED` : "UNRESERVED"
                   }
-                  categoryImage={imageMatcher(obj[0])}
+                  categoryImage={imageMatcher(name[0])}
                   key={index}
                 />
               );
