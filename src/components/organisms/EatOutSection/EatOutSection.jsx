@@ -29,6 +29,7 @@ const EatOutSection = (data) => {
         twoBiggest().map((obj, i) => (
           <RestaurantCard
             key={i}
+            displayFullCard={false}
             numberOfCheckIns={twoBiggest()[i].checkIns}
             restaurantName={twoBiggest()[i].name}
             restaurantOpeningHours={twoBiggest()[i].openingHours[0].hours}
