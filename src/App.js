@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { RegistrationPage } from "pages/RegistrationPage/RegistrationPage";
 import { Dashboard } from "pages/Dashboard";
 import { Reservations } from "pages/Reservations";
 import { EatOut } from "pages/EatOut";
 import { NotFound } from "pages/NotFound";
-import { useState, useEffect } from "react";
 
 function App() {
   const [userData, setUserData] = useState();
@@ -29,7 +29,8 @@ function App() {
     <div className="app">
       <Router>
         <Routes>
-          <Route path="/dashboard" element={<Dashboard data={userData} />} />
+          <Route path="/" element={<Dashboard data={userData} />} />
+          <Route path="/registration" element={<RegistrationPage />} />
           <Route path="/dashboard/reservations" element={<Reservations />} />
           <Route
             path="/dashboard/reservations/meetingrooms"

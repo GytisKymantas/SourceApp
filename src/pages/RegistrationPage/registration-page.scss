@@ -1,0 +1,85 @@
+@import '../../styles/base/base';
+
+.registration-page {
+    background: $color-mercury;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.registration-form-container {
+    &__two-inputs {
+        display: flex;
+    }
+
+    &__fname,
+    &__lname,
+    &__password,
+    &__password-repeat {
+        width: 100%;
+    }
+
+    &__fname:first-child,
+    &__password:first-child {
+        margin-right: 20px;
+    }
+
+    &__actions {
+        align-items: center;
+        display: flex;
+        height: 40px;
+        justify-content: space-between;
+        margin-top: 32px;
+    }
+
+    &__actions-text {
+        font-size: $font-size-medium;
+        font-weight: $font-weight-regular;
+        line-height: 24px;
+        margin: 0;
+    }
+
+    &__actions-text-link {
+        color: $color-violet;
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 635px) {
+    .registration-page {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .registration-form-container {
+        height: 600px;
+
+        &__two-inputs {
+            flex-direction: column;
+        }
+
+        &__password,
+        &__password-repeat {
+            margin-bottom: 10px;
+        }
+
+        &__fname:first-child,
+        &__password:first-child {
+            margin-right: 0;
+        }
+
+        &__actions {
+            flex-direction: column;
+            margin-top: 26px;
+        }
+
+        &__actions-button {
+            margin-bottom: 8px;
+        }
+
+        &__actions-text {
+            font-size: $font-size-small;
+            padding: 10px 0;
+        }
+    }
+}

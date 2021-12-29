@@ -18,5 +18,21 @@
         font-weight: $font-weight-medium;
         margin-right: 48px;
         text-transform: uppercase;
+
+        @media (max-width: 768px) {
+            margin-right: 36px;
+        }
+
+        @media (max-width: 580px) {
+            margin-right: 24px;
+        }
+
+        @media (max-width: 450px) {
+            margin-right: 18px;
+        }
+
+        @media (max-width: 350px) {
+            margin-right: 12px;
+        }
     }
 }

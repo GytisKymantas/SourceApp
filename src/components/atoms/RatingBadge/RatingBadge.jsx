@@ -5,7 +5,7 @@ import "./rating-badge.scss";
 
 export const RatingBadge = ({ averageRating }) => (
   <div className="frame">
-    <StarLogo className="frame__logo" />
+    <StarLogo className="frame__icon" />
     <div className="frame__score">{averageRating}</div>
   </div>
 );

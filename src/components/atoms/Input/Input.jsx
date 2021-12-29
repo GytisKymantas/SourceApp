@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 
 import "./input.scss";
 
@@ -13,11 +14,20 @@ export const Input = ({
   onBlur,
   onFocus,
   isFilled,
-  isPasswordField,
   passwordsMatch,
   showPasswordAlert,
-  warningInput,
+  doCredentialsMatch,
+  isSubmitted,
+  passwordWarningMessage,
 }) => {
+  const classnames = classNames("input-container__input", {
+    "red-border":
+      !isFilled ||
+      (isFilled && !passwordsMatch && showPasswordAlert) ||
+      (isFilled && !doCredentialsMatch && isSubmitted) ||
+      (isFilled && !!passwordWarningMessage),
+  });
+
   return (
     <div className="input-container">
       <label htmlFor={name} className="input-container__label">
@@ -28,21 +38,26 @@ export const Input = ({
         name={name}
         value={value}
         placeholder={placeholder}
-        className={`input-container__input ${isFilled ? "" : "is-blank"} ${
-          isFilled && isPasswordField && !passwordsMatch && warningInput
-            ? "is-blank"
-            : ""
-        }
-        }`}
+        className={classnames}
         onChange={onChange}
         onBlur={onBlur}
         onFocus={onFocus}
       />
       {!isFilled && (
-        <p className="input-container__required">Field is required.</p>
+        <p className="input-container__warning-text">Field is required</p>
       )}
-      {isFilled && isPasswordField && !passwordsMatch && showPasswordAlert && (
-        <p className="input-container__passwords">Passwords do not match.</p>
+      {isFilled && !passwordsMatch && showPasswordAlert && (
+        <p className="input-container__warning-text">Passwords do not match</p>
+      )}
+      {isFilled && !doCredentialsMatch && isSubmitted && (
+        <p className="input-container__warning-text">
+          Couldn&apos;t find your account or wrong password
+        </p>
+      )}
+      {isFilled && !!passwordWarningMessage && (
+        <p className="input-container__warning-text">
+          {passwordWarningMessage}
+        </p>
       )}
     </div>
   );
@@ -62,8 +77,9 @@ Input.propTypes = {
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
   isFilled: PropTypes.bool,
-  isPasswordField: PropTypes.bool,
   passwordsMatch: PropTypes.bool,
   showPasswordAlert: PropTypes.bool,
-  warningInput: PropTypes.bool,
+  doCredentialsMatch: PropTypes.bool,
+  isSubmitted: PropTypes.bool,
+  passwordWarningMessage: PropTypes.string,
 };
