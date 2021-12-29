@@ -17,37 +17,39 @@ const EatOutSection = (data) => {
         [0]
       );
       averageArray.push(averageCount);
-      averageArray[i] >= 4.0 ? finalArray.push(restaurantData[i]) : void 0;
+      averageArray[i] >= 4 ? finalArray.push(restaurantData[i]) : void 0;
     }
     return finalArray;
   };
+  console.log(twoBiggest());
+  const firstCard = twoBiggest()[0];
+  const secondCard = twoBiggest()[1];
 
   return (
     <div className="main-container">
       <ViewEatOutCard />
       {twoBiggest() && (
         <RestaurantCard
-          numberOfCheckIns={twoBiggest()[0].checkIns}
-          restaurantName={twoBiggest()[0].name}
-          restaurantWebsite={twoBiggest()[0].website.slice(7)}
-          restaurantAddress={twoBiggest()[0].location.address}
-          restaurantOpeningHours={twoBiggest()[0].openingHours[0].hours}
-          restaurantDescription={twoBiggest()[0].description}
-          restaurantCategories={twoBiggest()[0].categories}
-          restaurantImage={twoBiggest()[0].image}
-          restaurantAverageRating={twoBiggest()[0].ratingArray}
+          numberOfCheckIns={firstCard.checkIns}
+          restaurantName={firstCard.name}
+          restaurantOpeningHours={firstCard.openingHours[0].hours}
+          restaurantCategories={firstCard.categories}
+          restaurantImage={firstCard.image}
+          restaurantAverageRating={firstCard.reviews.map(
+            (review) => review.rating
+          )}
         />
       )}
       {twoBiggest() && (
         <RestaurantCard
-          numberOfCheckIns={twoBiggest()[1].checkIns}
-          restaurantName={twoBiggest()[1].name}
-          restaurantWebsite={twoBiggest()[1].website.slice(7)}
-          restaurantAddress={twoBiggest()[1].location.address}
-          restaurantOpeningHours={twoBiggest()[1].openingHours[0].hours}
-          restaurantDescription={twoBiggest()[1].description}
-          restaurantCategories={twoBiggest()[1].categories}
-          restaurantImage={twoBiggest()[1].image}
+          numberOfCheckIns={secondCard.checkIns}
+          restaurantName={secondCard.name}
+          restaurantOpeningHours={secondCard.openingHours[0].hours}
+          restaurantCategories={secondCard.categories}
+          restaurantImage={secondCard.image}
+          restaurantAverageRating={secondCard.reviews.map(
+            (review) => review.rating
+          )}
         />
       )}
     </div>
