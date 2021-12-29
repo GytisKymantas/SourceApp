@@ -14,9 +14,6 @@ export const Dashboard = (data) => {
   const [storiesData, setStoriesData] = useState();
   const [restaurantData, setRestaurantData] = useState();
   const restaurantCardData = restaurantData?.restaurants[0];
-  const ratingArray = restaurantCardData?.reviews.map(
-    (review) => review.rating
-  );
 
   useEffect(() => {
     fetch(
@@ -65,7 +62,9 @@ export const Dashboard = (data) => {
           restaurantDescription={restaurantCardData.description}
           restaurantCategories={restaurantCardData.categories}
           restaurantImage={restaurantCardData.image}
-          restaurantAverageRating={ratingArray}
+          restaurantAverageRating={restaurantCardData.reviews.map(
+            (review) => review.rating
+          )}
         />
       )}
       <ViewEatOutCard />
