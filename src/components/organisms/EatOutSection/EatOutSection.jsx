@@ -1,6 +1,6 @@
 import React from "react";
 import "./eat-out-section.scss";
-import { RestaurantCard } from "components/atoms/RestaurantCard/RestaurantCard";
+import { RestaurantCard } from "components/molecules/RestaurantCard/RestaurantCard";
 import { ViewEatOutCard } from "components/molecules/ViewEatOutCard/ViewEatOutCard";
 
 const EatOutSection = (data) => {
@@ -25,27 +25,26 @@ const EatOutSection = (data) => {
   return (
     <div className="main-container">
       <ViewEatOutCard />
-      {restaurantData && (
+      {twoBiggest() && (
         <RestaurantCard
-          displayFullCard={true}
           numberOfCheckIns={twoBiggest()[0].checkIns}
           restaurantName={twoBiggest()[0].name}
           restaurantWebsite={twoBiggest()[0].website.slice(7)}
           restaurantAddress={twoBiggest()[0].location.address}
-          restaurantOpeningHours={twoBiggest()[0].hours}
+          restaurantOpeningHours={twoBiggest()[0].openingHours[0].hours}
           restaurantDescription={twoBiggest()[0].description}
           restaurantCategories={twoBiggest()[0].categories}
           restaurantImage={twoBiggest()[0].image}
+          restaurantAverageRating={twoBiggest()[0].ratingArray}
         />
       )}
-      {restaurantData && (
+      {twoBiggest() && (
         <RestaurantCard
-          displayFullCard={true}
           numberOfCheckIns={twoBiggest()[1].checkIns}
           restaurantName={twoBiggest()[1].name}
           restaurantWebsite={twoBiggest()[1].website.slice(7)}
           restaurantAddress={twoBiggest()[1].location.address}
-          restaurantOpeningHours={twoBiggest()[1].hours}
+          restaurantOpeningHours={twoBiggest()[1].openingHours[0].hours}
           restaurantDescription={twoBiggest()[1].description}
           restaurantCategories={twoBiggest()[1].categories}
           restaurantImage={twoBiggest()[1].image}

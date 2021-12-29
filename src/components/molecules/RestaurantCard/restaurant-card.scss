@@ -1,10 +1,12 @@
 @import '../../../styles/base/base';
 
 .restaurant__container {
+    background: $color-white;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     margin-bottom: 40px;
-    max-width: 416px;
+    min-width: 416px;
+    height: 100%;
     text-align: start;
 
     a {
@@ -46,10 +48,6 @@
         top: 16px;
         width: 68px;
 
-        .frame {
-            padding: 7px;
-        }
-
         .frame:hover {
             left: -74%;
             position: absolute;
@@ -68,13 +66,21 @@
         display: flex;
         font-size: $font-size-mini;
         font-weight: $font-weight-medium;
-        gap: 32px;
+        gap: 26px;
         line-height: 150%;
         padding: 0 0 0 20px;
         text-transform: uppercase;
 
         li:first-of-type {
             list-style-type: none;
+        }
+
+        li::marker {
+            $_font-size-fifteen: 15px;
+
+            color: $color-dark-gray;
+            font-size: $_font-size-fifteen;
+            vertical-align: bottom;
         }
     }
 
@@ -125,29 +131,22 @@
         background: $color-fiord;
         border-radius: 8px;
         display: flex;
-        gap: 2.5px;
-        height: 32px;
+        gap: 9px;
+        height: 18px;
         justify-content: center;
         left: 16px;
+        padding: 8px 12px;
         position: absolute;
         top: 16px;
-        width: 56px;
 
         img {
             color: $color-yellow;
-            height: 16px;
-            padding-bottom: 12px;
-            padding-top: 9px;
             width: 14px;
         }
 
         span {
             color: $color-yellow;
             font-size: $font-size-small;
-            height: 16px;
-            padding-bottom: 15px;
-            padding-top: 12px;
-            width: 9px;
         }
     }
 
@@ -155,22 +154,19 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        margin-top: 5px;
+        margin-top: -5px;
 
         .restaurant-locale {
             align-items: center;
             display: flex;
-            gap: 10px;
+            font-size: $font-size-tiny;
+            gap: 9px;
             line-height: 22px;
             text-transform: uppercase;
+            transition: 0.3s;
 
             @media (max-width: 360px) {
                 font-size: $font-size-tiny;
-            }
-
-            .location-pin {
-                height: 23px;
-                width: 24px;
             }
         }
     }
@@ -209,8 +205,6 @@
 }
 
 .icon {
-    @media (max-width: 360px) {
-        height: 20px !important;
-        width: 20px !important;
-    }
+    height: 20px;
+    width: 20px;
 }
