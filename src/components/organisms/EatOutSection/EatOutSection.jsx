@@ -6,15 +6,15 @@ import { ViewEatOutCard } from "components/molecules/ViewEatOutCard/ViewEatOutCa
 const EatOutSection = (data) => {
   let restaurantData = data?.data?.restaurants;
 
-  const twoBiggest = () => {
+  const twoBestRated = () => {
     let averageArray = [];
     let finalArray = [];
 
     for (let i = 0; i < restaurantData.length; i++) {
-      let array2 = restaurantData[i].reviews.map((review) => review.rating); // [5,5,5]
-      let averageCount =
-        array2.reduce((prevValue, curValue) => prevValue + curValue, 0) /
-        array2.length;
+      const ratings = restaurantData[i].reviews.map((review) => review.rating); // [5,5,5]
+      const averageCount =
+        ratings.reduce((prevValue, curValue) => prevValue + curValue, 0) /
+        ratings.length;
 
       averageArray.push(averageCount);
       averageArray[i] >= 4.8 ? finalArray.push(restaurantData[i]) : void 0;
@@ -25,17 +25,17 @@ const EatOutSection = (data) => {
   return (
     <div className="main-container">
       <ViewEatOutCard />
-      {twoBiggest() &&
-        twoBiggest().map((obj, i) => (
+      {twoBestRated() &&
+        twoBestRated().map((obj, i) => (
           <RestaurantCard
             key={i}
             displayFullCard={false}
-            numberOfCheckIns={twoBiggest()[i].checkIns}
-            restaurantName={twoBiggest()[i].name}
-            restaurantOpeningHours={twoBiggest()[i].openingHours[0].hours}
-            restaurantCategories={twoBiggest()[i].categories}
-            restaurantImage={twoBiggest()[i].image}
-            restaurantAverageRating={twoBiggest()[i].reviews.map(
+            numberOfCheckIns={twoBestRated()[i].checkIns}
+            restaurantName={twoBestRated()[i].name}
+            restaurantOpeningHours={twoBestRated()[i].openingHours[0].hours}
+            restaurantCategories={twoBestRated()[i].categories}
+            restaurantImage={twoBestRated()[i].image}
+            restaurantAverageRating={twoBestRated()[i].reviews.map(
               (review) => review.rating
             )}
           />

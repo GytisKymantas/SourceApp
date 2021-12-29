@@ -10,7 +10,6 @@ export const Dashboard = (data) => {
   const userData = data.data?.userData[0];
   const firstName = userData?.userName.split(" ")[0];
   const reservationData = userData?.reservations;
-  // const restaurantList = restaurantData?.restaurants[0];
   const [storiesData, setStoriesData] = useState();
   const [restaurantData, setRestaurantData] = useState();
 
