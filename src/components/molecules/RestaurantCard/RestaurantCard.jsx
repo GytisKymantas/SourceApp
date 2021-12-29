@@ -35,10 +35,12 @@ export const RestaurantCard = ({
   return (
     <div className="restaurant__container">
       <div className="restaurant__container-front">
-        <div className="restaurant__people-number">
-          <img src={personIcon} alt="person" />
-          <span>{!checkIn ? numberOfCheckIns + 1 : numberOfCheckIns}</span>
-        </div>
+        {!displayFullCard && (
+          <div className="restaurant__people-number">
+            <img src={personIcon} alt="person" />
+            <span>{!checkIn ? numberOfCheckIns + 1 : numberOfCheckIns}</span>
+          </div>
+        )}
         <div
           className="restaurant__container-image-wrapper"
           style={{
