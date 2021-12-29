@@ -24,7 +24,10 @@ export const WeatherWidget = ({ time }) => {
     windSpeed,
     humidity,
     weather,
-    countryCode = null;
+    countryCode,
+    sunset,
+    sunrise = null;
+  const errorCallback = () => setWeatherError(true);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(CallAPI, errorCallback);
@@ -40,32 +43,72 @@ export const WeatherWidget = ({ time }) => {
     )
       .then((response) => response.json())
       .then((data) => {
-        setWeatherData(data);
-        setLoading(false);
-        setWeatherError(false);
+        if (data.cod === 200) {
+          setWeatherData(data);
+          setLoading(false);
+          setWeatherError(false);
+        } else {
+          setWeatherError(true);
+          setLoading(false);
+        }
       });
   };
-  const errorCallback = () => setWeatherError(true);
-  weatherId = weatherData?.weather[0].id;
-  windSpeed = weatherData?.wind.speed;
-  humidity = weatherData?.main.humidity;
-  countryCode = weatherData?.sys.country;
 
-  weatherId > 199 && weatherId < 300
-    ? (weather = "Thunderstorm")
-    : weatherId > 299 && weatherId < 600
-    ? (weather = "Rain")
-    : weatherId > 599 && weatherId < 700
-    ? (weather = "Snow")
-    : weatherId > 800 && weatherId < 900
-    ? (weather = "Cloudy")
-    : weatherId === 800
-    ? (weather = "Clear sky")
-    : (weather = "Mist");
+  if (weatherData && weatherData.cod === 200) {
+    weatherId = weatherData.weather[0].id;
+    windSpeed = weatherData.wind.speed;
+    humidity = weatherData.main.humidity;
+    countryCode = weatherData.sys.country;
+    sunset = new Date(weatherData.sys.sunset * 1000);
+    sunrise = new Date(weatherData.sys.sunrise * 1000);
+  }
 
   const options = { weekday: "long", month: "long", day: "numeric" };
-  const sunset = new Date(weatherData?.sys.sunset * 1000);
-  const sunrise = new Date(weatherData?.sys.sunrise * 1000);
+  const today = new Date().toLocaleDateString("en-GB", options);
+
+  const descriptionSelector = (weatherId) => {
+    switch (weatherId) {
+      case weatherId > 199 && weatherId < 300:
+        return "Thunderstorm";
+      case weatherId > 299 && weatherId < 600:
+        return "Rain";
+      case weatherId > 599 && weatherId < 700:
+        return "Snow";
+      case weatherId > 800 && weatherId < 900:
+        return "Cloudy";
+      case weatherId === 800:
+        return "Clear sky";
+      default:
+        return "Mist";
+    }
+  };
+
+  const weatherIconSelector = (weather, time) => {
+    switch (weather) {
+      case "Cloudy":
+        switch (time) {
+          case time < sunset && time > sunrise:
+            return <CloudDay />;
+          default:
+            return <CloudNight />;
+        }
+      case "Clear sky":
+        switch (time) {
+          case time < sunset && time > sunrise:
+            return <ClearDay />;
+          default:
+            return <ClearNight />;
+        }
+      case "Thunderstorm":
+        return <Thunderstorm />;
+      case "Mist":
+        return <Mist />;
+      case "Rain":
+        return <Rain />;
+      default:
+        return <Snow />;
+    }
+  };
 
   return (
     <>
@@ -84,8 +127,8 @@ export const WeatherWidget = ({ time }) => {
         <div className="weather-data">
           <div className="weather-data__box">
             <div className="weather-data__location">
-              {new Date().toLocaleDateString("en-GB", options)} |{" "}
-              {weatherData?.name}, {weatherData && countries[countryCode].name}
+              {today} | {weatherData?.name},{" "}
+              {weatherData && countries[countryCode].name}
             </div>
             <div className="weather-data__details">
               <div className="weather-data__details-main">
@@ -93,7 +136,7 @@ export const WeatherWidget = ({ time }) => {
                   {Math.round(weatherData?.main.temp)}
                   {"\u00b0"}
                 </span>
-                <span>{weather}</span>
+                <span>{descriptionSelector(weatherId)}</span>
               </div>
               <Divider />
               <div className="weather-data__details-secondary">
@@ -108,27 +151,7 @@ export const WeatherWidget = ({ time }) => {
             </div>
           </div>
           <div className="weather-data__icon">
-            {weather === "Clear sky" ? (
-              time < sunset && time > sunrise ? (
-                <ClearDay />
-              ) : (
-                <ClearNight />
-              )
-            ) : weather === "Rain" ? (
-              <Rain />
-            ) : weather === "Snow" ? (
-              <Snow />
-            ) : weather === "Cloudy" ? (
-              time < sunset && time > sunrise ? (
-                <CloudDay />
-              ) : (
-                <CloudNight />
-              )
-            ) : weather === "Mist" ? (
-              <Mist />
-            ) : (
-              <Thunderstorm />
-            )}
+            {weatherIconSelector(descriptionSelector(weather), time)}
           </div>
         </div>
       )}
