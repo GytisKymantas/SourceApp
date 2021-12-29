@@ -12,33 +12,33 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    fetch(
-      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/userData.json"
-    )
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setUserData(result);
-        },
+    if (isLoggedIn) {
+      fetch(
+        "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/userData.json"
+      )
+        .then((res) => res.json())
+        .then(
+          (result) => {
+            setUserData(result);
+          },
 
-        (error) => {
-          // handle error here
-        }
-      );
-  }, []);
+          (error) => {
+            // handle error here
+          }
+        );
+    }
+  }, [isLoggedIn]);
 
   let isUserLoggedIn = sessionStorage.getItem("loggedIn");
 
   useEffect(() => {
-    if (!isLoggedIn) {
-      if (isUserLoggedIn === "true") {
-        setIsLoggedIn(true);
-      }
+    if (isUserLoggedIn === "true") {
+      setIsLoggedIn(true);
+    }
 
-      if (isUserLoggedIn === "false") {
-        sessionStorage.setItem("loggedIn", "false");
-        setIsLoggedIn(false);
-      }
+    if (isUserLoggedIn === "false") {
+      sessionStorage.setItem("loggedIn", "false");
+      setIsLoggedIn(false);
     }
   }, [isLoggedIn, isUserLoggedIn]);
 
