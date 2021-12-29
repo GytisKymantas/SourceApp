@@ -53,10 +53,7 @@ export const Dashboard = (data) => {
           displayFullCard
           numberOfCheckIns={restaurantCardData.checkIns}
           restaurantName={restaurantCardData.name}
-          restaurantWebsite={restaurantCardData.website.replace(
-            /(^\w+:|^)\/\//,
-            ""
-          )}
+          restaurantWebsite={restaurantCardData.website}
           restaurantAddress={restaurantCardData.location.address}
           restaurantOpeningHours={restaurantCardData.openingHours[0].hours}
           restaurantDescription={restaurantCardData.description}

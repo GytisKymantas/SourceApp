@@ -85,7 +85,7 @@ export const RestaurantCard = ({
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                {restaurantWebsite}
+                {restaurantWebsite.replace(/(^\w+:|^)\/\//, "")}
               </a>
             </span>
             <span className="restaurant-locale">
