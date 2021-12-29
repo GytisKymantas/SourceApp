@@ -44,6 +44,7 @@ export const ProfileWidget = () => {
     }
 
     if (optionId === "settings") {
+      setShowDropDown((prevValue) => !prevValue);
       return;
     }
   };

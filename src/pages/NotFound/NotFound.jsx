@@ -25,7 +25,7 @@ export const NotFound = ({ isLoggedIn }) => {
       <Button
         type="submit"
         label="go to homepage"
-        isLarge={true}
+        isLarge
         onClick={() => handleButtonClick(isLoggedIn)}
       />
     </div>

@@ -99,9 +99,7 @@ export const LoginPage = ({ setIsLoggedIn }) => {
     }
   };
 
-  const handleEmailFocus = () => {
-    setIsEmailFilled(true);
-  };
+  const handleEmailFocus = () => setIsEmailFilled(true);
 
   // PASSWORD
   const handlePasswordChange = (e) => {
@@ -117,9 +115,7 @@ export const LoginPage = ({ setIsLoggedIn }) => {
     }
   };
 
-  const handlePasswordFocus = () => {
-    setIsPasswordFilled(true);
-  };
+  const handlePasswordFocus = () => setIsPasswordFilled(true);
 
   return (
     <div className="login-page">
