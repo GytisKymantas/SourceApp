@@ -6,3 +6,10 @@
         width: 416px;
     }
 }
+
+@media (max-width: 1150px) {
+    .main-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
