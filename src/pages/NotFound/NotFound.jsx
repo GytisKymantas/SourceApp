@@ -10,7 +10,7 @@ export const NotFound = ({ isLoggedIn }) => {
 
   const handleButtonClick = (isLoggedIn) => {
     isLoggedIn
-      ? navigate("../dashboard/dashboard", { replace: true })
+      ? navigate("../dashboard", { replace: true })
       : navigate("../", { replace: true });
   };
 

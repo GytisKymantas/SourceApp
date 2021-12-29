@@ -52,7 +52,7 @@ function App() {
           {isLoggedIn && (
             <>
               <Route
-                path="/dashboard/dashboard"
+                path="/dashboard"
                 element={<Dashboard data={userData} />}
               />
               <Route

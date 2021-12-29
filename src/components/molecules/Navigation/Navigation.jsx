@@ -15,7 +15,7 @@ export const Navigation = () => {
       <MenuItem
         icon={<DashboardIcon />}
         name={dashboardName}
-        link="/dashboard/dashboard"
+        link="/dashboard/"
       />
       <MenuItem
         icon={<ReservationsIcon />}

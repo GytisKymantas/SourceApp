@@ -14,7 +14,7 @@ export const Header = () => {
   let navigate = useNavigate();
 
   const handleLogoClick = () => {
-    navigate("../dashboard/dashboard", { replace: true });
+    navigate("../dashboard", { replace: true });
   };
 
   useEffect(() => {
