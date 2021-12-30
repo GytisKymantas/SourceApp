@@ -30,10 +30,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Dashboard data={userData} />} />
-<<<<<<< HEAD
-=======
           <Route path="/registration" element={<RegistrationPage />} />
->>>>>>> dev
           <Route path="/dashboard/reservations" element={<Reservations />} />
           <Route
             path="/dashboard/reservations/meetingrooms"
