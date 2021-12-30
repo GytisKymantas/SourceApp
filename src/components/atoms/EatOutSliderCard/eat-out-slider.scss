@@ -1,8 +1,5 @@
 @import '../../../styles/base/base';
 
-// $svg-url: url('../../../assets/SliderBulletPoint.svg');
-// $background-url: url('../../../assets/CassaDellaPasta.svg');
-
 .slider__container {
     display: flex;
     max-width: 1344px;
@@ -44,42 +41,48 @@
         }
 
         .text-slogan {
-            font-weight: 500;
-            font-size: 10px;
+            font-weight: $font-weight-medium;
+            font-size: $font-size-mini;
             line-height: 150%;
             text-transform: uppercase;
-            color: #ff6e75;
+            color: $color-watermelon;
         }
+
         h2 {
-            font-weight: 500;
-            font-size: 32px;
-            color: #001836;
+            $_font-size: 32px;
+
+            font-weight: $font-weight-medium;
+            font-size: $_font-size;
+            color: $color-midnight;
             line-height: 37px;
             margin: 0;
             padding: 2px 0 16px 0;
         }
+
         p {
-            color: #6a7889;
+            color: $color-dark-gray;
             width: 294px;
             font-weight: normal;
-            font-size: 16px;
+            font-size: $font-size-medium;
             line-height: 24px;
             text-align: justify;
             margin: 0;
         }
+
         .btn-container {
             display: flex;
             padding-top: 14px;
 
             .button {
-                font-weight: 500;
-                font-size: 14px;
+                font-weight: $font-size-medium;
+                font-size: $font-size-small;
                 line-height: 24px;
-                background: #ff6e75;
+                background: $color-watermelon;
             }
         }
     }
 }
+
 .slider__image-wrapper {
     background-image: url('../../../assets/CassaDellaPasta.svg');
     background-position: center;
