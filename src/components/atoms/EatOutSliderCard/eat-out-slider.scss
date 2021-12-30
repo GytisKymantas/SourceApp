@@ -1,11 +1,12 @@
 @import '../../../styles/base/base';
 
-$svg-url: url('../../../assets/SliderBulletPoint.svg');
+// $svg-url: url('../../../assets/SliderBulletPoint.svg');
+// $background-url: url('../../../assets/CassaDellaPasta.svg');
 
 .slider__container {
     display: flex;
-    max-width: 1112px;
-    max-height: 312px;
+    max-width: 1344px;
+    max-height: 316px;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
 
@@ -14,12 +15,13 @@ $svg-url: url('../../../assets/SliderBulletPoint.svg');
     }
 
     .slider-text__wrapper {
+        align-items: flex-start;
+        display: flex;
         font-family: Roboto;
         font-style: normal;
-        display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
+        padding: 32px 24px 32px 8px;
 
         .top-navigation {
             display: flex;
@@ -67,7 +69,7 @@ $svg-url: url('../../../assets/SliderBulletPoint.svg');
         }
         .btn-container {
             display: flex;
-            padding-top: 24px;
+            padding-top: 14px;
 
             .button {
                 font-weight: 500;
@@ -77,4 +79,11 @@ $svg-url: url('../../../assets/SliderBulletPoint.svg');
             }
         }
     }
+}
+.slider__image-wrapper {
+    background-image: url('../../../assets/CassaDellaPasta.svg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px 0px 0px 8px;
+    width: 1018px;
 }

@@ -9,12 +9,16 @@ import PlaceholderNav from "../../../assets/PlaceholderNav.svg";
 
 import "./eat-out-slider.scss";
 
-const EatOutSlider = () => {
+export const EatOutSliderCard = () => {
+  const cardSloganName = ["Feel the taste of Italy"];
+  const cardRestaurantName = ["Casa Della Pasta"];
+  const cardRestaurantDescription = [
+    "Casa della Pasta was the first restaurant in Kaunas cooking pizza in a traditional wood-oven a restaurant capable of satisfying more than 3000 customers...",
+  ];
+
   return (
     <div className="slider__container">
-      <div className="slider__image-wrapper">
-        <img src={CassaDellaPasta} className="slider-image" alt="salad bowl" />
-      </div>
+      <div className="slider__image-wrapper"></div>
       <div className="slider-text__wrapper">
         <div className="top-navigation">
           <div className="bullets">
@@ -28,13 +32,9 @@ const EatOutSlider = () => {
             <img src={PlaceholderNav} alt="placeholder" />
           </div>
         </div>
-        <span className="text-slogan">Feel the taste of italy</span>
-        <h2>Casa Della Pasta</h2>
-        <p>
-          Casa della Pasta was the first restaurant in Kaunas cooking pizza in a
-          traditional wood-oven; a restaurant capable of satisfying more than
-          3000 customers...
-        </p>
+        <span className="text-slogan">{cardSloganName}</span>
+        <h2>{cardRestaurantName}</h2>
+        <p>{cardRestaurantDescription}</p>
         <div className="btn-container">
           <Button label={"LEARN MORE"} isLarge className="LargeBtn" />
         </div>
@@ -42,5 +42,3 @@ const EatOutSlider = () => {
     </div>
   );
 };
-
-export default EatOutSlider;
