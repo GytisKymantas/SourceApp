@@ -8,9 +8,10 @@ $_color-lynch: #627485;
     display: flex;
     flex-direction: column;
     margin-top: 48px;
-    padding: 16px 0 0;
+    max-width: 384px;
+    min-width: 248px;
+    padding: 16px;
     position: relative;
-    width: 416px;
 
     &__image {
         margin-top: -64px;
@@ -37,6 +38,11 @@ $_color-lynch: #627485;
             }
         }
 
+        &-graphics {
+            max-width: 416px;
+            width: 100%;
+        }
+
         &-birthday,
         &-wish {
             line-height: 16px;
@@ -44,7 +50,8 @@ $_color-lynch: #627485;
     }
 
     &__divider {
-        margin-top: 24px;
+        margin: 24px 0 16px;
+        width: 100%;
     }
 
     &__icons {
@@ -52,7 +59,6 @@ $_color-lynch: #627485;
         display: flex;
         font-size: $font-size-tiny;
         font-weight: $font-weight-medium;
-        margin: 16px;
 
         &-present,
         &-comment {
@@ -68,12 +74,12 @@ $_color-lynch: #627485;
     &--expanded {
         display: flex;
         flex-direction: column;
-        padding: 0 19px;
         text-align: justify;
         word-break: break-word;
 
         &__divider {
-            margin: 0 auto 3px;
+            margin: 16px auto 3px;
+            width: 100%;
         }
 
         &__comments {
@@ -113,6 +119,8 @@ $_color-lynch: #627485;
         font-size: $font-size-small;
         line-height: 15px;
         padding: 12px 16px;
+        resize: vertical;
+        width: 50%;
 
         &:focus {
             border: 1px solid $color-fiord;
