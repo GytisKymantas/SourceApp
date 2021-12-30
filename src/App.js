@@ -8,6 +8,7 @@ import { NotFound } from "pages/NotFound";
 
 function App() {
   const [userData, setUserData] = useState();
+  const [restaurantData, setRestaurantData] = useState();
 
   useEffect(() => {
     fetch(
@@ -23,13 +24,31 @@ function App() {
           // handle error here
         }
       );
+    fetch(
+      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/restaurants.json"
+    )
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setRestaurantData(result);
+        },
+
+        (error) => {
+          // handle error here
+        }
+      );
   }, []);
 
   return (
     <div className="app">
       <Router>
         <Routes>
-          <Route path="/" element={<Dashboard data={userData} />} />
+          <Route
+            path="/"
+            element={
+              <Dashboard data={userData} restaurantsData={restaurantData} />
+            }
+          />
           <Route path="/registration" element={<RegistrationPage />} />
           <Route path="/dashboard/reservations" element={<Reservations />} />
           <Route
@@ -44,11 +63,17 @@ function App() {
             path="/dashboard/reservations/devices"
             element={<Reservations />}
           />
-          <Route path="/dashboard/eatout" element={<EatOut />} />
-          <Route path="/dashboard/eatout/category" element={<EatOut />} />
+          <Route
+            path="/dashboard/eatout"
+            element={<EatOut data={restaurantData} />}
+          />
+          <Route
+            path="/dashboard/eatout/category"
+            element={<EatOut data={restaurantData} />}
+          />
           <Route
             path="/dashboard/eatout/category/single"
-            element={<EatOut />}
+            element={<EatOut data={restaurantData} />}
           />
           <Route path="*" element={<NotFound />} />
         </Routes>

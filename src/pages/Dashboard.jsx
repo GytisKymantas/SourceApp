@@ -7,28 +7,15 @@ import { StoriesSection } from "components/organisms/StoriesSection/StoriesSecti
 import { RestaurantCard } from "components/molecules/RestaurantCard/RestaurantCard";
 import { ViewEatOutCard } from "components/molecules/ViewEatOutCard/ViewEatOutCard";
 
-export const Dashboard = (data) => {
+export const Dashboard = (data, restaurantsData) => {
   const userData = data.data?.userData[0];
   const firstName = userData?.userName.split(" ")[0];
   const reservationData = userData?.reservations;
-  const [storiesData, setStoriesData] = useState();
-  const [restaurantData, setRestaurantData] = useState();
+  const restaurantData = restaurantsData.restaurantsData?.restaurants;
   const restaurantCardData = restaurantData?.restaurants[0];
+  const [storiesData, setStoriesData] = useState();
 
   useEffect(() => {
-    fetch(
-      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/restaurants.json"
-    )
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setRestaurantData(result);
-        },
-
-        (error) => {
-          // handle error here
-        }
-      );
     fetch(
       "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/stories.json"
     )
