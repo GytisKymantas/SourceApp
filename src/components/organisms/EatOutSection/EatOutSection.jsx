@@ -7,8 +7,8 @@ const EatOutSection = (data) => {
   let restaurantData = data?.data?.restaurants;
 
   const twoBestRated = () => {
-    let averageArray = [];
-    let finalArray = [];
+    let arrayToCollectAverages = [];
+    let bestRatedArray = [];
 
     for (let i = 0; i < restaurantData.length; i++) {
       const ratings = restaurantData[i].reviews.map((review) => review.rating); // [5,5,5]
@@ -16,10 +16,12 @@ const EatOutSection = (data) => {
         ratings.reduce((prevValue, curValue) => prevValue + curValue, 0) /
         ratings.length;
 
-      averageArray.push(averageCount);
-      averageArray[i] >= 4.8 ? finalArray.push(restaurantData[i]) : void 0;
+      arrayToCollectAverages.push(averageCount);
+      arrayToCollectAverages[i] >= 4.8
+        ? bestRatedArray.push(restaurantData[i])
+        : void 0;
     }
-    return finalArray;
+    return bestRatedArray;
   };
 
   return (
