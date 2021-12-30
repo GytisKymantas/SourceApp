@@ -12,10 +12,6 @@ export const Dashboard = (data) => {
   const reservationData = userData?.reservations;
   const [storiesData, setStoriesData] = useState();
   const [restaurantData, setRestaurantData] = useState();
-<<<<<<< HEAD
-=======
-  const restaurantCardData = restaurantData?.restaurants[0];
->>>>>>> dev
 
   useEffect(() => {
     fetch(
@@ -50,27 +46,7 @@ export const Dashboard = (data) => {
     <MainLayout>
       <HelloWidget name={firstName} />
       <ReservationsSection reservationData={reservationData} />
-<<<<<<< HEAD
       {restaurantData && <EatOutSection data={restaurantData} />}
-=======
-      {restaurantCardData && (
-        <RestaurantCard
-          displayFullCard
-          numberOfCheckIns={restaurantCardData.checkIns}
-          restaurantName={restaurantCardData.name}
-          restaurantWebsite={restaurantCardData.website}
-          restaurantAddress={restaurantCardData.location.address}
-          restaurantOpeningHours={restaurantCardData.openingHours[0].hours}
-          restaurantDescription={restaurantCardData.description}
-          restaurantCategories={restaurantCardData.categories}
-          restaurantImage={restaurantCardData.image}
-          restaurantAverageRating={restaurantCardData.reviews.map(
-            (review) => review.rating
-          )}
-        />
-      )}
-      <ViewEatOutCard />
->>>>>>> dev
       {storiesData && <StoriesSection data={storiesData} />}
     </MainLayout>
   );
