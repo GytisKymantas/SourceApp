@@ -11,9 +11,9 @@ const EatOutSection = (data) => {
     let bestRatedArray = [];
 
     for (let i = 0; i < restaurantData.length; i++) {
-      const ratings = restaurantData[i].reviews.map((review) => review.rating); // [5,5,5]
+      const ratings = restaurantData[i].reviews.map((review) => review.rating); // gets ratings in an array
       const averageCount =
-        ratings.reduce((prevValue, curValue) => prevValue + curValue, 0) /
+        ratings.reduce((prevValue, curValue) => prevValue + curValue, 0) / // counts the average of previous array
         ratings.length;
 
       arrayToCollectAverages.push(averageCount);
