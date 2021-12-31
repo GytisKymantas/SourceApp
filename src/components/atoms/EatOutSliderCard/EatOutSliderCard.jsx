@@ -3,12 +3,16 @@ import SliderBulletPoint from "../../../assets/SliderBulletPoint.svg";
 import SliderBulletPointSelected from "../../../assets/SliderBulletPointSelected.svg";
 import { Button } from "components/atoms/Button/Button";
 import PlaceholderNav from "../../../assets/PlaceholderNav.svg";
-
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 import "./eat-out-slider.scss";
 
-export const EatOutSliderCard = () => {
+export const EatOutSliderCard = (
+  restaurantImageProp,
+  restaurantNameProp,
+  restaurantSloganProp,
+  restaurantDescriptionProp
+) => {
   const defaultSloganName = ["Feel the taste of Italy"];
   const defaultRestaurantName = ["Casa Della Pasta"];
   const defaultRestaurantDescription = [
@@ -40,4 +44,11 @@ export const EatOutSliderCard = () => {
       </div>
     </div>
   );
+};
+
+EatOutSliderCard.propTypes = {
+  restaurantNameProp: PropTypes.string,
+  restaurantDescriptionProp: PropTypes.string,
+  restaurantImageProp: PropTypes.string,
+  restaurantSloganProp: PropTypes.string,
 };
