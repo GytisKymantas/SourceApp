@@ -1,5 +1,4 @@
 import React from "react";
-import CassaDellaPasta from "../../../assets/CassaDellaPasta.svg";
 import SliderBulletPoint from "../../../assets/SliderBulletPoint.svg";
 import SliderBulletPointSelected from "../../../assets/SliderBulletPointSelected.svg";
 import { Button } from "components/atoms/Button/Button";
@@ -36,7 +35,7 @@ export const EatOutSliderCard = () => {
         <h2>{cardRestaurantName}</h2>
         <p>{cardRestaurantDescription}</p>
         <div className="btn-container">
-          <Button label={"LEARN MORE"} isLarge className="LargeBtn" />
+          <Button label={"LEARN MORE"} isLarge />
         </div>
       </div>
     </div>
