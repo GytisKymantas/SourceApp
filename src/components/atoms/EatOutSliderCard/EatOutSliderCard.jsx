@@ -9,9 +9,9 @@ import PlaceholderNav from "../../../assets/PlaceholderNav.svg";
 import "./eat-out-slider.scss";
 
 export const EatOutSliderCard = () => {
-  const cardSloganName = ["Feel the taste of Italy"];
-  const cardRestaurantName = ["Casa Della Pasta"];
-  const cardRestaurantDescription = [
+  const defaultSloganName = ["Feel the taste of Italy"];
+  const defaultRestaurantName = ["Casa Della Pasta"];
+  const defaultRestaurantDescription = [
     "Casa della Pasta was the first restaurant in Kaunas cooking pizza in a traditional wood-oven a restaurant capable of satisfying more than 3000 customers...",
   ];
 
@@ -31,9 +31,9 @@ export const EatOutSliderCard = () => {
             <img src={PlaceholderNav} alt="placeholder" />
           </div>
         </div>
-        <span className="text-slogan">{cardSloganName}</span>
-        <h2>{cardRestaurantName}</h2>
-        <p>{cardRestaurantDescription}</p>
+        <span className="text-slogan">{defaultSloganName}</span>
+        <h2>{defaultRestaurantName}</h2>
+        <p>{defaultRestaurantDescription}</p>
         <div className="btn-container">
           <Button label={"LEARN MORE"} isLarge />
         </div>
