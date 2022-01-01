@@ -115,42 +115,36 @@ export const NewsFeedItem = (data) => {
       </div>
       <div className="comment__wrapper">
         <span className="divider_top"></span>
-        <div className="test">
-          <div className="comments__rows">
-            {coms.map((item, index) => (
-              <div className="comments__box_one" key={index}>
-                <div className="comments__header">
-                  <span className="comments__name">{item.userName}</span>
-                  <div className="comments__timestamp">
-                    <span>{Moment(item.date).format("MM/DD/YYYY HH:mm")}</span>
-                  </div>
+        <div className="comments__rows">
+          {coms.map((item, index) => (
+            <div className="comments__box_one" key={index}>
+              <div className="comments__header">
+                <span className="comments__name">{item.userName}</span>
+                <div className="comments__timestamp">
+                  <span>{Moment(item.date).format("MM/DD/YYYY HH:mm")}</span>
                 </div>
-                <span className="comments--content">{item.comment}</span>
               </div>
-            ))}
-          </div>
-          <span className="divider_bottom"></span>
-          <div className="comment_input">
-            <img
-              className="user__icon"
-              src={userImage}
-              alt="your profile icon"
-            />
-            <input
-              className="input_leave_comment"
-              type="text"
-              placeholder="Leave a comment..."
-              value={commentValue}
-              onInput={(e) => setCommentValue(e.target.value)}
-            />
-            <Button
-              className="btn__active"
-              type="submit"
-              label="POST"
-              onClick={handleCommentSubmit}
-              disabled={!commentValue.trim()}
-            />
-          </div>
+              <span className="comments--content">{item.comment}</span>
+            </div>
+          ))}
+        </div>
+        <span className="divider_bottom"></span>
+        <div className="comment_input">
+          <img className="user__icon" src={userImage} alt="your profile icon" />
+          <input
+            className="input_leave_comment"
+            type="text"
+            placeholder="Leave a comment..."
+            value={commentValue}
+            onInput={(e) => setCommentValue(e.target.value)}
+          />
+          <Button
+            className="btn__active"
+            type="submit"
+            label="POST"
+            onClick={handleCommentSubmit}
+            disabled={!commentValue.trim()}
+          />
         </div>
       </div>
     </div>
