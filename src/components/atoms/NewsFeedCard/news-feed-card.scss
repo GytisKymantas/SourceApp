@@ -258,7 +258,6 @@
 }
 
 @media screen and (max-width: 600px) and (min-width: 361px) {
-    // header section styling
     .card-header__wrapper {
         padding: 6px 2px;
         width: 100%;
@@ -273,15 +272,6 @@
         }
     }
 
-    // image section styling
-    .card__content-video {
-        .vector__one {
-            left: 50%;
-            position: absolute;
-            top: 44%;
-        }
-    }
-    // comment section styling
     .comment__wrapper {
         width: 100%;
 
@@ -296,8 +286,6 @@
     }
 }
 @media screen and (max-width: 360px) {
-    // header section styling
-
     .card-header__wrapper {
         padding: 6px 2px;
         width: 100%;
