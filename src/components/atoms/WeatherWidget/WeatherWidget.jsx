@@ -118,7 +118,8 @@ export const WeatherWidget = ({ time }) => {
             <div className="weather-data__invisible-box">
               <p> No weather information available &#9785;</p>
               <p>
-                Make sure location services are enabled on your browser settings
+                Make sure location services are enabled on your browser
+                settings.
               </p>
             </div>
           </div>
