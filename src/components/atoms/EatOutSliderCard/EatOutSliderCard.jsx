@@ -11,7 +11,8 @@ export const EatOutSliderCard = (
   restaurantImageProp,
   restaurantNameProp,
   restaurantSloganProp,
-  restaurantDescriptionProp
+  restaurantDescriptionProp,
+  restaurantButtonColour
 ) => {
   const defaultSloganName = ["Feel the taste of Italy"];
   const defaultRestaurantName = ["Casa Della Pasta"];
@@ -51,4 +52,5 @@ EatOutSliderCard.propTypes = {
   restaurantDescriptionProp: PropTypes.string,
   restaurantImageProp: PropTypes.string,
   restaurantSloganProp: PropTypes.string,
+  restaurantButtonColour: PropTypes.string,
 };
