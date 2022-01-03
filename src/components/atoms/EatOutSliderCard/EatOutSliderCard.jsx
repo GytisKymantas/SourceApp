@@ -12,14 +12,14 @@ export const EatOutSliderCard = ({
   restaurantSloganProp,
   restaurantImageProp,
   restaurantDescriptionProp,
-  restaurantButtonColourProp,
+  restaurantButtonColourProp, // in progress
 }) => {
   return (
     <div className="slider__container">
       <div
         className="slider__image-wrapper"
         style={{
-          background: `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%),url(${restaurantImageProp})`,
+          background: `linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%),url(${restaurantImageProp})`,
         }}
       ></div>
       <div className="slider-text__wrapper">
@@ -51,5 +51,5 @@ EatOutSliderCard.propTypes = {
   restaurantDescriptionProp: PropTypes.string,
   restaurantImageProp: PropTypes.string,
   restaurantSloganProp: PropTypes.string,
-  restaurantButtonColourProp: PropTypes.string,
+  restaurantButtonColourProp: PropTypes.string, // in progress
 };
