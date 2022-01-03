@@ -26,8 +26,6 @@ export const ReservationsSection = ({ reservationData }) => {
 
   const nameMatcher = (name) => {
     switch (name) {
-      case "books":
-        return "Books";
       case "rooms":
         return "Meeting rooms";
       default:
@@ -72,7 +70,9 @@ export const ReservationsSection = ({ reservationData }) => {
                 >
                   <CategoryItem
                     categoryName={nameMatcher(name[0])}
-                    categoryNumber={name[1]}
+                    categoryInfo={
+                      name[1] ? `${name[1]} RESERVED` : "UNRESERVED"
+                    }
                     categoryImage={imageMatcher(name[0])}
                     key={index}
                   />
