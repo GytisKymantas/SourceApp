@@ -19,7 +19,7 @@ import "./weather-widget.scss";
 export const WeatherWidget = ({ time }) => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [weatherError, setWeatherError] = useState(false);
+  const [weatherError, setWeatherError] = useState(true);
   let weatherId,
     windSpeed,
     humidity,
