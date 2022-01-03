@@ -1,5 +1,7 @@
 @import '../../../styles/base/base';
 
+$inherit: inherit;
+
 .reservations-section {
     display: flex;
     flex-direction: column;
@@ -23,5 +25,10 @@
             flex-wrap: wrap;
             justify-content: center;
         }
+    }
+
+    &__element {
+        color: $inherit;
+        text-decoration: none;
     }
 }
