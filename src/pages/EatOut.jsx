@@ -32,6 +32,7 @@ export const EatOut = () => {
           restaurantImageProp={restaurantSliderCard[0].image}
           restaurantDescriptionProp={restaurantSliderCard[0].description}
           restaurantNameProp={restaurantSliderCard[0].name}
+          restaurantButtonColorProp={"red"}
         />
       )}
     </MainLayout>

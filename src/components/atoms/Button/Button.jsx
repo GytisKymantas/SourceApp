@@ -6,7 +6,7 @@ import { ReactComponent as SearchIcon } from "../../../assets/searchIcon.svg";
 import "./button.scss";
 
 export const Button = (props) => {
-  const { type, isLarge, label, disabled, onClick, hasIcon } = props;
+  const { type, isLarge, label, disabled, onClick, hasIcon, color } = props;
 
   return (
     <button
@@ -17,6 +17,7 @@ export const Button = (props) => {
       })}
       disabled={disabled}
       onClick={onClick}
+      style={{ backgroundColor: color }}
     >
       <span className="button__content">
         {hasIcon && <SearchIcon />}
@@ -33,4 +34,5 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
   hasIcon: PropTypes.node,
+  color: PropTypes.string,
 };

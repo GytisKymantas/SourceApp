@@ -35,15 +35,14 @@
         padding-top: 14px;
 
         .button {
-            background: $color-watermelon;
             line-height: 24px;
 
             &:hover {
-                background: darken($color-watermelon, 20%);
+                filter: brightness(85%);
             }
 
             &:active {
-                background: darken($color-watermelon, 40%);
+                filter: brightness(65%);
             }
         }
     }

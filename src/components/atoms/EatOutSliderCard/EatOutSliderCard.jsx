@@ -12,7 +12,7 @@ export const EatOutSliderCard = ({
   restaurantSloganProp,
   restaurantImageProp,
   restaurantDescriptionProp,
-  restaurantButtonColourProp, // in progress
+  restaurantButtonColorProp, // in progress
 }) => {
   return (
     <div className="slider__container">
@@ -39,7 +39,11 @@ export const EatOutSliderCard = ({
         <h2>{restaurantNameProp}</h2>
         <p>{restaurantDescriptionProp}</p>
         <div className="btn-container">
-          <Button label={"LEARN MORE"} isLarge />
+          <Button
+            label={"LEARN MORE"}
+            isLarge
+            color={restaurantButtonColorProp}
+          />
         </div>
       </div>
     </div>
@@ -51,5 +55,5 @@ EatOutSliderCard.propTypes = {
   restaurantDescriptionProp: PropTypes.string,
   restaurantImageProp: PropTypes.string,
   restaurantSloganProp: PropTypes.string,
-  restaurantButtonColourProp: PropTypes.string, // in progress
+  restaurantButtonColorProp: PropTypes.string,
 };
