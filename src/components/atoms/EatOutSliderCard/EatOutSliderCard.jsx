@@ -7,31 +7,19 @@ import PropTypes from "prop-types";
 
 import "./eat-out-slider.scss";
 
-export const EatOutSliderCard = (
+export const EatOutSliderCard = ({
   restaurantNameProp,
   restaurantSloganProp,
   restaurantImageProp,
   restaurantDescriptionProp,
-  restaurantBtnColourProp
-) => {
-  const defaultSloganName = ["Feel the taste of Italy"];
-  const defaultRestaurantName = ["Casa Della Pasta"];
-  const defaultRestaurantDescription = [
-    "Casa della Pasta was the first restaurant in Kaunas cooking pizza in a traditional wood-oven a restaurant capable of satisfying more than 3000 customers...",
-  ];
-  console.log(restaurantNameProp);
-  console.log(restaurantNameProp.restaurantDescriptionProp);
-
-  // console.log(restaurantSloganProp);
-
-  // console.log(restaurantDescriptionProp);
-
+  restaurantButtonColourProp,
+}) => {
   return (
     <div className="slider__container">
       <div
         className="slider__image-wrapper"
         style={{
-          background: `url(${restaurantNameProp.restaurantImageProp})`,
+          background: `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%),url(${restaurantImageProp})`,
         }}
       ></div>
       <div className="slider-text__wrapper">
@@ -47,11 +35,9 @@ export const EatOutSliderCard = (
             <img src={PlaceholderNav} alt="placeholder" />
           </div>
         </div>
-        <span className="text-slogan">
-          {restaurantNameProp.restaurantSloganProp}
-        </span>
-        <h2>{restaurantNameProp.restaurantNameProp}</h2>
-        <p>{restaurantNameProp.restaurantDescriptionProp}</p>
+        <span className="text-slogan">{restaurantSloganProp}</span>
+        <h2>{restaurantNameProp}</h2>
+        <p>{restaurantDescriptionProp}</p>
         <div className="btn-container">
           <Button label={"LEARN MORE"} isLarge />
         </div>
@@ -65,5 +51,5 @@ EatOutSliderCard.propTypes = {
   restaurantDescriptionProp: PropTypes.string,
   restaurantImageProp: PropTypes.string,
   restaurantSloganProp: PropTypes.string,
-  restaurantButtonColour: PropTypes.string,
+  restaurantButtonColourProp: PropTypes.string,
 };

@@ -28,7 +28,7 @@ export const EatOut = () => {
       <h1>EatOut</h1>
       {restaurantData && (
         <EatOutSliderCard
-          restaurantNameProp={restaurantSliderCard[0].slogan}
+          restaurantSloganProp={restaurantSliderCard[0].slogan}
           restaurantImageProp={restaurantSliderCard[0].image}
           restaurantDescriptionProp={restaurantSliderCard[0].description}
           restaurantNameProp={restaurantSliderCard[0].name}
