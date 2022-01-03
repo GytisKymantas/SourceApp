@@ -5,40 +5,36 @@ import { ViewEatOutCard } from "components/molecules/ViewEatOutCard/ViewEatOutCa
 
 const EatOutSection = (data) => {
   const restaurantData = data?.data?.restaurants;
+  let bestRatedArray = [];
 
-  const twoBestRated = () => {
-    let bestRatedArray = [];
+  for (let i = 0; i < restaurantData.length; i++) {
+    const ratings = restaurantData[i].reviews.map((review) => review.rating); // gets ratings in an array
+    const averageCount =
+      ratings.reduce((prevValue, curValue) => prevValue + curValue, 0) / // counts the average of previous array
+      ratings.length;
 
-    for (let i = 0; i < restaurantData.length; i++) {
-      const ratings = restaurantData[i].reviews.map((review) => review.rating); // gets ratings in an array
-      const averageCount =
-        ratings.reduce((prevValue, curValue) => prevValue + curValue, 0) / // counts the average of previous array
-        ratings.length;
+    bestRatedArray.push({
+      ...restaurantData[i],
+      averageRating: averageCount,
+    });
+    bestRatedArray.sort((a, b) => (b.averageRating < a.averageRating ? 1 : -1));
+  }
+  const twoBestRatedArray = bestRatedArray.slice(18, 20);
 
-      bestRatedArray.push({
-        ...restaurantData[i],
-        averageRating: averageCount,
-      });
-      bestRatedArray.sort((a, b) =>
-        b.averageRating < a.averageRating ? 1 : -1
-      );
-    }
-    return bestRatedArray.slice(18, 20);
-  };
   return (
     <div className="main-container">
       <ViewEatOutCard />
-      {twoBestRated() &&
-        twoBestRated().map((obj, i) => (
+      {twoBestRatedArray &&
+        twoBestRatedArray.map((obj, i) => (
           <RestaurantCard
-            key={twoBestRated()[i].id}
+            key={twoBestRatedArray[i].id}
             displayFullCard={false}
-            numberOfCheckIns={twoBestRated()[i].checkIns}
-            restaurantName={twoBestRated()[i].name}
-            restaurantOpeningHours={twoBestRated()[i].openingHours[0].hours}
-            restaurantCategories={twoBestRated()[i].categories}
-            restaurantImage={twoBestRated()[i].image}
-            restaurantAverageRating={twoBestRated()[i].reviews.map(
+            numberOfCheckIns={twoBestRatedArray[i].checkIns}
+            restaurantName={twoBestRatedArray[i].name}
+            restaurantOpeningHours={twoBestRatedArray[i].openingHours[0].hours}
+            restaurantCategories={twoBestRatedArray[i].categories}
+            restaurantImage={twoBestRatedArray[i].image}
+            restaurantAverageRating={twoBestRatedArray[i].reviews.map(
               (review) => review.rating
             )}
           />
