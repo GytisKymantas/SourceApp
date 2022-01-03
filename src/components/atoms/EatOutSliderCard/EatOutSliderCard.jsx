@@ -3,7 +3,7 @@ import SliderBulletPoint from "../../../assets/SliderBulletPoint.svg";
 import SliderBulletPointSelected from "../../../assets/SliderBulletPointSelected.svg";
 import { Button } from "components/atoms/Button/Button";
 import PlaceholderNav from "../../../assets/PlaceholderNav.svg";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 import "./eat-out-slider.scss";
 
@@ -60,10 +60,10 @@ export const EatOutSliderCard = (
   );
 };
 
-// EatOutSliderCard.propTypes = {
-//   restaurantNameProp: PropTypes.string,
-//   restaurantDescriptionProp: PropTypes.string,
-//   restaurantImageProp: PropTypes.string,
-//   restaurantSloganProp: PropTypes.string,
-//   restaurantButtonColour: PropTypes.string,
-// };
+EatOutSliderCard.propTypes = {
+  restaurantNameProp: PropTypes.string,
+  restaurantDescriptionProp: PropTypes.string,
+  restaurantImageProp: PropTypes.string,
+  restaurantSloganProp: PropTypes.string,
+  restaurantButtonColour: PropTypes.string,
+};

@@ -88,8 +88,11 @@
             font-size: $font-size-medium;
             line-height: 24px;
             margin: 0;
+            overflow: hidden;
             text-align: justify;
+            text-overflow: ellipsis;
             width: 294px;
+            white-space: nowrap;
         }
     }
 }
