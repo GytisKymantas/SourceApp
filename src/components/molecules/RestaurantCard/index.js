@@ -1,1 +1,1 @@
-export * from "components/atoms/RestaurantCard/RestaurantCard";
+export * from "components/molecules/RestaurantCard/RestaurantCard";
