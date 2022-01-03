@@ -25,6 +25,7 @@ $_color-black-transparent-07: rgba(0, 0, 0, 0.7);
 
     &__invisible-box {
         padding: 9px 19px;
+        text-align: center;
 
         :first-child {
             font-size: $font-size-big;
