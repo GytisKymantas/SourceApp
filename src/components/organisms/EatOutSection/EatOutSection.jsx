@@ -4,10 +4,9 @@ import { RestaurantCard } from "components/molecules/RestaurantCard/RestaurantCa
 import { ViewEatOutCard } from "components/molecules/ViewEatOutCard/ViewEatOutCard";
 
 const EatOutSection = (data) => {
-  let restaurantData = data?.data?.restaurants;
+  const restaurantData = data?.data?.restaurants;
 
   const twoBestRated = () => {
-    let arrayToCollectAverages = [];
     let bestRatedArray = [];
 
     for (let i = 0; i < restaurantData.length; i++) {
@@ -16,21 +15,23 @@ const EatOutSection = (data) => {
         ratings.reduce((prevValue, curValue) => prevValue + curValue, 0) / // counts the average of previous array
         ratings.length;
 
-      arrayToCollectAverages.push(averageCount);
-      arrayToCollectAverages[i] >= 4.8
-        ? bestRatedArray.push(restaurantData[i])
-        : void 0;
+      bestRatedArray.push({
+        ...restaurantData[i],
+        averageRating: averageCount,
+      });
+      bestRatedArray.sort((a, b) =>
+        b.averageRating < a.averageRating ? 1 : -1
+      );
     }
-    return bestRatedArray;
+    return bestRatedArray.slice(18, 20);
   };
-
   return (
     <div className="main-container">
       <ViewEatOutCard />
       {twoBestRated() &&
         twoBestRated().map((obj, i) => (
           <RestaurantCard
-            key={i}
+            key={twoBestRated()[i].id}
             displayFullCard={false}
             numberOfCheckIns={twoBestRated()[i].checkIns}
             restaurantName={twoBestRated()[i].name}
