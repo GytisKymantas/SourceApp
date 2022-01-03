@@ -91,13 +91,13 @@ export const EventCard = (data) => {
             onKeyDown={handleCommentClick}
             aria-hidden="true"
           />{" "}
-          <span className="card__icons-number">{coms.length}</span>
+          <span className="card__icons-number">{coms?.length}</span>
         </div>
         <div>
           {showComments && (
             <div className="card--expanded">
               <EventCardDivider className="card--expanded__divider" />
-              {coms.map((item, index) => (
+              {coms?.map((item, index) => (
                 <div className="card--expanded__comments" key={index}>
                   <div>
                     <span>{item.userName}</span>
