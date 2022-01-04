@@ -23,7 +23,7 @@ export const NewsFeedCard = (data) => {
     likes,
     postCover,
     postVideo,
-  } = postNews[13];
+  } = postNews[10];
 
   // like button
   const [like, setLike] = useState(false);

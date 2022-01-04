@@ -4,7 +4,9 @@ import { NewsFeedCard } from "../../atoms/NewsFeedCard/NewsFeedCard.jsx";
 
 export const StoriesSection = ({ data }) => {
   const storiesData = data?.stories;
-  const postNews = storiesData?.filter((x) => x.type === "post" || "video");
+  const postNews = storiesData?.filter(
+    (x) => x.type === "post" || ("video" && x.type !== "birthday")
+  );
 
   return (
     <div>
