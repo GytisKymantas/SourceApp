@@ -21,7 +21,7 @@ export const NewsFeedCard = (data) => {
     postDate,
     comments,
     likes,
-  } = postNews[0];
+  } = postNews[7];
 
   const postVideos = data?.data;
   let { postCover, postVideo } = postVideos[2];
