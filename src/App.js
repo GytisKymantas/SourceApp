@@ -9,8 +9,8 @@ import { NotFound } from "pages/NotFound/NotFound";
 
 function App() {
   const [userData, setUserData] = useState();
-  const [restaurantData, setRestaurantData] = useState();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [restaurantsData, setRestaurantsData] = useState();
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -28,6 +28,19 @@ function App() {
           }
         );
     }
+    fetch(
+      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/restaurants.json"
+    )
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setRestaurantsData(result);
+        },
+
+        (error) => {
+          // handle error here
+        }
+      );
   }, [isLoggedIn]);
 
   let isUserLoggedIn = sessionStorage.getItem("loggedIn");
@@ -43,65 +56,25 @@ function App() {
     }
   }, [isLoggedIn, isUserLoggedIn]);
 
-  useEffect(() => {
-    fetch(
-      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/restaurants.json"
-    )
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setRestaurantData(result);
-        },
-
-        (error) => {
-          // handle error here
-        }
-      );
-  }, []);
-
   return (
     <div className="app">
       <Router>
         <Routes>
           <Route
             path="/"
-            element={
-              <Dashboard data={userData} restaurantsData={restaurantData} />
-            }
-          />
-          <Route path="/registration" element={<RegistrationPage />} />
-          <Route path="/dashboard/reservations" element={<Reservations />} />
-          <Route
-            path="/"
             element={<LoginPage setIsLoggedIn={setIsLoggedIn} />}
           />
-          <Route
-            path="/dashboard/reservations/books"
-            element={<Reservations />}
-          />
-          <Route
-            path="/dashboard/reservations/devices"
-            element={<Reservations />}
-          />
-          <Route
-            path="/dashboard/eatout"
-            element={<EatOut data={restaurantData} />}
-          />
-          <Route
-            path="/dashboard/eatout/category"
-            element={<EatOut data={restaurantData} />}
-          />
-          <Route
-            path="/dashboard/eatout/category/single"
-            element={<EatOut data={restaurantData} />}
-          />
-          <Route path="*" element={<NotFound />} />
           <Route path="/registration" element={<RegistrationPage />} />
           {isLoggedIn && (
             <>
               <Route
                 path="/dashboard"
-                element={<Dashboard data={userData} />}
+                element={
+                  <Dashboard
+                    data={userData}
+                    restaurantsInfo={restaurantsData}
+                  />
+                }
               />
               <Route
                 path="/dashboard/reservations"
@@ -119,11 +92,17 @@ function App() {
                 path="/dashboard/reservations/devices"
                 element={<Reservations />}
               />
-              <Route path="/dashboard/eatout" element={<EatOut />} />
-              <Route path="/dashboard/eatout/category" element={<EatOut />} />
+              <Route
+                path="/dashboard/eatout"
+                element={<EatOut data={restaurantsData} />}
+              />
+              <Route
+                path="/dashboard/eatout/category"
+                element={<EatOut data={restaurantsData} />}
+              />
               <Route
                 path="/dashboard/eatout/category/single"
-                element={<EatOut />}
+                element={<EatOut data={restaurantsData} />}
               />
             </>
           )}
