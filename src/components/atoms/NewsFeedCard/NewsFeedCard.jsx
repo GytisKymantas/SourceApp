@@ -21,10 +21,9 @@ export const NewsFeedCard = (data) => {
     postDate,
     comments,
     likes,
+    postCover,
+    postVideo,
   } = postNews[7];
-
-  const postVideos = data?.data;
-  let { postCover, postVideo } = postVideos[2];
 
   // like button
   const [like, setLike] = useState(false);
