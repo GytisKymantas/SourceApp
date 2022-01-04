@@ -8,12 +8,11 @@ import { GreetingSection } from "components/molecules/GreetingSection/GreetingSe
 import { RestaurantCard } from "components/molecules/RestaurantCard/RestaurantCard";
 import { ViewEatOutCard } from "components/molecules/ViewEatOutCard/ViewEatOutCard";
 
-export const Dashboard = (props) => {
-  const { data, restaurantsData } = props;
+export const Dashboard = ({ data, restaurantsInfo }) => {
   const userData = data?.userData[0];
   const firstName = userData?.userName.split(" ")[0];
   const reservationData = userData?.reservations;
-  const restaurantData = restaurantsData;
+  const restaurantData = restaurantsInfo;
   const restaurantCardData = restaurantData?.restaurants[0];
   const [storiesData, setStoriesData] = useState();
 
@@ -61,5 +60,5 @@ export const Dashboard = (props) => {
 
 Dashboard.propTypes = {
   data: PropTypes.object,
-  restaurantsData: PropTypes.object,
+  restaurantsInfo: PropTypes.object,
 };
