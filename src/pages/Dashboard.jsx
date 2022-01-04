@@ -2,16 +2,18 @@ import { HelloWidget } from "components/atoms/HelloWidget/HelloWidget";
 import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import { ReservationsSection } from "components/molecules/ReservationsSection/ReservationsSection";
 import React from "react";
+import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { StoriesSection } from "components/organisms/StoriesSection/StoriesSection";
 import { RestaurantCard } from "components/molecules/RestaurantCard/RestaurantCard";
 import { ViewEatOutCard } from "components/molecules/ViewEatOutCard/ViewEatOutCard";
 
-export const Dashboard = (data, restaurantsData) => {
-  const userData = data.data?.userData[0];
+export const Dashboard = (props) => {
+  const { data, restaurantsData } = props;
+  const userData = data?.userData[0];
   const firstName = userData?.userName.split(" ")[0];
   const reservationData = userData?.reservations;
-  const restaurantData = restaurantsData.restaurantsData?.restaurants;
+  const restaurantData = restaurantsData;
   const restaurantCardData = restaurantData?.restaurants[0];
   const [storiesData, setStoriesData] = useState();
 
@@ -55,4 +57,9 @@ export const Dashboard = (data, restaurantsData) => {
       {storiesData && <StoriesSection data={storiesData} />}
     </MainLayout>
   );
+};
+
+Dashboard.propTypes = {
+  data: PropTypes.object,
+  restaurantsData: PropTypes.object,
 };
