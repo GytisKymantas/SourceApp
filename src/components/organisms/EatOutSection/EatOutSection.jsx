@@ -24,21 +24,20 @@ const EatOutSection = (data) => {
   return (
     <div className="main-container">
       <ViewEatOutCard />
-      {twoBestRatedArray &&
-        twoBestRatedArray.map((obj, i) => (
-          <RestaurantCard
-            key={twoBestRatedArray[i].id}
-            displayFullCard={false}
-            numberOfCheckIns={twoBestRatedArray[i].checkIns}
-            restaurantName={twoBestRatedArray[i].name}
-            restaurantOpeningHours={twoBestRatedArray[i].openingHours[0].hours}
-            restaurantCategories={twoBestRatedArray[i].categories}
-            restaurantImage={twoBestRatedArray[i].image}
-            restaurantAverageRating={twoBestRatedArray[i].reviews.map(
-              (review) => review.rating
-            )}
-          />
-        ))}
+      {twoBestRatedArray.map((obj, i) => (
+        <RestaurantCard
+          key={twoBestRatedArray.id}
+          displayFullCard={false}
+          numberOfCheckIns={twoBestRatedArray[i].checkIns}
+          restaurantName={twoBestRatedArray[i].name}
+          restaurantOpeningHours={twoBestRatedArray[i].openingHours[0].hours}
+          restaurantCategories={twoBestRatedArray[i].categories}
+          restaurantImage={twoBestRatedArray[i].image}
+          restaurantAverageRating={twoBestRatedArray[i].reviews.map(
+            (review) => review.rating
+          )}
+        />
+      ))}
     </div>
   );
 };
