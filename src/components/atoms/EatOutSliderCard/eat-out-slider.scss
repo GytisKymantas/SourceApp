@@ -34,64 +34,62 @@
     .btn-container {
         padding-top: 14px;
 
-        .button {
-            line-height: 24px;
+        // .button {
+        //     line-height: 24px;
 
-            &:hover {
-                filter: brightness(115%);
-            }
+        //     &:hover {
+        //         filter: brightness(115%);
+        //     }
 
-            &:active {
-                filter: brightness(95%);
-            }
-        }
+        //     &:active {
+        //         filter: brightness(95%);
+        //     }
+    }
+}
+
+.slider-text__wrapper {
+    align-items: flex-start;
+    background: $color-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px 24px 32px 8px;
+
+    .top-navigation {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 25px;
+        width: 312px;
     }
 
-    .slider-text__wrapper {
-        align-items: flex-start;
-        background: $color-white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 32px 24px 32px 8px;
+    .text-slogan {
+        color: $color-watermelon;
+        font-size: $font-size-mini;
+        font-weight: $font-weight-medium;
+        line-height: 150%;
+        text-transform: uppercase;
+    }
 
-        .top-navigation {
-            display: flex;
-            justify-content: space-between;
-            padding-bottom: 25px;
-            width: 312px;
-        }
+    h2 {
+        $_font-size: 32px;
+        color: $color-midnight;
+        font-size: $_font-size;
+        font-weight: $font-weight-medium;
+        line-height: 37px;
+        margin: 0;
+        padding: 2px 0 16px;
+    }
 
-        .text-slogan {
-            color: $color-watermelon;
-            font-size: $font-size-mini;
-            font-weight: $font-weight-medium;
-            line-height: 150%;
-            text-transform: uppercase;
-        }
-
-        h2 {
-            $_font-size: 32px;
-
-            color: $color-midnight;
-            font-size: $_font-size;
-            font-weight: $font-weight-medium;
-            line-height: 37px;
-            margin: 0;
-            padding: 2px 0 16px;
-        }
-
-        p {
-            color: $color-dark-gray;
-            font-size: $font-size-medium;
-            line-height: 24px;
-            margin: 0;
-            overflow: hidden;
-            text-align: justify;
-            text-overflow: ellipsis;
-            width: 294px;
-            white-space: nowrap;
-        }
+    p {
+        color: $color-dark-gray;
+        font-size: $font-size-medium;
+        line-height: 24px;
+        margin: 0;
+        overflow: hidden;
+        text-align: justify;
+        text-overflow: ellipsis;
+        width: 294px;
+        white-space: nowrap;
     }
 }
 

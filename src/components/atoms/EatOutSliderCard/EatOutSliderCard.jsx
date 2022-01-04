@@ -13,42 +13,40 @@ export const EatOutSliderCard = ({
   restaurantImageProp,
   restaurantDescriptionProp,
   restaurantButtonColorProp, // in progress
-}) => {
-  return (
-    <div className="slider__container">
-      <div
-        className="slider__image-wrapper"
-        style={{
-          background: `linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%),url(${restaurantImageProp})`,
-        }}
-      ></div>
-      <div className="slider-text__wrapper">
-        <div className="top-navigation">
-          <div className="bullets">
-            <img src={SliderBulletPoint} alt="bullet point" />
-            <img src={SliderBulletPoint} alt="bullet point" />
-            <img src={SliderBulletPointSelected} alt="selected point" />
-            <img src={SliderBulletPoint} alt="bullet point" />
-            <img src={SliderBulletPoint} alt="bullet point" />
-          </div>
-          <div className="placeholder-nav">
-            <img src={PlaceholderNav} alt="placeholder" />
-          </div>
+}) => (
+  <div className="slider__container">
+    <div
+      className="slider__image-wrapper"
+      style={{
+        background: `linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%),url(${restaurantImageProp})`,
+      }}
+    ></div>
+    <div className="slider-text__wrapper">
+      <div className="top-navigation">
+        <div className="bullets">
+          <img src={SliderBulletPoint} alt="bullet point" />
+          <img src={SliderBulletPoint} alt="bullet point" />
+          <img src={SliderBulletPointSelected} alt="selected point" />
+          <img src={SliderBulletPoint} alt="bullet point" />
+          <img src={SliderBulletPoint} alt="bullet point" />
         </div>
-        <span className="text-slogan">{restaurantSloganProp}</span>
-        <h2>{restaurantNameProp}</h2>
-        <p>{restaurantDescriptionProp}</p>
-        <div className="btn-container">
-          <Button
-            label={"LEARN MORE"}
-            isLarge
-            color={restaurantButtonColorProp}
-          />
+        <div className="placeholder-nav">
+          <img src={PlaceholderNav} alt="placeholder" />
         </div>
       </div>
+      <span className="text-slogan">{restaurantSloganProp}</span>
+      <h2>{restaurantNameProp}</h2>
+      <p>{restaurantDescriptionProp}</p>
+      <div className="btn-container">
+        <Button
+          label={"LEARN MORE"}
+          isLarge
+          color={restaurantButtonColorProp}
+        />
+      </div>
     </div>
-  );
-};
+  </div>
+);
 
 EatOutSliderCard.propTypes = {
   restaurantNameProp: PropTypes.string,

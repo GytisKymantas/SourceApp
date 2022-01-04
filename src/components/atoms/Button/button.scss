@@ -48,6 +48,14 @@
     &--large {
         font-size: $font-size-small;
         padding: 12px 24px;
+        line-height: 24px;
+
+        &:hover {
+            opacity: 1.1;
+        }
+        &:active {
+            opacity: 0.8;
+        }
     }
 
     &--has-icon {
