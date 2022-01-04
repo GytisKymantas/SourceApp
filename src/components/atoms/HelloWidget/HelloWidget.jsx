@@ -1,17 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./hello-widget.scss";
 import PropTypes from "prop-types";
 
-export const HelloWidget = ({ name }) => {
-  const [time, setTime] = useState(new Date());
-
-  useEffect(() => {
-    const interval = setInterval(() => setTime(new Date()), 1000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
+export const HelloWidget = ({ name, time }) => {
   const hours = time.getHours();
   return (
     <div className="hello-widget">
@@ -34,4 +25,5 @@ export const HelloWidget = ({ name }) => {
 
 HelloWidget.propTypes = {
   name: PropTypes.string,
+  time: PropTypes.object,
 };

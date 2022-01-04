@@ -1,27 +1,20 @@
 @import '../../styles/base/base';
 
-.registration-page {
+.login-page {
     background: $color-mercury;
     display: flex;
     height: 100vh;
     justify-content: center;
 }
 
-.registration-form-container {
-    &__two-inputs {
+.login-form-container {
+    &__inputs {
         display: flex;
+        flex-direction: column;
     }
 
-    &__fname,
-    &__lname,
-    &__password,
-    &__password-repeat {
+    &__input {
         width: 100%;
-    }
-
-    &__fname:first-child,
-    &__password:first-child {
-        margin-right: 20px;
     }
 
     &__actions {
@@ -46,31 +39,11 @@
 }
 
 @media (max-width: 635px) {
-    .registration-page {
-        height: auto;
-        padding-bottom: 25px;
-    }
-
-    .registration-form-container {
-        height: 600px;
-
-        &__two-inputs {
-            flex-direction: column;
-        }
-
-        &__password,
-        &__password-repeat {
-            margin-bottom: 10px;
-        }
-
-        &__fname:first-child,
-        &__password:first-child {
-            margin-right: 0;
-        }
+    .login-form-container {
+        height: 300px;
 
         &__actions {
             flex-direction: column;
-            margin-top: 26px;
         }
 
         &__actions-button {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Avatar } from "components/atoms/Avatar/Avatar";
 import { DropDown } from "components/atoms/DropDown/DropDown";
 
@@ -16,14 +17,16 @@ export const ProfileWidget = () => {
   const [notifications, setNotifications] = useState(true);
   const [showDropDown, setShowDropDown] = useState(false);
 
+  let navigate = useNavigate();
+
   const menuItems = [
     {
-      id: 1,
+      id: "settings",
       logo: <SettingsLogo />,
       text: "Settings",
     },
     {
-      id: 2,
+      id: "logout",
       logo: <LogOutLogo />,
       text: "Log out",
     },
@@ -34,9 +37,16 @@ export const ProfileWidget = () => {
   };
 
   const handleOptionSelect = (optionId) => {
-    // placeholder for future functionality
-    // eslint-disable-next-line no-console
-    console.log("option selected", optionId);
+    if (optionId === "logout") {
+      sessionStorage.setItem("loggedIn", "false");
+      navigate("../", { replace: true });
+      return;
+    }
+
+    if (optionId === "settings") {
+      setShowDropDown((prevValue) => !prevValue);
+      return;
+    }
   };
 
   const ref = useRef();

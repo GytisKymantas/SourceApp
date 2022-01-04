@@ -1,9 +1,9 @@
-import { HelloWidget } from "components/atoms/HelloWidget/HelloWidget";
 import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import { ReservationsSection } from "components/molecules/ReservationsSection/ReservationsSection";
 import React from "react";
 import { useState, useEffect } from "react";
 import { NewsFeedSection } from "components/organisms/NewsFeedSection/NewsFeedSection";
+import { GreetingSection } from "components/molecules/GreetingSection/GreetingSection";
 import { RestaurantCard } from "components/molecules/RestaurantCard/RestaurantCard";
 import { ViewEatOutCard } from "components/molecules/ViewEatOutCard/ViewEatOutCard";
 
@@ -46,7 +46,7 @@ export const Dashboard = (data) => {
 
   return (
     <MainLayout>
-      <HelloWidget name={firstName} />
+      <GreetingSection name={firstName} />
       <ReservationsSection reservationData={reservationData} />
       {restaurantCardData && (
         <RestaurantCard
