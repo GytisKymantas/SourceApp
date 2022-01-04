@@ -10,7 +10,7 @@ export const DropDown = ({ options, onSelect }) => (
         key={option.id}
         className="drop-down__option"
         role="button"
-        tabIndex={option.id}
+        tabIndex="0"
         onClick={() => onSelect(option.id)}
         onKeyDown={() => onSelect(option.id)}
       >
@@ -24,7 +24,7 @@ export const DropDown = ({ options, onSelect }) => (
 DropDown.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number,
+      id: PropTypes.string,
       logo: PropTypes.node,
       text: PropTypes.string,
     })

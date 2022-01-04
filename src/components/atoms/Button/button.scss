@@ -1,4 +1,6 @@
 @import '../../../styles/base/base';
+$_color-violet-medium: #5836cc;
+$_color-violet-dark: #462ca3;
 
 .button {
     background-color: $color-violet;
@@ -18,12 +20,10 @@
     }
 
     &:hover {
-        $_color-violet-medium: #5836cc;
         background-color: $_color-violet-medium;
     }
 
     &:active {
-        $_color-violet-dark: #462ca3;
         background-color: $_color-violet-dark;
     }
 
