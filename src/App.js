@@ -10,35 +10,6 @@ import { NotFound } from "pages/NotFound/NotFound";
 function App() {
   const [userData, setUserData] = useState();
   const [restaurantData, setRestaurantData] = useState();
-
-  useEffect(() => {
-    fetch(
-      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/userData.json"
-    )
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setUserData(result);
-        },
-
-        (error) => {
-          // handle error here
-        }
-      );
-    fetch(
-      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/restaurants.json"
-    )
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setRestaurantData(result);
-        },
-
-        (error) => {
-          // handle error here
-        }
-      );
-  }, []);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -71,6 +42,22 @@ function App() {
       setIsLoggedIn(false);
     }
   }, [isLoggedIn, isUserLoggedIn]);
+
+  useEffect(() => {
+    fetch(
+      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/restaurants.json"
+    )
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setRestaurantData(result);
+        },
+
+        (error) => {
+          // handle error here
+        }
+      );
+  }, []);
 
   return (
     <div className="app">
