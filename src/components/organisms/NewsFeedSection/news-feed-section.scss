@@ -6,13 +6,9 @@
 }
 
 .news-section {
-    // align-items: center;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
-    // height: 3500px;
 
     &__header {
         font-size: $font-size-large;
@@ -28,7 +24,7 @@
         &__news-post {
             border: solid;
             height: 662px;
-            margin: 0 auto;
+            margin: 20px;
             width: 416px;
         }
 
