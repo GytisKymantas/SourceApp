@@ -55,8 +55,15 @@ $_color-lynch: #627485;
         top: -19%;
         @media (max-width: 400px) {
             img {
-                height: 120px;
-                width: 130px;
+                height: 118px;
+                width: 128px;
+            }
+        }
+
+        @media (max-width: 300px) {
+            img {
+                height: 100px;
+                width: 105px;
             }
         }
     }

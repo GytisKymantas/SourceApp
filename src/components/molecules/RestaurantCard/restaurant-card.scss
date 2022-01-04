@@ -1,0 +1,209 @@
+@import '../../../styles/base/base';
+
+.restaurant__container {
+    background: $color-white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    margin-bottom: 40px;
+    max-width: 416px;
+    text-align: start;
+
+    a {
+        color: $color-fiord;
+        text-decoration: none;
+        transition: 0.3s;
+
+        &:hover {
+            color: $color-black;
+            opacity: 0.4;
+        }
+    }
+
+    &-front {
+        border-radius: 8px;
+        height: 229px;
+        position: relative;
+
+        .user-image {
+            left: 6%;
+            position: absolute;
+            top: 5%;
+        }
+    }
+
+    &-image-wrapper {
+        background-position: center !important;
+        background-size: cover !important;
+        border-radius: 8px;
+        height: 180px;
+    }
+
+    &-frame {
+        background: $color-yellow;
+        border-radius: 8px;
+        height: 32px;
+        left: calc(100% - 96px);
+        position: absolute;
+        top: 16px;
+        width: 68px;
+
+        .frame:hover {
+            left: -74%;
+            position: absolute;
+        }
+    }
+
+    &-footer {
+        padding-bottom: 20px;
+        position: absolute;
+        top: 55%;
+        width: 100%;
+    }
+
+    .ordered-list {
+        color: $color-dark-gray;
+        display: flex;
+        font-size: $font-size-mini;
+        font-weight: $font-weight-medium;
+        gap: 26px;
+        line-height: 150%;
+        padding: 0 0 0 20px;
+        text-transform: uppercase;
+
+        li:first-of-type {
+            list-style-type: none;
+        }
+
+        li::marker {
+            $_font-size-fifteen: 15px;
+
+            color: $color-dark-gray;
+            font-size: $_font-size-fifteen;
+            vertical-align: bottom;
+        }
+    }
+
+    &-image-text {
+        font-weight: $font-weight-medium;
+        line-height: 28px;
+        margin-left: 20px;
+
+        h2 {
+            margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 75%;
+
+            @media (max-width: 360px) {
+                font-size: $font-size-big;
+            }
+        }
+
+        span {
+            color: $color-dark-gray;
+            font-size: $font-size-mini;
+            line-height: 150%;
+        }
+    }
+
+    &-image-heart {
+        cursor: pointer;
+        float: right;
+        margin-right: 15px;
+        padding-top: 2px;
+    }
+
+    &-bottom {
+        margin-left: 20px;
+        padding-bottom: 10px;
+    }
+
+    .restaurant__description {
+        max-width: 390px;
+        overflow: hidden;
+        padding: 7px 15px 0 0;
+    }
+
+    .restaurant__people-number {
+        align-items: center;
+        background: $color-fiord;
+        border-radius: 8px;
+        display: flex;
+        gap: 9px;
+        height: 18px;
+        justify-content: center;
+        left: 16px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 16px;
+
+        img {
+            color: $color-yellow;
+            width: 14px;
+        }
+
+        span {
+            color: $color-yellow;
+            font-size: $font-size-small;
+        }
+    }
+
+    &-credentials {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: -5px;
+
+        .restaurant-locale {
+            align-items: center;
+            display: flex;
+            font-size: $font-size-tiny;
+            gap: 9px;
+            line-height: 22px;
+            text-transform: uppercase;
+            transition: 0.3s;
+
+            @media (max-width: 360px) {
+                font-size: $font-size-tiny;
+            }
+        }
+    }
+
+    p {
+        align-items: flex-end;
+        color: $color-dark-gray;
+        display: flex;
+        font-size: $font-size-medium;
+        line-height: 24px;
+        margin: 10px 0;
+    }
+
+    &-buttons {
+        display: flex;
+        gap: 16px;
+        justify-content: flex-end;
+        padding: 15px 24px 24px 0;
+
+        button {
+            @media (max-width: 325px) {
+                font-size: $font-size-mini;
+            }
+        }
+
+        button:first-child {
+            background: transparent;
+            border: 0;
+            color: $color-dark-gray;
+            cursor: pointer;
+            font-size: $font-size-mini;
+            font-weight: $font-size-medium;
+            line-height: 18px;
+        }
+    }
+}
+
+.icon {
+    height: 20px;
+    width: 20px;
+}
