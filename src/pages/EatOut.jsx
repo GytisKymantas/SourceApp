@@ -5,7 +5,7 @@ import { EatOutSliderCard } from "components/atoms/EatOutSliderCard/EatOutSlider
 
 export const EatOut = () => {
   const [restaurantData, setRestaurantData] = useState();
-  const restaurantSliderCard = restaurantData?.restaurants;
+  const restaurantSliderData = restaurantData?.restaurants?.[0];
 
   useEffect(() => {
     fetch(
@@ -26,12 +26,12 @@ export const EatOut = () => {
   return (
     <MainLayout>
       <h1>EatOut</h1>
-      {restaurantData && (
+      {restaurantSliderData && (
         <EatOutSliderCard
-          restaurantSloganProp={restaurantSliderCard[0].slogan}
-          restaurantImageProp={restaurantSliderCard[0].image}
-          restaurantDescriptionProp={restaurantSliderCard[0].description}
-          restaurantNameProp={restaurantSliderCard[0].name}
+          restaurantSloganProp={restaurantSliderData.slogan}
+          restaurantImageProp={restaurantSliderData.image}
+          restaurantDescriptionProp={restaurantSliderData.description}
+          restaurantNameProp={restaurantSliderData.name}
           restaurantButtonColorProp={"red"}
         />
       )}

@@ -33,17 +33,6 @@
 
     .btn-container {
         padding-top: 14px;
-
-        // .button {
-        //     line-height: 24px;
-
-        //     &:hover {
-        //         filter: brightness(115%);
-        //     }
-
-        //     &:active {
-        //         filter: brightness(95%);
-        //     }
     }
 }
 
@@ -66,7 +55,7 @@
         color: $color-watermelon;
         font-size: $font-size-mini;
         font-weight: $font-weight-medium;
-        line-height: 150%;
+        line-height: 1.5;
         text-transform: uppercase;
     }
 
@@ -75,7 +64,7 @@
         color: $color-midnight;
         font-size: $_font-size;
         font-weight: $font-weight-medium;
-        line-height: 37px;
+        line-height: 1.15;
         margin: 0;
         padding: 2px 0 16px;
     }
@@ -83,7 +72,7 @@
     p {
         color: $color-dark-gray;
         font-size: $font-size-medium;
-        line-height: 24px;
+        line-height: 1.5;
         margin: 0;
         overflow: hidden;
         text-align: justify;
@@ -107,13 +96,13 @@
     }
 
     .slider-text__wrapper {
-        align-items: center !important;
-        padding-top: 20px !important;
+        align-items: center;
+        padding-top: 20px;
         text-align: center;
 
         p {
-            font-size: $font-size-small !important;
-            width: 80% !important;
+            font-size: $font-size-small;
+            width: 80%;
         }
     }
 

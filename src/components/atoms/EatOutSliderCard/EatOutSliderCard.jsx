@@ -12,7 +12,7 @@ export const EatOutSliderCard = ({
   restaurantSloganProp,
   restaurantImageProp,
   restaurantDescriptionProp,
-  restaurantButtonColorProp, // in progress
+  restaurantButtonColorProp,
 }) => (
   <div className="slider__container">
     <div
