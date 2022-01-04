@@ -12,7 +12,11 @@ export const Navigation = () => {
   const dashboardName = "Dashboard";
   return (
     <div className="navigation">
-      <MenuItem icon={<DashboardIcon />} name={dashboardName} link="/" />
+      <MenuItem
+        icon={<DashboardIcon />}
+        name={dashboardName}
+        link="/dashboard/"
+      />
       <MenuItem
         icon={<ReservationsIcon />}
         name={reservationsName}
