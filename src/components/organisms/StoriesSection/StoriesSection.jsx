@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { NewsFeedItem } from "../../atoms/NewsFeedCard/NewsFeedCard.jsx";
+import { NewsFeedCard } from "../../atoms/NewsFeedCard/NewsFeedCard.jsx";
 
 export const StoriesSection = ({ data }) => {
   const storiesData = data?.stories;
@@ -9,8 +9,8 @@ export const StoriesSection = ({ data }) => {
 
   return (
     <div>
-      <NewsFeedItem data={postNews && postVideo} />
-      {/* <NewsFeedItem data={postVideo} /> */}
+      <NewsFeedCard data={postVideo} />
+      <NewsFeedCard data={postNews} />
     </div>
   );
 };

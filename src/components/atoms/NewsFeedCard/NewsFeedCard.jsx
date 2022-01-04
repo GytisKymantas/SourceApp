@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import vectorPlay from "../../../assets/vectorPlay.svg";
 import vectorOval from "../../../assets/vectorOval.svg";
 import { ReactComponent as VectorComment } from "../../../assets/vectorComment.svg";
 import { ReactComponent as TransparentHeart } from "../../../assets/transparentHeart.svg";
 import { ReactComponent as RedHeart } from "assets/redHeart.svg";
 import Moment from "moment";
-import { Button } from "../../atoms/Button/Button";
-import "../NewsFeedCard/news-feed-card.scss";
+import { Button } from "../Button/Button";
+import "./news-feed-card.scss";
 
-export const NewsFeedItem = (data) => {
+export const NewsFeedCard = (data) => {
   Moment.locale("en");
 
   const postNews = data?.data;
@@ -21,24 +21,10 @@ export const NewsFeedItem = (data) => {
     postDate,
     comments,
     likes,
-  } = postNews[1];
+  } = postNews[0];
 
   const postVideos = data?.data;
-  const { postCover, postVideo } = postVideos[1];
-
-  // const postNews = data?.data[2];
-  // const postVideos = data?.data[2];
-
-  // const userName = postNews.userName;
-  // const userImage = postNews.userImage;
-  // const postImage = postNews.postImage;
-  // const postLocation = postNews.postLocation;
-  // const postDate = postNews.postDate;
-  // const comments = postNews.comments;
-  // const comment = postNews.comment;
-  // const postCover = postNews.postCover;
-  // const date = postNews.date;
-  // const postVideo = postNews.postVideo;
+  let { postCover, postVideo } = postVideos[2];
 
   // like button
   const [like, setLike] = useState(false);
@@ -52,7 +38,6 @@ export const NewsFeedItem = (data) => {
   const [commentValue, setCommentValue] = useState("");
   const [coms, setComs] = useState(comments);
 
-  // veikia
   const handleCommentSubmit = () => {
     const userComment = {
       userName: "You",
@@ -76,7 +61,7 @@ export const NewsFeedItem = (data) => {
           <p className="card--time">{Moment(postDate).format("HH")}H</p>
         </div>
       </div>
-      {postVideos ? (
+      {postVideo ? (
         <div className="card__content-video">
           <img className="vector__two" src={vectorOval} alt="" />
           <img className="vector__one" src={vectorPlay} alt="" />
@@ -88,7 +73,7 @@ export const NewsFeedItem = (data) => {
       ) : (
         <img className="card__content-image" src={postImage} alt="" />
       )}
-      {/* liek button start */}
+      {/* like button start */}
       <div className="actions">
         <div className="likes">
           {like ? (
@@ -149,4 +134,16 @@ export const NewsFeedItem = (data) => {
       </div>
     </div>
   );
+};
+
+NewsFeedCard.propTypes = {
+  userName: PropTypes.string,
+  userImage: PropTypes.string,
+  postImage: PropTypes.string,
+  postLocation: PropTypes.string,
+  postDate: PropTypes.string,
+  comments: PropTypes.number,
+  likes: PropTypes.number,
+  postCover: PropTypes.string,
+  postVideo: PropTypes.string,
 };
