@@ -164,7 +164,11 @@
             justify-content: space-between;
             margin-bottom: 6px;
             margin-top: 6px;
-            width: 384px;
+            max-width: 92%;
+        }
+
+        .comments__name {
+            color: $color-fiord;
         }
 
         .comments--content {

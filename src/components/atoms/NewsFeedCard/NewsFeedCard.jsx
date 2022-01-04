@@ -23,7 +23,7 @@ export const NewsFeedCard = (data) => {
     likes,
     postCover,
     postVideo,
-  } = postNews[7];
+  } = postNews[13];
 
   // like button
   const [like, setLike] = useState(false);
@@ -103,9 +103,11 @@ export const NewsFeedCard = (data) => {
           {coms.map((item, index) => (
             <div className="comments__box_one" key={index}>
               <div className="comments__header">
-                <span className="comments__name">{item.userName}</span>
+                <span>{item.userName}</span>
                 <div className="comments__timestamp">
-                  <span>{Moment(item.date).format("MM/DD/YYYY HH:mm")}</span>
+                  <span className="comments__name">
+                    {Moment(item.date).format("MM/DD/YYYY HH:mm")}
+                  </span>
                 </div>
               </div>
               <span className="comments--content">{item.comment}</span>
