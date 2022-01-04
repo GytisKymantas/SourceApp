@@ -25,10 +25,15 @@ $inherit: inherit;
             flex-wrap: wrap;
             justify-content: center;
         }
+
+        @media (max-width: 400px) {
+            gap: 24px;
+        }
     }
 
     &__element {
         color: $inherit;
         text-decoration: none;
+        width: 416px;
     }
 }
