@@ -37,7 +37,6 @@ export const WeatherWidget = ({ time }) => {
     const lat = position.coords.latitude;
     const long = position.coords.longitude;
 
-    setLoading(true);
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
     )
@@ -112,18 +111,16 @@ export const WeatherWidget = ({ time }) => {
 
   return (
     <>
-      {loading ||
-        (weatherError && (
-          <div className="weather-data__invisible">
-            <div className="weather-data__invisible-box">
-              <p> No weather information available &#9785;</p>
-              <p>
-                Make sure location services are enabled on your browser
-                settings.
-              </p>
-            </div>
+      {(loading || weatherError) && (
+        <div className="weather-data__invisible">
+          <div className="weather-data__invisible-box">
+            <p>No weather information available &#9785;</p>
+            <p>
+              Make sure location services are enabled on your browser settings.
+            </p>
           </div>
-        ))}
+        </div>
+      )}
       {!loading && !weatherError && (
         <div className="weather-data">
           <div className="weather-data__box">
