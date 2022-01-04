@@ -6,9 +6,6 @@ export const EatOut = (props) => {
   const { data } = props;
   const restaurantData = data;
 
-  // eslint-disable-next-line no-console
-  console.log(restaurantData);
-
   return (
     <MainLayout>
       <h1>EatOut</h1>
