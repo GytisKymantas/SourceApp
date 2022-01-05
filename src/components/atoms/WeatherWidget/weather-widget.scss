@@ -1,0 +1,197 @@
+@import '../../../styles/base/base';
+$_font-size-description: 20px;
+$_font-size-temperature: 60px;
+$_color-black-transparent-05: rgba(0, 0, 0, 0.5);
+$_color-black-transparent-07: rgba(0, 0, 0, 0.7);
+
+.weather-data {
+    display: flex;
+    height: 201px;
+    position: relative;
+    width: 526px;
+
+    &__box,
+    &__invisible-box {
+        background-color: $color-white;
+        border-radius: 10px;
+        box-shadow: 0 8px 23px rgba(0, 0, 0, 0.25);
+        color: $_color-black-transparent-05;
+        display: flex;
+        flex-direction: column;
+        height: 158px;
+        padding: 9px 0 9px 19px;
+        width: 401px;
+    }
+
+    &__invisible-box {
+        padding: 9px 19px;
+        text-align: center;
+
+        :first-child {
+            font-size: $font-size-big;
+            font-weight: $font-weight-bold;
+        }
+    }
+
+    &__location {
+        font-size: $font-size-tiny;
+        letter-spacing: 1px;
+        padding-right: 114px;
+        text-align: left;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        margin-top: auto;
+
+        &-main {
+            display: flex;
+
+            :first-child {
+                color: $_color-black-transparent-07;
+                font-size: $_font-size-temperature;
+                font-weight: $font-weight-light;
+            }
+
+            :nth-child(2) {
+                align-self: flex-end;
+                font-size: $_font-size-description;
+                font-weight: $font-weight-light;
+                margin-bottom: 10px;
+            }
+        }
+
+        &-secondary {
+            display: flex;
+            font-size: $font-size-tiny;
+            font-weight: $font-weight-light;
+            margin-top: 8px;
+
+            :first-child {
+                padding-right: 6px;
+            }
+
+            :nth-child(2) {
+                align-items: center;
+                display: flex;
+            }
+
+            span:first-child {
+                align-items: center;
+                display: flex;
+                padding-right: 30px;
+            }
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        right: 0;
+    }
+}
+
+@media (max-width: 950px) {
+    .weather-data {
+        width: 475.8px;
+
+        &__box,
+        &__invisible-box {
+            width: 372px;
+        }
+
+        &__icon {
+            right: -21px;
+            transform: scale(0.8);
+        }
+    }
+}
+
+@media (max-width: 890px) {
+    .weather-data {
+        height: 176px;
+        width: 372px;
+
+        &__box,
+        &__invisible-box {
+            margin: 0;
+            width: 300px;
+        }
+
+        &__location {
+            padding-right: 0;
+        }
+
+        &__icon {
+            right: -53px;
+            transform: scale(0.5);
+        }
+    }
+}
+
+@media (max-width: 782px) {
+    .weather-data {
+        margin-left: 55px;
+    }
+}
+
+@media (max-width: 480px) {
+    .weather-data {
+        height: 176px;
+        margin-left: 45px;
+        width: 289px;
+
+        &__box {
+            margin: 0;
+            width: 228px;
+        }
+
+        &__invisible-box {
+            margin: 0;
+            padding: 9px 19px;
+            width: 228px;
+
+            :first-child {
+                font-size: $font-size-medium;
+                font-weight: $font-weight-medium;
+            }
+        }
+
+        &__location {
+            padding-right: 0;
+        }
+
+        &__icon {
+            left: 50%;
+            transform: scale(0.4);
+        }
+    }
+}
+@media (max-width: 380px) {
+    .weather-data {
+        height: 100%;
+        margin-left: auto;
+        width: 100%;
+
+        &__box {
+            margin: 0;
+            padding: 9px 19px;
+            width: 100%;
+        }
+
+        &__invisible-box {
+            margin: 0;
+            padding: 9px 19px;
+            width: 228px;
+
+            :first-child {
+                font-size: $font-size-medium;
+                font-weight: $font-weight-medium;
+            }
+        }
+
+        &__icon {
+            display: none;
+        }
+    }
+}
