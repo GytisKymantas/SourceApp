@@ -78,7 +78,7 @@ EatOutSliderCard.propTypes = {
   restaurantDescriptionProp: PropTypes.string,
   restaurantImageProp: PropTypes.string,
   restaurantSloganProp: PropTypes.string,
-  index: PropTypes.string,
+  index: PropTypes.number,
 };
 
 export default EatOutSliderCard;

@@ -32,5 +32,5 @@ export const EatOutHeroSlider = (data) => {
 };
 
 EatOutHeroSlider.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.array,
 };
