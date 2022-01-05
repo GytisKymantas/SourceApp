@@ -34,5 +34,5 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
   hasIcon: PropTypes.node,
-  redColor: PropTypes.string,
+  redColor: PropTypes.bool,
 };

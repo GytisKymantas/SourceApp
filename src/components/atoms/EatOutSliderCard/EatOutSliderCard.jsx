@@ -12,7 +12,6 @@ export const EatOutSliderCard = ({
   restaurantSloganProp,
   restaurantImageProp,
   restaurantDescriptionProp,
-  restaurantButtonColorProp,
 }) => (
   <div className="slider__container">
     <div
@@ -49,5 +48,4 @@ EatOutSliderCard.propTypes = {
   restaurantDescriptionProp: PropTypes.string,
   restaurantImageProp: PropTypes.string,
   restaurantSloganProp: PropTypes.string,
-  restaurantButtonColorProp: PropTypes.string,
 };

@@ -14,7 +14,7 @@ export const Breadcrumbs = () => {
 
   return (
     <nav>
-      {!["/", "/dashboard", "/dashboard/"].includes(location.pathname) && (
+      {!["/dashboard/", "/dashboard"].includes(location.pathname) && (
         <ul className="breadcrumbs">
           {formatedPaths.map((item, index) => (
             <li className="breadcrumbs__item" key={index}>
