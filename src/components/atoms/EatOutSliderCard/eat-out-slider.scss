@@ -10,8 +10,8 @@
     .slider__image-wrapper {
         background-position: center !important;
         background-size: cover !important;
-        border-radius: 8px 0 0 8px !important;
-        width: 100% !important;
+        border-radius: 8px 0 0 8px;
+        width: 100%;
     }
 
     .slider-image {
@@ -106,8 +106,8 @@
         }
     }
 
-    .top-navigation {
-        justify-content: center !important;
+    .slider-text__wrapper .top-navigation {
+        justify-content: center;
     }
 
     .placeholder-nav {

@@ -15,7 +15,7 @@ export const EatOutSliderCard = ({
 }) => (
   <div className="slider__container">
     <div
-      className="slider__image-wrapper"
+      className="slider__image-wrapper baba"
       style={{
         background: `linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%),url(${restaurantImageProp})`,
       }}
