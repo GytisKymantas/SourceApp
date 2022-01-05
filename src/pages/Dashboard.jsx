@@ -64,8 +64,8 @@ export const Dashboard = (data) => {
           )}
         />
       )}
-      {storiesData && <NewsFeedSection data={storiesData} />}
       <ViewEatOutCard />
+      {storiesData && <NewsFeedSection data={storiesData} />}
     </MainLayout>
   );
 };
