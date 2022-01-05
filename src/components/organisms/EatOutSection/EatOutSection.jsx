@@ -3,7 +3,7 @@ import "./eat-out-section.scss";
 import { RestaurantCard } from "components/molecules/RestaurantCard/RestaurantCard";
 import { ViewEatOutCard } from "components/molecules/ViewEatOutCard/ViewEatOutCard";
 
-const EatOutSection = (data) => {
+export const EatOutSection = (data) => {
   const restaurantData = data?.data?.restaurants;
   let bestRatedArray = [];
 
@@ -41,5 +41,3 @@ const EatOutSection = (data) => {
     </div>
   );
 };
-
-export default EatOutSection;
