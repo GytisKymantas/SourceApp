@@ -1,6 +1,7 @@
 import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import React from "react";
-import { EatOutSliderCard } from "components/atoms/EatOutSliderCard/EatOutSliderCard";
+// import { EatOutSliderCard } from "components/atoms/EatOutSliderCard/EatOutSliderCard";
+import { EatOutHeroSlider } from "components/molecules/EatOutHeroSlider/EatOutHeroSlider";
 import PropTypes from "prop-types";
 
 export const EatOut = ({ data }) => {
@@ -9,14 +10,7 @@ export const EatOut = ({ data }) => {
   return (
     <MainLayout>
       <h1>EatOut</h1>
-      {restaurantsData && (
-        <EatOutSliderCard
-          restaurantSloganProp={restaurantsData[0].slogan}
-          restaurantImageProp={restaurantsData[0].image}
-          restaurantDescriptionProp={restaurantsData[0].description}
-          restaurantNameProp={restaurantsData[0].name}
-        />
-      )}
+      <EatOutHeroSlider data={restaurantsData} />
     </MainLayout>
   );
 };

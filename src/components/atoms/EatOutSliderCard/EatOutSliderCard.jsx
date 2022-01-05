@@ -9,11 +9,12 @@ import TextTruncate from "react-text-truncate";
 import "./eat-out-slider.scss";
 // var TextTruncate = require("react-text-truncate"); // CommonJS or UMD
 
-export const EatOutSliderCard = ({
+const EatOutSliderCard = ({
   restaurantNameProp,
   restaurantSloganProp,
   restaurantImageProp,
   restaurantDescriptionProp,
+  index,
 }) => (
   <div className="slider__container">
     <div
@@ -25,11 +26,31 @@ export const EatOutSliderCard = ({
     <div className="slider-text__wrapper">
       <div className="top-navigation">
         <div className="bullets">
-          <img src={SliderBulletPoint} alt="bullet point" />
-          <img src={SliderBulletPoint} alt="bullet point" />
-          <img src={SliderBulletPointSelected} alt="selected point" />
-          <img src={SliderBulletPoint} alt="bullet point" />
-          <img src={SliderBulletPoint} alt="bullet point" />
+          {index === 0 ? (
+            <img src={SliderBulletPointSelected} alt="selected point" />
+          ) : (
+            <img src={SliderBulletPoint} alt="bullet point" />
+          )}
+          {index === 1 ? (
+            <img src={SliderBulletPointSelected} alt="selected point" />
+          ) : (
+            <img src={SliderBulletPoint} alt="bullet point" />
+          )}
+          {index === 2 ? (
+            <img src={SliderBulletPointSelected} alt="selected point" />
+          ) : (
+            <img src={SliderBulletPoint} alt="bullet point" />
+          )}
+          {index === 3 ? (
+            <img src={SliderBulletPointSelected} alt="selected point" />
+          ) : (
+            <img src={SliderBulletPoint} alt="bullet point" />
+          )}
+          {index === 4 ? (
+            <img src={SliderBulletPointSelected} alt="selected point" />
+          ) : (
+            <img src={SliderBulletPoint} alt="bullet point" />
+          )}
         </div>
         <div className="placeholder-nav">
           <img src={PlaceholderNav} alt="placeholder" />
@@ -57,4 +78,7 @@ EatOutSliderCard.propTypes = {
   restaurantDescriptionProp: PropTypes.string,
   restaurantImageProp: PropTypes.string,
   restaurantSloganProp: PropTypes.string,
+  index: PropTypes.string,
 };
+
+export default EatOutSliderCard;
