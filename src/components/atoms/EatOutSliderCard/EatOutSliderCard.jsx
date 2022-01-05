@@ -4,8 +4,10 @@ import SliderBulletPointSelected from "../../../assets/SliderBulletPointSelected
 import { Button } from "components/atoms/Button/Button";
 import PlaceholderNav from "../../../assets/PlaceholderNav.svg";
 import PropTypes from "prop-types";
+import TextTruncate from "react-text-truncate";
 
 import "./eat-out-slider.scss";
+// var TextTruncate = require("react-text-truncate"); // CommonJS or UMD
 
 export const EatOutSliderCard = ({
   restaurantNameProp,
@@ -35,7 +37,14 @@ export const EatOutSliderCard = ({
       </div>
       <span className="text-slogan">{restaurantSloganProp}</span>
       <h2>{restaurantNameProp}</h2>
-      <p>{restaurantDescriptionProp}</p>
+      <p title={restaurantDescriptionProp}>
+        <TextTruncate
+          line={2}
+          element="span"
+          truncateText="…"
+          text={restaurantDescriptionProp}
+        />
+      </p>
       <div className="btn-container">
         <Button label={"LEARN MORE"} isLarge redColor />
       </div>
