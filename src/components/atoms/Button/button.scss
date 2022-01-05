@@ -47,8 +47,8 @@ $_color-violet-dark: #462ca3;
 
     &--large {
         font-size: $font-size-small;
-        padding: 12px 24px;
         line-height: 1.7;
+        padding: 12px 24px;
 
         &:hover {
             filter: brightness(1.1);
