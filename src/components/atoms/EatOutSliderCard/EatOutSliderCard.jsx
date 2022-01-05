@@ -38,11 +38,7 @@ export const EatOutSliderCard = ({
       <h2>{restaurantNameProp}</h2>
       <p>{restaurantDescriptionProp}</p>
       <div className="btn-container">
-        <Button
-          label={"LEARN MORE"}
-          isLarge
-          color={restaurantButtonColorProp}
-        />
+        <Button label={"LEARN MORE"} isLarge redColor />
       </div>
     </div>
   </div>

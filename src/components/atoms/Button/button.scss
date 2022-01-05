@@ -63,4 +63,12 @@
         padding: 8px 24px;
         width: 141px;
     }
+
+    &--has-color-red {
+        background: $color-watermelon;
+
+        &:hover {
+            background: $color-watermelon;
+        }
+    }
 }
