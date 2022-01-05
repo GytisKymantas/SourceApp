@@ -1,34 +1,22 @@
 import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import { ReservationsSection } from "components/molecules/ReservationsSection/ReservationsSection";
 import React from "react";
+import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { StoriesSection } from "components/organisms/StoriesSection/StoriesSection";
 import { GreetingSection } from "components/molecules/GreetingSection/GreetingSection";
 import { RestaurantCard } from "components/molecules/RestaurantCard/RestaurantCard";
 import { ViewEatOutCard } from "components/molecules/ViewEatOutCard/ViewEatOutCard";
 
-export const Dashboard = (data) => {
-  const userData = data.data?.userData[0];
+export const Dashboard = ({ data, restaurantsInfo }) => {
+  const userData = data?.userData[0];
   const firstName = userData?.userName.split(" ")[0];
   const reservationData = userData?.reservations;
-  const [storiesData, setStoriesData] = useState();
-  const [restaurantData, setRestaurantData] = useState();
+  const restaurantData = restaurantsInfo;
   const restaurantCardData = restaurantData?.restaurants[0];
+  const [storiesData, setStoriesData] = useState();
 
   useEffect(() => {
-    fetch(
-      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/restaurants.json"
-    )
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setRestaurantData(result);
-        },
-
-        (error) => {
-          // handle error here
-        }
-      );
     fetch(
       "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/stories.json"
     )
@@ -68,4 +56,9 @@ export const Dashboard = (data) => {
       {storiesData && <StoriesSection data={storiesData} />}
     </MainLayout>
   );
+};
+
+Dashboard.propTypes = {
+  data: PropTypes.object,
+  restaurantsInfo: PropTypes.object,
 };
