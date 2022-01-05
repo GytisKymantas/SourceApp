@@ -1,0 +1,27 @@
+.greeting-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 72px;
+    min-width: 240px;
+
+    &__hello-widget {
+        order: 1;
+    }
+
+    &__weather-widget {
+        margin-left: auto;
+        order: 2;
+    }
+}
+
+@media (max-width: 782px) {
+    .greeting-section {
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: space-between;
+        min-width: 240px;
+    }
+}

@@ -4,8 +4,56 @@
     align-items: center;
     background-color: $color-violet;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    column-gap: 10px;
     display: flex;
     height: 80px;
-    justify-content: space-between;
+    min-width: 280px;
     padding: 0 48px;
+    text-align: center;
+
+    &__logo {
+        cursor: pointer;
+        display: flex;
+        order: 1;
+        width: 15%;
+    }
+}
+
+.navigation {
+    height: 80px;
+    order: 2;
+    width: 70%;
+}
+
+.profile-widget {
+    display: flex;
+    justify-content: flex-end;
+    order: 3;
+    width: 15%;
+}
+
+@media all and (max-width: 630px) {
+    .header {
+        flex-wrap: wrap;
+        height: 160px;
+        justify-content: space-between;
+        padding: 0;
+
+        &__logo {
+            margin-left: 3%;
+        }
+    }
+
+    .navigation {
+        order: 3;
+        padding: 0;
+        width: 100%;
+    }
+
+    .profile-widget {
+        height: 80px;
+        margin-right: 3%;
+        order: 2;
+        width: 45%;
+    }
 }

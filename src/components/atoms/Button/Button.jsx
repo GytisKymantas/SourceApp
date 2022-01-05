@@ -31,6 +31,6 @@ Button.propTypes = {
   label: PropTypes.string.isRequired,
   isLarge: PropTypes.bool,
   disabled: PropTypes.bool,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   hasIcon: PropTypes.node,
 };
