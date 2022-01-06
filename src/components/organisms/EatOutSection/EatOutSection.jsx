@@ -22,7 +22,7 @@ export const EatOutSection = (data) => {
   const twoBestRatedArray = bestRatedArray.slice(18, 20);
 
   return (
-    <div className="main-container">
+    <div className="eat-out-section">
       <ViewEatOutCard />
       {twoBestRatedArray.map((obj, i) => (
         <RestaurantCard

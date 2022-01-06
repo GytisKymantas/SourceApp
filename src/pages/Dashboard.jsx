@@ -11,7 +11,6 @@ export const Dashboard = ({ data, restaurantsInfo }) => {
   const userData = data?.userData[0];
   const firstName = userData?.userName.split(" ")[0];
   const reservationData = userData?.reservations;
-  const restaurantData = restaurantsInfo;
   const [storiesData, setStoriesData] = useState();
 
   useEffect(() => {
@@ -34,7 +33,7 @@ export const Dashboard = ({ data, restaurantsInfo }) => {
     <MainLayout>
       <GreetingSection name={firstName} />
       <ReservationsSection reservationData={reservationData} />
-      {restaurantData && <EatOutSection data={restaurantData} />}
+      {restaurantsInfo && <EatOutSection data={restaurantsInfo} />}
       {storiesData && <StoriesSection data={storiesData} />}
     </MainLayout>
   );

@@ -1,4 +1,4 @@
-.main-container {
+.eat-out-section {
     display: flex;
     gap: 50px;
 
@@ -8,7 +8,7 @@
 }
 
 @media (max-width: 1150px) {
-    .main-container {
+    .eat-out-section {
         flex-wrap: wrap;
         justify-content: center;
     }
