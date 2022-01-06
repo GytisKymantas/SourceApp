@@ -82,6 +82,7 @@ export const FoodCategoriesSection = ({ restaurantsData }) => {
         return Bread;
     }
   };
+
   return (
     <div className="food-categories-section">
       <h2 className="food-categories-section__header">Categories</h2>

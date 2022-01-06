@@ -19,7 +19,7 @@ $inherit: inherit;
         }
 
         @media (max-width: 400px) {
-            gap: 24px;
+            gap: 24px 0;
         }
     }
 
@@ -36,10 +36,10 @@ $inherit: inherit;
     }
 }
 
-.category-item__image-wrapper {
-    margin: 0 -20px 0 0;
+// .category-item__image-wrapper {
+//   margin: 0 -20px 0 0;
 
-    @media (max-width: 450px) {
-        margin: 0;
-    }
-}
+//   @media (max-width: 450px) {
+//     margin: 0;
+//   }
+// }
