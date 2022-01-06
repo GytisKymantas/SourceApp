@@ -1,0 +1,45 @@
+@import '../../../styles/base/base';
+
+$inherit: inherit;
+
+.food-categories-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__element-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 63px 80px;
+        justify-content: center;
+
+        &::after {
+            content: '';
+            flex: 0 0 50%;
+        }
+
+        @media (max-width: 400px) {
+            gap: 24px;
+        }
+    }
+
+    &__element {
+        color: $inherit;
+        flex: 1 0 20%;
+        max-width: 416px;
+        min-width: 250px;
+        text-decoration: none;
+
+        @media (max-width: 600px) {
+            flex: 1 0 50%;
+        }
+    }
+}
+
+.category-item__image-wrapper {
+    margin: 0 -20px 0 0;
+
+    @media (max-width: 450px) {
+        margin: 0;
+    }
+}
