@@ -12,7 +12,6 @@ export const EatOut = () => {
       .then(
         (result) => {
           setRestaurantsData(result);
-          console.log(result);
         },
 
         (error) => {
