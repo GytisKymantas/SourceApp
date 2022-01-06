@@ -10,6 +10,7 @@ export const Avatar = ({ imageSource, hasIcon, isClickable, isLarge }) => {
     "avatar--large": isLarge,
     "avatar--clickable": isClickable,
   });
+
   return (
     <div className={className}>
       <img className="avatar__picture" src={imageSource} alt="profile" />
@@ -19,8 +20,6 @@ export const Avatar = ({ imageSource, hasIcon, isClickable, isLarge }) => {
 };
 
 Avatar.defaultProps = {
-  imageSource:
-    "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg",
   hasIcon: false,
 };
 
