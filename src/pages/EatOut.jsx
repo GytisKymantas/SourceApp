@@ -1,6 +1,5 @@
 import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import React from "react";
-// import { EatOutSliderCard } from "components/atoms/EatOutSliderCard/EatOutSliderCard";
 import { EatOutHeroSlider } from "components/molecules/EatOutHeroSlider/EatOutHeroSlider";
 import PropTypes from "prop-types";
 

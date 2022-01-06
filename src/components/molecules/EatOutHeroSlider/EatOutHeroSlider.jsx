@@ -7,17 +7,17 @@ export const EatOutHeroSlider = (data) => {
 
   const [index, setIndex] = useState(0);
 
-  const handleCardUp = () => {
+  const handleCardRight = () => {
     setIndex(index === 4 ? 4 : index + 1);
   };
-  const handleCardDel = () => {
+  const handleCardLeft = () => {
     setIndex(index === 0 ? 0 : index - 1);
   };
 
   return (
     <div>
-      <button onClick={handleCardUp}>Forwards</button>
-      <button onClick={handleCardDel}>Backwards</button>
+      <button onClick={handleCardRight}>Forwards</button>
+      <button onClick={handleCardLeft}>Backwards</button>
       {restaurantsData && (
         <EatOutSliderCard
           restaurantSloganProp={restaurantsData[index].slogan}
