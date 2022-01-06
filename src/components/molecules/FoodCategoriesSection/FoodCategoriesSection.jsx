@@ -96,6 +96,7 @@ export const FoodCategoriesSection = ({ restaurantsData }) => {
                   to={getPath(name[0].toLowerCase())}
                 >
                   <CategoryItem
+                    className="food-categories-section__element-content"
                     categoryName={nameMatcher(name[0])}
                     categoryInfo={`${name[1]}
                     ${name[1] % 10 === 1 ? "PLACE" : "PLACES"}`}

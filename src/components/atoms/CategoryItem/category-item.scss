@@ -50,8 +50,9 @@
 
     &__image-wrapper {
         display: flex;
+        margin: 0;
 
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
             img {
                 height: 100px;
                 width: 105px;
