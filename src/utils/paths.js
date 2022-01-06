@@ -1,5 +1,5 @@
 export const paths = {
-  dashboard: "/dashboard",
+  dashboard: "/dashboard/",
   reservations: "/dashboard/reservations",
   meetingrooms: "/dashboard/reservations/meetingrooms",
   books: "/dashboard/reservations/books",
@@ -19,7 +19,6 @@ export const paths = {
   sushi: "/dashboard/eatout/sushi",
   hotdogs: "/dashboard/eatout/hotdogs",
   donuts: "/dashboard/eatout/donuts",
-  single: "/dashboard/eatout/category/single",
 };
 
 // Eatout and reservation pages have dynamic items to be displayed
