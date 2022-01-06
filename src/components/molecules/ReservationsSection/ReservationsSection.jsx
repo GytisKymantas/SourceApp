@@ -26,8 +26,6 @@ export const ReservationsSection = ({ reservationData }) => {
 
   const nameMatcher = (name) => {
     switch (name) {
-      case "books":
-        return "Books";
       case "rooms":
         return "Meeting rooms";
       default:
@@ -63,19 +61,20 @@ export const ReservationsSection = ({ reservationData }) => {
       <h2 className="reservations-section__header">Reservations</h2>
       <div className="reservations-section__element-container">
         {reservationArray
-          ? reservationArray.map((obj, index) => {
+          ? reservationArray.map((name, index) => {
               return (
                 <Link
                   key={index}
                   className="reservations-section__element"
-                  to={getPath(obj[0])}
+                  to={getPath(name[0])}
                 >
                   <CategoryItem
-                    categoryName={nameMatcher(obj[0])}
+                    categoryName={nameMatcher(name[0])}
                     categoryInfo={
-                      obj[1].length ? `${obj[1].length} RESERVED` : "UNRESERVED"
+                      name[1] ? `${name[1]} RESERVED` : "UNRESERVED"
                     }
-                    categoryImage={imageMatcher(obj[0])}
+                    categoryImage={imageMatcher(name[0])}
+                    key={index}
                   />
                 </Link>
               );
