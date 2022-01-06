@@ -18,13 +18,9 @@ $inherit: inherit;
 
     &__element-container {
         display: flex;
+        flex-wrap: wrap;
         gap: 48px;
         justify-content: space-between;
-
-        @media (max-width: 1150px) {
-            flex-wrap: wrap;
-            justify-content: center;
-        }
 
         @media (max-width: 400px) {
             gap: 24px;
@@ -33,7 +29,9 @@ $inherit: inherit;
 
     &__element {
         color: $inherit;
+        flex: 1 0 25%;
+        max-width: 416px;
+        min-width: 250px;
         text-decoration: none;
-        width: 416px;
     }
 }
