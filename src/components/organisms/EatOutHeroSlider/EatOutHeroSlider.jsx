@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import EatOutSliderCard from "components/atoms/EatOutSliderCard/EatOutSliderCard/";
+import EatOutSliderCard from "components/molecules/EatOutSliderCard/EatOutSliderCard/";
 import PropTypes from "prop-types";
 
 export const EatOutHeroSlider = (data) => {
@@ -16,8 +16,6 @@ export const EatOutHeroSlider = (data) => {
 
   return (
     <div>
-      <button onClick={handleCardRight}>Forwards</button>
-      <button onClick={handleCardLeft}>Backwards</button>
       {restaurantsData && (
         <EatOutSliderCard
           restaurantSloganProp={restaurantsData[index].slogan}
@@ -25,6 +23,8 @@ export const EatOutHeroSlider = (data) => {
           restaurantDescriptionProp={restaurantsData[index].description}
           restaurantNameProp={restaurantsData[index].name}
           index={index}
+          handleCardLeft={handleCardLeft}
+          handleCardRight={handleCardRight}
         />
       )}
     </div>
@@ -32,5 +32,10 @@ export const EatOutHeroSlider = (data) => {
 };
 
 EatOutHeroSlider.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.array.shape({
+    slogan: PropTypes.string,
+    image: PropTypes.string,
+    description: PropTypes.string,
+    name: PropTypes.string,
+  }),
 };

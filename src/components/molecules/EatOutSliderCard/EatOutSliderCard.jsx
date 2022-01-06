@@ -14,8 +14,12 @@ const EatOutSliderCard = ({
   restaurantImageProp,
   restaurantDescriptionProp,
   index,
+  handleCardRight,
+  handleCardLeft,
 }) => (
   <div className="slider__container">
+    <button onClick={handleCardLeft}> - </button>
+    <button onClick={handleCardRight}> + </button>
     <div
       className="slider__image-wrapper baba"
       style={{
@@ -73,6 +77,8 @@ EatOutSliderCard.propTypes = {
   restaurantImageProp: PropTypes.string,
   restaurantSloganProp: PropTypes.string,
   index: PropTypes.number,
+  handleCardRight: PropTypes.func,
+  handleCardLeft: PropTypes.func,
 };
 
 export default EatOutSliderCard;
