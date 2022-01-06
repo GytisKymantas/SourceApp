@@ -7,7 +7,6 @@ import PropTypes from "prop-types";
 import TextTruncate from "react-text-truncate";
 
 import "./eat-out-slider.scss";
-// var TextTruncate = require("react-text-truncate"); // CommonJS or UMD
 
 const EatOutSliderCard = ({
   restaurantNameProp,
