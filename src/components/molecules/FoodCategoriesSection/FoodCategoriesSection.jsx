@@ -1,5 +1,7 @@
 import React from "react";
 import "./food-categories-section.scss";
+import { Link } from "react-router-dom";
+
 import { CategoryItem } from "components/atoms/CategoryItem/CategoryItem";
 // import Barbecue from "../../../assets/barbecue.svg";
 import Bread from "../../../assets/bread.svg";
@@ -35,11 +37,12 @@ import PropTypes from "prop-types";
 
 export const FoodCategoriesSection = ({ restaurantsData }) => {
   let categories = [];
-  for (const i in restaurantsData?.restaurants) {
-    for (const j in restaurantsData?.restaurants[i].categories) {
+  for (const restaurant in restaurantsData?.restaurants) {
+    for (const category in restaurantsData?.restaurants[restaurant]
+      .categories) {
       categories = [
         ...categories,
-        restaurantsData?.restaurants[i].categories[j],
+        restaurantsData?.restaurants[restaurant].categories[category],
       ];
     }
   }
@@ -49,7 +52,11 @@ export const FoodCategoriesSection = ({ restaurantsData }) => {
   for (const num of categories) {
     counts[num] = counts[num] ? counts[num] + 1 : 1;
   }
-  // console.log(counts);
+
+  const path = "/dashboard/eatout/";
+  const getPath = (item) => {
+    return path.concat(item);
+  };
 
   const nameMatcher = (name) => {
     switch (name) {
@@ -74,16 +81,20 @@ export const FoodCategoriesSection = ({ restaurantsData }) => {
   return (
     <div>
       {counts
-        ? counts.map((name, index) => {
+        ? Object.entries(counts).map((name, index) => {
             return (
-              <CategoryItem
-                categoryName={nameMatcher(name)}
-                categoryInfo={
-                  name[1].length > 1 ? `${name[1].length} PLACES` : "PLACE"
-                }
-                categoryImage={imageMatcher(name[0])}
+              <Link
                 key={index}
-              />
+                className="food-categories-section__element"
+                to={getPath(name[0].toLowerCase())}
+              >
+                <CategoryItem
+                  categoryName={nameMatcher(name[0])}
+                  categoryInfo={name[1] > 1 ? `${name[1]} PLACES` : "PLACE"}
+                  categoryImage={imageMatcher(name[0])}
+                  key={index}
+                />
+              </Link>
             );
           })
         : null}
