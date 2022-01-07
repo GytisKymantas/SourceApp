@@ -20,22 +20,19 @@ export const EatOutSection = (data) => {
     bestRatedArray.sort((a, b) => (b.averageRating < a.averageRating ? 1 : -1));
   }
   const twoBestRatedArray = bestRatedArray.slice(18, 20);
-
   return (
     <div className="eat-out-section">
       <ViewEatOutCard />
       {twoBestRatedArray.map((restaurant) => (
         <RestaurantCard
-          key={twoBestRatedArray.id}
+          key={restaurant.id}
           displayFullCard={false}
           numberOfCheckIns={restaurant.checkIns}
           restaurantName={restaurant.name}
           restaurantOpeningHours={restaurant.openingHours[0].hours}
           restaurantCategories={restaurant.categories}
           restaurantImage={restaurant.image}
-          restaurantAverageRating={restaurant.reviews.map(
-            (review) => review.rating
-          )}
+          restaurantAverageRating={restaurant.reviews}
         />
       ))}
     </div>
