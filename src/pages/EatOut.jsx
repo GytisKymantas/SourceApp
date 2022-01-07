@@ -13,7 +13,7 @@ export const EatOut = ({ data }) => {
 
   return (
     <MainLayout>
-      <h1>EatOut</h1>
+      <h1>Hungry? Find the best place!</h1>
     </MainLayout>
   );
 };
