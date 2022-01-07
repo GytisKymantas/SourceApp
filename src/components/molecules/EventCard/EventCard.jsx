@@ -22,7 +22,6 @@ export const EventCard = ({ storiesData, userData }) => {
     Moment(birthdayDate).format("MMM Do");
 
   const [present, setPresent] = useState(false);
-  // const [showComments, setShowComments] = useState(false);
   const [commentValue, setCommentValue] = useState("");
   const [coms, setComs] = useState(comments);
 
