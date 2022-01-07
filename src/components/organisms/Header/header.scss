@@ -12,6 +12,7 @@
     text-align: center;
 
     &__logo {
+        cursor: pointer;
         display: flex;
         order: 1;
         width: 15%;
@@ -31,7 +32,7 @@
     width: 15%;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 630px) {
     .header {
         flex-wrap: wrap;
         height: 160px;
