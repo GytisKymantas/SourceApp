@@ -1,16 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { NewsFeedCard } from "../../atoms/NewsFeedCard/NewsFeedCard.jsx";
+import { EventCard } from "components/molecules/EventCard/EventCard.jsx";
 
 export const StoriesSection = ({ data }) => {
   const storiesData = data?.stories;
-  const postNews = storiesData?.filter(
-    (x) => x.type === "post" || ("video" && x.type !== "birthday")
-  );
+  const birthdays = storiesData?.filter((story) => story.type === "birthday");
 
   return (
-    <div>
-      <NewsFeedCard data={postNews} />
+    <div className="section">
+      {birthdays && <EventCard data={birthdays[0]} />}
     </div>
   );
 };
