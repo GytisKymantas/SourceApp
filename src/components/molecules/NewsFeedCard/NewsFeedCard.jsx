@@ -5,7 +5,7 @@ import { ReactComponent as VectorComment } from "../../../assets/vectorComment.s
 import { ReactComponent as TransparentHeart } from "../../../assets/transparentHeart.svg";
 import { ReactComponent as RedHeart } from "assets/redHeart.svg";
 import Moment from "moment";
-import { Button } from "../Button/Button";
+import { Button } from "../../atoms/Button/Button";
 import "./news-feed-card.scss";
 
 export const NewsFeedCard = (data) => {

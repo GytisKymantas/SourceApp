@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { EventCard } from "components/molecules/EventCard/EventCard.jsx";
-import { NewsFeedCard } from "../../atoms/NewsFeedCard/NewsFeedCard.jsx";
+import { NewsFeedCard } from "../../molecules/NewsFeedCard/NewsFeedCard.jsx";
 
 export const StoriesSection = ({ data }) => {
   const storiesData = data?.stories;
