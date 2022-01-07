@@ -24,16 +24,16 @@ export const EatOutSection = (data) => {
   return (
     <div className="eat-out-section">
       <ViewEatOutCard />
-      {twoBestRatedArray.map((obj, i) => (
+      {twoBestRatedArray.map((restaurant) => (
         <RestaurantCard
           key={twoBestRatedArray.id}
           displayFullCard={false}
-          numberOfCheckIns={twoBestRatedArray[i].checkIns}
-          restaurantName={twoBestRatedArray[i].name}
-          restaurantOpeningHours={twoBestRatedArray[i].openingHours[0].hours}
-          restaurantCategories={twoBestRatedArray[i].categories}
-          restaurantImage={twoBestRatedArray[i].image}
-          restaurantAverageRating={twoBestRatedArray[i].reviews.map(
+          numberOfCheckIns={restaurant.checkIns}
+          restaurantName={restaurant.name}
+          restaurantOpeningHours={restaurant.openingHours[0].hours}
+          restaurantCategories={restaurant.categories}
+          restaurantImage={restaurant.image}
+          restaurantAverageRating={restaurant.reviews.map(
             (review) => review.rating
           )}
         />
