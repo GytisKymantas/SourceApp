@@ -21,7 +21,7 @@ export const NewsFeedCard = (data) => {
     comments,
     likes,
     postVideo,
-  } = postNews[7];
+  } = postNews[2];
 
   // like button
   const [like, setLike] = useState(false);
@@ -59,7 +59,7 @@ export const NewsFeedCard = (data) => {
   };
   // comment submit end
   return (
-    <div className="card">
+    <div className="card__news">
       <div className="card-header__wrapper">
         <div className="card__title">
           <img className="user__icon" src={userImage} alt="your profile" />
