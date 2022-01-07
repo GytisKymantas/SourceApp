@@ -19,23 +19,17 @@ export const NewsFeedSection = ({ data }) => {
       <div className="news-section">
         {columnData?.map((col, index) => (
           <div className="news-section__column" key={index}>
-            {col.map((card) => {
-              if (card.type === "birthday") {
-                return (
-                  <div
-                    className="news-section__column__event-card"
-                    key={card.id}
-                  >
-                    {card && <EventCard data={card} />}
-                  </div>
-                );
-              }
-              return (
+            {col.map((card) =>
+              card.type === "birthday" ? (
+                <div className="news-section__column__event-card" key={card.id}>
+                  {<EventCard data={card} />}
+                </div>
+              ) : (
                 <div className="news-section__column__news-post" key={card.id}>
                   {card.userName}
                 </div>
-              );
-            })}
+              )
+            )}
           </div>
         ))}
       </div>
