@@ -55,6 +55,7 @@ function App() {
       setIsLoggedIn(false);
     }
   }, [isLoggedIn, isUserLoggedIn]);
+
   return (
     <div className="app">
       <Router>
