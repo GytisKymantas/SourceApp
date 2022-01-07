@@ -1,0 +1,58 @@
+@import '../../styles/base/base';
+
+.login-page {
+    background: $color-mercury;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.login-form-container {
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__input {
+        width: 100%;
+    }
+
+    &__actions {
+        align-items: center;
+        display: flex;
+        height: 40px;
+        justify-content: space-between;
+        margin-top: 32px;
+    }
+
+    &__actions-text {
+        font-size: $font-size-medium;
+        font-weight: $font-weight-regular;
+        line-height: 24px;
+        margin: 0;
+    }
+
+    &__actions-text-link {
+        color: $color-violet;
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 635px) {
+    .login-form-container {
+        height: 300px;
+
+        &__actions {
+            flex-direction: column;
+        }
+
+        &__actions-button {
+            margin-bottom: 8px;
+        }
+
+        &__actions-text {
+            font-size: $font-size-small;
+            padding: 10px 0;
+        }
+    }
+}

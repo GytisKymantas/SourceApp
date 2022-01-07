@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Avatar } from "components/atoms/Avatar/Avatar";
 import { DropDown } from "components/atoms/DropDown/DropDown";
 
@@ -10,20 +11,40 @@ import { ReactComponent as Elipse } from "../../../assets/elipse.svg";
 import "./profile-widget.scss";
 
 export const ProfileWidget = () => {
-  // state placeholder for future notifications functionality,
-  // suppose to be false by default actually
-  // eslint-disable-next-line no-unused-vars
-  const [notifications, setNotifications] = useState(true);
   const [showDropDown, setShowDropDown] = useState(false);
+  const [photoURL, setPhotoURL] = useState(
+    "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"
+  );
+  const [notifications, setNotifications] = useState(null);
+
+  useEffect(() => {
+    fetch(
+      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/userData.json"
+    )
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setPhotoURL(result.userData[0].userImage);
+          setNotifications(result.userData[0].notifications.length);
+        },
+
+        (error) => {
+          // eslint-disable-next-line no-console
+          console.log("Error occured: ", error.message);
+        }
+      );
+  }, []);
+
+  const navigate = useNavigate();
 
   const menuItems = [
     {
-      id: 1,
+      id: "settings",
       logo: <SettingsLogo />,
       text: "Settings",
     },
     {
-      id: 2,
+      id: "logout",
       logo: <LogOutLogo />,
       text: "Log out",
     },
@@ -34,9 +55,16 @@ export const ProfileWidget = () => {
   };
 
   const handleOptionSelect = (optionId) => {
-    // placeholder for future functionality
-    // eslint-disable-next-line no-console
-    console.log("option selected", optionId);
+    if (optionId === "logout") {
+      sessionStorage.setItem("loggedIn", "false");
+      navigate("../", { replace: true });
+      return;
+    }
+
+    if (optionId === "settings") {
+      setShowDropDown((prevValue) => !prevValue);
+      return;
+    }
   };
 
   const ref = useRef();
@@ -74,7 +102,7 @@ export const ProfileWidget = () => {
         role="menu"
         tabIndex={0}
       >
-        <Avatar hasIcon={true} />
+        <Avatar hasIcon isClickable isLarge={false} imageSource={photoURL} />
       </div>
       {showDropDown && (
         <div ref={ref} className="profile-widget__drop-down">

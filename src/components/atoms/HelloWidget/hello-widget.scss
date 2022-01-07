@@ -1,4 +1,5 @@
 @import '../../../styles/base/base';
+$_font-size-xlarge-plus: 60px;
 
 .hello-widget {
     display: flex;
@@ -20,14 +21,25 @@
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1080px) {
     .hello-widget {
         &__time {
-            font-size: $font-size-xlarge;
+            font-weight: $font-weight-medium;
         }
 
         &__text {
             font-size: $font-size-large;
+        }
+    }
+}
+@media (max-width: 672px) {
+    .hello-widget {
+        align-items: center;
+        text-align: center;
+
+        &__time {
+            font-size: $_font-size-xlarge-plus;
+            font-weight: $font-weight-medium;
         }
     }
 }
