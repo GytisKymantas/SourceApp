@@ -132,7 +132,7 @@ video {
     display: flex;
     flex-direction: column;
     font-size: $font-size-mini;
-    height: 95px;
+    max-height: 95px;
     overflow: auto;
     padding-left: 16px;
     text-align: left;
