@@ -1,18 +1,13 @@
 @import '../../../styles/';
 
 // Card
-
-.card {
+.card__news {
     background: $color-white;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
-    height: 662px;
-    margin-bottom: 72px;
     max-width: 416px;
-    padding-bottom: 12px;
-    padding-top: 12px;
     text-transform: uppercase;
 }
 
@@ -22,17 +17,12 @@
     flex-direction: row;
     font-size: $font-size-tiny;
     font-weight: $font-weight-medium;
-    height: 24px;
-    justify-content: flex-end;
-    line-height: 150%;
-    margin-bottom: 10px;
-    padding-left: 16px;
-    padding-right: 16px;
-    width: 390px;
+    gap: 8px;
+    justify-content: space-between;
 
     p {
         color: $color-dark-gray;
-        padding-left: 8px;
+        margin: 0;
     }
 }
 // Header
@@ -43,11 +33,9 @@
     flex-direction: row;
     font-size: $font-size-tiny;
     font-weight: $font-weight-medium;
-    height: 24px;
     justify-content: space-between;
-    line-height: 150%;
-    padding: 6px 16px;
-    width: 390px;
+    padding: 12px 16px;
+    width: 90%;
 
     .card__title {
         align-items: center;
@@ -55,35 +43,35 @@
         flex-direction: row;
         font-size: $font-size-tiny;
         font-weight: $font-weight-medium;
-        height: 24px;
-        justify-content: space-between;
-        line-height: 150%;
-        margin-bottom: 10px;
-        padding: 8px;
-        width: 270px;
+        gap: 12px;
+
+        p {
+            margin: 0;
+        }
     }
 }
 // format video / photo
+
 .card__content-video {
     flex-grow: 1;
     position: relative;
 
-    .vector__one {
-        left: 46%;
+    .video--pause {
+        left: 39%;
+        opacity: 0;
         position: absolute;
-        top: 44%;
+        top: 30%;
     }
 
-    .vector__two {
-        left: 39%;
+    .video--play {
+        left: 42%;
         position: absolute;
-        top: 39%;
+        top: 38%;
     }
 }
 
 .card__content-image {
-    height: 405px;
-    margin-bottom: 14px;
+    max-height: 416px;
     object-fit: cover;
     width: 100%;
 }
@@ -91,53 +79,51 @@
 .user__icon {
     background-repeat: no-repeat;
     border-radius: 50%;
-    height: 20px;
-    width: 20px;
+    display: flex;
+    height: 24px;
+    object-fit: cover;
+    width: 24px;
 }
 
 .comment__wrapper {
-    margin-top: 12px;
-    width: 416px;
+    width: 100%;
 
     .divider_top {
         border-top: 1px solid #ccc;
         display: block;
         justify-content: center;
-        margin: 0 auto;
-        max-width: 94%;
+        margin: 2px 16px;
     }
 
     .comment_input {
         align-items: center;
         display: flex;
-        flex-direction: row;
+        gap: 12px;
         justify-content: space-between;
-        margin-bottom: 12px;
-        margin-top: 12px;
-        padding-left: 16px;
-        padding-right: 16px;
+        margin: 12px 0;
+        padding: 0 16px;
+
+        &-content {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            width: 100%;
+        }
 
         .input_leave_comment {
-            background: none;
             border: $color-white;
             color: $color-dark-gray;
-            cursor: pointer;
             font-size: $font-size-mini;
-            margin-left: 12px;
-            margin-right: 12px;
             outline: none;
-            width: 250px;
+            width: 80%;
         }
     }
+}
 
-    .divider_bottom {
-        border-top: 1px solid #ccc;
-        display: block;
-        justify-content: center;
-        margin: 0 auto;
-        margin-top: 10px;
-        max-width: 94%;
-    }
+video {
+    height: 405px;
+    object-fit: cover;
+    width: 100%;
 }
 
 // comments section rows
@@ -147,28 +133,26 @@
     flex-direction: column;
     font-size: $font-size-mini;
     height: 95px;
-    margin-top: 8px;
-    order: 1;
     overflow: auto;
-    padding-left: 12px;
+    padding-left: 16px;
     text-align: left;
 
     .comments__box_one {
         margin-bottom: 10px;
+        padding-right: 5px;
 
         .comments__header {
-            color: $color-midnight;
             display: flex;
             flex-direction: row;
             font-weight: $font-weight-medium;
             justify-content: space-between;
-            margin-bottom: 6px;
-            margin-top: 6px;
-            max-width: 92%;
+            margin: 6px 0;
+            margin-right: 16px;
         }
 
-        .comments__name {
+        .comments__timestamp {
             color: $color-fiord;
+            font-weight: $font-weight-regular;
         }
 
         .comments--content {
@@ -214,30 +198,23 @@
 // Actions -- likes / comments
 
 .actions {
-    align-items: center;
     color: $color-dark-gray;
     display: flex;
     font-size: $font-size-tiny;
     font-weight: $font-weight-medium;
-    line-height: 150%;
-    padding-left: 16px;
+    gap: 12px;
+    padding: 15px 20px;
 
     .likes {
         align-items: center;
-        background: none;
         border: $color-light-gray;
         cursor: pointer;
         display: flex;
-        flex-direction: row;
-        height: 24px;
-        padding-left: 1px;
-        padding-right: 1px;
-        padding-top: 4px;
-        width: 46px;
+        gap: 9px;
 
         .likes__body {
             color: $color-dark-gray;
-            margin-left: 2px;
+            cursor: default;
         }
     }
 
@@ -245,33 +222,19 @@
         align-items: center;
         background: none;
         border: $color-light-gray;
-        cursor: pointer;
         display: flex;
-        height: 18px;
-        padding-left: 1px;
-        padding-right: 1px;
-        padding-top: 4px;
+        gap: 9px;
 
         .comments__body {
             color: $color-dark-gray;
-            margin-left: 6px;
         }
     }
 }
 
-@media screen and (max-width: 600px) and (min-width: 361px) {
-    .card-header__wrapper {
-        padding: 6px 2px;
-        width: 100%;
-
-        .card__title {
-            padding-right: 16px;
-        }
-
-        .user__icon {
-            height: 18px;
-            width: 18px;
-        }
+@media (max-width: 600px) {
+    .user__icon {
+        height: 18px;
+        width: 18px;
     }
 
     .comment__wrapper {
@@ -280,74 +243,35 @@
         .comments__box_one {
             margin-bottom: 4px;
         }
-
-        .comments__header {
-            display: flex;
-            max-width: 92%;
-        }
     }
 }
-@media screen and (max-width: 360px) {
+@media (max-width: 360px) {
     .card-header__wrapper {
-        padding: 6px 2px;
-        width: 100%;
-
-        .card__title {
-            padding-right: 16px;
-        }
-
         .card--name {
             font-size: $font-size-mini;
         }
 
         .card__timestamp {
             font-size: $font-size-mini;
-            width: 100px;
-        }
-
-        .user__icon {
-            height: 18px;
-            width: 18px;
         }
     }
 
-    // image section styling
-    .card__content-video {
-        .vector__one {
-            left: 50%;
-            position: absolute;
-            top: 44%;
-        }
-    }
     // comment section styling
     .comment__wrapper {
-        width: 100%;
-
         .comments__box_one {
             margin-bottom: 4px;
         }
 
         .comments__header {
             display: flex;
-            max-width: 92%;
         }
 
         .comment_input {
-            align-items: center;
-            display: flex;
-            flex-direction: row;
+            gap: 5px;
             justify-content: space-between;
-            margin-bottom: 12px;
-            margin-top: 12px;
-            padding-left: 16px;
-            padding-right: 4px;
 
             .input_leave_comment {
                 font-size: $font-size-mini;
-                margin-left: 12px;
-                margin-right: 12px;
-                outline: none;
-                width: 80px;
             }
         }
     }

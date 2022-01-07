@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
-import vectorPlay from "../../../assets/vectorPlay.svg";
-import vectorOval from "../../../assets/vectorOval.svg";
+import playIcon from "../../../assets/playIcon.svg";
 import { ReactComponent as VectorComment } from "../../../assets/vectorComment.svg";
 import { ReactComponent as TransparentHeart } from "../../../assets/transparentHeart.svg";
 import { ReactComponent as RedHeart } from "assets/redHeart.svg";
 import Moment from "moment";
-import { Button } from "../Button/Button";
+import { Button } from "../../atoms/Button/Button";
 import "./news-feed-card.scss";
 
 export const NewsFeedCard = (data) => {
@@ -21,9 +20,8 @@ export const NewsFeedCard = (data) => {
     postDate,
     comments,
     likes,
-    postCover,
     postVideo,
-  } = postNews[10];
+  } = postNews[2];
 
   // like button
   const [like, setLike] = useState(false);
@@ -47,9 +45,21 @@ export const NewsFeedCard = (data) => {
     setCommentValue("");
   };
 
+  const videoRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
+
+  const videoHandler = (control) => {
+    if (control === "play") {
+      videoRef.current.play();
+      setPlaying(true);
+    } else if (control === "pause") {
+      videoRef.current.pause();
+      setPlaying(false);
+    }
+  };
   // comment submit end
   return (
-    <div className="card">
+    <div className="card__news">
       <div className="card-header__wrapper">
         <div className="card__title">
           <img className="user__icon" src={userImage} alt="your profile" />
@@ -62,12 +72,33 @@ export const NewsFeedCard = (data) => {
       </div>
       {postVideo ? (
         <div className="card__content-video">
-          <img className="vector__two" src={vectorOval} alt="" />
-          <img className="vector__one" src={vectorPlay} alt="" />
-          <video className="card__content-image" src={postVideo || postCover}>
+          <video
+            className="card__content-video-main"
+            ref={videoRef}
+            src={postVideo}
+            type="video/mp4"
+          >
             <track kind="captions" type="video/mp4"></track>
-            Sorry, your browser does not support embedded videos.
           </video>
+          {playing ? (
+            <img
+              className="video--pause"
+              onClick={() => videoHandler("pause")}
+              onKeyDown={() => videoHandler("pause")}
+              src={playIcon}
+              alt=""
+              role="presentation"
+            />
+          ) : (
+            <img
+              className="video--play"
+              onClick={() => videoHandler("play")}
+              onKeyDown={() => videoHandler("play")}
+              src={playIcon}
+              alt=""
+              role="presentation"
+            />
+          )}
         </div>
       ) : (
         <img className="card__content-image" src={postImage} alt="" />
@@ -92,10 +123,10 @@ export const NewsFeedCard = (data) => {
             {like ? (likes = likes + 1) : likes}
           </span>
         </div>
-        <button className="comments">
+        <div className="comments">
           <VectorComment />
           <span className="comments__body">{coms.length}</span>
-        </button>
+        </div>
       </div>
       <div className="comment__wrapper">
         <span className="divider_top"></span>
@@ -105,25 +136,32 @@ export const NewsFeedCard = (data) => {
               <div className="comments__header">
                 <span>{item.userName}</span>
                 <div className="comments__timestamp">
-                  <span className="comments__name">
-                    {Moment(item.date).format("MM/DD/YYYY HH:mm")}
-                  </span>
+                  {/* <span className="comments__name"> */}
+                  {Moment(item.date).format("MM/DD/YYYY HH:mm")}
+                  {/* </span> */}
                 </div>
               </div>
               <span className="comments--content">{item.comment}</span>
             </div>
           ))}
         </div>
-        <span className="divider_bottom"></span>
+        <span className="divider_top"></span>
         <div className="comment_input">
-          <img className="user__icon" src={userImage} alt="your profile icon" />
-          <input
-            className="input_leave_comment"
-            type="text"
-            placeholder="Leave a comment..."
-            value={commentValue}
-            onInput={(e) => setCommentValue(e.target.value)}
-          />
+          <div className="comment_input-content">
+            <img
+              className="user__icon"
+              src={userImage}
+              alt="your profile icon"
+            />
+            <input
+              className="input_leave_comment"
+              type="text"
+              placeholder="Leave a comment..."
+              value={commentValue}
+              onInput={(e) => setCommentValue(e.target.value)}
+            />
+          </div>
+
           <Button
             className="btn__active"
             type="submit"
@@ -145,6 +183,5 @@ NewsFeedCard.propTypes = {
   postDate: PropTypes.string,
   comments: PropTypes.number,
   likes: PropTypes.number,
-  postCover: PropTypes.string,
   postVideo: PropTypes.string,
 };
