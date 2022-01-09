@@ -1,14 +1,14 @@
 import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
 import playIcon from "../../../assets/playIcon.svg";
-import { ReactComponent as VectorComment } from "../../../assets/vectorComment.svg";
-import { ReactComponent as TransparentHeart } from "../../../assets/transparentHeart.svg";
-import { ReactComponent as RedHeart } from "assets/redHeart.svg";
+import { ReactComponent as CommentIcon } from "../../../assets/commentIcon.svg";
+import { ReactComponent as ClearHeartIcon } from "assets/clearHeartIcon.svg";
+import { ReactComponent as RedHeartIcon } from "assets/redHeartIcon.svg";
 import Moment from "moment";
 import { Button } from "../../atoms/Button/Button";
 import "./news-feed-card.scss";
 
-export const NewsFeedCard = (data) => {
+export const NewsFeedCard = (data, userData) => {
   Moment.locale("en");
 
   const postNews = data?.data;
@@ -23,21 +23,20 @@ export const NewsFeedCard = (data) => {
     postVideo,
   } = postNews;
 
-  // like button
+  const currentUserImage = userData?.userImage;
+  const currentUserName = userData?.userName;
   const [like, setLike] = useState(false);
 
   const handleLikeClick = () => {
     setLike((prevValue) => !prevValue);
   };
-  // like button end
 
-  // comment submit start
   const [commentValue, setCommentValue] = useState("");
   const [coms, setComs] = useState(comments);
 
   const handleCommentSubmit = () => {
     const userComment = {
-      userName: "You",
+      userName: currentUserName,
       comment: commentValue,
       date: Moment(new Date()).format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
     };
@@ -57,7 +56,6 @@ export const NewsFeedCard = (data) => {
       setPlaying(false);
     }
   };
-  // comment submit end
   return (
     <div className="card__news">
       <div className="card-header__wrapper">
@@ -103,17 +101,16 @@ export const NewsFeedCard = (data) => {
       ) : (
         <img className="card__content-image" src={postImage} alt="" />
       )}
-      {/* like button start */}
       <div className="actions">
         <div className="likes">
           {like ? (
-            <RedHeart
+            <RedHeartIcon
               className="card__icons-present"
               onClick={handleLikeClick}
               onKeyDown={handleLikeClick}
             />
           ) : (
-            <TransparentHeart
+            <ClearHeartIcon
               className="card__icons-present"
               onClick={handleLikeClick}
               onKeyDown={handleLikeClick}
@@ -124,7 +121,7 @@ export const NewsFeedCard = (data) => {
           </span>
         </div>
         <div className="comments">
-          <VectorComment />
+          <CommentIcon />
           <span className="comments__body">{coms.length}</span>
         </div>
       </div>
@@ -136,9 +133,7 @@ export const NewsFeedCard = (data) => {
               <div className="comments__header">
                 <span>{item.userName}</span>
                 <div className="comments__timestamp">
-                  {/* <span className="comments__name"> */}
                   {Moment(item.date).format("MM/DD/YYYY HH:mm")}
-                  {/* </span> */}
                 </div>
               </div>
               <span className="comments--content">{item.comment}</span>
@@ -150,7 +145,7 @@ export const NewsFeedCard = (data) => {
           <div className="comment_input-content">
             <img
               className="user__icon"
-              src={userImage}
+              src={currentUserImage}
               alt="your profile icon"
             />
             <input
@@ -161,7 +156,6 @@ export const NewsFeedCard = (data) => {
               onInput={(e) => setCommentValue(e.target.value)}
             />
           </div>
-
           <Button
             className="btn__active"
             type="submit"
@@ -184,4 +178,5 @@ NewsFeedCard.propTypes = {
   comments: PropTypes.number,
   likes: PropTypes.number,
   postVideo: PropTypes.string,
+  userData: PropTypes.object,
 };
