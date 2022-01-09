@@ -51,7 +51,7 @@ export const NewsFeedCard = (data, userData) => {
     if (control === "play") {
       videoRef.current.play();
       setPlaying(true);
-    } else if (control === "pause") {
+    } else {
       videoRef.current.pause();
       setPlaying(false);
     }
