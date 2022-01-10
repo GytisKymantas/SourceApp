@@ -74,6 +74,7 @@ export const ReservationsSection = ({ reservationData }) => {
                       name[1] ? `${name[1]} RESERVED` : "UNRESERVED"
                     }
                     categoryImage={imageMatcher(name[0])}
+                    isFood={false}
                     key={index}
                   />
                 </Link>

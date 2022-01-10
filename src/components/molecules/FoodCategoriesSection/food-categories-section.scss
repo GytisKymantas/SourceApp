@@ -3,43 +3,41 @@
 $inherit: inherit;
 
 .food-categories-section {
-    display: flex;
-    flex-direction: column;
     width: 100%;
 
     &__element-container {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
         gap: 63px 80px;
-        justify-content: center;
 
-        &::after {
-            content: '';
-            flex: 0 0 50%;
+        grid-template-columns: repeat(4, 1fr);
+
+        @media (max-width: 1300px) {
+            gap: 63px 53px;
+            grid-template-columns: repeat(3, 1fr);
         }
 
-        @media (max-width: 500px) {
+        @media (max-width: 950px) {
+            gap: 63px 53px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 700px) {
+            gap: 30px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 570px) {
             gap: 24px 0;
+            grid-template-columns: 1fr;
+            margin: auto;
+            max-width: 416px;
         }
     }
 
     &__element {
         color: $inherit;
-        flex: 1 0 20%;
+        display: grid;
         max-width: 416px;
         min-width: 235px;
         text-decoration: none;
-
-        @media (max-width: 600px) {
-            flex: 1 0 50%;
-        }
-    }
-}
-
-.category-item__image-wrapper {
-    margin: 0 -20px 0 0;
-
-    @media (max-width: 500px) {
-        margin: 0;
     }
 }
