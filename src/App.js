@@ -27,20 +27,20 @@ function App() {
             // handle error here
           }
         );
-    }
-    fetch(
-      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/restaurants.json"
-    )
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setRestaurantsData(result);
-        },
+      fetch(
+        "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/restaurants.json"
+      )
+        .then((res) => res.json())
+        .then(
+          (result) => {
+            setRestaurantsData(result);
+          },
 
-        (error) => {
-          // handle error here
-        }
-      );
+          (error) => {
+            // handle error here
+          }
+        );
+    }
   }, [isLoggedIn]);
 
   let isUserLoggedIn = sessionStorage.getItem("loggedIn");
