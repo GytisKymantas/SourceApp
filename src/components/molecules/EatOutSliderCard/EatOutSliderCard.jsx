@@ -8,6 +8,8 @@ import TextTruncate from "react-text-truncate";
 
 import "./eat-out-slider.scss";
 
+const array = [1, 2, 3, 4, 5];
+
 const EatOutSliderCard = ({
   restaurantNameProp,
   restaurantSloganProp,
@@ -21,7 +23,7 @@ const EatOutSliderCard = ({
     <button onClick={handleCardLeft}> - </button>
     <button onClick={handleCardRight}> + </button>
     <div
-      className="slider__image-wrapper baba"
+      className="slider__image-wrapper"
       style={{
         background: `linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%),url(${restaurantImageProp})`,
       }}

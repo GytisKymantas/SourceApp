@@ -1,15 +1,15 @@
 import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import React from "react";
-import { EatOutHeroSlider } from "components/molecules/EatOutHeroSlider/EatOutHeroSlider";
 import PropTypes from "prop-types";
+import EatOutHeroSlider from "components/molecules/EatOutHeroSlider/EatOutHeroSlider";
 
 export const EatOut = ({ data }) => {
   const restaurantsData = data?.restaurants;
 
   return (
     <MainLayout>
-      <h1>EatOut</h1>
       <EatOutHeroSlider data={restaurantsData} />
+      <h1>EatOut</h1>
     </MainLayout>
   );
 };
