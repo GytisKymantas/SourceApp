@@ -22,10 +22,6 @@ $inherit: inherit;
         gap: 48px;
         justify-content: space-around;
 
-        // &::after {
-        //   content: '';
-        //   flex: 1 1 46%;
-        // }
         @media (max-width: 400px) {
             gap: 24px;
         }

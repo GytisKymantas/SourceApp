@@ -3,39 +3,24 @@
 $inherit: inherit;
 
 .food-categories-section {
+    display: flex;
+    flex-direction: column;
     width: 100%;
 
     &__element-container {
-        display: grid;
+        display: flex;
+        flex-wrap: wrap;
         gap: 63px 80px;
+        justify-content: center;
 
-        grid-template-columns: repeat(4, 1fr);
-
-        @media (max-width: 1300px) {
-            gap: 63px 53px;
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        @media (max-width: 950px) {
-            gap: 63px 53px;
-            grid-template-columns: repeat(2, 1fr);
-        }
         @media (max-width: 700px) {
-            gap: 30px;
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        @media (max-width: 570px) {
-            gap: 24px 0;
-            grid-template-columns: 1fr;
-            margin: auto;
-            max-width: 416px;
+            gap: 24px 25px;
         }
     }
 
     &__element {
         color: $inherit;
-        display: grid;
+        flex: 1 0 20%;
         max-width: 416px;
         min-width: 235px;
         text-decoration: none;
