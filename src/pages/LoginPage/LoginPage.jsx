@@ -64,8 +64,8 @@ export const LoginPage = ({ setIsLoggedIn }) => {
   };
 
   const retrieveFromSessionStorage = () => {
-    const emailFromStorage = sessionStorage.getItem("email");
-    const passwordFromStorage = sessionStorage.getItem("password");
+    const { emailFromStorage } = sessionStorage.getItem("email");
+    const { passwordFromStorage } = sessionStorage.getItem("password");
 
     return { emailFromStorage, passwordFromStorage };
   };
