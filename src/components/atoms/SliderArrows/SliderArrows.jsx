@@ -9,6 +9,7 @@ export const SliderArrows = (props) => {
 
   const handleClick = (onClickSlider) => {
     onClickSlider = props;
+    // console.log(onClickSlider);
   };
 
   return (
