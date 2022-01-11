@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import EatOutSliderCard from "components/molecules/EatOutSliderCard/EatOutSliderCard/";
 import PropTypes from "prop-types";
 
@@ -15,7 +15,7 @@ const EatOutHeroSlider = (data) => {
   };
 
   return (
-    <div>
+    <Fragment>
       {restaurantsData && (
         <EatOutSliderCard
           restaurantSloganProp={restaurantsData[index].slogan}
@@ -27,7 +27,7 @@ const EatOutHeroSlider = (data) => {
           handleCardRight={handleCardRight}
         />
       )}
-    </div>
+    </Fragment>
   );
 };
 
