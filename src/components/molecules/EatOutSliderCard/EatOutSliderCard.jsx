@@ -18,12 +18,20 @@ const EatOutSliderCard = ({
   index,
   handleCardRight,
   handleCardLeft,
+  handleImageClick,
 }) => (
   <div className="slider__container">
-    <button onClick={handleCardLeft}> - </button>
-    <button onClick={handleCardRight}> + </button>
+    <div className="placeholder-buttons">
+      <button onClick={handleCardLeft}> - </button>
+      <button onClick={handleCardRight}> + </button>
+    </div>
     <div
       className="slider__image-wrapper"
+      onClick={handleImageClick}
+      onKeyPress={handleImageClick}
+      role={"switch"}
+      tabIndex={-1}
+      aria-checked="false"
       style={{
         background: `linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%),url(${restaurantImageProp})`,
       }}
@@ -68,6 +76,7 @@ EatOutSliderCard.propTypes = {
   index: PropTypes.number,
   handleCardRight: PropTypes.func,
   handleCardLeft: PropTypes.func,
+  handleImageClick: PropTypes.func,
 };
 
 export default EatOutSliderCard;

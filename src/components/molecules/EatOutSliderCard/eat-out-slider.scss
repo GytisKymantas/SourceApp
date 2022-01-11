@@ -75,7 +75,9 @@
 
     p {
         color: $color-dark-gray;
+        display: flex;
         font-size: $font-size-medium;
+        justify-content: center;
         line-height: 1.5;
         margin: 0;
         text-align: justify;
@@ -86,11 +88,19 @@
 @media (max-width: 750px) {
     .slider__container {
         display: inline-block;
-        max-height: 550px;
+        height: 483px;
         position: relative;
         width: 100%;
     }
-
+    p {
+        height: 42px;
+    }
+    .placeholder-nav {
+        display: none;
+    }
+    .placeholder-buttons {
+        display: none;
+    }
     .slider__image-wrapper {
         height: 225px;
         width: 100%;

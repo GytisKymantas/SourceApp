@@ -13,6 +13,9 @@ const EatOutHeroSlider = (data) => {
   const handleCardLeft = () => {
     setIndex(index === 0 ? 0 : index - 1);
   };
+  const handleImageClick = () => {
+    setIndex(index === 4 ? index - 4 : index + 1);
+  };
 
   return (
     <Fragment>
@@ -25,6 +28,7 @@ const EatOutHeroSlider = (data) => {
           index={index}
           handleCardLeft={handleCardLeft}
           handleCardRight={handleCardRight}
+          handleImageClick={handleImageClick}
         />
       )}
     </Fragment>
