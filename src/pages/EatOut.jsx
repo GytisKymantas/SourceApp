@@ -6,10 +6,16 @@ import EatOutHeroSlider from "components/organisms/EatOutHeroSlider/EatOutHeroSl
 export const EatOut = ({ data }) => {
   const restaurantsData = data?.restaurants;
 
+  // eslint-disable-next-line no-unused-vars
+  const sortedByDate = []
+    .concat(restaurantsData)
+    .sort((a, b) => (a.createdDate > b.createdDate ? -1 : 1))
+    .slice(0, 6);
+
   return (
     <MainLayout>
+      <h1>Hungry? Find the best place!</h1>
       <EatOutHeroSlider data={restaurantsData} />
-      <h1>EatOut</h1>
     </MainLayout>
   );
 };
