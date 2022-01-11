@@ -11,7 +11,7 @@ import "./news-feed-card.scss";
 export const NewsFeedCard = ({ data, userData }) => {
   Moment.locale("en");
   const postNews = data;
-  let {
+  const {
     userName,
     userImage,
     postImage,
