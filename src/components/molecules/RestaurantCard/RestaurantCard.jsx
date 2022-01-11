@@ -8,6 +8,7 @@ import personIcon from "../../../assets/personIcon.svg";
 import { Button } from "components/atoms/Button/Button";
 import { RatingBadge } from "components/atoms/RatingBadge/RatingBadge";
 import "./restaurant-card.scss";
+import TextTruncate from "react-text-truncate";
 
 export const RestaurantCard = ({
   displayFullCard,
@@ -22,10 +23,11 @@ export const RestaurantCard = ({
   restaurantAverageRating,
 }) => {
   const average =
-    restaurantAverageRating &&
-    restaurantAverageRating.reduce(
-      (preValue, curValue) => preValue + curValue
-    ) / restaurantAverageRating.length;
+    restaurantAverageRating && restaurantAverageRating.length === 0
+      ? 0
+      : restaurantAverageRating.reduce(
+          (preValue, curValue) => preValue + curValue
+        ) / restaurantAverageRating.length;
 
   const [heart, setHeart] = useState(true);
   const [checkIn, setCheckIn] = useState(numberOfCheckIns);
@@ -93,11 +95,18 @@ export const RestaurantCard = ({
               {restaurantAddress}
             </span>
           </div>
-          <p className="restaurant__description">{restaurantDescription}</p>
+          <p className="restaurant__description" title={restaurantDescription}>
+            <TextTruncate
+              line={3}
+              element="span"
+              truncateText="…"
+              text={restaurantDescription}
+            />
+          </p>
           <div className="restaurant__container-buttons">
             <button>READ MORE</button>
             <Button
-              label={checkIn ? "CHECK-IN" : "CHECK-OUT"}
+              label={!checkIn ? "CHECK-IN" : "CHECK-OUT"}
               onClick={handleCheckInClick}
             />
           </div>
