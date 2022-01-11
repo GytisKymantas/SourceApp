@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import React from "react";
 import PropTypes from "prop-types";
@@ -11,6 +12,13 @@ import "./eat-out.scss";
 export const EatOut = ({ data }) => {
   // use real data here and remove this file later
   // const restaurantsData = data;
+
+  const restaurantsData = data?.restaurants;
+
+  const sortedByDate = []
+    .concat(restaurantsData)
+    .sort((a, b) => (a.createdDate > b.createdDate ? -1 : 1))
+    .slice(0, 6);
 
   return (
     <MainLayout>
