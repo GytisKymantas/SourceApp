@@ -3,9 +3,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export const EatOut = ({ data }) => {
-<<<<<<< HEAD
-  // const restaurantsData = data;
-=======
   const restaurantsData = data?.restaurants;
 
   // eslint-disable-next-line no-unused-vars
@@ -13,7 +10,6 @@ export const EatOut = ({ data }) => {
     .concat(restaurantsData)
     .sort((a, b) => (a.createdDate > b.createdDate ? -1 : 1))
     .slice(0, 6);
->>>>>>> dev
 
   return (
     <MainLayout>

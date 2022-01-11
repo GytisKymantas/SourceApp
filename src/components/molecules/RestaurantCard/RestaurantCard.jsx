@@ -19,9 +19,9 @@ export const RestaurantCard = ({
   restaurantDescription,
   restaurantCategories,
   restaurantImage,
-  restaurantAverageRating,
+  restaurantReviewList,
 }) => {
-  const ratingArray = restaurantAverageRating.map((review) => review.rating);
+  const ratingArray = restaurantReviewList.map((review) => review.rating);
   const average =
     ratingArray &&
     ratingArray.reduce((preValue, curValue) => preValue + curValue) /
@@ -120,5 +120,5 @@ RestaurantCard.propTypes = {
   restaurantDescription: PropTypes.string,
   restaurantCategories: PropTypes.array,
   restaurantImage: PropTypes.string,
-  restaurantAverageRating: PropTypes.array,
+  restaurantReviewList: PropTypes.array,
 };

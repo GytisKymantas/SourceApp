@@ -20,6 +20,7 @@ export const EatOutSection = (data) => {
     bestRatedArray.sort((a, b) => (b.averageRating < a.averageRating ? 1 : -1));
   }
   const twoBestRatedArray = bestRatedArray.slice(18, 20);
+
   return (
     <div className="eat-out-section">
       <ViewEatOutCard />
@@ -32,7 +33,7 @@ export const EatOutSection = (data) => {
           restaurantOpeningHours={restaurant.openingHours[0].hours}
           restaurantCategories={restaurant.categories}
           restaurantImage={restaurant.image}
-          restaurantAverageRating={restaurant.reviews}
+          restaurantReviewList={restaurant.reviews}
         />
       ))}
     </div>
