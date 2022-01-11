@@ -30,7 +30,7 @@
 @media (max-width: 768px) {
     .eat-out {
         &__carousel-container {
-            width: 325px;
+            width: 300px;
         }
     }
 }
@@ -38,8 +38,10 @@
 @media (max-width: 320px) {
     .eat-out {
         &__carousel-container {
+            width: 296px;
+
             &--inside {
-                margin-right: 0;
+                margin-right: 5px;
             }
         }
     }
