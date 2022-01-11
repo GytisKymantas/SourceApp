@@ -1,0 +1,66 @@
+@import '../../../styles/base/base';
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__title-container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+
+        &--title {
+            font-size: $font-size-large;
+            font-weight: $font-weight-heavy;
+            line-height: 32px;
+        }
+
+        // &--slider-arrows {
+        // }
+    }
+
+    &__wrapper {
+        display: flex;
+        position: relative;
+        width: 100%;
+
+        &--content-wrapper {
+            height: 100%;
+            overflow: hidden;
+            width: 100%;
+        }
+    }
+}
+
+.carousel-content {
+    display: flex;
+    transition: all 250ms linear;
+    width: 2784px;
+}
+
+// will be removed when real arrows will be used
+.left-arrow,
+.right-arrow {
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+@media (max-width: 1440px) {
+    .carousel-content {
+        width: 2208px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-content {
+        width: 2064px;
+    }
+}
+
+@media (max-width: 320px) {
+    .carousel-content {
+        width: 1806px;
+    }
+}
