@@ -23,8 +23,8 @@ export const NewsFeedCard = (data, userData) => {
     postVideo,
   } = postNews;
 
-  const currentUserImage = userData?.userImage;
-  const currentUserName = userData?.userName;
+  // const currentUserImage = userData?.userImage;
+  // const currentUserName = userData?.userName;
   const [like, setLike] = useState(false);
 
   const handleLikeClick = () => {
@@ -36,7 +36,8 @@ export const NewsFeedCard = (data, userData) => {
 
   const handleCommentSubmit = () => {
     const userComment = {
-      userName: currentUserName,
+      // userName: currentUserName,
+      userName: "You",
       comment: commentValue,
       date: Moment(new Date()).format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
     };
@@ -145,7 +146,7 @@ export const NewsFeedCard = (data, userData) => {
           <div className="comment_input-content">
             <img
               className="user__icon"
-              src={currentUserImage}
+              src={userImage}
               alt="your profile icon"
             />
             <input
