@@ -10,6 +10,7 @@ import { NotFound } from "pages/NotFound/NotFound";
 function App() {
   const [userData, setUserData] = useState();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [restaurantsData, setRestaurantsData] = useState();
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -27,6 +28,19 @@ function App() {
           }
         );
     }
+    fetch(
+      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/restaurants.json"
+    )
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setRestaurantsData(result);
+        },
+
+        (error) => {
+          // handle error here
+        }
+      );
   }, [isLoggedIn]);
 
   let isUserLoggedIn = sessionStorage.getItem("loggedIn");
@@ -51,11 +65,16 @@ function App() {
             element={<LoginPage setIsLoggedIn={setIsLoggedIn} />}
           />
           <Route path="/registration" element={<RegistrationPage />} />
-          {isLoggedIn && (
+          {isLoggedIn && userData && (
             <>
               <Route
                 path="/dashboard"
-                element={<Dashboard data={userData} />}
+                element={
+                  <Dashboard
+                    data={userData}
+                    restaurantsInfo={restaurantsData}
+                  />
+                }
               />
               <Route
                 path="/dashboard/reservations"
@@ -73,11 +92,17 @@ function App() {
                 path="/dashboard/reservations/devices"
                 element={<Reservations />}
               />
-              <Route path="/dashboard/eatout" element={<EatOut />} />
-              <Route path="/dashboard/eatout/category" element={<EatOut />} />
+              <Route
+                path="/dashboard/eatout"
+                element={<EatOut data={restaurantsData} />}
+              />
+              <Route
+                path="/dashboard/eatout/category"
+                element={<EatOut data={restaurantsData} />}
+              />
               <Route
                 path="/dashboard/eatout/category/single"
-                element={<EatOut />}
+                element={<EatOut data={restaurantsData} />}
               />
             </>
           )}
