@@ -106,7 +106,7 @@ export const RestaurantCard = ({
           <div className="restaurant__container-buttons">
             <button>READ MORE</button>
             <Button
-              label={!checkIn ? "CHECK-IN" : "CHECK-OUT"}
+              label={checkIn ? "CHECK-IN" : "CHECK-OUT"}
               onClick={handleCheckInClick}
             />
           </div>
