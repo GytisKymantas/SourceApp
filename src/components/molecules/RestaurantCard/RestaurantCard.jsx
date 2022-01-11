@@ -81,7 +81,7 @@ export const RestaurantCard = ({
             <span className="restaurant-locale">
               <img src={globe} className="icon" alt="globe" />
               <a
-                href={`https://${restaurantWebsite}`}
+                href={`${restaurantWebsite}`}
                 rel="noopener noreferrer"
                 target="_blank"
               >
