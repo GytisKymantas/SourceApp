@@ -4,9 +4,7 @@ import { PropTypes } from "prop-types";
 import { StartingPageLayout } from "components/layouts/StartingPageLayout/StartingPageLayout";
 import { Input } from "components/atoms/Input/Input";
 import { Button } from "components/atoms/Button/Button";
-
 import "./login-page.scss";
-
 export const LoginPage = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState("");
   const [isEmailFilled, setIsEmailFilled] = useState(true);
@@ -14,24 +12,17 @@ export const LoginPage = ({ setIsLoggedIn }) => {
   const [isPasswordFilled, setIsPasswordFilled] = useState(true);
   const [doCredentialsMatch, setDoCredentialsMatch] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
   let navigate = useNavigate();
-
   const handleSubmit = (e) => {
     e.preventDefault();
-
     markRequiredFields();
-
     setIsSubmitted(false);
     setDoCredentialsMatch(false);
-
     const canSubmit = isAllInputsFilled();
-
     const {
       emailFromStorage,
       passwordFromStorage,
     } = retrieveFromSessionStorage();
-
     if (
       canSubmit &&
       email === emailFromStorage &&
@@ -44,7 +35,6 @@ export const LoginPage = ({ setIsLoggedIn }) => {
       sessionStorage.setItem("loggedIn", "true");
       navigate("../dashboard", { replace: true });
     }
-
     if (
       canSubmit &&
       (email !== emailFromStorage || password !== passwordFromStorage)
@@ -55,44 +45,36 @@ export const LoginPage = ({ setIsLoggedIn }) => {
       return;
     }
   };
-
   const isAllInputsFilled = () => {
     if (email !== "" && password !== "") {
       return true;
     }
     return false;
   };
-
   const retrieveFromSessionStorage = () => {
     const emailFromStorage = sessionStorage.getItem("email");
     const passwordFromStorage = sessionStorage.getItem("password");
-
     return { emailFromStorage, passwordFromStorage };
   };
-
   const markRequiredFields = () => {
     if (email.trim() === "") {
       setIsEmailFilled(false);
     }
-
     if (password.trim() === "") {
       setIsPasswordFilled(false);
     }
   };
-
   const resetInputFields = () => {
     setEmail("");
     setIsEmailFilled(true);
     setPassword("");
     setIsPasswordFilled(true);
   };
-
   // EMAIL
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
     setIsSubmitted(false);
   };
-
   const handleEmailBlur = () => {
     if (email.trim() === "") {
       setIsEmailFilled(false);
@@ -100,15 +82,12 @@ export const LoginPage = ({ setIsLoggedIn }) => {
       setIsEmailFilled(true);
     }
   };
-
   const handleEmailFocus = () => setIsEmailFilled(true);
-
   // PASSWORD
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
     setIsSubmitted(false);
   };
-
   const handlePasswordBlur = () => {
     if (password.trim() === "") {
       setIsPasswordFilled(false);
@@ -116,9 +95,7 @@ export const LoginPage = ({ setIsLoggedIn }) => {
       setIsPasswordFilled(true);
     }
   };
-
   const handlePasswordFocus = () => setIsPasswordFilled(true);
-
   return (
     <div className="login-page">
       <StartingPageLayout
@@ -177,7 +154,6 @@ export const LoginPage = ({ setIsLoggedIn }) => {
     </div>
   );
 };
-
 LoginPage.propTypes = {
   setIsLoggedIn: PropTypes.func,
 };
