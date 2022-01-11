@@ -76,25 +76,15 @@ export const NewsFeedCard = ({ data, userData }) => {
           >
             <track kind="captions" type="video/mp4"></track>
           </video>
-          {playing ? (
+          {
             <img
-              className="video--pause"
-              onClick={() => videoHandler("pause")}
-              onKeyDown={() => videoHandler("pause")}
+              className={playing ? "video--pause" : "video--play"}
+              onClick={() => videoHandler(playing ? "pause" : "play")}
               src={playIcon}
               alt=""
               role="presentation"
             />
-          ) : (
-            <img
-              className="video--play"
-              onClick={() => videoHandler("play")}
-              onKeyDown={() => videoHandler("play")}
-              src={playIcon}
-              alt=""
-              role="presentation"
-            />
-          )}
+          }
         </div>
       ) : (
         <img className="card__content-image" src={postImage} alt="" />
