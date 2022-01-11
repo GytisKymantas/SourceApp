@@ -1,0 +1,46 @@
+.eat-out {
+    &__carousel-container {
+        width: 1349px;
+
+        &--inside {
+            margin-right: 48px;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .eat-out {
+        &__carousel-container {
+            margin-left: auto;
+            margin-right: auto;
+            width: 1060px;
+        }
+    }
+}
+
+@media (max-width: 1155px) {
+    .eat-out {
+        &__carousel-container {
+            width: 693px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .eat-out {
+        &__carousel-container {
+            width: 325px;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .eat-out {
+        &__carousel-container {
+            &--inside {
+                margin-right: 0;
+            }
+        }
+    }
+}
