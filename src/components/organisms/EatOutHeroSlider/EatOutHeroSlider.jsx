@@ -32,11 +32,14 @@ const EatOutHeroSlider = (data) => {
 };
 
 EatOutHeroSlider.propTypes = {
-  data: PropTypes.array,
-  slogan: PropTypes.string,
-  image: PropTypes.string,
-  description: PropTypes.string,
-  name: PropTypes.string,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      slogan: PropTypes.string,
+      image: PropTypes.string,
+      description: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ),
 };
 
 export default EatOutHeroSlider;
