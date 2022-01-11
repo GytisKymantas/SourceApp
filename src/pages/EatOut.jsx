@@ -15,7 +15,7 @@ export const EatOut = ({ data }) => {
   return (
     <MainLayout>
       <h1>Hungry? Find the best place!</h1>
-      <SliderArrows></SliderArrows>
+      <SliderArrows />
     </MainLayout>
   );
 };

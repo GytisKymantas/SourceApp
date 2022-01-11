@@ -8,10 +8,10 @@ export const SliderArrows = () => {
   return (
     <div className="container__slider--arrows">
       <button className="btn__right">
-        <SliderArrowLeft className="arrow__right"></SliderArrowLeft>
+        <SliderArrowLeft className="arrow__right" />
       </button>
       <button className="btn__left">
-        <SliderArrowRight className="arrow__left"></SliderArrowRight>
+        <SliderArrowRight className="arrow__left" />
       </button>
     </div>
   );
