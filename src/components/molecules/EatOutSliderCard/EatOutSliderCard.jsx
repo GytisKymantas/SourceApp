@@ -31,26 +31,13 @@ const EatOutSliderCard = ({
     <div className="slider-text__wrapper">
       <div className="top-navigation">
         <div className="bullets">
-          <img
-            src={index === 0 ? SliderBulletPointSelected : SliderBulletPoint}
-            alt={index === 0 ? "selected point" : "bullet point"}
-          />
-          <img
-            src={index === 1 ? SliderBulletPointSelected : SliderBulletPoint}
-            alt={index === 1 ? "selected point" : "bullet point"}
-          />
-          <img
-            src={index === 2 ? SliderBulletPointSelected : SliderBulletPoint}
-            alt={index === 2 ? "selected point" : "bullet point"}
-          />
-          <img
-            src={index === 3 ? SliderBulletPointSelected : SliderBulletPoint}
-            alt={index === 3 ? "selected point" : "bullet point"}
-          />
-          <img
-            src={index === 4 ? SliderBulletPointSelected : SliderBulletPoint}
-            alt={index === 4 ? "selected point" : "bullet point"}
-          />
+          {array.map((object, i) => (
+            <img
+              key={object}
+              src={index === i ? SliderBulletPointSelected : SliderBulletPoint}
+              alt={index === i ? "selected point" : "bullet point"}
+            />
+          ))}
         </div>
         <div className="placeholder-nav">
           <img src={PlaceholderNav} alt="placeholder" />

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import EatOutSliderCard from "components/molecules/EatOutSliderCard/EatOutSliderCard/";
 import PropTypes from "prop-types";
 
-export const EatOutHeroSlider = (data) => {
+const EatOutHeroSlider = (data) => {
   const restaurantsData = data.data;
 
   const [index, setIndex] = useState(0);
@@ -32,10 +32,11 @@ export const EatOutHeroSlider = (data) => {
 };
 
 EatOutHeroSlider.propTypes = {
-  data: PropTypes.array.shape({
-    slogan: PropTypes.string,
-    image: PropTypes.string,
-    description: PropTypes.string,
-    name: PropTypes.string,
-  }),
+  data: PropTypes.array,
+  slogan: PropTypes.string,
+  image: PropTypes.string,
+  description: PropTypes.string,
+  name: PropTypes.string,
 };
+
+export default EatOutHeroSlider;
