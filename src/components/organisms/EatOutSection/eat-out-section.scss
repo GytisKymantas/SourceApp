@@ -1,0 +1,17 @@
+.eat-out-section {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    padding-bottom: 72px;
+
+    .view-eat-out-card {
+        width: 416px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .eat-out-section {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

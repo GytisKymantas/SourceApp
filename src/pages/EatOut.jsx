@@ -1,7 +1,8 @@
 import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import { FoodCategoriesSection } from "components/molecules/FoodCategoriesSection/FoodCategoriesSection";
 import React from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
+import { SliderArrows } from "components/atoms/SliderArrows/SliderArrows";
 
 export const EatOut = ({ data }) => {
   const restaurantsData = data?.restaurants;
@@ -17,6 +18,7 @@ export const EatOut = ({ data }) => {
       {restaurantsData && (
         <FoodCategoriesSection restaurantsData={restaurantsData} />
       )}
+      <SliderArrows></SliderArrows>
     </MainLayout>
   );
 };
