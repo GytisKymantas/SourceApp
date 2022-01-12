@@ -33,8 +33,31 @@ export const Dashboard = ({ data, restaurantsInfo }) => {
     <MainLayout>
       <GreetingSection name={firstName} />
       <ReservationsSection reservationData={reservationData} />
+<<<<<<< HEAD
       {restaurantsInfo && <EatOutSection data={restaurantsInfo} />}
       {storiesData && <StoriesSection data={storiesData} />}
+=======
+      {restaurantCardData && (
+        <RestaurantCard
+          displayFullCard
+          numberOfCheckIns={restaurantCardData.checkIns}
+          restaurantName={restaurantCardData.name}
+          restaurantWebsite={restaurantCardData.website}
+          restaurantAddress={restaurantCardData.location.address}
+          restaurantOpeningHours={restaurantCardData.openingHours[0].hours}
+          restaurantDescription={restaurantCardData.description}
+          restaurantCategories={restaurantCardData.categories}
+          restaurantImage={restaurantCardData.image}
+          restaurantAverageRating={restaurantCardData.reviews.map(
+            (review) => review.rating
+          )}
+        />
+      )}
+      <ViewEatOutCard />
+      {storiesData && (
+        <StoriesSection storiesData={storiesData} userData={userData} />
+      )}
+>>>>>>> dev
     </MainLayout>
   );
 };
