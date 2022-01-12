@@ -3,35 +3,61 @@
 $inherit: inherit;
 
 .reservations-section {
-    display: flex;
-    flex-direction: column;
     gap: 27px;
+    justify-content: center;
     padding-bottom: 72px;
     width: 100%;
 
     &__header {
-        display: flex;
         font-size: $font-size-large;
         font-weight: $font-weight-heavy;
-        line-height: 32px;
     }
 
     &__element-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 48px;
-        justify-content: space-around;
-
-        @media (max-width: 400px) {
-            gap: 24px;
-        }
+        display: grid;
+        grid-gap: 50px;
+        grid-template-areas: 'a1 a2 a3';
+        grid-template-columns: repeat(3, 1fr);
+        transition: 0.4s;
     }
 
     &__element {
         color: $inherit;
-        flex: 1 0 20%;
-        max-width: 416px;
         min-width: 280px;
         text-decoration: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .reservations-section__element-container {
+        grid-template-areas: 'a1 a1 a1 a1 a1 a1 a2 a2 a2 a2 a2 a2' '. . . b b b b b b . . .';
+        grid-template-columns: repeat(12, 1fr);
+
+        @for $i from 1 through 2 {
+            :nth-child(#{$i}) {
+                grid-area: a#{$i};
+            }
+
+            :nth-child(3) {
+                grid-area: b;
+            }
+        }
+    }
+
+    @media (max-width: 680px) {
+        .reservations-section__element-container {
+            grid-gap: 20px;
+            grid-template-areas: 'a1' 'a2' 'a3';
+            grid-template-columns: 1fr;
+
+            @for $i from 1 through 3 {
+                :nth-child(#{$i}) {
+                    grid-area: a#{$i};
+                }
+            }
+            margin: auto;
+            max-width: 416px;
+        }
     }
 }
