@@ -8,25 +8,23 @@ import Moment from "moment";
 import { Button } from "../../atoms/Button/Button";
 import "./news-feed-card.scss";
 
-export const NewsFeedCard = (data, userData) => {
+export const NewsFeedCard = ({ data, userData }) => {
   Moment.locale("en");
-
-  const postNews = data?.data;
-  let {
+  const postNews = data;
+  const {
     userName,
     userImage,
     postImage,
     postLocation,
     postDate,
     comments,
-    likes,
     postVideo,
   } = postNews;
+  let { likes } = postNews;
 
-  // const currentUserImage = userData?.userImage;
-  // const currentUserName = userData?.userName;
+  const currentUserImage = userData?.userImage;
+  const currentUserName = userData?.userName;
   const [like, setLike] = useState(false);
-
   const handleLikeClick = () => {
     setLike((prevValue) => !prevValue);
   };
@@ -36,8 +34,7 @@ export const NewsFeedCard = (data, userData) => {
 
   const handleCommentSubmit = () => {
     const userComment = {
-      // userName: currentUserName,
-      userName: "You",
+      userName: currentUserName,
       comment: commentValue,
       date: Moment(new Date()).format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
     };
@@ -79,25 +76,15 @@ export const NewsFeedCard = (data, userData) => {
           >
             <track kind="captions" type="video/mp4"></track>
           </video>
-          {playing ? (
+          {
             <img
-              className="video--pause"
-              onClick={() => videoHandler("pause")}
-              onKeyDown={() => videoHandler("pause")}
+              className={playing ? "video--pause" : "video--play"}
+              onClick={() => videoHandler(playing ? "pause" : "play")}
               src={playIcon}
               alt=""
               role="presentation"
             />
-          ) : (
-            <img
-              className="video--play"
-              onClick={() => videoHandler("play")}
-              onKeyDown={() => videoHandler("play")}
-              src={playIcon}
-              alt=""
-              role="presentation"
-            />
-          )}
+          }
         </div>
       ) : (
         <img className="card__content-image" src={postImage} alt="" />
@@ -146,7 +133,7 @@ export const NewsFeedCard = (data, userData) => {
           <div className="comment_input-content">
             <img
               className="user__icon"
-              src={userImage}
+              src={currentUserImage}
               alt="your profile icon"
             />
             <input
@@ -180,4 +167,5 @@ NewsFeedCard.propTypes = {
   likes: PropTypes.number,
   postVideo: PropTypes.string,
   userData: PropTypes.object,
+  data: PropTypes.object,
 };
