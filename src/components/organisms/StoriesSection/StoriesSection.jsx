@@ -11,7 +11,9 @@ export const StoriesSection = ({ storiesData, userData }) => {
   );
   return (
     <div className="section">
-      {birthdays && <EventCard data={birthdays[0]} />}
+      {birthdays && (
+        <EventCard storiesData={birthdays[0]} userData={userData} />
+      )}
       <NewsFeedCard data={postNews[7]} userData={userData} />
     </div>
   );
