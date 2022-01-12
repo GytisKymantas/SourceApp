@@ -2,9 +2,9 @@ import React from "react";
 import SliderBulletPoint from "../../../assets/SliderBulletPoint.svg";
 import SliderBulletPointSelected from "../../../assets/SliderBulletPointSelected.svg";
 import { Button } from "components/atoms/Button/Button";
-import PlaceholderNav from "../../../assets/PlaceholderNav.svg";
 import PropTypes from "prop-types";
 import TextTruncate from "react-text-truncate";
+import { SliderArrows } from "components/atoms/SliderArrows/SliderArrows";
 
 import "./eat-out-slider.scss";
 
@@ -21,10 +21,6 @@ const EatOutSliderCard = ({
   handleImageClick,
 }) => (
   <div className="slider__container">
-    <div className="placeholder-buttons">
-      <button onClick={handleCardLeft}> - </button>
-      <button onClick={handleCardRight}> + </button>
-    </div>
     <div
       className="slider__image-wrapper"
       onClick={handleImageClick}
@@ -48,7 +44,7 @@ const EatOutSliderCard = ({
           ))}
         </div>
         <div className="placeholder-nav">
-          <img src={PlaceholderNav} alt="placeholder" />
+          <SliderArrows />
         </div>
       </div>
       <span className="text-slogan">{restaurantSloganProp}</span>
