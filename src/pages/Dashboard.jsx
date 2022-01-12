@@ -53,7 +53,9 @@ export const Dashboard = ({ data, restaurantsInfo }) => {
         />
       )}
       <ViewEatOutCard />
-      {storiesData && <StoriesSection data={storiesData} />}
+      {storiesData && (
+        <StoriesSection storiesData={storiesData} userData={userData} />
+      )}
     </MainLayout>
   );
 };

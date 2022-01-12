@@ -2,17 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 import { EventCard } from "components/molecules/EventCard/EventCard.jsx";
 
-export const StoriesSection = ({ data }) => {
-  const storiesData = data?.stories;
-  const birthdays = storiesData?.filter((story) => story.type === "birthday");
+export const StoriesSection = ({ storiesData, userData }) => {
+  const stories = storiesData?.stories;
+  const birthdays = stories?.filter((story) => story.type === "birthday");
 
   return (
     <div className="section">
-      {birthdays && <EventCard data={birthdays[0]} />}
+      {birthdays && (
+        <EventCard storiesData={birthdays[0]} userData={userData} />
+      )}
     </div>
   );
 };
 
 StoriesSection.propTypes = {
-  data: PropTypes.object,
+  storiesData: PropTypes.object,
+  userData: PropTypes.object,
 };
