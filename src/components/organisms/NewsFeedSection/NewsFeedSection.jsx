@@ -7,18 +7,12 @@ import { NewsFeedCard } from "../../molecules/NewsFeedCard/NewsFeedCard.jsx";
 export const NewsFeedSection = ({ data, userData }) => {
   const storiesData = data?.stories;
   const storiesAmount = storiesData?.length;
-  const postNews = storiesData?.filter(
-    (postCard) =>
-      postCard.type === "post" || ("video" && postCard.type !== "birthday")
-  );
   const storiesPerColumn = Math.ceil(storiesAmount / 3);
   const columnData = [
     storiesData?.slice(0, storiesPerColumn),
     storiesData?.slice(storiesPerColumn, storiesPerColumn * 2),
     storiesData?.slice(storiesPerColumn * 2),
   ];
-  // userData ? console.log(userData) : console.log("");
-  // storiesData ? console.log(storiesData) : console.log("");
 
   return (
     <div className="news-section-container">
@@ -29,11 +23,11 @@ export const NewsFeedSection = ({ data, userData }) => {
             {col.map((card) =>
               card.type === "birthday" ? (
                 <div className="news-section__column__event-card" key={card.id}>
-                  {<EventCard data={card} />}
+                  <EventCard data={card} />
                 </div>
               ) : (
                 <div className="news-section__column__news-post" key={card.id}>
-                  <NewsFeedCard data={postNews[7]} userData={userData} />
+                  <NewsFeedCard data={card} userData={userData} />
                 </div>
               )
             )}

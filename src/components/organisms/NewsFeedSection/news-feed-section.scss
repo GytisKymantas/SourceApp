@@ -8,7 +8,7 @@
 .news-section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 10px;
 
     &__header {
@@ -19,17 +19,14 @@
     }
 
     &__column {
-        flex: 1 1 150px;
         margin: 5px;
 
         &__news-post {
-            // height: 662px;
-            margin: 20px;
-            // width: 400px;
+            margin: 37px 20px 36px;
         }
 
         &__event-card {
-            margin: 60px 18px 10px;
+            margin: 60px 20px 10px;
         }
     }
 }
