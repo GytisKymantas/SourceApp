@@ -10,7 +10,6 @@ export * from "./molecules/ProfileWidget/index";
 export * from "./molecules/Navigation/index";
 export * from "./molecules/GreetingSection/index";
 export * from "./molecules/EventCard/index";
-export * from "./molecules/NewsFeedCard/index";
 
 // ----- ORGANISMS ----- //
 
