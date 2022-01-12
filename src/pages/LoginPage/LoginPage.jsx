@@ -31,7 +31,6 @@ export const LoginPage = ({ setIsLoggedIn }) => {
       emailFromStorage,
       passwordFromStorage,
     } = retrieveFromSessionStorage();
-
     if (
       canSubmit &&
       email === emailFromStorage &&
