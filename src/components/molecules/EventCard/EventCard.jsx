@@ -7,31 +7,31 @@ import { ReactComponent as PresentIconColor } from "../../../assets/presentIconC
 import { ReactComponent as CommentIcon } from "../../../assets/commentIcon.svg";
 import { Button } from "../../atoms/Button/Button";
 import Moment from "moment";
+import PropTypes from "prop-types";
+
 import "./event-card.scss";
 
-export const EventCard = (data) => {
+export const EventCard = ({ storiesData, userData }) => {
   Moment.locale("en");
-  const eventData = data?.data;
-  let wishes = eventData.wishes;
-  const { comments, userName, birthdayDate, userImage } = eventData;
+  let wishes = storiesData.wishes;
+  const { comments, userName, birthdayDate, userImage } = storiesData;
+  const currentUserImage = userData?.userImage;
+  const currentUserName = userData?.userName;
   const isToday =
     Moment(new Date()).format("MMM Do") ===
     Moment(birthdayDate).format("MMM Do");
 
   const [present, setPresent] = useState(false);
-  const [showComments, setShowComments] = useState(false);
   const [commentValue, setCommentValue] = useState("");
   const [coms, setComs] = useState(comments);
 
   const handlePresentClick = () => {
     setPresent((prevValue) => !prevValue);
   };
-  const handleCommentClick = () => {
-    setShowComments((prevValue) => !prevValue);
-  };
+
   const handleCommentSubmit = () => {
     const userComment = {
-      userName: "You",
+      userName: currentUserName,
       comment: commentValue,
       date: Moment(new Date()).format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
     };
@@ -85,45 +85,47 @@ export const EventCard = (data) => {
           <span className="card__icons-number">
             {present ? (wishes = wishes + 1) : wishes}
           </span>
-          <CommentIcon
-            className="card__icons-comment"
-            onClick={handleCommentClick}
-            onKeyDown={handleCommentClick}
-            aria-hidden="true"
-          />{" "}
-          <span className="card__icons-number">{coms?.length}</span>
+          <CommentIcon className="card__icons-comment" />
+          <span className="card__icons-number">{coms.length}</span>
         </div>
         <div>
-          {showComments && (
-            <div className="card--expanded">
-              <EventCardDivider className="card--expanded__divider" />
-              {coms?.map((item, index) => (
-                <div className="card--expanded__comments" key={index}>
-                  <div>
-                    <span>{item.userName}</span>
-                    <span>{Moment(item.date).format("MM/DD/YYYY HH:mm")}</span>
-                  </div>
-                  <span>{item.comment}</span>
+          <EventCardDivider className="comments-divider__top" />
+          <div className="comments-rows">
+            {coms.map((item, index) => (
+              <div className="comments-rows__comments-box" key={index}>
+                <div className="comments-rows__comments-box-one">
+                  <span>{item.userName}</span>
+                  <span>{Moment(item.date).format("MM/DD/YYYY HH:mm")}</span>
                 </div>
-              ))}
-              <div className="comments__box">
-                <textarea
-                  className="comments__box-input"
-                  value={commentValue}
-                  onInput={(e) => setCommentValue(e.target.value)}
-                  placeholder="Send a wish!"
-                />
-                <Button
-                  type="submit"
-                  label="Send"
-                  onClick={handleCommentSubmit}
-                  disabled={!commentValue.trim()}
-                />
+                <span>{item.comment}</span>
               </div>
+            ))}
+          </div>
+          <EventCardDivider className="comments-divider__bottom" />
+
+          <div className="comments__box">
+            <div className="comments__box-content">
+              <img src={currentUserImage} alt="your profile icon" />
+              <input
+                className="comments__box-input"
+                value={commentValue}
+                onInput={(e) => setCommentValue(e.target.value)}
+                placeholder="Send a wish!"
+              />
             </div>
-          )}
+            <Button
+              type="submit"
+              label="Send"
+              onClick={handleCommentSubmit}
+              disabled={!commentValue.trim()}
+            />
+          </div>
         </div>
       </div>
     </>
   );
+};
+EventCard.propTypes = {
+  storiesData: PropTypes.object,
+  userData: PropTypes.object,
 };
