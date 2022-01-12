@@ -5,6 +5,7 @@ $inherit: inherit;
 .food-categories-section {
     display: grid;
     max-width: 1440px;
+    padding-bottom: 72px;
 
     &__element-container {
         display: grid;
