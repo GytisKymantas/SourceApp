@@ -27,10 +27,8 @@ export const LoginPage = ({ setIsLoggedIn }) => {
 
     const canSubmit = isAllInputsFilled();
 
-    const {
-      emailFromStorage,
-      passwordFromStorage,
-    } = retrieveFromSessionStorage();
+    const { emailFromStorage, passwordFromStorage } =
+      retrieveFromSessionStorage();
     if (
       canSubmit &&
       email === emailFromStorage &&
