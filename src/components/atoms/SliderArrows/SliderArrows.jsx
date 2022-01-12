@@ -9,17 +9,11 @@ export const SliderArrows = (props) => {
 
   return (
     <div className="container__slider--arrows">
-      <button className="btn__left">
-        <SliderArrowLeft
-          className="arrow__left"
-          onClick={() => onClickSlider("left")}
-        />
+      <button className="btn__left" onClick={() => onClickSlider("left")}>
+        <SliderArrowLeft className="arrow__left" />
       </button>
-      <button className="btn__right">
-        <SliderArrowRight
-          className="arrow__right"
-          onClick={() => onClickSlider("right")}
-        />
+      <button className="btn__right" onClick={() => onClickSlider("right")}>
+        <SliderArrowRight className="arrow__right" />
       </button>
     </div>
   );
