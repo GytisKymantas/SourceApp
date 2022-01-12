@@ -22,16 +22,14 @@ import PropTypes from "prop-types";
 
 export const FoodCategoriesSection = ({ restaurantsData }) => {
   let categories = [];
-  for (const restaurant in restaurantsData?.restaurants) {
-    for (const category in restaurantsData?.restaurants[restaurant]
-      .categories) {
+  for (const restaurant in restaurantsData) {
+    for (const category in restaurantsData[restaurant].categories) {
       categories = [
         ...categories,
-        restaurantsData?.restaurants[restaurant].categories[category],
+        restaurantsData[restaurant].categories[category],
       ];
     }
   }
-
   const counts = {};
   for (const num of categories) {
     counts[num] = counts[num] ? counts[num] + 1 : 1;
@@ -112,5 +110,5 @@ export const FoodCategoriesSection = ({ restaurantsData }) => {
   );
 };
 FoodCategoriesSection.propTypes = {
-  restaurantsData: PropTypes.object,
+  restaurantsData: PropTypes.array,
 };
