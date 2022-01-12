@@ -9,7 +9,7 @@ import { NotFound } from "pages/NotFound/NotFound";
 
 function App() {
   const [userData, setUserData] = useState();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [restaurantsData, setRestaurantsData] = useState();
 
   useEffect(() => {
