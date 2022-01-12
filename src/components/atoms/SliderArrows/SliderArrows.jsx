@@ -7,27 +7,18 @@ import "./sliderArrows.scss";
 export const SliderArrows = (props) => {
   const { onClickSlider } = props;
 
-  const handleClick = (onClickSlider) => {
-    onClickSlider = props;
-    // console.log(onClickSlider);
-  };
-
   return (
     <div className="container__slider--arrows">
       <button className="btn__left">
         <SliderArrowLeft
           className="arrow__left"
-          onClick={() => {
-            handleClick(onClickSlider + " Arrow Left");
-          }}
+          onClick={() => onClickSlider("left")}
         />
       </button>
       <button className="btn__right">
         <SliderArrowRight
           className="arrow__right"
-          onClick={() => {
-            handleClick(onClickSlider + " Arrow Right");
-          }}
+          onClick={() => onClickSlider("right")}
         />
       </button>
     </div>
