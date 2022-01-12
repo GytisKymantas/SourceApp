@@ -1,24 +1,16 @@
 import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import { FoodCategoriesSection } from "components/molecules/FoodCategoriesSection/FoodCategoriesSection";
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { PropTypes } from "prop-types";
 
-export const EatOut = () => {
-  const [restaurantsData, setRestaurantsData] = useState();
-  useEffect(() => {
-    fetch(
-      "http://frontendsourceryweb.s3-website.eu-central-1.amazonaws.com/restaurants.json"
-    )
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setRestaurantsData(result);
-        },
+export const EatOut = ({ data }) => {
+  const restaurantsData = data?.restaurants;
 
-        (error) => {
-          // handle error here
-        }
-      );
-  }, []);
+  // eslint-disable-next-line no-unused-vars
+  const sortedByDate = []
+    .concat(restaurantsData)
+    .sort((a, b) => (a.createdDate > b.createdDate ? -1 : 1))
+    .slice(0, 6);
 
   return (
     <MainLayout>
@@ -27,4 +19,8 @@ export const EatOut = () => {
       )}
     </MainLayout>
   );
+};
+
+EatOut.propTypes = {
+  data: PropTypes.object,
 };
