@@ -2,6 +2,7 @@ import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import React from "react";
 import PropTypes from "prop-types";
 import EatOutHeroSlider from "components/organisms/EatOutHeroSlider/EatOutHeroSlider";
+import { SliderArrows } from "components/atoms/SliderArrows/SliderArrows";
 
 export const EatOut = ({ data }) => {
   const restaurantsData = data?.restaurants;
@@ -16,6 +17,7 @@ export const EatOut = ({ data }) => {
     <MainLayout>
       <h1>Hungry? Find the best place!</h1>
       <EatOutHeroSlider data={restaurantsData} />
+      <SliderArrows />
     </MainLayout>
   );
 };

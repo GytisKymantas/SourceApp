@@ -1,0 +1,31 @@
+@import '../../../styles/base/base';
+
+.arrow__left,
+.arrow__right {
+    padding-top: 2px;
+}
+
+.btn__left {
+    background: none;
+    border: 1px solid;
+    border-bottom-left-radius: 5px;
+    border-color: $color-iron;
+    border-top-left-radius: 5px;
+    cursor: pointer;
+}
+
+.btn__right {
+    background: none;
+    border: 1px solid;
+    border-bottom-right-radius: 5px;
+    border-color: $color-iron;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    margin-left: -1px;
+}
+
+.btn__left:hover,
+.btn__right:hover {
+    background: $color-white;
+    transition: 0.5s;
+}
