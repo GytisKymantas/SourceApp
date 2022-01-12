@@ -1,12 +1,10 @@
 @import '../../../styles/base/base';
 
-.arrow__left,
-.arrow__right {
+.arrow {
     padding-top: 2px;
 }
 
-.btn__left,
-.btn__right {
+.btn {
     background: $color-white;
     border: 1px solid;
     border-color: $color-iron;
