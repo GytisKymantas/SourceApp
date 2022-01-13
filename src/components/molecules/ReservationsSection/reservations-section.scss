@@ -1,4 +1,5 @@
 @import '../../../styles/base/base';
+@import '../../../styles/mixins/index';
 
 $inherit: inherit;
 
@@ -14,6 +15,7 @@ $inherit: inherit;
     }
 
     &__element-container {
+        @include section-responsiveness;
         display: grid;
         grid-gap: 50px;
         grid-template-areas: 'a1 a2 a3';
@@ -30,38 +32,5 @@ $inherit: inherit;
         min-width: 280px;
         text-decoration: none;
         width: 100%;
-    }
-}
-
-@media (max-width: 1000px) {
-    .reservations-section__element-container {
-        grid-template-areas: 'a1 a1 a1 a1 a1 a1 a2 a2 a2 a2 a2 a2' '. . . b b b b b b . . .';
-        grid-template-columns: repeat(12, 1fr);
-
-        @for $i from 1 through 2 {
-            :nth-child(#{$i}) {
-                grid-area: a#{$i};
-            }
-
-            :nth-child(3) {
-                grid-area: b;
-            }
-        }
-    }
-
-    @media (max-width: 680px) {
-        .reservations-section__element-container {
-            grid-gap: 20px;
-            grid-template-areas: 'a1' 'a2' 'a3';
-            grid-template-columns: 1fr;
-
-            @for $i from 1 through 3 {
-                :nth-child(#{$i}) {
-                    grid-area: a#{$i};
-                }
-            }
-            margin: auto;
-            max-width: 416px;
-        }
     }
 }
