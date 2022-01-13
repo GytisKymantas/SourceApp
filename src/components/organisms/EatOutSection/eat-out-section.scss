@@ -1,17 +1,23 @@
+$inherit: inherit;
+@import '../../../styles/mixins/index';
+
 .eat-out-section {
-    display: flex;
-    gap: 50px;
-    justify-content: space-between;
+    @include section-responsiveness;
+    display: grid;
+    grid-gap: 50px;
+    grid-template-areas: 'a1 a2 a3';
+    grid-template-columns: repeat(3, 1fr);
     padding-bottom: 72px;
+    transition: 0.4s;
 
-    .view-eat-out-card {
-        width: 416px;
+    @media (max-width: 1200px) {
+        grid-gap: 25px;
     }
-}
 
-@media (max-width: 1150px) {
-    .eat-out-section {
-        flex-wrap: wrap;
-        justify-content: center;
+    &__element {
+        color: $inherit;
+        min-width: 280px;
+        text-decoration: none;
+        width: 100%;
     }
 }
