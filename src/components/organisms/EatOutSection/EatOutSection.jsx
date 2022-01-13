@@ -19,13 +19,14 @@ export const EatOutSection = (data) => {
     });
     bestRatedArray.sort((a, b) => (b.averageRating < a.averageRating ? 1 : -1));
   }
-  const twoBestRatedArray = bestRatedArray.slice(18, 20);
+  const twoBestRatedArray = bestRatedArray.slice(18, 20).reverse();
 
   return (
     <div className="eat-out-section">
-      <ViewEatOutCard />
+      <ViewEatOutCard className="eat-out-section__element" />
       {twoBestRatedArray.map((restaurant) => (
         <RestaurantCard
+          className="eat-out-section__element"
           key={restaurant.id}
           displayFullCard={false}
           numberOfCheckIns={restaurant.checkIns}
