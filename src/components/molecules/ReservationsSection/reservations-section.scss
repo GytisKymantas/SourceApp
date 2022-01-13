@@ -3,7 +3,6 @@
 $inherit: inherit;
 
 .reservations-section {
-    gap: 27px;
     justify-content: center;
     padding-bottom: 72px;
     width: 100%;
@@ -11,6 +10,7 @@ $inherit: inherit;
     &__header {
         font-size: $font-size-large;
         font-weight: $font-weight-heavy;
+        margin-bottom: 48px;
     }
 
     &__element-container {
@@ -19,6 +19,10 @@ $inherit: inherit;
         grid-template-areas: 'a1 a2 a3';
         grid-template-columns: repeat(3, 1fr);
         transition: 0.4s;
+
+        @media (max-width: 1200px) {
+            grid-gap: 40px 25px;
+        }
     }
 
     &__element {
@@ -29,7 +33,7 @@ $inherit: inherit;
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
     .reservations-section__element-container {
         grid-template-areas: 'a1 a1 a1 a1 a1 a1 a2 a2 a2 a2 a2 a2' '. . . b b b b b b . . .';
         grid-template-columns: repeat(12, 1fr);
