@@ -29,6 +29,7 @@ export const Header = () => {
       <div
         className="header__logo"
         role="button"
+        aria-label="Go to Dashboard"
         tabIndex="0"
         onClick={handleLogoClick}
         onKeyDown={handleLogoClick}
