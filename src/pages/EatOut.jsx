@@ -18,7 +18,7 @@ export const EatOut = ({ data }) => {
       {restaurantsData && (
         <FoodCategoriesSection restaurantsData={restaurantsData} />
       )}
-      <SliderArrows></SliderArrows>
+      <SliderArrows />
     </MainLayout>
   );
 };
