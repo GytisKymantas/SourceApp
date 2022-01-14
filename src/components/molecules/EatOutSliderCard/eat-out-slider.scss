@@ -86,6 +86,10 @@
     }
 }
 
+.hidden-two {
+    display: none;
+}
+
 @media (max-width: 750px) {
     .slider__container {
         border-radius: 0;
@@ -97,6 +101,18 @@
 
     p {
         height: 42px;
+    }
+
+    .hidden-one {
+        display: none;
+    }
+
+    .hidden-two {
+        display: block;
+    }
+
+    .slider__image-wrapper--hidden {
+        display: contents;
     }
 
     .slider-text__wrapper .top-navigation {

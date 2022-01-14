@@ -21,7 +21,13 @@ const EatOutSliderCard = ({
 }) => (
   <div className="slider__container">
     <div
-      className="slider__image-wrapper"
+      className="slider__image-wrapper hidden-one"
+      style={{
+        background: `linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%),url(${restaurantImageProp})`,
+      }}
+    ></div>
+    <div
+      className="slider__image-wrapper hidden-two"
       onClick={handleImageClick}
       onKeyPress={handleImageClick}
       role={"switch"}
