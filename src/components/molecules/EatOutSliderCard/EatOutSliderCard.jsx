@@ -42,7 +42,7 @@ const EatOutSliderCard = ({
             />
           ))}
         </div>
-        <div className="placeholder-nav">
+        <div className="arrow-nav">
           <SliderArrows props={handleCard} />
         </div>
       </div>

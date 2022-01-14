@@ -39,6 +39,7 @@
 .slider-text__wrapper {
     align-items: flex-start;
     background: $color-white;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,21 +88,23 @@
 
 @media (max-width: 750px) {
     .slider__container {
+        border-radius: 0;
         display: inline-block;
         height: 483px;
         position: relative;
         width: 100%;
     }
+
     p {
         height: 42px;
     }
-    .placeholder-nav {
-        display: none;
+
+    .slider-text__wrapper .top-navigation {
+        justify-content: center;
     }
-    .placeholder-buttons {
-        display: none;
-    }
-    .slider__image-wrapper {
+
+    .slider__container .slider__image-wrapper {
+        border-radius: 0;
         height: 225px;
         width: 100%;
     }
@@ -117,13 +120,7 @@
         }
     }
 
-    .slider-text__wrapper .top-navigation {
-        justify-content: center;
-    }
-
-    .placeholder-nav {
-        left: 0;
-        position: absolute;
-        top: 0;
+    .arrow-nav {
+        display: none;
     }
 }
