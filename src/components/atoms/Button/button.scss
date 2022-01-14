@@ -51,11 +51,9 @@ $_color-violet-dark: #462ca3;
         padding: 12px 24px;
 
         &:hover {
-            filter: brightness(1.1);
         }
 
         &:active {
-            opacity: 0.8;
         }
     }
 
@@ -68,7 +66,11 @@ $_color-violet-dark: #462ca3;
         background: $color-watermelon;
 
         &:hover {
-            background: $color-watermelon;
+            background: darken($color-watermelon, 20%);
+        }
+
+        &:active {
+            background: darken($color-watermelon, 40%);
         }
     }
 }
