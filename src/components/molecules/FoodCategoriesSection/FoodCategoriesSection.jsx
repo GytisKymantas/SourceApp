@@ -90,6 +90,7 @@ export const FoodCategoriesSection = ({ restaurantsData }) => {
                   categoryInfo={`${name[1]}
                     ${name[1] % 10 === 1 ? "PLACE" : "PLACES"}`}
                   categoryImage={imageMatcher(name[0].toLowerCase())}
+                  isFood={true}
                   key={index}
                 />
               </Link>

@@ -14,7 +14,6 @@ export const CategoryItem = ({
       <h2>{categoryName}</h2>
       <p>{categoryInfo}</p>
     </div>
-
     <div
       className={classNames("category-item__image-wrapper", {
         "category-item__image-wrapper--onRight": isFood,
@@ -29,7 +28,7 @@ export const CategoryItem = ({
   </div>
 );
 CategoryItem.defaultProps = {
-  isFood: true,
+  isFood: false,
 };
 CategoryItem.propTypes = {
   categoryImage: PropTypes.string,
