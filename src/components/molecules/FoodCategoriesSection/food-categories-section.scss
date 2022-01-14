@@ -20,7 +20,7 @@ $inherit: inherit;
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 680px) {
             grid-gap: 1rem;
         }
 
