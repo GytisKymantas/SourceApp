@@ -34,9 +34,9 @@ const EatOutSliderCard = ({
     <div className="slider-text__wrapper">
       <div className="top-navigation">
         <div className="bullets">
-          {array.map((object, i) => (
+          {array.map((bulletImg, i) => (
             <img
-              key={object}
+              key={bulletImg}
               src={index === i ? SliderBulletPointSelected : SliderBulletPoint}
               alt={index === i ? "selected point" : "bullet point"}
             />
