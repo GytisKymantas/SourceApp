@@ -1,7 +1,6 @@
 import React from "react";
 import "./food-categories-section.scss";
 import { Link } from "react-router-dom";
-
 import { CategoryItem } from "components/atoms/CategoryItem/CategoryItem";
 import Bread from "../../../assets/bread.svg";
 import Breakfast from "../../../assets/breakfast.svg";
@@ -40,12 +39,6 @@ export const FoodCategoriesSection = ({ restaurantsData }) => {
     return path.concat(item);
   };
 
-  const nameMatcher = (name) => {
-    switch (name) {
-      default:
-        return name;
-    }
-  };
   const imageMatcher = (image) => {
     switch (image) {
       case "burger":
@@ -95,7 +88,7 @@ export const FoodCategoriesSection = ({ restaurantsData }) => {
                 >
                   <CategoryItem
                     className="food-categories-section__element-content"
-                    categoryName={nameMatcher(name[0])}
+                    categoryName={name[0]}
                     categoryInfo={`${name[1]}
                     ${name[1] % 10 === 1 ? "PLACE" : "PLACES"}`}
                     categoryImage={imageMatcher(name[0].toLowerCase())}
