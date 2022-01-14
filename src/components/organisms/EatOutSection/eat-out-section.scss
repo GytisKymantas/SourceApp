@@ -8,11 +8,4 @@ $inherit: inherit;
     @media (max-width: 1200px) {
         grid-gap: 25px;
     }
-
-    &__element {
-        color: $inherit;
-        min-width: 280px;
-        text-decoration: none;
-        width: 100%;
-    }
 }

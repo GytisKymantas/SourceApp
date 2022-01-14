@@ -23,10 +23,9 @@ export const EatOutSection = (data) => {
 
   return (
     <div className="eat-out-section">
-      <ViewEatOutCard className="eat-out-section__element" />
+      <ViewEatOutCard />
       {twoBestRatedArray.map((restaurant) => (
         <RestaurantCard
-          className="eat-out-section__element"
           key={restaurant.id}
           displayFullCard={false}
           numberOfCheckIns={restaurant.checkIns}
