@@ -8,13 +8,9 @@ const EatOutHeroSlider = (data) => {
   const [index, setIndex] = useState(0);
 
   const handleCard = (e) => {
-    if (e === "right") {
-      setIndex(index === 4 ? 4 : index + 1);
-    } else if (e === "left") {
-      setIndex(index === 0 ? 0 : index - 1);
-    } else {
-      setIndex(index === 4 ? index - 4 : index + 1);
-    }
+    e === "right"
+      ? setIndex(index === 4 ? 4 : index + 1)
+      : setIndex(index === 0 ? 0 : index - 1);
   };
   useEffect(() => {
     const timeout = setTimeout(
