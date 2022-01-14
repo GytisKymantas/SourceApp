@@ -79,24 +79,21 @@ export const FoodCategoriesSection = ({ restaurantsData }) => {
       <h2 className="food-categories-section__header">Categories</h2>
       <div className="food-categories-section__element-container">
         {counts
-          ? Object.entries(counts).map((name, index) => {
-              return (
-                <Link
-                  key={index}
-                  className="food-categories-section__element"
-                  to={getPath(name[0].toLowerCase())}
-                >
-                  <CategoryItem
-                    className="food-categories-section__element-content"
-                    categoryName={name[0]}
-                    categoryInfo={`${name[1]}
+          ? Object.entries(counts).map((name, index) => (
+              <Link
+                key={index}
+                className="food-categories-section__element"
+                to={getPath(name[0].toLowerCase())}
+              >
+                <CategoryItem
+                  categoryName={name[0]}
+                  categoryInfo={`${name[1]}
                     ${name[1] % 10 === 1 ? "PLACE" : "PLACES"}`}
-                    categoryImage={imageMatcher(name[0].toLowerCase())}
-                    key={index}
-                  />
-                </Link>
-              );
-            })
+                  categoryImage={imageMatcher(name[0].toLowerCase())}
+                  key={index}
+                />
+              </Link>
+            ))
           : null}
       </div>
     </div>
