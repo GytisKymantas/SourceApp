@@ -16,8 +16,7 @@ const EatOutSliderCard = ({
   restaurantImageProp,
   restaurantDescriptionProp,
   index,
-  handleCardRight,
-  handleCardLeft,
+  handleCard,
   handleImageClick,
 }) => (
   <div className="slider__container">
@@ -44,7 +43,7 @@ const EatOutSliderCard = ({
           ))}
         </div>
         <div className="placeholder-nav">
-          <SliderArrows />
+          <SliderArrows props={handleCard} />
         </div>
       </div>
       <span className="text-slogan">{restaurantSloganProp}</span>
@@ -70,8 +69,7 @@ EatOutSliderCard.propTypes = {
   restaurantImageProp: PropTypes.string,
   restaurantSloganProp: PropTypes.string,
   index: PropTypes.number,
-  handleCardRight: PropTypes.func,
-  handleCardLeft: PropTypes.func,
+  handleCard: PropTypes.func,
   handleImageClick: PropTypes.func,
 };
 

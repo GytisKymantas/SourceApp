@@ -7,11 +7,10 @@ const EatOutHeroSlider = (data) => {
 
   const [index, setIndex] = useState(0);
 
-  const handleCardRight = () => {
-    setIndex(index === 4 ? 4 : index + 1);
-  };
-  const handleCardLeft = () => {
-    setIndex(index === 0 ? 0 : index - 1);
+  const handleCard = (e) => {
+    e === "right"
+      ? setIndex(index === 4 ? 4 : index + 1)
+      : setIndex(index === 0 ? 0 : index - 1);
   };
   const handleImageClick = () => {
     setIndex(index === 4 ? index - 4 : index + 1);
@@ -26,8 +25,7 @@ const EatOutHeroSlider = (data) => {
           restaurantDescriptionProp={restaurantsData[index].description}
           restaurantNameProp={restaurantsData[index].name}
           index={index}
-          handleCardLeft={handleCardLeft}
-          handleCardRight={handleCardRight}
+          handleCard={handleCard}
           handleImageClick={handleImageClick}
         />
       )}

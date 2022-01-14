@@ -5,7 +5,7 @@ import { ReactComponent as SliderArrowRight } from "../../../assets/sliderArrowR
 import "./sliderArrows.scss";
 
 export const SliderArrows = (props) => {
-  const { onClickSlider } = props;
+  const onClickSlider = props.props;
 
   return (
     <div className="container__slider--arrows">
@@ -20,5 +20,5 @@ export const SliderArrows = (props) => {
 };
 
 SliderArrows.propTypes = {
-  onClickSlider: PropTypes.func,
+  props: PropTypes.func,
 };
