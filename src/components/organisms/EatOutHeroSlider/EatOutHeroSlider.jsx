@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useEffect } from "react";
 import EatOutSliderCard from "components/molecules/EatOutSliderCard/EatOutSliderCard/";
 import PropTypes from "prop-types";
 
@@ -8,10 +8,23 @@ const EatOutHeroSlider = (data) => {
   const [index, setIndex] = useState(0);
 
   const handleCard = (e) => {
-    e === "right"
-      ? setIndex(index === 4 ? 4 : index + 1)
-      : setIndex(index === 0 ? 0 : index - 1);
+    if (e === "right") {
+      setIndex(index === 4 ? 4 : index + 1);
+    } else if (e === "left") {
+      setIndex(index === 0 ? 0 : index - 1);
+    } else {
+      setIndex(index === 4 ? index - 4 : index + 1);
+    }
   };
+  useEffect(() => {
+    const timeout = setTimeout(
+      () => setIndex(index === 4 ? index - 4 : index + 1),
+      5000
+    );
+
+    return () => clearTimeout(timeout);
+  }, [index]);
+
   const handleImageClick = () => {
     setIndex(index === 4 ? index - 4 : index + 1);
   };
