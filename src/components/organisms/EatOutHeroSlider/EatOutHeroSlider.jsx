@@ -6,6 +6,9 @@ const EatOutHeroSlider = (data) => {
   const restaurantsData = data.data;
 
   const [index, setIndex] = useState(0);
+  const handleImageClick = () => {
+    setIndex(index === 4 ? index - 4 : index + 1);
+  };
 
   const handleCard = (e) => {
     e === "right"
@@ -20,10 +23,6 @@ const EatOutHeroSlider = (data) => {
 
     return () => clearTimeout(timeout);
   }, [index]);
-
-  const handleImageClick = () => {
-    setIndex(index === 4 ? index - 4 : index + 1);
-  };
 
   return (
     <Fragment>
