@@ -1,56 +1,24 @@
-import React, { useState, useEffect, useCallback, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+
+const mockData = {
+  location: "",
+  recruitingStatus: "",
+  organization: "",
+  starts: "",
+  locations: [
+    { latitude: "44.500000", longitude: "89.500000" },
+    { latitude: "39.913818", longitude: "116.363625" },
+    { latitude: "1.290270", longitude: "103.851959" },
+    { latitude: "35.652832", longitude: "139.839478" },
+  ],
+};
 
 // Component finds single closest location from 'mockData'
 export const EatoutNearYouSection = ({ restaurantsData }) => {
   const [locationPosition, setLocationPosition] = useState({});
+  // eslint-disable-next-line no-unused-vars
   const [finalInfo, setFinalInfo] = useState({});
-
-  const mockData = useMemo(() => {
-    return {
-      location: "",
-      recruitingStatus: "",
-      organization: "",
-      starts: "",
-      locations: [
-        { latitude: "44.500000", longitude: "89.500000" },
-        { latitude: "39.913818", longitude: "116.363625" },
-        { latitude: "1.290270", longitude: "103.851959" },
-        { latitude: "35.652832", longitude: "139.839478" },
-      ],
-    };
-  }, []);
-
-  // GetFinalLocation returns an index of the shortest distance
-  const locationTotal = mockData.locations.length;
-  const getFinalLocation = useCallback(() => {
-    if (mockData && locationTotal >= 1) {
-      // Creating an array with distances
-      const locationLatitude = mockData.locations.map((el) => el.latitude);
-      const locationLongitude = mockData.locations.map((el) => el.longitude);
-      const distanceArray = locationLatitude.map((lat, idx) => {
-        const log = locationLongitude[idx];
-        return distance(
-          locationPosition.defaultLatitude,
-          locationPosition.defaultLongitude,
-          lat,
-          log
-        );
-      });
-
-      // Finding the shortest distance, getting it's index
-      // then displaying this value from mockData
-      const closest = Math.min(...distanceArray);
-      const closestLocationIndex = distanceArray.indexOf(closest);
-      return mockData.locations[closestLocationIndex];
-    }
-    return {};
-  }, [
-    mockData,
-    locationPosition.defaultLatitude,
-    locationPosition.defaultLongitude,
-    locationTotal,
-  ]);
 
   useEffect(() => {
     if (!navigator.geolocation) {
@@ -65,20 +33,6 @@ export const EatoutNearYouSection = ({ restaurantsData }) => {
       });
     }
   }, []);
-
-  useEffect(() => {
-    const finalLocationInfo = getFinalLocation();
-
-    setFinalInfo({
-      ...finalLocationInfo,
-      locationAdress: `${finalLocationInfo.city},
-                        ${finalLocationInfo.stateProvince},
-                        ${finalLocationInfo.country}`,
-
-      recruitmentStatus: finalLocationInfo.recruitmentStatus,
-      organisationAdress: finalLocationInfo.name,
-    });
-  }, [getFinalLocation]);
 
   const distance = (lat1, lon1, lat2, lon2, name) => {
     const radlat1 = (Math.PI * lat1) / 180;
@@ -104,7 +58,47 @@ export const EatoutNearYouSection = ({ restaurantsData }) => {
     return dist;
   };
 
-  return <div>{finalInfo ? finalInfo : ""}</div>;
+  useEffect(() => {
+    // GetFinalLocation returns an index of the shortest distance
+    const locationTotal = mockData.locations.length;
+    const getFinalLocation = () => {
+      if (mockData && locationTotal >= 1) {
+        // Creating an array with distances
+        const locationLatitude = mockData.locations.map((el) => el.latitude);
+        const locationLongitude = mockData.locations.map((el) => el.longitude);
+        const distanceArray = locationLatitude.map((lat, idx) => {
+          const log = locationLongitude[idx];
+          return distance(
+            locationPosition.defaultLatitude,
+            locationPosition.defaultLongitude,
+            lat,
+            log
+          );
+        });
+
+        // Finding the shortest distance, getting it's index
+        // then displaying this value from mockData
+        const closest = Math.min(...distanceArray);
+        const closestLocationIndex = distanceArray.indexOf(closest);
+        return mockData.locations[closestLocationIndex];
+      }
+      return {};
+    };
+
+    const finalLocationInfo = getFinalLocation();
+
+    setFinalInfo({
+      ...finalLocationInfo,
+      locationAdress: `${finalLocationInfo.city},
+                      ${finalLocationInfo.stateProvince},
+                      ${finalLocationInfo.country}`,
+
+      recruitmentStatus: finalLocationInfo.recruitmentStatus,
+      organisationAdress: finalLocationInfo.name,
+    });
+  }, [locationPosition.defaultLatitude, locationPosition.defaultLongitude]);
+
+  return <div></div>;
 };
 
 EatoutNearYouSection.propTypes = {
