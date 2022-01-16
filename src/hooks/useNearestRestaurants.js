@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 // and returns an index array if data is fetched, if not - returns null
 export const useNearestRestaurants = (restaurantsData) => {
   const [locationPosition, setLocationPosition] = useState({});
-  const closestLocationIndeces = [];
+  const closestLocationIndices = [];
 
   // Get users current location
   useEffect(() => {
@@ -62,19 +62,19 @@ export const useNearestRestaurants = (restaurantsData) => {
         lon
       );
     });
-    // Finding the shortest distances, getting their indeces
+    // Finding the shortest distances, getting their indices
     // and returning the index array
     const closestDistances = [];
     if (distanceArray.length) {
       for (let i = 0; i < 6; i++) {
         closestDistances[i] = Math.min(...distanceArray);
-        closestLocationIndeces[i] = distanceArray.indexOf(closestDistances[i]);
+        closestLocationIndices[i] = distanceArray.indexOf(closestDistances[i]);
         distanceArray[distanceArray.indexOf(closestDistances[i])] = Infinity;
       }
     }
-    return closestLocationIndeces;
+    return closestLocationIndices;
   };
   if (getFinalLocation().includes(-1)) return null;
 
-  return closestLocationIndeces;
+  return closestLocationIndices;
 };
