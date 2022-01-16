@@ -1,18 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { EventCard } from "components/molecules/EventCard/EventCard.jsx";
-
-export const StoriesSection = ({ data }) => {
-  const storiesData = data?.stories;
-  const birthdays = storiesData?.filter((story) => story.type === "birthday");
-
+import { NewsFeedCard } from "../../molecules/NewsFeedCard/NewsFeedCard.jsx";
+export const StoriesSection = ({ storiesData, userData }) => {
+  const stories = storiesData?.stories;
+  const birthdays = stories?.filter((story) => story.type === "birthday");
+  const postNews = stories?.filter(
+    (postCard) =>
+      postCard.type === "post" || ("video" && postCard.type !== "birthday")
+  );
   return (
     <div className="section">
-      {birthdays && <EventCard data={birthdays[0]} />}
+      {stories && userData && (
+        <>
+          <EventCard storiesData={birthdays[0]} userData={userData} />
+          <NewsFeedCard data={postNews[7]} userData={userData} />
+        </>
+      )}
     </div>
   );
 };
 
 StoriesSection.propTypes = {
-  data: PropTypes.object,
+  storiesData: PropTypes.object,
+  userData: PropTypes.object,
 };

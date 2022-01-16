@@ -20,14 +20,13 @@ export const RestaurantCard = ({
   restaurantDescription,
   restaurantCategories,
   restaurantImage,
-  restaurantAverageRating,
+  restaurantReviewList,
 }) => {
+  const ratingArray = restaurantReviewList.map((review) => review.rating);
   const average =
-    restaurantAverageRating && restaurantAverageRating.length === 0
-      ? 0
-      : restaurantAverageRating.reduce(
-          (preValue, curValue) => preValue + curValue
-        ) / restaurantAverageRating.length;
+    ratingArray &&
+    ratingArray.reduce((preValue, curValue) => preValue + curValue) /
+      ratingArray.length;
 
   const [heart, setHeart] = useState(true);
   const [checkIn, setCheckIn] = useState(numberOfCheckIns);
@@ -37,21 +36,23 @@ export const RestaurantCard = ({
   return (
     <div className="restaurant__container">
       <div className="restaurant__container-front">
-        {!displayFullCard && (
-          <div className="restaurant__people-number">
-            <img src={personIcon} alt="person" />
-            <span>{!checkIn ? numberOfCheckIns + 1 : numberOfCheckIns}</span>
+        <div className="restaurant__container-top">
+          {!displayFullCard && (
+            <div className="restaurant__people-number">
+              <img src={personIcon} alt="person" />
+              <span>{!checkIn ? numberOfCheckIns + 1 : numberOfCheckIns}</span>
+            </div>
+          )}
+          <div className="restaurant__container-frame">
+            <RatingBadge averageRating={Math.round(average * 10) / 10} />
           </div>
-        )}
+        </div>
         <div
           className="restaurant__container-image-wrapper"
           style={{
             background: `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%),url('${restaurantImage}')`,
           }}
         ></div>
-        <div className="restaurant__container-frame">
-          <RatingBadge averageRating={Math.round(average * 10) / 10} />
-        </div>
         <div className="restaurant__container-footer">
           <ul className="ordered-list">
             {restaurantCategories &&
@@ -127,5 +128,5 @@ RestaurantCard.propTypes = {
   restaurantDescription: PropTypes.string,
   restaurantCategories: PropTypes.array,
   restaurantImage: PropTypes.string,
-  restaurantAverageRating: PropTypes.array,
+  restaurantReviewList: PropTypes.array,
 };
