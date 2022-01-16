@@ -19,7 +19,7 @@ export const EatOutSection = (data) => {
     });
     bestRatedArray.sort((a, b) => (b.averageRating < a.averageRating ? 1 : -1));
   }
-  const twoBestRatedArray = bestRatedArray.slice(18, 20);
+  const twoBestRatedArray = bestRatedArray.slice(18, 20).reverse();
 
   return (
     <div className="eat-out-section">
