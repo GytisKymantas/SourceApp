@@ -38,10 +38,7 @@ export const EatOut = ({ data }) => {
                   restaurantDescription={restaurant.description}
                   restaurantCategories={restaurant.categories}
                   restaurantImage={restaurant.image}
-                  // not sure if this counting is needed with new data
-                  restaurantAverageRating={restaurant.reviews.map(
-                    (review) => review.rating
-                  )}
+                  restaurantReviewList={restaurant.reviews}
                 />
               </div>
             ))}
