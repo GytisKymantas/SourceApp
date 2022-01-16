@@ -17,7 +17,7 @@ $inherit: inherit;
     &__element-container {
         @include section-responsiveness;
 
-        @media (max-width: 1200px) {
+        @media (max-width: 1050px) {
             grid-gap: 40px 25px;
         }
     }

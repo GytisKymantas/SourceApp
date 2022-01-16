@@ -23,7 +23,7 @@ export const NewsFeedSection = ({ data, userData }) => {
             {col.map((card) =>
               card.type === "birthday" ? (
                 <div className="news-section__column__event-card" key={card.id}>
-                  <EventCard data={card} />
+                  <EventCard storiesData={card} userData={userData} />
                 </div>
               ) : (
                 <div className="news-section__column__news-post" key={card.id}>
