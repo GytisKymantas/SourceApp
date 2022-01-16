@@ -6,18 +6,7 @@
     margin-bottom: 72px;
     min-width: 240px;
 
-    &__hello-widget {
-        order: 1;
-    }
-
-    &__weather-widget {
-        margin-left: auto;
-        order: 2;
-    }
-}
-
-@media (max-width: 782px) {
-    .greeting-section {
+    @media (max-width: 782px) {
         align-items: center;
         flex-direction: column;
         gap: 20px;

@@ -68,7 +68,7 @@ function App() {
           {isLoggedIn && userData && (
             <>
               <Route
-                path="/dashboard"
+                path="/dashboard/"
                 element={
                   <Dashboard
                     data={userData}
