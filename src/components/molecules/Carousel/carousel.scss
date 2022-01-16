@@ -43,13 +43,25 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1155px) {
     .carousel-content {
-        width: 2064px;
+        width: 2784px;
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 1000px) {
+    .carousel-content {
+        width: 2208px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-content {
+        width: 2784px;
+    }
+}
+
+@media (max-width: 460px) {
     .carousel-content {
         width: 1806px;
     }

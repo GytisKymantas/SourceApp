@@ -22,6 +22,14 @@
 @media (max-width: 1155px) {
     .eat-out {
         &__carousel-container {
+            width: 886px;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .eat-out {
+        &__carousel-container {
             width: 693px;
         }
     }
@@ -30,12 +38,12 @@
 @media (max-width: 768px) {
     .eat-out {
         &__carousel-container {
-            width: 300px;
+            width: 420px;
         }
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 460px) {
     .eat-out {
         &__carousel-container {
             width: 296px;
