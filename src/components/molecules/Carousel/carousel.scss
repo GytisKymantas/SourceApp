@@ -34,7 +34,13 @@
 .carousel-content {
     display: flex;
     transition: all 250ms linear;
-    width: 2784px;
+    width: 3060px;
+}
+
+@media (max-width: 1555px) {
+    .carousel-content {
+        width: 2818px;
+    }
 }
 
 @media (max-width: 1440px) {
