@@ -28,6 +28,7 @@ body {
 .content {
     margin: 0 auto;
     max-width: 1440px;
+    overflow-y: auto;
     padding: 48px 48px 120px;
 
     @media (max-width: 768px) {
