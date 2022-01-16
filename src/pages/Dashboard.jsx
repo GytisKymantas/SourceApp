@@ -5,15 +5,12 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { StoriesSection } from "components/organisms/StoriesSection/StoriesSection";
 import { GreetingSection } from "components/molecules/GreetingSection/GreetingSection";
-import { RestaurantCard } from "components/molecules/RestaurantCard/RestaurantCard";
-import { ViewEatOutCard } from "components/molecules/ViewEatOutCard/ViewEatOutCard";
+import { EatOutSection } from "components/organisms/EatOutSection/EatOutSection";
 
 export const Dashboard = ({ data, restaurantsInfo }) => {
   const userData = data?.userData[0];
   const firstName = userData?.userName.split(" ")[0];
   const reservationData = userData?.reservations;
-  const restaurantData = restaurantsInfo;
-  const restaurantCardData = restaurantData?.restaurants[0];
   const [storiesData, setStoriesData] = useState();
 
   useEffect(() => {
@@ -36,23 +33,8 @@ export const Dashboard = ({ data, restaurantsInfo }) => {
     <MainLayout>
       <GreetingSection name={firstName} />
       <ReservationsSection reservationData={reservationData} />
-      {restaurantCardData && (
-        <RestaurantCard
-          displayFullCard
-          numberOfCheckIns={restaurantCardData.checkIns}
-          restaurantName={restaurantCardData.name}
-          restaurantWebsite={restaurantCardData.website}
-          restaurantAddress={restaurantCardData.location.address}
-          restaurantOpeningHours={restaurantCardData.openingHours[0].hours}
-          restaurantDescription={restaurantCardData.description}
-          restaurantCategories={restaurantCardData.categories}
-          restaurantImage={restaurantCardData.image}
-          restaurantAverageRating={restaurantCardData.reviews.map(
-            (review) => review.rating
-          )}
-        />
-      )}
-      <ViewEatOutCard />
+      {restaurantsInfo && <EatOutSection data={restaurantsInfo} />}
+      {storiesData && <StoriesSection data={storiesData} />}
       {storiesData && (
         <StoriesSection storiesData={storiesData} userData={userData} />
       )}
