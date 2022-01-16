@@ -1,11 +1,14 @@
-import { MainLayout } from "components/layouts/MainLayout/MainLayout";
-import { FoodCategoriesSection } from "components/molecules/FoodCategoriesSection/FoodCategoriesSection";
 import React from "react";
 import PropTypes from "prop-types";
+import { useNearestRestaurants } from "hooks/useNearestRestaurants";
 import { SliderArrows } from "components/atoms/SliderArrows/SliderArrows";
+import { MainLayout } from "components/layouts/MainLayout/MainLayout";
+import { FoodCategoriesSection } from "components/molecules/FoodCategoriesSection/FoodCategoriesSection";
 
 export const EatOut = ({ data }) => {
   const restaurantsData = data?.restaurants;
+  // eslint-disable-next-line no-unused-vars
+  const sortedNearestRestaurants = useNearestRestaurants(restaurantsData); // Returns null if data not fetched
 
   // eslint-disable-next-line no-unused-vars
   const sortedByDate = []
