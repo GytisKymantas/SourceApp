@@ -33,6 +33,38 @@ export const Carousel = ({ children, title }) => {
     }
   };
 
+  // Slides cards automatically
+  useEffect(() => {
+    let timeout;
+
+    if (width <= 768) {
+      timeout = setTimeout(
+        () =>
+          setCurrentIndex(
+            currentIndex === 5 ? currentIndex - 5 : currentIndex + 1
+          ),
+        5000
+      );
+    } else if (width <= 1155) {
+      timeout = setTimeout(
+        () =>
+          setCurrentIndex(
+            currentIndex === 4 ? currentIndex - 4 : currentIndex + 1
+          ),
+        5000
+      );
+    } else {
+      timeout = setTimeout(
+        () =>
+          setCurrentIndex(
+            currentIndex === 3 ? currentIndex - 3 : currentIndex + 1
+          ),
+        5000
+      );
+    }
+    return () => clearTimeout(timeout);
+  }, [currentIndex, width]);
+
   // Carousel works not only with arrows click, but with touch slide on mobile
   const handleTouchStart = (e) => {
     const touchDown = e.touches[0].clientX;
