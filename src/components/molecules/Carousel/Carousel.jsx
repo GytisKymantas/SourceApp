@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { SliderArrows } from "components/atoms/SliderArrows/SliderArrows";
 import PropTypes from "prop-types";
 
 import "./carousel.scss";
@@ -6,7 +7,6 @@ import "./carousel.scss";
 export const Carousel = ({ children, title }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchPosition, setTouchPosition] = useState(null);
-
   const [width, setWidth] = useState(window.innerWidth);
 
   // Sets the width prop of the screen
@@ -60,19 +60,19 @@ export const Carousel = ({ children, title }) => {
     setTouchPosition(null);
   };
 
+  const handleClickSlider = (pos) => {
+    if (pos === "left") {
+      prevCard();
+    } else {
+      nextCard();
+    }
+  };
+
   return (
     <div className="carousel">
       <div className="carousel__title-container">
         <div className="carousel__title-container--title">{title}</div>
-        {/* Will be replaced be other arrows */}
-        <div className="carousel__title-container--slider-arrows">
-          <button onClick={prevCard} className="left-arrow">
-            &lt;
-          </button>
-          <button onClick={nextCard} className="right-arrow">
-            &gt;
-          </button>
-        </div>
+        <SliderArrows onClickSlider={handleClickSlider} />
       </div>
       <div className="carousel__wrapper">
         <div

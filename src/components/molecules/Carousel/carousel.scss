@@ -16,9 +16,6 @@
             font-weight: $font-weight-heavy;
             line-height: 32px;
         }
-
-        // &--slider-arrows {
-        // }
     }
 
     &__wrapper {
@@ -38,13 +35,6 @@
     display: flex;
     transition: all 250ms linear;
     width: 2784px;
-}
-
-// will be removed when real arrows will be used
-.left-arrow,
-.right-arrow {
-    border: 1px solid #ddd;
-    cursor: pointer;
 }
 
 @media (max-width: 1440px) {
