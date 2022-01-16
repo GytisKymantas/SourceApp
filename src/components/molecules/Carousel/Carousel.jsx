@@ -5,7 +5,6 @@ import "./carousel.scss";
 
 export const Carousel = ({ children, title }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [length, setLength] = useState(children.length);
   const [touchPosition, setTouchPosition] = useState(null);
 
   const [width, setWidth] = useState(window.innerWidth);
@@ -18,17 +17,12 @@ export const Carousel = ({ children, title }) => {
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
 
-  // Set the length to match current children from props
-  useEffect(() => {
-    setLength(children.length);
-  }, [children]);
-
   const nextCard = () => {
-    if (width <= 768 && currentIndex < length - 1) {
+    if (width <= 768 && currentIndex < 5) {
       setCurrentIndex((prevState) => prevState + 1);
-    } else if (width <= 1155 && currentIndex < length - 2) {
+    } else if (width <= 1155 && currentIndex < 4) {
       setCurrentIndex((prevState) => prevState + 1);
-    } else if (currentIndex < length - 3) {
+    } else if (currentIndex < 3) {
       setCurrentIndex((prevState) => prevState + 1);
     }
   };
