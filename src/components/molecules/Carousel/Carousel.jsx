@@ -81,7 +81,7 @@ export const Carousel = ({ children, title }) => {
           onTouchMove={handleTouchMove}
         >
           <div
-            className={`carousel-content`}
+            className={"carousel-content"}
             style={{
               transform: `translateX(-${currentIndex * (100 / 6)}%)`,
             }}
