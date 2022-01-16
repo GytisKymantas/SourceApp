@@ -1,12 +1,24 @@
 export const paths = {
-  dashboard: "/dashboard",
+  dashboard: "/dashboard/",
   reservations: "/dashboard/reservations",
   meetingrooms: "/dashboard/reservations/meetingrooms",
   books: "/dashboard/reservations/books",
   devices: "/dashboard/reservations/devices",
   eatout: "/dashboard/eatout",
-  category: "/dashboard/eatout/category",
-  single: "/dashboard/eatout/category/single",
+  burger: "/dashboard/eatout/burger",
+  salads: "/dashboard/eatout/salads",
+  grill: "/dashboard/eatout/grill",
+  pizza: "/dashboard/eatout/pizza",
+  pancakes: "/dashboard/eatout/pancakes",
+  soups: "/dashboard/eatout/soups",
+  sweets: "/dashboard/eatout/sweets",
+  breakfast: "/dashboard/eatout/breakfast",
+  ramen: "/dashboard/eatout/ramen",
+  sandwich: "/dashboard/eatout/sandwich",
+  kebab: "/dashboard/eatout/kebab",
+  sushi: "/dashboard/eatout/sushi",
+  hotdogs: "/dashboard/eatout/hotdogs",
+  donuts: "/dashboard/eatout/donuts",
 };
 
 // Eatout and reservation pages have dynamic items to be displayed
