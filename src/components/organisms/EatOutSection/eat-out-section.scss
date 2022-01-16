@@ -1,17 +1,11 @@
+$inherit: inherit;
+@import '../../../styles/mixins/index';
+
 .eat-out-section {
-    display: flex;
-    gap: 50px;
-    justify-content: space-between;
+    @include section-responsiveness;
     padding-bottom: 72px;
 
-    .view-eat-out-card {
-        width: 416px;
-    }
-}
-
-@media (max-width: 1150px) {
-    .eat-out-section {
-        flex-wrap: wrap;
-        justify-content: center;
+    @media (max-width: 1200px) {
+        grid-gap: 25px;
     }
 }

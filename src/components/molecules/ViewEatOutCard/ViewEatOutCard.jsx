@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../atoms/Button/Button";
-
 import "./view-eat-out-card.scss";
 
 export const ViewEatOutCard = () => {
