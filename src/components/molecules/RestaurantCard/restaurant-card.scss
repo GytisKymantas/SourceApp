@@ -1,23 +1,14 @@
 @import '../../../styles/base/base';
 
+$_z-index: 1;
+
 .restaurant__container {
     background: $color-white;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-    margin-bottom: 40px;
-    max-width: 416px;
+    height: 100%;
+    min-width: 280px;
     text-align: start;
-
-    a {
-        color: $color-fiord;
-        text-decoration: none;
-        transition: 0.3s;
-
-        &:hover {
-            color: $color-black;
-            opacity: 0.4;
-        }
-    }
 
     &-front {
         border-radius: 8px;
@@ -36,21 +27,9 @@
         background-size: cover !important;
         border-radius: 8px;
         height: 180px;
-    }
-
-    &-frame {
-        background: $color-yellow;
-        border-radius: 8px;
-        height: 32px;
-        left: calc(100% - 96px);
         position: absolute;
-        top: 16px;
-        width: 68px;
-
-        .frame:hover {
-            left: -74%;
-            position: absolute;
-        }
+        top: 0;
+        width: 100%;
     }
 
     &-footer {
@@ -125,6 +104,15 @@
         padding: 7px 15px 0 0;
     }
 
+    .restaurant__people-number,
+    .restaurant__container-frame {
+        z-index: $_z-index;
+    }
+
+    .restaurant__container-frame {
+        margin-left: auto;
+    }
+
     .restaurant__people-number {
         align-items: center;
         background: $color-fiord;
@@ -133,10 +121,7 @@
         gap: 9px;
         height: 18px;
         justify-content: center;
-        left: 16px;
         padding: 8px 12px;
-        position: absolute;
-        top: 16px;
 
         img {
             color: $color-yellow;
@@ -203,7 +188,24 @@
     }
 }
 
+.restaurant__link {
+    color: $color-fiord;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+        color: $color-black;
+        opacity: 0.4;
+    }
+}
+
 .icon {
     height: 20px;
     width: 20px;
+}
+
+.restaurant__container-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
 }

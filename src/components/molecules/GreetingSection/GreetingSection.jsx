@@ -16,12 +16,8 @@ export const GreetingSection = ({ name }) => {
 
   return (
     <div className="greeting-section">
-      <HelloWidget
-        name={name}
-        time={time}
-        className="greeting-section__hello-widget"
-      />
-      <WeatherWidget time={time} className="greeting-section__weather-widget" />
+      <HelloWidget name={name} time={time} />
+      <WeatherWidget time={time} />
     </div>
   );
 };

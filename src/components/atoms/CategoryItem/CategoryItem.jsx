@@ -1,14 +1,24 @@
 import React from "react";
 import "./category-item.scss";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 
-export const CategoryItem = ({ categoryName, categoryImage, categoryInfo }) => (
+export const CategoryItem = ({
+  categoryName,
+  categoryImage,
+  categoryInfo,
+  isFood,
+}) => (
   <div className="category-item">
     <div className="category-item__header-container">
       <h2>{categoryName}</h2>
       <p>{categoryInfo}</p>
     </div>
-    <div className="category-item__image-wrapper">
+    <div
+      className={classNames("category-item__image-wrapper", {
+        "category-item__image-wrapper--onRight": isFood,
+      })}
+    >
       <img
         className="category-item__image"
         src={categoryImage}
@@ -17,9 +27,12 @@ export const CategoryItem = ({ categoryName, categoryImage, categoryInfo }) => (
     </div>
   </div>
 );
-
+CategoryItem.defaultProps = {
+  isFood: false,
+};
 CategoryItem.propTypes = {
   categoryImage: PropTypes.string,
   categoryName: PropTypes.string,
   categoryInfo: PropTypes.string,
+  isFood: PropTypes.bool,
 };

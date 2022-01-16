@@ -1,0 +1,11 @@
+$inherit: inherit;
+@import '../../../styles/mixins/index';
+
+.eat-out-section {
+    @include section-responsiveness;
+    padding-bottom: 72px;
+
+    @media (max-width: 1200px) {
+        grid-gap: 25px;
+    }
+}
