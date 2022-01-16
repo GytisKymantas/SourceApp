@@ -40,24 +40,24 @@ export const Carousel = ({ children, title }) => {
     if (width <= 768) {
       timeout = setTimeout(
         () =>
-          setCurrentIndex(
-            currentIndex === 5 ? currentIndex - 5 : currentIndex + 1
+          setCurrentIndex((prevState) =>
+            prevState === 5 ? prevState - 5 : prevState + 1
           ),
         5000
       );
     } else if (width <= 1155) {
       timeout = setTimeout(
         () =>
-          setCurrentIndex(
-            currentIndex === 4 ? currentIndex - 4 : currentIndex + 1
+          setCurrentIndex((prevState) =>
+            prevState === 4 ? prevState - 4 : prevState + 1
           ),
         5000
       );
     } else {
       timeout = setTimeout(
         () =>
-          setCurrentIndex(
-            currentIndex === 3 ? currentIndex - 3 : currentIndex + 1
+          setCurrentIndex((prevState) =>
+            prevState === 3 ? prevState - 3 : prevState + 1
           ),
         5000
       );
