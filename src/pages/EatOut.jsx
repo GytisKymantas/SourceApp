@@ -15,14 +15,11 @@ export const EatOut = ({ data }) => {
   return (
     <MainLayout>
       <h1>Hungry? Find the best place!</h1>
-<<<<<<< HEAD
       <EatOutHeroSlider data={restaurantsData} />
-=======
       {restaurantsData && (
         <FoodCategoriesSection restaurantsData={restaurantsData} />
       )}
       <SliderArrows />
->>>>>>> dev
     </MainLayout>
   );
 };
