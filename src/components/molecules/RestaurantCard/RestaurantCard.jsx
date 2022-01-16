@@ -22,7 +22,7 @@ export const RestaurantCard = ({
   restaurantImage,
   restaurantReviewList,
 }) => {
-  const ratingArray = restaurantReviewList.map((review) => review.rating);
+  const ratingArray = restaurantReviewList?.map((review) => review.rating);
   const average =
     ratingArray &&
     ratingArray.reduce((preValue, curValue) => preValue + curValue) /
