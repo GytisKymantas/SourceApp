@@ -6,6 +6,7 @@ $_text-color: rgba(0, 0, 0, 0.7);
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     height: 229px;
+    min-width: 280px;
 
     &__content {
         align-items: center;
@@ -28,12 +29,6 @@ $_text-color: rgba(0, 0, 0, 0.7);
     @media (max-width: 500px) {
         &__content {
             padding: 0 32px;
-        }
-    }
-
-    @media (max-width: 410px) {
-        &__text {
-            font-size: $font-size-medium;
         }
     }
 }
