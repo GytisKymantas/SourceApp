@@ -1,5 +1,7 @@
 @import '../../../styles/base/base';
 
+$_sticky-z-index: 999;
+
 .header {
     align-items: center;
     background-color: $color-violet;
@@ -9,7 +11,10 @@
     height: 80px;
     min-width: 280px;
     padding: 0 48px;
+    position: sticky;
     text-align: center;
+    top: 0;
+    z-index: $_sticky-z-index;
 
     &__logo {
         cursor: pointer;
