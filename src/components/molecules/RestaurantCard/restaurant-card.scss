@@ -206,6 +206,17 @@ $_z-index: 1;
     }
 }
 
+.restaurant__link {
+    color: $color-fiord;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+        color: $color-black;
+        opacity: 0.4;
+    }
+}
+
 .icon {
     height: 20px;
     width: 20px;
