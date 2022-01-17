@@ -72,7 +72,7 @@
 }
 
 video {
-    height: 460px;
+    height: 100%;
     object-fit: cover;
     width: 100%;
 }
@@ -146,8 +146,8 @@ video {
     text-align: left;
 
     .comments__box_one {
-        margin-bottom: 10px;
-        padding-right: 5px;
+        margin-left: 16px;
+        padding: 5px 0;
 
         .comments__header {
             display: flex;
