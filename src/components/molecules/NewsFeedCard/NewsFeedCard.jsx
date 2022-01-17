@@ -84,6 +84,7 @@ export const NewsFeedCard = ({ data, userData }) => {
               src={playIcon}
               alt=""
               role="presentation"
+              onClick={() => videoHandler(playing ? "pause" : "play")}
             />
           }
         </div>
