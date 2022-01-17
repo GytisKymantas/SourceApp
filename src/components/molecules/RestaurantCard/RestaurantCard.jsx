@@ -8,6 +8,7 @@ import personIcon from "../../../assets/personIcon.svg";
 import { Button } from "components/atoms/Button/Button";
 import { RatingBadge } from "components/atoms/RatingBadge/RatingBadge";
 import "./restaurant-card.scss";
+import TextTruncate from "react-text-truncate";
 
 export const RestaurantCard = ({
   displayFullCard,
@@ -21,7 +22,7 @@ export const RestaurantCard = ({
   restaurantImage,
   restaurantReviewList,
 }) => {
-  const ratingArray = restaurantReviewList.map((review) => review.rating);
+  const ratingArray = restaurantReviewList?.map((review) => review.rating);
   const average =
     ratingArray &&
     ratingArray.reduce((preValue, curValue) => preValue + curValue) /
@@ -83,7 +84,7 @@ export const RestaurantCard = ({
             <span className="restaurant-locale">
               <img src={globe} className="icon" alt="globe" />
               <a
-                href={`https://${restaurantWebsite}`}
+                href={`${restaurantWebsite}`}
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -95,7 +96,14 @@ export const RestaurantCard = ({
               {restaurantAddress}
             </span>
           </div>
-          <p className="restaurant__description">{restaurantDescription}</p>
+          <p className="restaurant__description" title={restaurantDescription}>
+            <TextTruncate
+              line={3}
+              element="span"
+              truncateText="…"
+              text={restaurantDescription}
+            />
+          </p>
           <div className="restaurant__container-buttons">
             <button>READ MORE</button>
             <Button
