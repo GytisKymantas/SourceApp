@@ -7,6 +7,7 @@ import { EatOut } from "pages/EatOut";
 import { LoginPage } from "pages/LoginPage/LoginPage";
 import { NotFound } from "pages/NotFound/NotFound";
 import { CategoryPage } from "pages/CategoryPage/CategoryPage";
+
 function App() {
   const [userData, setUserData] = useState();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -97,7 +98,7 @@ function App() {
               />
               <Route
                 path="/dashboard/eatout/:category"
-                element={<CategoryPage />}
+                element={<CategoryPage data={restaurantsData} />}
               />
             </>
           )}
