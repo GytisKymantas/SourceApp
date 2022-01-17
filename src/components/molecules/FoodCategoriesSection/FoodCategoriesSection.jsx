@@ -29,6 +29,7 @@ export const FoodCategoriesSection = ({ restaurantsData }) => {
       ];
     }
   }
+
   const counts = {};
   for (const num of categories) {
     counts[num] = counts[num] ? counts[num] + 1 : 1;
@@ -36,7 +37,8 @@ export const FoodCategoriesSection = ({ restaurantsData }) => {
 
   const path = "/dashboard/eatout/";
   const getPath = (item) => {
-    return path.concat(item);
+    const res = item.replace(/ /g, "");
+    return path.concat(res);
   };
 
   const imageMatcher = (image) => {

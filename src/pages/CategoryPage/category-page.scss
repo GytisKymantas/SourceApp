@@ -1,0 +1,27 @@
+$inherit: inherit;
+
+.category-header__name {
+    text-transform: uppercase;
+}
+
+.category__list {
+    display: grid;
+    grid-gap: 32px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 72px;
+    transition: 0.4s;
+
+    @media (max-width: 1000px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 680px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__element {
+        color: $inherit;
+        min-width: 235px;
+        text-decoration: none;
+    }
+}

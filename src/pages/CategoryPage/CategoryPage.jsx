@@ -1,13 +1,58 @@
 import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import React from "react";
 import { useParams } from "react-router-dom";
+import { RestaurantCard } from "components/molecules/RestaurantCard/RestaurantCard";
+import "./category-page.scss";
 
-export const CategoryPage = () => {
-  const { category } = useParams();
+export const CategoryPage = (data) => {
+  let { category } = useParams();
+  let categoryRestaurants = [];
+  const restaurants = data?.data?.restaurants;
+
+  const Capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
+  const findRestaurants = (cat) => {
+    for (let i = 0; i < restaurants?.length; i++) {
+      if (restaurants[i].categories.includes(Capitalize(cat.category))) {
+        categoryRestaurants.push({
+          ...restaurants[i],
+        });
+      }
+    }
+  };
+
+  if (category === "hotdogs") {
+    category = "hot dogs";
+  }
 
   return (
     <MainLayout>
-      <h1>The best places for {category}</h1>
+      <h1>
+        The best places for the{" "}
+        <span className="category-header__name">{category}!</span>
+      </h1>
+      <div className="category__list">
+        {findRestaurants({ category })}
+        {categoryRestaurants &&
+          categoryRestaurants.map((restaurant) => (
+            <RestaurantCard
+              key={restaurant.id}
+              displayFullCard
+              numberOfCheckIns={restaurant.checkIns}
+              restaurantName={restaurant.name}
+              restaurantWebsite={restaurant.website.replace(/(^\w:|^)\/\//, "")}
+              restaurantAddress={restaurant.location?.address}
+              restaurantOpeningHours={restaurant.openingHours[0].hours}
+              restaurantDescription={restaurant.description}
+              restaurantCategories={restaurant.categories}
+              restaurantImage={restaurant.image}
+              restaurantReviewList={restaurant.reviews}
+              isLarge
+            />
+          ))}
+      </div>
     </MainLayout>
   );
 };
