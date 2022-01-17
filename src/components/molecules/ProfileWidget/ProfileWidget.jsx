@@ -93,7 +93,11 @@ export const ProfileWidget = () => {
   return (
     <div className="profile-widget">
       <div className="profile-widget__notifications-container">
-        <Notification className="profile-widget__notification-icon" />
+        <Notification
+          aria-label="notification bell"
+          className="profile-widget__notification-icon"
+          tabIndex={0}
+        />
         {notifications && <Elipse className="profile-widget__elipse-icon" />}
       </div>
       <div
@@ -102,7 +106,13 @@ export const ProfileWidget = () => {
         role="menu"
         tabIndex={0}
       >
-        <Avatar hasIcon isClickable isLarge={false} imageSource={photoURL} />
+        <Avatar
+          hasIcon
+          isClickable
+          isLarge={false}
+          imageSource={photoURL}
+          role="menuitem"
+        />
       </div>
       {showDropDown && (
         <div ref={ref} className="profile-widget__drop-down">
