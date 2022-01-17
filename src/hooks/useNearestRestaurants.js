@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 // This custom hook finds 6 closest locations to the user from restaurantsData
-// and returns an index array if data is fetched, if not - returns null
+// and returns an array with indices and restaurants if data is fetched, if not - returns null
 export const useNearestRestaurants = (restaurantsData) => {
   const [locationPosition, setLocationPosition] = useState({});
   const closestLocationIndices = [];
@@ -79,7 +79,7 @@ export const useNearestRestaurants = (restaurantsData) => {
   // Guard clause to check if getFinalLocation() got fetched data
   if (getFinalLocation().includes(-1)) return null;
 
-  // if successful populate closestLocations array
+  // If successful populate closestLocations array
   for (let i = 0; i < closestLocationIndices.length; i++) {
     closestLocations.push(restaurantsData[closestLocationIndices[i]]);
   }
