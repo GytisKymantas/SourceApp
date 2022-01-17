@@ -45,6 +45,7 @@ function App() {
   }, [isLoggedIn]);
 
   let isUserLoggedIn = sessionStorage.getItem("loggedIn");
+
   useEffect(() => {
     if (isUserLoggedIn === "true") {
       setIsLoggedIn(true);
