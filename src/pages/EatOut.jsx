@@ -8,7 +8,7 @@ import { FoodCategoriesSection } from "components/molecules/FoodCategoriesSectio
 export const EatOut = ({ data }) => {
   const restaurantsData = data?.restaurants;
   // eslint-disable-next-line no-unused-vars
-  const sortedNearestRestaurants = useNearestRestaurants(restaurantsData); // Returns null if data is not fetched
+  const nearestRestaurants = useNearestRestaurants(restaurantsData); // Returns an array if data is fetched or null if not
 
   // eslint-disable-next-line no-unused-vars
   const sortedByDate = []

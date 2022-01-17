@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 export const useNearestRestaurants = (restaurantsData) => {
   const [locationPosition, setLocationPosition] = useState({});
   const closestLocationIndices = [];
+  const closestLocations = [];
 
   // Get users current location
   useEffect(() => {
@@ -74,7 +75,14 @@ export const useNearestRestaurants = (restaurantsData) => {
     }
     return closestLocationIndices;
   };
+
+  // Guard clause to check if getFinalLocation() got fetched data
   if (getFinalLocation().includes(-1)) return null;
 
-  return closestLocationIndices;
+  // if successful populate closestLocations array
+  for (let i = 0; i < closestLocationIndices.length; i++) {
+    closestLocations.push(restaurantsData[closestLocationIndices[i]]);
+  }
+
+  return [closestLocationIndices, closestLocations];
 };
