@@ -69,6 +69,7 @@ export const NewsFeedCard = ({ data, userData }) => {
       {postVideo ? (
         <div className="card__content-video">
           <video
+            onClick={() => videoHandler(playing ? "pause" : "play")}
             className="card__content-video-main"
             ref={videoRef}
             src={postVideo}
@@ -80,7 +81,6 @@ export const NewsFeedCard = ({ data, userData }) => {
           {
             <img
               className={playing ? "video--pause" : "video--play"}
-              onClick={() => videoHandler(playing ? "pause" : "play")}
               src={playIcon}
               alt=""
               role="presentation"
@@ -88,7 +88,9 @@ export const NewsFeedCard = ({ data, userData }) => {
           }
         </div>
       ) : (
-        <img className="card__content-image" src={postImage} alt="" />
+        <div className="card__content-image">
+          <img className="card__content-image-main" src={postImage} alt="" />
+        </div>
       )}
       <div className="actions">
         <div className="likes">

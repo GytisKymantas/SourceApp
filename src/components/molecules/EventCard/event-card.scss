@@ -75,8 +75,8 @@ $_color-lynch: #627485;
 .comments-rows {
     display: flex;
     flex-direction: column;
+    height: 95px;
     margin-right: -16px;
-    max-height: 95px;
     overflow: auto;
     text-align: justify;
     word-break: break-word;
