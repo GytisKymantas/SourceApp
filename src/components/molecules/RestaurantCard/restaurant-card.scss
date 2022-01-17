@@ -7,8 +7,21 @@ $_z-index: 1;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     height: 100%;
-    min-width: 280px;
+    max-width: 416px;
+    min-width: 296px;
+    position: relative;
     text-align: start;
+
+    a {
+        color: $color-fiord;
+        text-decoration: none;
+        transition: 0.3s;
+
+        &:hover {
+            color: $color-black;
+            opacity: 0.4;
+        }
+    }
 
     &-front {
         border-radius: 8px;
@@ -51,6 +64,7 @@ $_z-index: 1;
 
         li:first-of-type {
             list-style-type: none;
+            padding-top: 1px;
         }
 
         li::marker {
@@ -89,7 +103,7 @@ $_z-index: 1;
     &-image-heart {
         cursor: pointer;
         float: right;
-        margin-right: 15px;
+        margin-right: 20px;
         padding-top: 2px;
     }
 
@@ -169,6 +183,9 @@ $_z-index: 1;
         gap: 16px;
         justify-content: flex-end;
         padding: 15px 24px 24px 0;
+        position: absolute;
+        right: -2px;
+        top: 85%;
 
         button {
             @media (max-width: 325px) {
