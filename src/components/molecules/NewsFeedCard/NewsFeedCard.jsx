@@ -73,6 +73,7 @@ export const NewsFeedCard = ({ data, userData }) => {
             ref={videoRef}
             src={postVideo}
             type="video/mp4"
+            loop
           >
             <track kind="captions" type="video/mp4"></track>
           </video>

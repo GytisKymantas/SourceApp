@@ -3,7 +3,7 @@ import { ReservationsSection } from "components/molecules/ReservationsSection/Re
 import React from "react";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
-import { StoriesSection } from "components/organisms/StoriesSection/StoriesSection";
+import { NewsFeedSection } from "components/organisms/NewsFeedSection/NewsFeedSection";
 import { GreetingSection } from "components/molecules/GreetingSection/GreetingSection";
 import { EatOutSection } from "components/organisms/EatOutSection/EatOutSection";
 
@@ -34,9 +34,8 @@ export const Dashboard = ({ data, restaurantsInfo }) => {
       <GreetingSection name={firstName} />
       <ReservationsSection reservationData={reservationData} />
       {restaurantsInfo && <EatOutSection data={restaurantsInfo} />}
-      {storiesData && <StoriesSection data={storiesData} />}
       {storiesData && (
-        <StoriesSection storiesData={storiesData} userData={userData} />
+        <NewsFeedSection data={storiesData} userData={userData} />
       )}
     </MainLayout>
   );
