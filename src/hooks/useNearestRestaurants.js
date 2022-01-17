@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 /** @function
  * @name useNearestRestaurants
  * This custom hook finds 6 closest locations to the user from restaurantsData
- * and returns an array with indices and restaurants if data is fetched, if not - returns null
+ * and returns an array with indices and restaurants if data is fetched, if not - returns []
  * @param {array} restaurantsData - An array of restaurant objects fetched in app.js.
  */
 export const useNearestRestaurants = (restaurantsData) => {
@@ -26,7 +26,7 @@ export const useNearestRestaurants = (restaurantsData) => {
   }, []);
 
   /** Guard clause to check if restaurantsData has been fetched */
-  if (restaurantsData === undefined) return null;
+  if (restaurantsData === undefined) return [];
 
   /** @function
    * @name distance
@@ -92,8 +92,8 @@ export const useNearestRestaurants = (restaurantsData) => {
     return closestLocationIndices;
   };
 
-  /** Guard clause to check if getFinalLocation() got fetched data */
-  if (getFinalLocation().includes(-1)) return null;
+  /** Last check if getFinalLocation() got fetched data */
+  if (getFinalLocation().includes(-1)) return [];
 
   /** If successful - populate closestLocations array */
   for (let i = 0; i < closestLocationIndices.length; i++) {
