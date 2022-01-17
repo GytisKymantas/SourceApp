@@ -2,15 +2,12 @@ import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import { FoodCategoriesSection } from "components/molecules/FoodCategoriesSection/FoodCategoriesSection";
 import React from "react";
 import PropTypes from "prop-types";
-<<<<<<< HEAD
 import EatOutHeroSlider from "components/organisms/EatOutHeroSlider/EatOutHeroSlider";
-import SliderArrows from "components/atoms/SliderArrows/SliderArrows";
-=======
+// import SliderArrows from "components/atoms/SliderArrows/SliderArrows";
 import { RestaurantCard } from "components/molecules/RestaurantCard/RestaurantCard";
 import { Carousel } from "components/molecules/Carousel/Carousel";
 
 import "./eat-out.scss";
->>>>>>> dev
 
 export const EatOut = ({ data }) => {
   const restaurantsData = data?.restaurants;
