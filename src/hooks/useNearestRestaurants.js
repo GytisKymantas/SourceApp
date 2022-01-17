@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react";
 
-// This custom hook finds 6 closest locations to the user from restaurantsData
-// and returns an array with indices and restaurants if data is fetched, if not - returns null
+/** @function
+ * @name useNearestRestaurants
+ * This custom hook finds 6 closest locations to the user from restaurantsData
+ * and returns an array with indices and restaurants if data is fetched, if not - returns null
+ * @param {array} restaurantsData - An array of restaurant objects fetched in app.js.
+ */
 export const useNearestRestaurants = (restaurantsData) => {
   const [locationPosition, setLocationPosition] = useState({});
   const closestLocationIndices = [];
   const closestLocations = [];
 
-  // Get users current location
+  /** Get users current location */
   useEffect(() => {
     if (!navigator.geolocation) {
       alert("Geolocation is not supported by your browser.");
@@ -21,11 +25,18 @@ export const useNearestRestaurants = (restaurantsData) => {
     }
   }, []);
 
-  // Guard clause to check if restaurantsData has been fetched
+  /** Guard clause to check if restaurantsData has been fetched */
   if (restaurantsData === undefined) return null;
 
-  // Distance function calculates the nearest straight path to a destination based on a Haversine formula
-  // Arguments could be grouped in the future like so: (point1, point2, name) where point is {x: float y: float}
+  /** @function
+   * @name distance
+   * Distance function calculates the nearest straight path to a destination based on a Haversine formula
+   * Arguments could be grouped in the future like so: (point1, point2) where point is {x: float y: float}
+   * @param {float} lat1 - Current users latitude.
+   * @param {float} lon1 - Current users longitude.
+   * @param {float} lat2 - Restaurant's latitude.
+   * @param {float} lon2 - Restaurant's longitude.
+   */
   const distance = (lat1, lon1, lat2, lon2) => {
     const radlat1 = (Math.PI * lat1) / 180;
     const radlat2 = (Math.PI * lat2) / 180;
@@ -44,10 +55,14 @@ export const useNearestRestaurants = (restaurantsData) => {
     return dist;
   };
 
-  // GetFinalLocation returns an index array of shortest calculated distances
+  /** @function
+   * @name getFinalLocation
+   * GetFinalLocation returns an index array of shortest calculated distances */
   const getFinalLocation = () => {
-    // Creating an array with distances
-    // Code could be improved by not double maping the same data. I can map single time, store into an object if needed
+    /** Creating an array with distances
+     * Code could be improved by not double maping the same data.
+     * I can map single time, store into an object if needed
+     */
     const locationLatitude = restaurantsData.map(
       (el) => el.location.coordinates.lat
     );
@@ -63,8 +78,9 @@ export const useNearestRestaurants = (restaurantsData) => {
         lon
       );
     });
-    // Finding the shortest distances, getting their indices
-    // and returning the index array
+    /** Finding the shortest distances, getting their indices
+     * and returning the index array
+     */
     const closestDistances = [];
     if (distanceArray.length) {
       for (let i = 0; i < 6; i++) {
@@ -76,10 +92,10 @@ export const useNearestRestaurants = (restaurantsData) => {
     return closestLocationIndices;
   };
 
-  // Guard clause to check if getFinalLocation() got fetched data
+  /** Guard clause to check if getFinalLocation() got fetched data */
   if (getFinalLocation().includes(-1)) return null;
 
-  // If successful populate closestLocations array
+  /** If successful - populate closestLocations array */
   for (let i = 0; i < closestLocationIndices.length; i++) {
     closestLocations.push(restaurantsData[closestLocationIndices[i]]);
   }
