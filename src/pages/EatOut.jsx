@@ -3,6 +3,7 @@ import { FoodCategoriesSection } from "components/molecules/FoodCategoriesSectio
 import React from "react";
 import PropTypes from "prop-types";
 import EatOutHeroSlider from "components/organisms/EatOutHeroSlider/EatOutHeroSlider";
+import SliderArrows from "components/atoms/SliderArrows/SliderArrows";
 
 export const EatOut = ({ data }) => {
   const restaurantsData = data?.restaurants;

@@ -4,7 +4,7 @@ import { ReactComponent as SliderArrowLeft } from "../../../assets/sliderArrowLe
 import { ReactComponent as SliderArrowRight } from "../../../assets/sliderArrowRight.svg";
 import "./sliderArrows.scss";
 
-export const SliderArrows = (props) => {
+const SliderArrows = (props) => {
   const onClickSlider = props.props;
 
   return (
@@ -22,3 +22,5 @@ export const SliderArrows = (props) => {
 SliderArrows.propTypes = {
   props: PropTypes.func,
 };
+
+export default SliderArrows;

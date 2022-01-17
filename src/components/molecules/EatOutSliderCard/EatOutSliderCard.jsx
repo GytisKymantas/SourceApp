@@ -4,11 +4,11 @@ import SliderBulletPointSelected from "../../../assets/SliderBulletPointSelected
 import { Button } from "components/atoms/Button/Button";
 import PropTypes from "prop-types";
 import TextTruncate from "react-text-truncate";
-import { SliderArrows } from "components/atoms/SliderArrows/SliderArrows";
+import SliderArrows from "components/atoms/SliderArrows/SliderArrows";
 
 import "./eat-out-slider.scss";
 
-const array = [1, 2, 3, 4, 5];
+const BulletArray = [1, 2, 3, 4, 5];
 
 const EatOutSliderCard = ({
   restaurantNameProp,
@@ -40,7 +40,7 @@ const EatOutSliderCard = ({
     <div className="slider-text__wrapper">
       <div className="top-navigation">
         <div className="bullets">
-          {array.map((bulletImg, i) => (
+          {BulletArray.map((bulletImg, i) => (
             <img
               key={bulletImg}
               src={index === i ? SliderBulletPointSelected : SliderBulletPoint}
