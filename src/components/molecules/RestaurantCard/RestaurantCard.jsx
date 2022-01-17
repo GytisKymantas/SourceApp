@@ -30,6 +30,11 @@ export const RestaurantCard = ({
   const [heart, setHeart] = useState(true);
   const [checkIn, setCheckIn] = useState(numberOfCheckIns);
   const handleHeartClick = () => setHeart(!heart);
+  let handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      setHeart(!heart);
+    }
+  };
   const handleCheckInClick = () => setCheckIn(!checkIn);
 
   return (
@@ -62,13 +67,13 @@ export const RestaurantCard = ({
           <div
             className="restaurant__container-image-heart"
             onClick={handleHeartClick}
-            onKeyDown={handleHeartClick}
+            onKeyDown={handleKeyPress}
             role="button"
-            aria-hidden="true"
+            tabIndex={0}
           >
             <img
               src={heart ? heartImage : redHeart}
-              alt={heart ? "clear heart" : "heart filled red"}
+              alt={heart ? "Clear heart." : "Red heart."}
             />
           </div>
           <div className="restaurant__container-image-text">
