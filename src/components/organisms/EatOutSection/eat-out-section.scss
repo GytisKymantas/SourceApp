@@ -3,7 +3,9 @@ $inherit: inherit;
 
 .eat-out-section {
     @include section-responsiveness;
+
     padding-bottom: 72px;
+    width: 100%;
 
     @media (max-width: 1050px) {
         grid-gap: 25px;

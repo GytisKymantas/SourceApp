@@ -8,7 +8,7 @@ export const NewsFeedSection = ({ data, userData }) => {
   const storiesData = data?.stories;
 
   return (
-    <>
+    <div className="news-section__container">
       <h2 className="news-section__header">News and stories</h2>
       <div className="news-section">
         {storiesData.map((card) =>
@@ -23,7 +23,7 @@ export const NewsFeedSection = ({ data, userData }) => {
           )
         )}
       </div>
-    </>
+    </div>
   );
 };
 
