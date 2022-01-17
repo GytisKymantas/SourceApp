@@ -6,6 +6,7 @@ import { ViewEatOutCard } from "components/molecules/ViewEatOutCard/ViewEatOutCa
 export const EatOutSection = (data) => {
   const restaurantData = data?.data?.restaurants;
   let bestRatedArray = [];
+
   for (let i = 0; i < restaurantData.length; i++) {
     const ratings = restaurantData[i].reviews.map((review) => review.rating); // gets ratings in an array
     const averageCount =
