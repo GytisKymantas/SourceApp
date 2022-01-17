@@ -60,6 +60,7 @@ $_color-lynch: #627485;
         display: flex;
         font-size: $font-size-tiny;
         font-weight: $font-weight-medium;
+        padding-right: 16px;
 
         &-present {
             cursor: pointer;
@@ -69,6 +70,10 @@ $_color-lynch: #627485;
             color: $_color-lynch;
             margin: auto 12px auto 8px;
         }
+    }
+
+    &__comments-container {
+        width: 100%;
     }
 }
 
