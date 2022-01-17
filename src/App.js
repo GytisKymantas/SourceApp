@@ -94,12 +94,11 @@ function App() {
               <Route
                 path="/dashboard/eatout"
                 element={<EatOut data={restaurantsData} />}
-              >
-                <Route
-                  path="/dashboard/eatout/:category"
-                  element={<CategoryPage />}
-                />
-              </Route>
+              />
+              <Route
+                path="/dashboard/eatout/:category"
+                element={<CategoryPage />}
+              />
             </>
           )}
           <Route path="*" element={<NotFound isLoggedIn={isLoggedIn} />} />
