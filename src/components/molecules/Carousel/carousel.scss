@@ -64,44 +64,34 @@
     margin-bottom: 5px;
     transition: all 250ms linear;
     width: 2960px;
-}
 
-@media (max-width: 1555px) {
-    .carousel-content {
+    @media (max-width: 1555px) {
         width: 2818px;
     }
-}
 
-@media (max-width: 1470px) {
-    .carousel-content {
+    @media (max-width: 1470px) {
         width: 2208px;
     }
-}
 
-@media (max-width: 1165px) {
-    .carousel-content {
+    @media (max-width: 1165px) {
         width: 2784px;
     }
-}
 
-@media (max-width: 990px) {
-    .carousel-content {
+    @media (max-width: 990px) {
         width: 2208px;
+    }
+
+    @media (max-width: 795px) {
+        width: 2675px;
+    }
+
+    @media (max-width: 460px) {
+        width: 1723px;
     }
 }
 
 @media (max-width: 795px) {
-    .carousel-content {
-        width: 2675px;
-    }
-
     .carousel__arrows {
         display: none;
-    }
-}
-
-@media (max-width: 460px) {
-    .carousel-content {
-        width: 1723px;
     }
 }
