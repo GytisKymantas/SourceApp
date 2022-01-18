@@ -9,13 +9,13 @@ export const CategoryPage = (data) => {
   let categoryRestaurants = [];
   const restaurants = data?.data?.restaurants;
 
-  const Capitalize = (str) => {
+  const capitalize = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
   const findRestaurants = (cat) => {
     for (let i = 0; i < restaurants?.length; i++) {
-      if (restaurants[i].categories.includes(Capitalize(cat.category))) {
+      if (restaurants[i].categories.includes(capitalize(cat.category))) {
         categoryRestaurants.push({
           ...restaurants[i],
         });
