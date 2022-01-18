@@ -108,13 +108,14 @@ $_z-index: 1;
 
     &-bottom {
         margin-left: 20px;
-        padding-bottom: 10px;
+        padding: 0 10px 10px 0;
     }
 
     .restaurant__description {
         max-width: 390px;
         overflow: hidden;
-        padding: 7px 15px 0 0;
+        padding: 7px 0 0;
+        width: 100%;
     }
 
     .restaurant__people-number,
