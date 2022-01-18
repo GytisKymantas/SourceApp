@@ -18,5 +18,3 @@ export const SliderArrows = ({ onClickSlider }) => (
 SliderArrows.propTypes = {
   onClickSlider: PropTypes.func,
 };
-
-export default SliderArrows;

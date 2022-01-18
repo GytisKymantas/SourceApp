@@ -4,7 +4,7 @@ import SliderBulletPointSelected from "../../../assets/SliderBulletPointSelected
 import { Button } from "components/atoms/Button/Button";
 import PropTypes from "prop-types";
 import TextTruncate from "react-text-truncate";
-import SliderArrows from "components/atoms/SliderArrows/SliderArrows";
+import { SliderArrows } from "components/atoms/SliderArrows/SliderArrows";
 
 import "./eat-out-slider.scss";
 
@@ -56,7 +56,7 @@ const EatOutSliderCard = ({
       <h2>{restaurantNameProp}</h2>
       <p title={restaurantDescriptionProp}>
         <TextTruncate
-          line={2}
+          line={4}
           element="span"
           truncateText="…"
           text={restaurantDescriptionProp}
