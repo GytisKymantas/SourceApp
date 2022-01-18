@@ -26,8 +26,7 @@ export const RestaurantCard = ({
 }) => {
   const ratingArray = restaurantReviewList?.map((review) => review.rating);
   let average = 0;
-
-  if (ratingArray.length > 0) {
+  if (ratingArray.length) {
     average =
       ratingArray &&
       ratingArray.reduce((preValue, curValue) => preValue + curValue) /

@@ -66,7 +66,7 @@ function App() {
             element={<LoginPage setIsLoggedIn={setIsLoggedIn} />}
           />
           <Route path="/registration" element={<RegistrationPage />} />
-          {isLoggedIn && userData && (
+          {isLoggedIn && (
             <>
               <Route
                 path="/dashboard/"
