@@ -14,7 +14,7 @@
 
 @mixin section-responsiveness() {
     display: grid;
-    grid-gap: 50px;
+    grid-gap: 48px;
     grid-template-areas: 'a1 a2 a3';
     grid-template-columns: repeat(3, 1fr);
     transition: 0.4s;
