@@ -23,10 +23,13 @@ export const RestaurantCard = ({
   restaurantReviewList,
 }) => {
   const ratingArray = restaurantReviewList?.map((review) => review.rating);
-  const average =
-    ratingArray &&
-    ratingArray.reduce((preValue, curValue) => preValue + curValue) /
-      ratingArray.length;
+  let average = 0;
+  if (ratingArray.length) {
+    average =
+      ratingArray &&
+      ratingArray.reduce((preValue, curValue) => preValue + curValue) /
+        ratingArray.length;
+  }
 
   const [heart, setHeart] = useState(true);
   const [checkIn, setCheckIn] = useState(numberOfCheckIns);
