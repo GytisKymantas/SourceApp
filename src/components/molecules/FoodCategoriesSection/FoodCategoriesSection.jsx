@@ -20,6 +20,12 @@ import SushiMaki from "../../../assets/sushiMaki.svg";
 import PropTypes from "prop-types";
 
 export const FoodCategoriesSection = ({ restaurantsData }) => {
+  const scrollToTop = () =>
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
   let categories = [];
   for (const restaurant in restaurantsData) {
     for (const category in restaurantsData[restaurant].categories) {
@@ -86,6 +92,7 @@ export const FoodCategoriesSection = ({ restaurantsData }) => {
                 key={index}
                 className="food-categories-section__element"
                 to={getPath(name[0].toLowerCase())}
+                onClick={scrollToTop}
               >
                 <CategoryItem
                   categoryName={name[0]}
