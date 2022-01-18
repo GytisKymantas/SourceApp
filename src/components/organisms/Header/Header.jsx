@@ -15,6 +15,7 @@ export const Header = () => {
 
   const handleLogoClick = () => {
     navigate("../dashboard/", { replace: true });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
