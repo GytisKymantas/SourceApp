@@ -9,7 +9,6 @@ $_color-lynch: #627485;
     display: flex;
     flex-direction: column;
     margin-top: 48px;
-    max-width: 384px;
     min-width: 248px;
     padding: 16px 16px 0;
     position: relative;
@@ -61,6 +60,7 @@ $_color-lynch: #627485;
         display: flex;
         font-size: $font-size-tiny;
         font-weight: $font-weight-medium;
+        padding-right: 16px;
 
         &-present {
             cursor: pointer;
@@ -71,13 +71,17 @@ $_color-lynch: #627485;
             margin: auto 12px auto 8px;
         }
     }
+
+    &__comments-container {
+        width: 100%;
+    }
 }
 
 .comments-rows {
     display: flex;
     flex-direction: column;
+    height: 95px;
     margin-right: -16px;
-    max-height: 95px;
     overflow: auto;
     text-align: justify;
     word-break: break-word;
