@@ -125,7 +125,13 @@
     }
 
     .slider-text__wrapper .top-navigation {
+        flex-direction: column;
+        height: 50px;
         justify-content: center;
+
+        .bullets {
+            justify-content: center;
+        }
     }
 
     .slider__container .slider__image-wrapper {
@@ -147,6 +153,7 @@
     }
 
     .arrow-nav {
-        display: none;
+        display: block;
+        padding-top: 20px;
     }
 }
