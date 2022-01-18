@@ -1,13 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-<<<<<<< HEAD
 import EatOutHeroSlider from "components/organisms/EatOutHeroSlider/EatOutHeroSlider";
-// import SliderArrows from "components/atoms/SliderArrows/SliderArrows";
-=======
 import { useNearestRestaurants } from "hooks/useNearestRestaurants";
 import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import { FoodCategoriesSection } from "components/molecules/FoodCategoriesSection/FoodCategoriesSection";
->>>>>>> dev
 import { RestaurantCard } from "components/molecules/RestaurantCard/RestaurantCard";
 import { Carousel } from "components/molecules/Carousel/Carousel";
 
