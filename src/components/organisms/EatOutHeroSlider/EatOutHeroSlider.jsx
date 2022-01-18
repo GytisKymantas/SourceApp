@@ -16,14 +16,14 @@ const EatOutHeroSlider = (data) => {
       : setIndex(index === 0 ? 0 : index - 1);
   };
 
-  // useEffect(() => {
-  //   const timeout = setTimeout(
-  //     () => setIndex(index === 4 ? index - 4 : index + 1),
-  //     5000
-  //   );
+  useEffect(() => {
+    const timeout = setTimeout(
+      () => setIndex(index === 4 ? index - 4 : index + 1),
+      5000
+    );
 
-  //   return () => clearTimeout(timeout);
-  // }, [index]);
+    return () => clearTimeout(timeout);
+  }, [index]);
 
   return (
     <Fragment>

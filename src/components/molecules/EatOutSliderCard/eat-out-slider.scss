@@ -95,9 +95,17 @@
     .slider__container {
         border-radius: 0;
         display: inline-block;
-        height: 483px;
+        height: 100%;
         position: relative;
         width: 100%;
+
+        h2 {
+            min-width: 340px;
+        }
+
+        .btn-container {
+            padding: 0;
+        }
     }
 
     p {
@@ -128,6 +136,7 @@
 
     .slider-text__wrapper {
         align-items: center;
+        border-radius: 0;
         padding-top: 20px;
         text-align: center;
 
