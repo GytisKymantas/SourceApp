@@ -1,8 +1,7 @@
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import { ReservationsSection } from "components/molecules/ReservationsSection/ReservationsSection";
-import React from "react";
-import PropTypes from "prop-types";
-import { useState, useEffect } from "react";
 import { NewsFeedSection } from "components/organisms/NewsFeedSection/NewsFeedSection";
 import { GreetingSection } from "components/molecules/GreetingSection/GreetingSection";
 import { EatOutSection } from "components/organisms/EatOutSection/EatOutSection";
