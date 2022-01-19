@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import TextTruncate from "react-text-truncate";
 import { SliderArrows } from "components/atoms/SliderArrows/SliderArrows";
 
-import "./eat-out-slider.scss";
+import "./eat-out-slider-card.scss";
 
 const BulletArray = [1, 2, 3, 4, 5];
 
