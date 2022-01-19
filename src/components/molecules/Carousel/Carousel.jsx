@@ -104,7 +104,19 @@ export const Carousel = ({ children, title }) => {
     <div className="carousel">
       <div className="carousel__title-container">
         <div className="carousel__title-container--title">{title}</div>
-        <SliderArrows onClickSlider={handleClickSlider} />
+        <SliderArrows
+          onClickSlider={handleClickSlider}
+          disabledLeft={currentIndex === 0 ? true : false}
+          disabledRight={
+            width >= 1155 && currentIndex === 3
+              ? true
+              : width >= 768 && width <= 1155 && currentIndex === 4
+              ? true
+              : width > 0 && width <= 768 && currentIndex === 5
+              ? true
+              : false
+          }
+        />
       </div>
       <div className="carousel__wrapper">
         <div
