@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { RegistrationPage } from "pages/RegistrationPage/RegistrationPage";
 import { Dashboard } from "pages/Dashboard";
 import { Reservations } from "pages/Reservations";
-import { EatOut } from "pages/EatOut";
+import { EatOut } from "pages/EatOut/EatOut";
 import { LoginPage } from "pages/LoginPage/LoginPage";
 import { NotFound } from "pages/NotFound/NotFound";
 import { CategoryPage } from "pages/CategoryPage/CategoryPage";
