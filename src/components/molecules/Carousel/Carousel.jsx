@@ -37,7 +37,7 @@ export const Carousel = ({ children, title }) => {
   useEffect(() => {
     let timeout;
 
-    if (width <= 768) {
+    if (width <= 795) {
       timeout = setTimeout(
         () =>
           setCurrentIndex((prevState) =>
@@ -45,7 +45,7 @@ export const Carousel = ({ children, title }) => {
           ),
         5000
       );
-    } else if (width <= 1155) {
+    } else if (width <= 1165) {
       timeout = setTimeout(
         () =>
           setCurrentIndex((prevState) =>
@@ -103,16 +103,16 @@ export const Carousel = ({ children, title }) => {
   return (
     <div className="carousel">
       <div className="carousel__title-container">
-        <div className="carousel__title-container--title">{title}</div>
+        <div className="carousel__title">{title}</div>
         <SliderArrows
           onClickSlider={handleClickSlider}
           disabledLeft={currentIndex === 0 ? true : false}
           disabledRight={
-            width >= 1155 && currentIndex === 3
+            width >= 1165 && currentIndex === 3
               ? true
-              : width >= 768 && width <= 1155 && currentIndex === 4
+              : width >= 795 && width <= 1165 && currentIndex === 4
               ? true
-              : width > 0 && width <= 768 && currentIndex === 5
+              : width > 0 && width <= 795 && currentIndex === 5
               ? true
               : false
           }
