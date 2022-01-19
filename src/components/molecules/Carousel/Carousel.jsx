@@ -104,9 +104,7 @@ export const Carousel = ({ children, title }) => {
     <div className="carousel">
       <div className="carousel__title-container">
         <div className="carousel__title">{title}</div>
-        <div className="carousel__arrows">
-          <SliderArrows onClickSlider={handleClickSlider} />
-        </div>
+        <SliderArrows onClickSlider={handleClickSlider} />
       </div>
       <div className="carousel__wrapper">
         <div
