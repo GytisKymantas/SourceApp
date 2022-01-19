@@ -1,0 +1,41 @@
+@import '../../../styles/base/base';
+
+.arrow {
+    margin-top: 2px;
+}
+
+.btn {
+    background: $color-white;
+    border: 1px solid $color-iron;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+
+    &:hover {
+        background: $color-fiord;
+    }
+}
+
+.btn__left {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.btn__right {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-left: -1px;
+}
+
+.btn__disabled {
+    background: $color-chateau-gray;
+    cursor: default;
+
+    &:hover {
+        background: $color-chateau-gray;
+    }
+}
+
+.btn:hover svg path {
+    stroke: $color-white;
+}

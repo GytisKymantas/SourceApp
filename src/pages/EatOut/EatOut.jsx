@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import EatOutHeroSlider from "components/organisms/EatOutHeroSlider/EatOutHeroSlider";
 import { useNearestRestaurants } from "hooks/useNearestRestaurants";
 import { MainLayout } from "components/layouts/MainLayout/MainLayout";
 import { FoodCategoriesSection } from "components/molecules/FoodCategoriesSection/FoodCategoriesSection";
@@ -20,6 +21,7 @@ export const EatOut = ({ data }) => {
   return (
     <MainLayout>
       <h1>Hungry? Find the best place!</h1>
+      <EatOutHeroSlider data={restaurantsData} />
       {restaurantsData && (
         <FoodCategoriesSection restaurantsData={restaurantsData} />
       )}

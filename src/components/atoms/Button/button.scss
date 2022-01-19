@@ -17,6 +17,7 @@ $_color-violet-dark: #462ca3;
         align-items: center;
         display: flex;
         justify-content: space-around;
+        line-height: 1.5;
     }
 
     &:hover {
@@ -53,5 +54,18 @@ $_color-violet-dark: #462ca3;
     &--has-icon {
         padding: 8px 24px;
         width: 141px;
+    }
+
+    &--has-color-red {
+        background: $color-watermelon;
+        padding: 9px 24px;
+
+        &:hover {
+            background: darken($color-watermelon, 20%);
+        }
+
+        &:active {
+            background: darken($color-watermelon, 40%);
+        }
     }
 }
