@@ -15,6 +15,7 @@ export const SliderArrows = ({
     <button
       className={disabledLeft ? "btn btn__left btn__disabled" : "btn btn__left"}
       disabled={disabledLeft ? true : false}
+      aria-label="left arrow"
       onClick={() => onClickSlider("left")}
     >
       {disabledLeft ? (
@@ -28,6 +29,7 @@ export const SliderArrows = ({
         disabledRight ? "btn btn__right btn__disabled" : "btn btn__right"
       }
       disabled={disabledRight ? true : false}
+      aria-label="right arrow"
       onClick={() => onClickSlider("right")}
     >
       {disabledRight ? (
