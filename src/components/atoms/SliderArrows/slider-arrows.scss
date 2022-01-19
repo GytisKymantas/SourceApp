@@ -1,7 +1,7 @@
 @import '../../../styles/base/base';
 
 .arrow {
-    padding-top: 2px;
+    margin-top: 2px;
 }
 
 .btn {
@@ -9,6 +9,8 @@
     border: 1px solid;
     border-color: $color-iron;
     cursor: pointer;
+    height: 24px;
+    width: 24px;
 
     &:hover {
         background: $color-fiord;
@@ -27,12 +29,11 @@
 }
 
 .btn__disabled {
-    background: $color-iron;
+    background: $color-chateau-gray;
     cursor: default;
 
     &:hover {
-        background: $color-iron;
-        border: 1px solid $color-fiord;
+        background: $color-chateau-gray;
     }
 }
 
