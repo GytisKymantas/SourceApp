@@ -20,54 +20,58 @@ const EatOutSliderCard = ({
   handleImageClick,
 }) => (
   <div className="slider__container">
-    <div
-      className="slider__image-wrapper hidden-one"
-      style={{
-        background: `linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%),url(${restaurantImageProp})`,
-      }}
-    ></div>
-    <div
-      className="slider__image-wrapper hidden-two"
-      onClick={handleImageClick}
-      onKeyPress={handleImageClick}
-      role={"switch"}
-      tabIndex={-1}
-      aria-checked="false"
-      style={{
-        background: `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%),url(${restaurantImageProp})`,
-      }}
-    ></div>
-    <div className="slider-text__wrapper">
-      <div className="top-navigation">
-        <div className="bullets">
-          {BulletArray.map((bulletImg, i) => (
-            <img
-              key={bulletImg}
-              src={index === i ? SliderBulletPointSelected : SliderBulletPoint}
-              alt={index === i ? "selected point" : "bullet point"}
+    <div className="slider__content">
+      <div
+        className="slider__image-wrapper hidden-one"
+        style={{
+          background: `linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%),url(${restaurantImageProp})`,
+        }}
+      ></div>
+      <div
+        className="slider__image-wrapper hidden-two"
+        onClick={handleImageClick}
+        onKeyPress={handleImageClick}
+        role={"switch"}
+        tabIndex={-1}
+        aria-checked="false"
+        style={{
+          background: `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%),url(${restaurantImageProp})`,
+        }}
+      ></div>
+      <div className="slider-text__wrapper">
+        <div className="top-navigation">
+          <div className="bullets">
+            {BulletArray.map((bulletImg, i) => (
+              <img
+                key={bulletImg}
+                src={
+                  index === i ? SliderBulletPointSelected : SliderBulletPoint
+                }
+                alt={index === i ? "selected point" : "bullet point"}
+              />
+            ))}
+          </div>
+          <div className="arrow-nav">
+            <SliderArrows
+              onClickSlider={handleCardSwitch}
+              disabledLeft={index === 0 ? true : false}
+              disabledRight={index === 4 ? true : false}
             />
-          ))}
+          </div>
         </div>
-        <div className="arrow-nav">
-          <SliderArrows
-            onClickSlider={handleCardSwitch}
-            disabledLeft={index === 0 ? true : false}
-            disabledRight={index === 4 ? true : false}
+        <span className="text-slogan">{restaurantSloganProp}</span>
+        <h2>{restaurantNameProp}</h2>
+        <p title={restaurantDescriptionProp}>
+          <TextTruncate
+            line={4}
+            element="span"
+            truncateText="…"
+            text={restaurantDescriptionProp}
           />
+        </p>
+        <div className="btn-container">
+          <Button label={"LEARN MORE"} isLarge redColor />
         </div>
-      </div>
-      <span className="text-slogan">{restaurantSloganProp}</span>
-      <h2>{restaurantNameProp}</h2>
-      <p title={restaurantDescriptionProp}>
-        <TextTruncate
-          line={4}
-          element="span"
-          truncateText="…"
-          text={restaurantDescriptionProp}
-        />
-      </p>
-      <div className="btn-container">
-        <Button label={"LEARN MORE"} isLarge redColor />
       </div>
     </div>
   </div>

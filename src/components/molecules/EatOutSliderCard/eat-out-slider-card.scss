@@ -1,6 +1,6 @@
 @import '../../../styles/base/base';
 
-.slider__container {
+.slider__content {
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -92,9 +92,13 @@
 
 @media (max-width: 750px) {
     .slider__container {
+        margin: 0 auto;
+        max-width: 416px;
+    }
+
+    .slider__content {
         display: inline-block;
         height: 100%;
-        max-width: 416px;
         min-width: 280px;
         position: relative;
         width: 100%;
