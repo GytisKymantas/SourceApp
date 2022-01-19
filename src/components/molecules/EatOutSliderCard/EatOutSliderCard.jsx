@@ -49,7 +49,11 @@ const EatOutSliderCard = ({
           ))}
         </div>
         <div className="arrow-nav">
-          <SliderArrows onClickSlider={handleCard} />
+          <SliderArrows
+            onClickSlider={handleCard}
+            disabledLeft={index === 0 ? true : false}
+            disabledRight={index === 4 ? true : false}
+          />
         </div>
       </div>
       <span className="text-slogan">{restaurantSloganProp}</span>
