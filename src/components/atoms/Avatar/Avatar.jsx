@@ -13,7 +13,11 @@ export const Avatar = ({ imageSource, hasIcon, isClickable, isLarge }) => {
 
   return (
     <div className={className}>
-      <img className="avatar__picture" src={imageSource} alt="profile" />
+      <img
+        className="avatar__picture"
+        src={imageSource}
+        alt="Profile avatar."
+      />
       {hasIcon && <HeartLogo className="avatar__logo" />}
     </div>
   );

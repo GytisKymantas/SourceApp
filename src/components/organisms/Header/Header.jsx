@@ -17,6 +17,12 @@ export const Header = () => {
     navigate("../dashboard/", { replace: true });
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  const handleKeyboardLogoClick = (event) => {
+    if (event.key === "Enter") {
+      navigate("../dashboard/", { replace: true });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth);
@@ -30,9 +36,10 @@ export const Header = () => {
       <div
         className="header__logo"
         role="button"
+        aria-label="Go to Dashboard"
         tabIndex="0"
         onClick={handleLogoClick}
-        onKeyDown={handleLogoClick}
+        onKeyDown={handleKeyboardLogoClick}
       >
         {width > breakPoint ? <Logo /> : <RocketLogo />}
       </div>
