@@ -103,7 +103,6 @@ export const Carousel = ({ children, title }) => {
   return (
     <div className="carousel">
       <div className="carousel__title-container">
-<<<<<<< HEAD
         <div className="carousel__title-container--title">{title}</div>
         <SliderArrows
           onClickSlider={handleClickSlider}
@@ -118,10 +117,6 @@ export const Carousel = ({ children, title }) => {
               : false
           }
         />
-=======
-        <div className="carousel__title">{title}</div>
-        <SliderArrows onClickSlider={handleClickSlider} />
->>>>>>> dev
       </div>
       <div className="carousel__wrapper">
         <div
