@@ -29,6 +29,12 @@ export const NewsFeedCard = ({ data, userData }) => {
     setLike((prevValue) => !prevValue);
   };
 
+  const handleKeyboardLikeClick = (event) => {
+    if (event.key === "Enter") {
+      setLike((prevValue) => !prevValue);
+    }
+  };
+
   const [commentValue, setCommentValue] = useState("");
   const [coms, setComs] = useState(comments);
 
@@ -99,13 +105,13 @@ export const NewsFeedCard = ({ data, userData }) => {
             <RedHeartIcon
               className="card__icons-present"
               onClick={handleLikeClick}
-              onKeyDown={handleLikeClick}
+              onKeyDown={handleKeyboardLikeClick}
             />
           ) : (
             <ClearHeartIcon
               className="card__icons-present"
               onClick={handleLikeClick}
-              onKeyDown={handleLikeClick}
+              onKeyDown={handleKeyboardLikeClick}
             />
           )}
           <span className="likes__body">
