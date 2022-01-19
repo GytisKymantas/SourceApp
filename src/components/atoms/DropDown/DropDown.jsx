@@ -9,7 +9,7 @@ export const DropDown = ({ options, onSelect }) => (
       <div
         key={option.id}
         className="drop-down__option"
-        role="button"
+        role="menuitem"
         tabIndex="0"
         onClick={() => onSelect(option.id)}
         onKeyDown={() => onSelect(option.id)}

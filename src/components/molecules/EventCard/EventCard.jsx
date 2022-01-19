@@ -29,6 +29,12 @@ export const EventCard = ({ storiesData, userData }) => {
     setPresent((prevValue) => !prevValue);
   };
 
+  const handleKeyboardPresentClick = (event) => {
+    if (event.key === "Enter") {
+      setPresent((prevValue) => !prevValue);
+    }
+  };
+
   const handleCommentSubmit = () => {
     const userComment = {
       userName: currentUserName,
@@ -73,13 +79,15 @@ export const EventCard = ({ storiesData, userData }) => {
             <PresentIconColor
               className="card__icons-present"
               onClick={handlePresentClick}
-              onKeyDown={handlePresentClick}
+              onKeyDown={handleKeyboardPresentClick}
             />
           ) : (
             <PresentIconClear
               className="card__icons-present"
               onClick={handlePresentClick}
-              onKeyDown={handlePresentClick}
+              onKeyDown={handleKeyboardPresentClick}
+              role="button"
+              tabIndex={0}
             />
           )}
           <span className="card__icons-number">
