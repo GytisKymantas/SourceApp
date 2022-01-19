@@ -6,6 +6,7 @@ import { Reservations } from "pages/Reservations";
 import { EatOut } from "pages/EatOut";
 import { LoginPage } from "pages/LoginPage/LoginPage";
 import { NotFound } from "pages/NotFound/NotFound";
+import { CategoryPage } from "pages/CategoryPage/CategoryPage";
 
 function App() {
   const [userData, setUserData] = useState();
@@ -97,12 +98,8 @@ function App() {
                 element={<EatOut data={restaurantsData} />}
               />
               <Route
-                path="/dashboard/eatout/category"
-                element={<EatOut data={restaurantsData} />}
-              />
-              <Route
-                path="/dashboard/eatout/category/single"
-                element={<EatOut data={restaurantsData} />}
+                path="/dashboard/eatout/:category"
+                element={<CategoryPage data={restaurantsData} />}
               />
             </>
           )}
