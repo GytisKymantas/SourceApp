@@ -8,7 +8,7 @@ $inherit: inherit;
     display: grid;
     grid-gap: 32px;
     grid-template-columns: repeat(3, 1fr);
-    margin-top: 72px;
+    margin: 72px 0 101px;
     transition: 0.4s;
 
     @media (max-width: 1000px) {
