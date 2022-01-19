@@ -86,6 +86,8 @@ export const EventCard = ({ storiesData, userData }) => {
               className="card__icons-present"
               onClick={handlePresentClick}
               onKeyDown={handleKeyboardPresentClick}
+              role="button"
+              tabIndex={0}
             />
           )}
           <span className="card__icons-number">

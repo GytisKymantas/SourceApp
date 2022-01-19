@@ -106,12 +106,16 @@ export const NewsFeedCard = ({ data, userData }) => {
               className="card__icons-present"
               onClick={handleLikeClick}
               onKeyDown={handleKeyboardLikeClick}
+              role="button"
+              tabIndex={0}
             />
           ) : (
             <ClearHeartIcon
               className="card__icons-present"
               onClick={handleLikeClick}
               onKeyDown={handleKeyboardLikeClick}
+              role="button"
+              tabIndex={0}
             />
           )}
           <span className="likes__body">
