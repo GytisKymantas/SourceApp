@@ -17,9 +17,9 @@ export const EatOutSection = (data) => {
       ...restaurantData[i],
       averageRating: averageCount,
     });
-    bestRatedArray.sort((a, b) => (b.averageRating < a.averageRating ? 1 : -1));
   }
-  const twoBestRatedArray = bestRatedArray.slice(18, 20).reverse();
+  bestRatedArray.sort((a, b) => b.averageRating - a.averageRating);
+  const twoBestRatedArray = bestRatedArray.slice(0, 2);
 
   return (
     <div className="eat-out-section">

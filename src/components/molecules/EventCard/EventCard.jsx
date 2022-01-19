@@ -88,7 +88,7 @@ export const EventCard = ({ storiesData, userData }) => {
           <CommentIcon className="card__icons-comment" />
           <span className="card__icons-number">{coms.length}</span>
         </div>
-        <div>
+        <div className="card__comments-container">
           <EventCardDivider className="comments-divider__top" />
           <div className="comments-rows">
             {coms.map((item, index) => (

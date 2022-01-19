@@ -20,6 +20,12 @@ import SushiMaki from "../../../assets/sushiMaki.svg";
 import PropTypes from "prop-types";
 
 export const FoodCategoriesSection = ({ restaurantsData }) => {
+  const scrollToTop = () =>
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
   let categories = [];
   for (const restaurant in restaurantsData) {
     for (const category in restaurantsData[restaurant].categories) {
@@ -29,6 +35,7 @@ export const FoodCategoriesSection = ({ restaurantsData }) => {
       ];
     }
   }
+
   const counts = {};
   for (const num of categories) {
     counts[num] = counts[num] ? counts[num] + 1 : 1;
@@ -36,7 +43,8 @@ export const FoodCategoriesSection = ({ restaurantsData }) => {
 
   const path = "/dashboard/eatout/";
   const getPath = (item) => {
-    return path.concat(item);
+    const res = item.replace(/ /g, "");
+    return path.concat(res);
   };
 
   const imageMatcher = (image) => {
@@ -84,6 +92,7 @@ export const FoodCategoriesSection = ({ restaurantsData }) => {
                 key={index}
                 className="food-categories-section__element"
                 to={getPath(name[0].toLowerCase())}
+                onClick={scrollToTop}
               >
                 <CategoryItem
                   categoryName={name[0]}
