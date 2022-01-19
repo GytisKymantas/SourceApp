@@ -1,4 +1,36 @@
-🚨 Be sure to update this file according to your team.
+## Team Space
+
+Team Space is an online application for teams.
+
+## Description
+
+The purpose of Team Space app is to have quickly accessible and manageable reservations for meeting rooms, devices and books, view other users' shared posts and restaurants information. Team Space app consists of Dashboard, Reservations and Eat-Out pages.
+
+[![team-space.gif](https://i.postimg.cc/sDVL4Rcp/team-space.gif)](https://postimg.cc/hh5MK6Nj)
+
+### Dashboard page
+
+Displays:
+
+- Weather data
+- User's reservations of Meeting Rooms, Books and Devices
+- Best rated restaurants
+- Other users' posts (photos, videos and birthdays)
+
+### Reservations page
+
+Should display:
+
+- Reservation system for meeting rooms, books and devices
+- User's reservations
+
+### Eat-Out page
+
+Displays:
+
+- Sorted restraunts by food category
+- Nearest restaurants
+- Newest restaurants
 
 ## Run the project
 
@@ -42,6 +74,30 @@ Runs all linters and prettier and shows any warnings/errors in console.
 ### `npm run storybook`
 
 Runs storybook for development.
+
+## Usage
+
+To start using Team Space app, you need to log in or sign up if you don't have an account.
+
+### Sign up
+
+To sign up, click "Sign Up" in the main page and create personal account.
+
+[![signup.png](https://i.postimg.cc/PxxTP8RR/signup.png)](https://postimg.cc/WDQQytjG)
+
+### Log in
+
+To log in, enter your credentials in the login form and click "LOGIN" button.
+
+[![login.png](https://i.postimg.cc/JnfXxmZM/login.png)](https://postimg.cc/9RBzX6Ln)
+
+### Browsing
+
+Use navigation bar to browse the app.
+
+## Authors
+
+Team "Cutest Coders in Town": Gytis Kymantas, Lukas Krisikatis, Martynas Goberis, Rimgailė Sinkevičienė, Silvija Aleknaitė, Vilija Martinaitytė, Vitoldas Čebatorius.
 
 ## Learn More
 

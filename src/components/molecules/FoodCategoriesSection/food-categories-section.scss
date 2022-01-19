@@ -6,6 +6,10 @@ $inherit: inherit;
     max-width: 1440px;
     padding-bottom: 72px;
 
+    &__header {
+        margin-bottom: 42px;
+    }
+
     &__element-container {
         display: grid;
         grid-gap: 3.5rem 3rem;
