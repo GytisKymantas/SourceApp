@@ -16,7 +16,7 @@ const EatOutSliderCard = ({
   restaurantImageProp,
   restaurantDescriptionProp,
   index,
-  handleCard,
+  handleCardSwitch,
   handleImageClick,
 }) => (
   <div className="slider__container">
@@ -34,7 +34,7 @@ const EatOutSliderCard = ({
       tabIndex={-1}
       aria-checked="false"
       style={{
-        background: `linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%),url(${restaurantImageProp})`,
+        background: `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%),url(${restaurantImageProp})`,
       }}
     ></div>
     <div className="slider-text__wrapper">
@@ -50,7 +50,7 @@ const EatOutSliderCard = ({
         </div>
         <div className="arrow-nav">
           <SliderArrows
-            onClickSlider={handleCard}
+            onClickSlider={handleCardSwitch}
             disabledLeft={index === 0 ? true : false}
             disabledRight={index === 4 ? true : false}
           />
@@ -79,7 +79,7 @@ EatOutSliderCard.propTypes = {
   restaurantImageProp: PropTypes.string,
   restaurantSloganProp: PropTypes.string,
   index: PropTypes.number,
-  handleCard: PropTypes.func,
+  handleCardSwitch: PropTypes.func,
   handleImageClick: PropTypes.func,
 };
 

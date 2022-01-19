@@ -21,10 +21,7 @@
     .bullets {
         display: flex;
         gap: 10px;
-
-        img {
-            cursor: pointer;
-        }
+        height: 100%;
     }
 
     .placeholder-nav {
@@ -48,7 +45,7 @@
     .top-navigation {
         display: flex;
         justify-content: space-between;
-        padding-bottom: 25px;
+        padding-bottom: 16px;
         width: 312px;
     }
 
@@ -67,11 +64,13 @@
         font-weight: $font-weight-medium;
         line-height: 1.15;
         margin: 0;
+        max-width: 272px;
+        min-width: 250px;
         overflow: hidden;
         padding: 2px 0 16px;
         text-overflow: ellipsis;
         white-space: nowrap;
-        width: 272px;
+        width: 100%;
     }
 
     p {
@@ -93,15 +92,12 @@
 
 @media (max-width: 750px) {
     .slider__container {
-        border-radius: 0;
         display: inline-block;
         height: 100%;
+        max-width: 416px;
+        min-width: 280px;
         position: relative;
         width: 100%;
-
-        h2 {
-            min-width: 340px;
-        }
 
         .btn-container {
             padding: 0;
@@ -124,36 +120,30 @@
         display: contents;
     }
 
-    .slider-text__wrapper .top-navigation {
-        flex-direction: column;
-        height: 50px;
-        justify-content: center;
-
-        .bullets {
-            justify-content: center;
-        }
-    }
-
     .slider__container .slider__image-wrapper {
-        border-radius: 0;
         height: 225px;
         width: 100%;
     }
 
     .slider-text__wrapper {
         align-items: center;
-        border-radius: 0;
-        padding-top: 20px;
+        padding: 20px 20px 24px;
         text-align: center;
 
         p {
             font-size: $font-size-small;
-            width: 80%;
+            width: 100%;
         }
-    }
 
-    .arrow-nav {
-        display: block;
-        padding-top: 20px;
+        .top-navigation {
+            align-items: center;
+            align-self: end;
+            justify-content: space-between;
+            width: 60%;
+        }
+
+        .arrow-nav {
+            display: none;
+        }
     }
 }

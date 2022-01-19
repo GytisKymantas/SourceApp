@@ -10,7 +10,7 @@ const EatOutHeroSlider = (data) => {
     setIndex(index === 4 ? index - 4 : index + 1);
   };
 
-  const handleCard = (e) => {
+  const handleCardSwitch = (e) => {
     e === "right"
       ? setIndex(index === 4 ? 4 : index + 1)
       : setIndex(index === 0 ? 0 : index - 1);
@@ -34,7 +34,7 @@ const EatOutHeroSlider = (data) => {
           restaurantDescriptionProp={restaurantsData[index].description}
           restaurantNameProp={restaurantsData[index].name}
           index={index}
-          handleCard={handleCard}
+          handleCardSwitch={handleCardSwitch}
           handleImageClick={handleImageClick}
         />
       )}
