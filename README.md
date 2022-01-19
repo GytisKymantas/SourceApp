@@ -97,7 +97,7 @@ Use navigation bar to browse the app.
 
 ## Authors
 
-Team "Cutest Coders in Town": Gytis Kymantas, Lukas Krisikatis, Marynas Goberis, Rimgailė Sinkevičienė, Silvija Aleknaitė, Vilija Martinaitytė, Vitoldas Čebatorius.
+Team "Cutest Coders in Town": Gytis Kymantas, Lukas Krisikatis, Martynas Goberis, Rimgailė Sinkevičienė, Silvija Aleknaitė, Vilija Martinaitytė, Vitoldas Čebatorius.
 
 ## Learn More
 
