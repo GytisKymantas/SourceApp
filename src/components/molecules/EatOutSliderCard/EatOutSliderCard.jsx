@@ -61,7 +61,10 @@ const EatOutSliderCard = ({
         </div>
         <span className="text-slogan">{restaurantSloganProp}</span>
         <h2>{restaurantNameProp}</h2>
-        <p title={restaurantDescriptionProp}>
+        <p
+          className="restaurant__description"
+          title={restaurantDescriptionProp}
+        >
           <TextTruncate
             line={4}
             element="span"

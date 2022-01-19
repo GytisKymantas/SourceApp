@@ -73,7 +73,7 @@
         width: 100%;
     }
 
-    p {
+    .restaurant__description {
         color: $color-dark-gray;
         display: flex;
         font-size: $font-size-medium;
@@ -108,7 +108,7 @@
         }
     }
 
-    p {
+    .restaurant__description {
         height: 42px;
     }
 
@@ -134,7 +134,7 @@
         padding: 20px 20px 24px;
         text-align: center;
 
-        p {
+        .restaurant__description {
             font-size: $font-size-small;
             width: 100%;
         }
