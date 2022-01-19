@@ -9,6 +9,7 @@ import { Button } from "components/atoms/Button/Button";
 import { RatingBadge } from "components/atoms/RatingBadge/RatingBadge";
 import "./restaurant-card.scss";
 import TextTruncate from "react-text-truncate";
+import classNames from "classnames";
 
 export const RestaurantCard = ({
   displayFullCard,
@@ -21,6 +22,7 @@ export const RestaurantCard = ({
   restaurantCategories,
   restaurantImage,
   restaurantReviewList,
+  isLarge,
 }) => {
   const ratingArray = restaurantReviewList?.map((review) => review.rating);
   let average = 0;
@@ -37,7 +39,11 @@ export const RestaurantCard = ({
   const handleCheckInClick = () => setCheckIn(!checkIn);
 
   return (
-    <div className="restaurant__container">
+    <div
+      className={classNames("restaurant__container", {
+        "restaurant__container--large": isLarge,
+      })}
+    >
       <div className="restaurant__container-front">
         <div className="restaurant__container-top">
           {!displayFullCard && (
@@ -132,4 +138,5 @@ RestaurantCard.propTypes = {
   restaurantCategories: PropTypes.array,
   restaurantImage: PropTypes.string,
   restaurantReviewList: PropTypes.array,
+  isLarge: PropTypes.bool,
 };

@@ -9,6 +9,10 @@
     border: 1px solid;
     border-color: $color-iron;
     cursor: pointer;
+
+    &:hover {
+        background: $color-fiord;
+    }
 }
 
 .btn__left {
@@ -20,4 +24,17 @@
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     margin-left: -1px;
+}
+
+.btn__disabled {
+    background: $color-iron;
+    cursor: default;
+
+    &:hover {
+        background: $color-iron;
+    }
+}
+
+.btn:hover svg path {
+    stroke: $color-white;
 }
