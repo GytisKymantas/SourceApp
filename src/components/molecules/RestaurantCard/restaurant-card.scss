@@ -11,6 +11,14 @@ $_z-index: 1;
     position: relative;
     text-align: start;
 
+    &--large {
+        height: 477px;
+        justify-self: center;
+        max-width: 460px;
+        min-width: 280px;
+        width: 100%;
+    }
+
     a {
         color: $color-fiord;
         text-decoration: none;
